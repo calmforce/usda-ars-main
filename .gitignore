@@ -31,3 +31,5 @@ settings.local.php
 /docroot/sites/scientific-discoveries/settings.local.php
 # Backup files
 *.bak
+
+*.eyb
