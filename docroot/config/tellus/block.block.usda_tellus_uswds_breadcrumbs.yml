@@ -1,0 +1,22 @@
+uuid: 65f9e169-69e9-4c94-ba5f-54b5a4dd7fbb
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - usda_tellus_uswds
+_core:
+  default_config_hash: QegsOBiGqYHIApDsgm_Yaba6zzNoQUsP-q_dz1KhhH4
+id: usda_tellus_uswds_breadcrumbs
+theme: usda_tellus_uswds
+region: breadcrumb
+weight: -100
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

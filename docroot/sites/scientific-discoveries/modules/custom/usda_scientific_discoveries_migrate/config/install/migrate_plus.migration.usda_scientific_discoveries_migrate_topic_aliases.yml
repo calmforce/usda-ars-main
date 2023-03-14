@@ -1,0 +1,51 @@
+# Migration configuration for Tellus Topic aliases.
+id: usda_scientific_discoveries_migrate_topic_aliases
+label: 3 - ARS Scientific Discoveries Topic Aliases
+migration_group: usda_scientific_discoveries_migrate
+migration_tags:
+  - Umbraco
+  - Scientific Discoveries Topics
+  - USDA ARS Scientific Discoveries
+  - USDA ARS
+source:
+  constants:
+    source_prefix: '/taxonomy/term/'
+    langcode: 'en'
+  plugin: usda_scientific_discoveries_topic_aliases
+  key: scientific_discoveries
+destination:
+  plugin: entity:path_alias
+# Migration processes
+process:
+  # Figure out the ID of the corresponding term.
+  tid:
+    -
+      plugin: usda_scientific_discoveries_uuid
+      source: topic
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_topics
+      no_stub: true
+  # Specify the actual path to which are want to define an alias.
+  # We want to point to "/node/NID", so we generate that by concatenating various properties.
+  source:
+    plugin: concat
+    source:
+      - constants/source_prefix
+      - "@tid"
+  path: "@source"
+  # Specify the alias which should point to the "source" specified above.
+  alias: topicAlias
+  # All URL aliases need to specify a language.
+  langcode: constants/langcode
+# Migration dependencies
+migration_dependencies:
+  required:
+    - usda_scientific_discoveries_migrate_topics
+dependencies:
+  enforced:
+    module:
+      - usda_scientific_discoveries_migrate

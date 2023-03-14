@@ -1,0 +1,23 @@
+uuid: 61a4f4b0-9158-43de-b514-3904a2ab554c
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: tellus_category_url_pattern
+label: 'Tellus Category URL pattern'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'category/[term:name]'
+selection_criteria:
+  a4ad6d06-6116-4ae4-8b4a-4ee39f9317f6:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      tellus_categories: tellus_categories
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: a4ad6d06-6116-4ae4-8b4a-4ee39f9317f6
+selection_logic: and
+weight: -5
+relationships: {  }

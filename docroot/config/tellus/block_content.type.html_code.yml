@@ -1,0 +1,8 @@
+uuid: 2ece61bb-c924-418a-90b3-92051d5c4db9
+langcode: en
+status: true
+dependencies: {  }
+id: html_code
+label: 'HTML Code'
+revision: 0
+description: 'HTML Code with no restrictions'

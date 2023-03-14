@@ -1,0 +1,17 @@
+uuid: d835fa62-1639-4f96-9f11-5f8d903c3b21
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'add or remove dislike votes on article of node'
+  - 'add or remove like votes on article of node'
+  - 'add or remove vote votes on article of node'
+  - 'view media'

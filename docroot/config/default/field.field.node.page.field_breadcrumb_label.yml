@@ -1,0 +1,19 @@
+uuid: 5f92c9af-313b-4e7a-8aaf-d3903340d6ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_breadcrumb_label
+    - node.type.page
+id: node.page.field_breadcrumb_label
+field_name: field_breadcrumb_label
+entity_type: node
+bundle: page
+label: 'Breadcrumb Label'
+description: 'How the page is labeled in the breadcrumb. (Will default to page name if nothing is entered)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

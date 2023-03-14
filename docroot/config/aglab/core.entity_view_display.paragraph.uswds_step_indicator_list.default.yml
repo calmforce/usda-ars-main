@@ -1,0 +1,80 @@
+uuid: b5b882f1-1fb7-4fda-8840-42a098bc222c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uswds_step_indicator_list.field_centered
+    - field.field.paragraph.uswds_step_indicator_list.field_counters
+    - field.field.paragraph.uswds_step_indicator_list.field_header
+    - field.field.paragraph.uswds_step_indicator_list.field_no_labels
+    - field.field.paragraph.uswds_step_indicator_list.field_small_counters
+    - field.field.paragraph.uswds_step_indicator_list.field_step_indicator_items
+    - paragraphs.paragraphs_type.uswds_step_indicator_list
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: sxHdIn4BD0hdwdKGUuPzKU3_pIpf1LfyAu0VdcK3EQQ
+id: paragraph.uswds_step_indicator_list.default
+targetEntityType: paragraph
+bundle: uswds_step_indicator_list
+mode: default
+content:
+  field_centered:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_counters:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_header:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_no_labels:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_small_counters:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_step_indicator_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  search_api_excerpt: true

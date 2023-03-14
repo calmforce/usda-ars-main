@@ -1,0 +1,20 @@
+uuid: d5ff2dc6-2f2f-4895-931b-fd70dad9928d
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: NwV97iYG3i3lu-kpE_bVk9SlCZ1FsxdM4nd6GWDB3OA
+id: paragraph.field_multiselect
+field_name: field_multiselect
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

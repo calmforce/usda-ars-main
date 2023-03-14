@@ -1,0 +1,35 @@
+uuid: c88e275a-2e3a-4733-99cd-8400aeb1e5ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.news_search
+    - views.view.news_search
+  module:
+    - views
+id: news_search-block_display-0
+label: 'Block page'
+variant: block_display
+variant_settings:
+  blocks:
+    567c4b82-1581-4658-bc2b-483162b6eb59:
+      id: 'views_block:news_search-news_search_block'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: top
+      weight: 0
+      uuid: 567c4b82-1581-4658-bc2b-483162b6eb59
+      context_mapping: {  }
+  id: block_display
+  uuid: 51499707-0004-43e6-9848-a05f846a59f4
+  label: null
+  weight: 0
+  page_title: 'Search News'
+page: news_search
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

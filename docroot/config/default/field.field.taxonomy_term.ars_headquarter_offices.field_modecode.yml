@@ -1,0 +1,19 @@
+uuid: 1b10b85e-c1a5-48c7-8c24-ae236fef39de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_modecode
+    - taxonomy.vocabulary.ars_headquarter_offices
+id: taxonomy_term.ars_headquarter_offices.field_modecode
+field_name: field_modecode
+entity_type: taxonomy_term
+bundle: ars_headquarter_offices
+label: MODECODE
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

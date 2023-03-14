@@ -1,0 +1,19 @@
+uuid: 32e8665c-7883-4a4b-82a0-e4405d1fd225
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_keywords
+    - taxonomy.vocabulary.best_bets_search_results
+id: taxonomy_term.best_bets_search_results.field_keywords
+field_name: field_keywords
+entity_type: taxonomy_term
+bundle: best_bets_search_results
+label: Keywords
+description: 'Keyword or phrase that should be matched to display this recommendation.  You can enter as many different keywords, one at a time, that should display this recommendation.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

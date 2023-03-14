@@ -1,0 +1,109 @@
+uuid: 86f5d418-b24a-4b7c-a590-739545b939d8
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_scientific_discoveries_migrate
+id: usda_scientific_discoveries_migrate_topic_fields
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'Scientific Discoveries Topics'
+  - 'USDA ARS Scientific Discoveries'
+  - 'USDA ARS'
+migration_group: usda_scientific_discoveries_migrate
+label: '13 - ARS Scientific Discoveries Topic Fields'
+source:
+  plugin: usda_scientific_discoveries_regions_topics
+  key: scientific_discoveries
+  source_node_types:
+    - topicPage
+  constants:
+    vid: topics
+    langcode: en
+    html_format: rich_text
+process:
+  tid:
+    -
+      plugin: usda_scientific_discoveries_uuid
+      source: topic
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_topics
+      no_stub: true
+  vid: constants/vid
+  langcode: constants/langcode
+  name: nodeName
+  description/value: description
+  description/format: rich_text
+  field_main_content_images:
+    -
+      plugin: usda_scientific_discoveries_uuid
+      source: main_content_images
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_media
+      no_stub: true
+  body/value:
+    plugin: usda_scientific_discoveries_main_content_data
+    source: main_content
+  body/summary:
+    plugin: skip_on_empty
+    method: process
+    source: body_summary
+  body/format: constants/html_format
+  field_hero_image:
+    -
+      plugin: usda_scientific_discoveries_uuid
+      source: hero_image
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_media
+      no_stub: true
+  field_hide_page_title: hidePageTitle
+  field_hero_image_overlay_title: heroSlideOverlayTitle
+  field_in_this_section:
+    plugin: migration_lookup
+    migration: usda_scientific_discoveries_migrate_articles
+    source: imageCardsNodeIds
+    no_stub: true
+  layout_selection: layout
+  weight: sortOrder
+  status:
+    plugin: default_value
+    default_value: 1
+  changed: datetime
+  uid:
+    plugin: default_value
+    source: documentUser
+    default_value: 1
+  metatags/0/title: htmlTitle
+  metatags/0/description: pageDescription
+  metatags/0/keywords: keywords
+  field_meta_tags:
+    plugin: callback
+    callable: serialize
+    source: '@metatags'
+destination:
+  plugin: 'entity:taxonomy_term'
+  overwrite_properties:
+    - body
+    - field_hero_image
+    - field_hero_image_overlay_title
+    - field_hide_page_title
+    - field_meta_tags
+    - field_in_this_section
+    - layout_selection
+migration_dependencies: null

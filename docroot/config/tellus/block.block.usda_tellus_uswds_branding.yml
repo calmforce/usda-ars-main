@@ -1,0 +1,25 @@
+uuid: e260824f-8cf9-49cb-9ac3-f20cd1988210
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - usda_tellus_uswds
+_core:
+  default_config_hash: 7gmaBz8bOHMrDveIVeYki3NOC-Kjm5s6B4oRjFGdIGU
+id: usda_tellus_uswds_branding
+theme: usda_tellus_uswds
+region: header
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

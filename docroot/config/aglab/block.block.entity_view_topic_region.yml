@@ -1,0 +1,32 @@
+uuid: 9811ee8b-3e12-44b6-90ca-59c12549c053
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+  theme:
+    - usda_aglab_uswds
+id: entity_view_topic_region
+theme: usda_aglab_uswds
+region: hero
+weight: 0
+provider: null
+plugin: 'entity_view:taxonomy_term'
+settings:
+  id: 'entity_view:taxonomy_term'
+  label: 'Entity view (Taxonomy term)'
+  label_display: '0'
+  provider: ctools
+  view_mode: hero
+  context_mapping:
+    entity: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+visibility:
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+    bundles:
+      regions: regions
+      topics: topics

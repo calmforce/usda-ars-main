@@ -1,0 +1,10 @@
+uuid: 16e845ea-a70f-4003-b0e9-710a9f4947b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.440px_wide
+label: 440px-wide
+targetEntityType: media
+cache: true

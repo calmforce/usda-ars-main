@@ -1,0 +1,17 @@
+uuid: 89059b10-13e4-452e-882a-9d86f8781319
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Front Page'
+type: front_page
+description: 'Existing as a single node ever, the Front Page has Lead Article reference and Popular Content list.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,12 @@
+uuid: e72b57b1-e585-485b-af10-5e8eca7f7c10
+langcode: en
+status: true
+dependencies: {  }
+id: search_api__views_block__news_search__news_search_block
+name: 'search_api:views_block__news_search__news_search_block'
+filter_key: ''
+url_processor: query_string
+breadcrumb:
+  active: false
+  before: true
+  group: false

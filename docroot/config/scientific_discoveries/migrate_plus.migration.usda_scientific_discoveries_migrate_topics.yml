@@ -1,0 +1,45 @@
+uuid: cbff5200-624c-4398-b341-992686d47d6a
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_scientific_discoveries_migrate
+id: usda_scientific_discoveries_migrate_topics
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'Scientific Discoveries Categories'
+  - 'USDA ARS Scientific Discoveries'
+  - 'USDA ARS'
+migration_group: usda_scientific_discoveries_migrate
+label: '2.2 - ARS Scientific Discoveries Topics'
+source:
+  plugin: usda_scientific_discoveries_topics
+  key: scientific_discoveries
+  constants:
+    vid: topics
+    langcode: en
+    html_format: rich_text
+process:
+  tid: nodeId
+  vid: constants/vid
+  langcode: constants/langcode
+  name: nodeName
+  description/value: description
+  description/format: rich_text
+  field_color/color: color
+  weight: sortOrder
+  status:
+    plugin: default_value
+    default_value: 1
+  changed: datetime
+  uid:
+    plugin: default_value
+    source: documentUser
+    default_value: 1
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies: null

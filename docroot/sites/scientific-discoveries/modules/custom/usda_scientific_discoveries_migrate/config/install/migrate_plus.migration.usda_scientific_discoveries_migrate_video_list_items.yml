@@ -1,0 +1,92 @@
+# Migration configuration for ARS Scientific Discoveries External Video content.
+id: usda_scientific_discoveries_migrate_video_list_items
+label: 18 - ARS Scientific Discoveries Video List Items
+migration_group: usda_scientific_discoveries_migrate
+audit: true
+migration_tags:
+  - Umbraco
+  - Scientific Discoveries External Video
+  - USDA ARS Scientific Discoveries
+  - USDA ARS
+
+source:
+  plugin: usda_scientific_discoveries_video_list_items
+  key: scientific_discoveries
+  constants:
+    langcode: 'en'
+    html_format: 'rich_text'
+    bundle: 'remote_video'
+destination:
+  plugin: entity:media
+process:
+  uuid: videoUuid
+  bundle: 'constants/bundle'
+  name: mediaName
+  langcode: 'constants/langcode'
+  default_langcode:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+  created:
+    plugin: usda_ars_date2timestamp
+    source: createDate
+  changed: '@created'
+  uid:
+    -
+      plugin: usda_ars_user
+      source: nodeUser
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_user
+      no_stub: true
+    -
+      plugin: default_value
+      default_value: 1
+  field_media_oembed_video:
+    -
+      plugin: skip_on_empty
+      method: row
+      source: videoUrl
+    -
+      plugin: usda_scientific_discoveries_youtube_url
+  field_caption/value:
+    -
+      plugin: usda_scientific_discoveries_external_video_caption
+      source: textBelowVideo
+    -
+      plugin: skip_on_empty
+      method: process
+  field_caption/format: 'constants/html_format'
+  field_video_alt_text:
+    -
+      plugin: usda_scientific_discoveries_external_video_caption
+      source: videoAltText
+    -
+      plugin: skip_on_empty
+      method: process
+  field_media_in_library:
+    plugin: default_value
+    default_value: 1
+  # Cover Image.
+  field_image:
+    -
+      plugin: usda_scientific_discoveries_uuid
+      source: imageUmbMediaId
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_media
+      no_stub: true
+  # Hide section title.
+  field_hide_title: hideTitle
+migration_dependencies:
+  required:
+    - usda_scientific_discoveries_migrate_user
+dependencies:
+  enforced:
+    module:
+      - usda_scientific_discoveries_migrate

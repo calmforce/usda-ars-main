@@ -1,0 +1,21 @@
+uuid: 6a8a409e-9aa5-4968-b5eb-b7f762988ce1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_right_custom_content
+    - taxonomy.vocabulary.ars_locations
+  module:
+    - text
+id: taxonomy_term.ars_locations.field_right_custom_content
+field_name: field_right_custom_content
+entity_type: taxonomy_term
+bundle: ars_locations
+label: 'Right Custom Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

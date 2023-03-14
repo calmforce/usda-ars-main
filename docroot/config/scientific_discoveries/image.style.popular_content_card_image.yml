@@ -1,0 +1,17 @@
+uuid: 08e76101-2bb7-42f4-848b-d1ae9c960b1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: popular_content_card_image
+label: 'Popular Content Card Image (360×195)'
+effects:
+  c6df54d1-f154-4f94-b9b8-23fafbbaaf64:
+    uuid: c6df54d1-f154-4f94-b9b8-23fafbbaaf64
+    id: focal_point_scale_and_crop
+    weight: 2
+    data:
+      width: 360
+      height: 195
+      crop_type: focal_point

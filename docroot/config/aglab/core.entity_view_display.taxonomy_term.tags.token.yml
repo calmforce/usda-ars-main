@@ -1,0 +1,31 @@
+uuid: ff7c9135-ec68-4041-a55b-9eb228978ffd
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.token
+    - field.field.taxonomy_term.tags.field_color
+    - taxonomy.vocabulary.tags
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: taxonomy_term.tags.token
+targetEntityType: taxonomy_term
+bundle: tags
+mode: token
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_color: true
+  langcode: true
+  search_api_excerpt: true

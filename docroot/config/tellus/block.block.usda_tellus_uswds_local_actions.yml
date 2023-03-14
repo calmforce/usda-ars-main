@@ -1,0 +1,20 @@
+uuid: c99bec93-c31d-47e6-af10-f8204df41469
+langcode: en
+status: true
+dependencies:
+  theme:
+    - usda_tellus_uswds
+_core:
+  default_config_hash: JKZASPT3lMWKyIVj_2Q0cWkTo14wEhnJAb0pM5R3ZVY
+id: usda_tellus_uswds_local_actions
+theme: usda_tellus_uswds
+region: content
+weight: -7
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

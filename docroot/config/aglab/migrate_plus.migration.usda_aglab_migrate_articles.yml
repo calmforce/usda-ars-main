@@ -1,0 +1,172 @@
+uuid: 98f6f18f-2f72-46cb-9f0a-3a0927b89845
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_aglab_migrate
+_core:
+  default_config_hash: tIesNz80apyp_7Ap8iD4t8h3WlCTtshVqrqQQuwbZNw
+id: usda_aglab_migrate_articles
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'Aglab Articles'
+  - 'USDA ARS Aglab'
+  - 'USDA ARS'
+migration_group: usda_aglab_migrate
+label: '9 - ARS Aglab Articles'
+source:
+  plugin: usda_aglab_articles
+  key: aglab
+  constants:
+    bundle: article
+    langcode: en
+    html_format: rich_text
+process:
+  nid: nodeId
+  type: constants/bundle
+  langcode: constants/langcode
+  status:
+    plugin: default_value
+    default_value: 1
+  created:
+    plugin: usda_ars_date2timestamp
+    source: createDate
+  changed:
+    plugin: usda_ars_date2timestamp
+    source: updateDate
+  revision_timestamp: '@changed'
+  title: nodeName
+  field_main_content_images:
+    -
+      plugin: usda_aglab_uuid
+      source: main_content_images
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_media
+      no_stub: true
+  body/value:
+    plugin: usda_aglab_main_content_data
+    source: main_content
+  body/summary:
+    plugin: skip_on_empty
+    method: process
+    source: body_summary
+  body/format: constants/html_format
+  field_publish_date:
+    plugin: format_date
+    source: publish_date
+    from_format: 'Y-m-d H:i:s.v'
+    to_format: Y-m-d
+    from_timezone: America/New_York
+    to_timezone: UTC
+  uid:
+    -
+      plugin: usda_ars_user
+      source: nodeUser
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_user
+      no_stub: true
+    -
+      plugin: default_value
+      default_value: 1
+  revision_uid: '@uid'
+  field_tags:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: tags
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: usda_aglab_uuid
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_tags
+      no_stub: true
+  field_topic:
+    -
+      plugin: usda_aglab_uuid
+      source: category
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_topics
+      no_stub: true
+  field_region:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: regionId
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_regions
+      no_stub: true
+  layout_selection:
+    plugin: skip_on_empty
+    method: process
+    source: layout
+  field_hero_image:
+    -
+      plugin: usda_aglab_uuid
+      source: hero_image
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_media
+      no_stub: true
+  field_featured_image:
+    -
+      plugin: usda_aglab_uuid
+      source: featured_image
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_media
+      no_stub: true
+  field_slideshow:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: gallery_carousel
+    -
+      plugin: usda_lookup_slide_id
+      no_stub: true
+  field_external_video:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: external_video
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_external_video
+      no_stub: true
+  field_hide_page_title: hidePageTitle
+  field_short_name: shortName
+  field_hero_image_overlay_title/value: heroSlideOverlayTitle
+  field_hero_image_overlay_title/format: constants/html_format
+  field_image_cards_section_title: imageCardsSectionTitle
+  metatags/0/title: htmlTitle
+  metatags/0/description: pageDescription
+  metatags/0/keywords: keywords
+  field_meta_tags:
+    plugin: callback
+    callable: serialize
+    source: '@metatags'
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

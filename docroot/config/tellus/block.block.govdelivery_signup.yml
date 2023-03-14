@@ -1,0 +1,29 @@
+uuid: e7b098a9-9a00-47e4-9f9c-1c941468e557
+langcode: en
+status: false
+dependencies:
+  module:
+    - govdelivery_signup
+  theme:
+    - usda_tellus_uswds
+id: govdelivery_signup
+theme: usda_tellus_uswds
+region: footer
+weight: 0
+provider: null
+plugin: govdelivery_signup_block
+settings:
+  id: govdelivery_signup_block
+  label: Subscribe
+  provider: govdelivery_signup
+  label_display: visible
+  fieldset_desc: ''
+  button_label: Go
+  description: ''
+  email_label: Email
+  email_desc: ''
+  email_placeholder: 'Sign up for ARS News updates'
+  client_code: tV2OquJR5xnmtrmmZS3U
+  server: 'https://public.govdelivery.com/accounts/USDAARS/subscriber/qualify?qsp=CODE_RED'
+  js_enabled: 1
+visibility: {  }

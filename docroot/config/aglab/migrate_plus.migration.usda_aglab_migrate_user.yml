@@ -1,0 +1,39 @@
+uuid: b8ec8528-2226-421f-834d-f5bf8e3647db
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_aglab_migrate
+_core:
+  default_config_hash: PZGo_GCnJsgu9atE7W8TFlTBYynZF2IJmTDj1REormw
+id: usda_aglab_migrate_user
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'Aglab Users'
+  - 'USDA ARS Aglab'
+  - 'USDA ARS'
+migration_group: usda_aglab_migrate
+label: '1 - ARS Aglab Users'
+source:
+  plugin: usda_aglab_user
+  key: aglab
+process:
+  uid: id
+  name: userName
+  pass: userPassword
+  mail: userEmail
+  roles: userType
+  status:
+    plugin: default_value
+    default_value: 1
+  created: createDate
+  changed: updateDate
+  access: lastLoginDate
+  login: lastLoginDate
+destination:
+  plugin: 'entity:user'
+migration_dependencies: null

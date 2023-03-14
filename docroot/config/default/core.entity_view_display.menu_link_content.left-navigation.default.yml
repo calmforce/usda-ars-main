@@ -1,0 +1,19 @@
+uuid: 5facd34b-e35f-40c6-b3b3-4d1d8af8cc80
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.left-navigation
+id: menu_link_content.left-navigation.default
+targetEntityType: menu_link_content
+bundle: left-navigation
+mode: default
+content:
+  children:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,22 @@
+uuid: 6529f045-9547-485d-bcb4-d31728e5273a
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - usda_aglab_uswds
+_core:
+  default_config_hash: i6AzguGGocQQgg63qklSYzp7Ps2gXMYwUZdrUyf_YHY
+id: usda_aglab_uswds_help
+theme: usda_aglab_uswds
+region: help
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 9bb7bbdc-c4d8-475d-82b1-3a8f88056819
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_color
+    - taxonomy.vocabulary.topics
+  module:
+    - color_field
+id: taxonomy_term.topics.field_color
+field_name: field_color
+entity_type: taxonomy_term
+bundle: topics
+label: Color
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

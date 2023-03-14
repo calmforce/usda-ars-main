@@ -1,0 +1,34 @@
+uuid: 6356f4bf-7cb7-4e15-a6c8-d7b22d9ff9ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uswds_3_column_breakpoints.field_3_column_grid_options
+    - field.field.paragraph.uswds_3_column_breakpoints.field_uswds_breakpoints
+    - paragraphs.paragraphs_type.uswds_3_column_breakpoints
+  module:
+    - options
+_core:
+  default_config_hash: dzko2PqeR1NamuHx2bYRerxPKJXBO8gBd_KVtgm0ogI
+id: paragraph.uswds_3_column_breakpoints.default
+targetEntityType: paragraph
+bundle: uswds_3_column_breakpoints
+mode: default
+content:
+  field_3_column_grid_options:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_uswds_breakpoints:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

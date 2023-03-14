@@ -1,0 +1,21 @@
+uuid: 7c79c006-e02a-408c-9341-04a9f5acc050
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_image_cards_section_title
+    - taxonomy.vocabulary.topics
+id: taxonomy_term.topics.field_image_cards_section_title
+field_name: field_image_cards_section_title
+entity_type: taxonomy_term
+bundle: topics
+label: 'Image Cards Section Title'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'In This Section'
+default_value_callback: ''
+settings: {  }
+field_type: string

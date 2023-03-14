@@ -1,0 +1,10 @@
+uuid: 65223930-ecfa-4962-99b1-886aaacfc596
+langcode: en
+status: true
+dependencies: {  }
+id: usda_scientific_discoveries_migrate
+label: 'ARS Scientific Discoveries Site Migrate'
+description: 'Migrating Scientific Discoveries Umbraco CMS to Drupal'
+source_type: Umbraco
+module: null
+shared_configuration: null

@@ -1,0 +1,8 @@
+uuid: faa618b9-bddb-4265-977e-6e6df9800f1b
+langcode: en
+status: true
+dependencies: {  }
+name: 'News Years'
+vid: ars_news_years
+description: 'Vocabulary with each term representing a News Year for News Articles'
+weight: 0

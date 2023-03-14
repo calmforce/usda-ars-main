@@ -1,0 +1,21 @@
+uuid: ce44272f-d108-4435-aa55-872c41b0fc78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_folder_type
+    - node.type.site_folder
+  module:
+    - options
+id: node.site_folder.field_site_folder_type
+field_name: field_site_folder_type
+entity_type: node
+bundle: site_folder
+label: 'Site Folder Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

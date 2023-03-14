@@ -1,0 +1,66 @@
+uuid: a28eabd4-5f34-40e2-9d5c-2d984d308181
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.np_program_content_page.body
+    - field.field.node.np_program_content_page.field_document_type
+    - field.field.node.np_program_content_page.field_national_program
+    - field.field.node.np_program_content_page.field_umbraco_node_url
+    - field.field.node.np_program_content_page.field_umbraco_path
+    - node.type.np_program_content_page
+  module:
+    - options
+    - text
+    - user
+id: node.np_program_content_page.default
+targetEntityType: node
+bundle: np_program_content_page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_document_type:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_national_program:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_umbraco_node_url:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_umbraco_path:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,833 @@
+uuid: 27095d58-467b-4bc0-b6e1-23e36591b329
+langcode: en
+status: true
+dependencies: {  }
+id: home_page
+label: 'Home Page'
+targetEntityType: node
+targetBundle: front_page
+layout:
+  -
+    layout_id: 'bootstrap_layout_builder:blb_col_1'
+    layout_settings:
+      label: 'Large Video'
+      context_mapping: {  }
+      container_wrapper_classes: home_video
+      container_wrapper_attributes: null
+      container_wrapper:
+        bootstrap_styles:
+          background:
+            background_type: color
+          background_color:
+            class: null
+          background_media:
+            image:
+              media_id: null
+            video:
+              media_id: null
+            background_options:
+              background_position: center
+              background_repeat: no-repeat
+              background_attachment: not_fixed
+              background_size: cover
+          text_color:
+            class: null
+          text_alignment:
+            class: null
+          padding:
+            class: _none
+          padding_left:
+            class: _none
+          padding_top:
+            class: _none
+          padding_right:
+            class: _none
+          padding_bottom:
+            class: _none
+          margin:
+            class: _none
+          margin_left:
+            class: _none
+          margin_top:
+            class: _none
+          margin_right:
+            class: _none
+          margin_bottom:
+            class: _none
+          border:
+            border_style:
+              class: null
+            border_width:
+              class: _none
+            border_color:
+              class: null
+            rounded_corners:
+              class: _none
+            border_left_style:
+              class: null
+            border_left_width:
+              class: _none
+            border_left_color:
+              class: null
+            border_top_style:
+              class: null
+            border_top_width:
+              class: _none
+            border_top_color:
+              class: null
+            border_right_style:
+              class: null
+            border_right_width:
+              class: _none
+            border_right_color:
+              class: null
+            border_bottom_style:
+              class: null
+            border_bottom_width:
+              class: _none
+            border_bottom_color:
+              class: null
+            rounded_corner_top_left:
+              class: _none
+            rounded_corner_top_right:
+              class: _none
+            rounded_corner_bottom_left:
+              class: _none
+            rounded_corner_bottom_right:
+              class: _none
+          scroll_effects:
+            class: null
+      container_wrapper_bg_color_class: ''
+      container_wrapper_bg_media: null
+      container: container-fluid
+      section_classes: ''
+      section_attributes: null
+      regions_classes:
+        blb_region_col_1: ''
+      regions_attributes:
+        blb_region_col_1: {  }
+      breakpoints: {  }
+      layout_regions_classes: {  }
+      remove_gutters: '0'
+    components:
+      c5092cc5-0479-4f4f-a4bb-54ed6deca54c:
+        uuid: c5092cc5-0479-4f4f-a4bb-54ed6deca54c
+        region: blb_region_col_1
+        configuration:
+          id: 'block_content:e774e037-494a-6930-344b-5b5cbb19a8c1'
+          label: 'ARS Scientific Discoveries Overview 2021'
+          label_display: visible
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: 'bootstrap_layout_builder:blb_col_1'
+    layout_settings:
+      label: 'National Program Areas view'
+      context_mapping: {  }
+      container_wrapper_classes: grid-container
+      container_wrapper_attributes: null
+      container_wrapper:
+        bootstrap_styles:
+          background:
+            background_type: color
+          background_color:
+            class: null
+          background_media:
+            image:
+              media_id: null
+            video:
+              media_id: null
+            background_options:
+              background_position: center
+              background_repeat: no-repeat
+              background_attachment: not_fixed
+              background_size: cover
+          text_color:
+            class: null
+          text_alignment:
+            class: null
+          padding:
+            class: _none
+          padding_left:
+            class: _none
+          padding_top:
+            class: _none
+          padding_right:
+            class: _none
+          padding_bottom:
+            class: _none
+          margin:
+            class: _none
+          margin_left:
+            class: _none
+          margin_top:
+            class: _none
+          margin_right:
+            class: _none
+          margin_bottom:
+            class: _none
+          border:
+            border_style:
+              class: null
+            border_width:
+              class: _none
+            border_color:
+              class: null
+            rounded_corners:
+              class: _none
+            border_left_style:
+              class: null
+            border_left_width:
+              class: _none
+            border_left_color:
+              class: null
+            border_top_style:
+              class: null
+            border_top_width:
+              class: _none
+            border_top_color:
+              class: null
+            border_right_style:
+              class: null
+            border_right_width:
+              class: _none
+            border_right_color:
+              class: null
+            border_bottom_style:
+              class: null
+            border_bottom_width:
+              class: _none
+            border_bottom_color:
+              class: null
+            rounded_corner_top_left:
+              class: _none
+            rounded_corner_top_right:
+              class: _none
+            rounded_corner_bottom_left:
+              class: _none
+            rounded_corner_bottom_right:
+              class: _none
+          scroll_effects:
+            class: null
+      container_wrapper_bg_color_class: ''
+      container_wrapper_bg_media: null
+      container: container-fluid
+      section_classes: ''
+      section_attributes: null
+      regions_classes:
+        blb_region_col_1: ''
+      regions_attributes:
+        blb_region_col_1: {  }
+      breakpoints: {  }
+      layout_regions_classes: {  }
+      remove_gutters: '1'
+    components:
+      056a1ccf-f193-4d1b-923f-805a52c48fa4:
+        uuid: 056a1ccf-f193-4d1b-923f-805a52c48fa4
+        region: blb_region_col_1
+        configuration:
+          id: 'views_block:national_programs-block_1'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: 'bootstrap_layout_builder:blb_col_1'
+    layout_settings:
+      label: 'Explore Our Discoveries'
+      context_mapping: {  }
+      container_wrapper_classes: grid-container
+      container_wrapper_attributes: null
+      container_wrapper:
+        bootstrap_styles:
+          background:
+            background_type: color
+          background_color:
+            class: null
+          background_media:
+            image:
+              media_id: null
+            video:
+              media_id: null
+            background_options:
+              background_position: center
+              background_repeat: no-repeat
+              background_attachment: not_fixed
+              background_size: cover
+          text_color:
+            class: null
+          text_alignment:
+            class: null
+          padding:
+            class: _none
+          padding_left:
+            class: _none
+          padding_top:
+            class: _none
+          padding_right:
+            class: _none
+          padding_bottom:
+            class: _none
+          margin:
+            class: _none
+          margin_left:
+            class: _none
+          margin_top:
+            class: _none
+          margin_right:
+            class: _none
+          margin_bottom:
+            class: _none
+          border:
+            border_style:
+              class: null
+            border_width:
+              class: _none
+            border_color:
+              class: null
+            rounded_corners:
+              class: _none
+            border_left_style:
+              class: null
+            border_left_width:
+              class: _none
+            border_left_color:
+              class: null
+            border_top_style:
+              class: null
+            border_top_width:
+              class: _none
+            border_top_color:
+              class: null
+            border_right_style:
+              class: null
+            border_right_width:
+              class: _none
+            border_right_color:
+              class: null
+            border_bottom_style:
+              class: null
+            border_bottom_width:
+              class: _none
+            border_bottom_color:
+              class: null
+            rounded_corner_top_left:
+              class: _none
+            rounded_corner_top_right:
+              class: _none
+            rounded_corner_bottom_left:
+              class: _none
+            rounded_corner_bottom_right:
+              class: _none
+          scroll_effects:
+            class: null
+      container_wrapper_bg_color_class: ''
+      container_wrapper_bg_media: null
+      container: container-fluid
+      section_classes: ''
+      section_attributes: null
+      regions_classes:
+        blb_region_col_1: ''
+      regions_attributes:
+        blb_region_col_1: {  }
+      breakpoints: {  }
+      layout_regions_classes: {  }
+      remove_gutters: '0'
+    components:
+      e89044aa-5ce6-4870-85fc-8c156c5f18ff:
+        uuid: e89044aa-5ce6-4870-85fc-8c156c5f18ff
+        region: blb_region_col_1
+        configuration:
+          id: 'views_block:regions-block_1'
+          label: 'Explore Our Discoveries'
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: 'Explore Our Discoveries'
+          items_per_page: none
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: 'bootstrap_layout_builder:blb_col_1'
+    layout_settings:
+      label: ''
+      context_mapping: {  }
+      container_wrapper_classes: grid-container
+      container_wrapper_attributes: null
+      container_wrapper:
+        bootstrap_styles:
+          background:
+            background_type: color
+          background_color:
+            class: null
+          background_media:
+            image:
+              media_id: null
+            video:
+              media_id: null
+            background_options:
+              background_position: center
+              background_repeat: no-repeat
+              background_attachment: not_fixed
+              background_size: cover
+          text_color:
+            class: null
+          text_alignment:
+            class: null
+          padding:
+            class: _none
+          padding_left:
+            class: _none
+          padding_top:
+            class: _none
+          padding_right:
+            class: _none
+          padding_bottom:
+            class: _none
+          margin:
+            class: _none
+          margin_left:
+            class: _none
+          margin_top:
+            class: _none
+          margin_right:
+            class: _none
+          margin_bottom:
+            class: _none
+          border:
+            border_style:
+              class: null
+            border_width:
+              class: _none
+            border_color:
+              class: null
+            rounded_corners:
+              class: _none
+            border_left_style:
+              class: null
+            border_left_width:
+              class: _none
+            border_left_color:
+              class: null
+            border_top_style:
+              class: null
+            border_top_width:
+              class: _none
+            border_top_color:
+              class: null
+            border_right_style:
+              class: null
+            border_right_width:
+              class: _none
+            border_right_color:
+              class: null
+            border_bottom_style:
+              class: null
+            border_bottom_width:
+              class: _none
+            border_bottom_color:
+              class: null
+            rounded_corner_top_left:
+              class: _none
+            rounded_corner_top_right:
+              class: _none
+            rounded_corner_bottom_left:
+              class: _none
+            rounded_corner_bottom_right:
+              class: _none
+          scroll_effects:
+            class: null
+      container_wrapper_bg_color_class: ''
+      container_wrapper_bg_media: null
+      container: container-fluid
+      section_classes: home-video-slide
+      section_attributes: null
+      regions_classes:
+        blb_region_col_1: ''
+      regions_attributes:
+        blb_region_col_1: {  }
+      breakpoints: {  }
+      layout_regions_classes: {  }
+      remove_gutters: '0'
+    components:
+      8328dd98-e170-4db1-9884-af551aac4d62:
+        uuid: 8328dd98-e170-4db1-9884-af551aac4d62
+        region: blb_region_col_1
+        configuration:
+          id: 'block_content:1de41a14-41bc-824a-f106-d61577ec3541'
+          label: 'Watch Our Discoveries with Impact'
+          label_display: visible
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: 'bootstrap_layout_builder:blb_col_1'
+    layout_settings:
+      label: ''
+      context_mapping: {  }
+      container_wrapper_classes: grid-container
+      container_wrapper_attributes: null
+      container_wrapper:
+        bootstrap_styles:
+          background:
+            background_type: color
+          background_color:
+            class: null
+          background_media:
+            image:
+              media_id: null
+            video:
+              media_id: null
+            background_options:
+              background_position: center
+              background_repeat: no-repeat
+              background_attachment: not_fixed
+              background_size: cover
+          text_color:
+            class: null
+          text_alignment:
+            class: null
+          padding:
+            class: _none
+          padding_left:
+            class: _none
+          padding_top:
+            class: _none
+          padding_right:
+            class: _none
+          padding_bottom:
+            class: _none
+          margin:
+            class: _none
+          margin_left:
+            class: _none
+          margin_top:
+            class: _none
+          margin_right:
+            class: _none
+          margin_bottom:
+            class: _none
+          border:
+            border_style:
+              class: null
+            border_width:
+              class: _none
+            border_color:
+              class: null
+            rounded_corners:
+              class: _none
+            border_left_style:
+              class: null
+            border_left_width:
+              class: _none
+            border_left_color:
+              class: null
+            border_top_style:
+              class: null
+            border_top_width:
+              class: _none
+            border_top_color:
+              class: null
+            border_right_style:
+              class: null
+            border_right_width:
+              class: _none
+            border_right_color:
+              class: null
+            border_bottom_style:
+              class: null
+            border_bottom_width:
+              class: _none
+            border_bottom_color:
+              class: null
+            rounded_corner_top_left:
+              class: _none
+            rounded_corner_top_right:
+              class: _none
+            rounded_corner_bottom_left:
+              class: _none
+            rounded_corner_bottom_right:
+              class: _none
+          scroll_effects:
+            class: null
+      container_wrapper_bg_color_class: ''
+      container_wrapper_bg_media: null
+      container: container-fluid
+      section_classes: ''
+      section_attributes: null
+      regions_classes:
+        blb_region_col_1: ''
+      regions_attributes:
+        blb_region_col_1: {  }
+      breakpoints: {  }
+      layout_regions_classes: {  }
+      remove_gutters: '0'
+    components:
+      e5fce8ae-3bd3-48e5-a1a5-8cfee2f96301:
+        uuid: e5fce8ae-3bd3-48e5-a1a5-8cfee2f96301
+        region: blb_region_col_1
+        configuration:
+          id: 'block_content:6a93dc5e-d432-a7b0-0756-d2dc1bf0cf28'
+          label: 'ARS by the Numbers'
+          label_display: visible
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: 'bootstrap_layout_builder:blb_col_1'
+    layout_settings:
+      label: ''
+      context_mapping: {  }
+      container_wrapper_classes: grid-container
+      container_wrapper_attributes: null
+      container_wrapper:
+        bootstrap_styles:
+          background:
+            background_type: color
+          background_color:
+            class: null
+          background_media:
+            image:
+              media_id: null
+            video:
+              media_id: null
+            background_options:
+              background_position: center
+              background_repeat: no-repeat
+              background_attachment: not_fixed
+              background_size: cover
+          text_color:
+            class: null
+          text_alignment:
+            class: null
+          padding:
+            class: _none
+          padding_left:
+            class: _none
+          padding_top:
+            class: _none
+          padding_right:
+            class: _none
+          padding_bottom:
+            class: _none
+          margin:
+            class: _none
+          margin_left:
+            class: _none
+          margin_top:
+            class: _none
+          margin_right:
+            class: _none
+          margin_bottom:
+            class: _none
+          border:
+            border_style:
+              class: null
+            border_width:
+              class: _none
+            border_color:
+              class: null
+            rounded_corners:
+              class: _none
+            border_left_style:
+              class: null
+            border_left_width:
+              class: _none
+            border_left_color:
+              class: null
+            border_top_style:
+              class: null
+            border_top_width:
+              class: _none
+            border_top_color:
+              class: null
+            border_right_style:
+              class: null
+            border_right_width:
+              class: _none
+            border_right_color:
+              class: null
+            border_bottom_style:
+              class: null
+            border_bottom_width:
+              class: _none
+            border_bottom_color:
+              class: null
+            rounded_corner_top_left:
+              class: _none
+            rounded_corner_top_right:
+              class: _none
+            rounded_corner_bottom_left:
+              class: _none
+            rounded_corner_bottom_right:
+              class: _none
+          scroll_effects:
+            class: null
+      container_wrapper_bg_color_class: ''
+      container_wrapper_bg_media: null
+      container: container-fluid
+      section_classes: ''
+      section_attributes: null
+      regions_classes:
+        blb_region_col_1: ''
+      regions_attributes:
+        blb_region_col_1: {  }
+      breakpoints: {  }
+      layout_regions_classes: {  }
+      remove_gutters: '0'
+    components:
+      348ef9b3-635e-4195-a49b-1dd3e540cb2e:
+        uuid: 348ef9b3-635e-4195-a49b-1dd3e540cb2e
+        region: blb_region_col_1
+        configuration:
+          id: 'block_content:a0ca3fcd-9b95-3c95-21df-9e4b856b2c7b'
+          label: 'ARS Awards'
+          label_display: visible
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: 'bootstrap_layout_builder:blb_col_1'
+    layout_settings:
+      label: ''
+      context_mapping: {  }
+      container_wrapper_classes: grid-container
+      container_wrapper_attributes: null
+      container_wrapper:
+        bootstrap_styles:
+          background:
+            background_type: color
+          background_color:
+            class: null
+          background_media:
+            image:
+              media_id: null
+            video:
+              media_id: null
+            background_options:
+              background_position: center
+              background_repeat: no-repeat
+              background_attachment: not_fixed
+              background_size: cover
+          text_color:
+            class: null
+          text_alignment:
+            class: null
+          padding:
+            class: _none
+          padding_left:
+            class: _none
+          padding_top:
+            class: _none
+          padding_right:
+            class: _none
+          padding_bottom:
+            class: _none
+          margin:
+            class: _none
+          margin_left:
+            class: _none
+          margin_top:
+            class: _none
+          margin_right:
+            class: _none
+          margin_bottom:
+            class: _none
+          border:
+            border_style:
+              class: null
+            border_width:
+              class: _none
+            border_color:
+              class: null
+            rounded_corners:
+              class: _none
+            border_left_style:
+              class: null
+            border_left_width:
+              class: _none
+            border_left_color:
+              class: null
+            border_top_style:
+              class: null
+            border_top_width:
+              class: _none
+            border_top_color:
+              class: null
+            border_right_style:
+              class: null
+            border_right_width:
+              class: _none
+            border_right_color:
+              class: null
+            border_bottom_style:
+              class: null
+            border_bottom_width:
+              class: _none
+            border_bottom_color:
+              class: null
+            rounded_corner_top_left:
+              class: _none
+            rounded_corner_top_right:
+              class: _none
+            rounded_corner_bottom_left:
+              class: _none
+            rounded_corner_bottom_right:
+              class: _none
+          scroll_effects:
+            class: null
+      container_wrapper_bg_color_class: ''
+      container_wrapper_bg_media: null
+      container: container-fluid
+      section_classes: ''
+      section_attributes: null
+      regions_classes:
+        blb_region_col_1: ''
+      regions_attributes:
+        blb_region_col_1: {  }
+      breakpoints: {  }
+      layout_regions_classes: {  }
+      remove_gutters: '0'
+    components:
+      ce42dc18-ed53-43f0-abbe-1e2503586dd3:
+        uuid: ce42dc18-ed53-43f0-abbe-1e2503586dd3
+        region: blb_region_col_1
+        configuration:
+          id: 'block_content:d6ac427b-bf43-3944-c5b5-28bb4c3575d4'
+          label: 'Scientific Discoveries Publication'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }

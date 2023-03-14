@@ -1,0 +1,12 @@
+uuid: c51cb6b4-a226-444e-84ed-09942b18b9ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: FEFUW_OSFcxe5W6x5IS0-xEkkco1TTC7P2zFeu8vq-g
+id: paragraph.embed
+label: Embed
+targetEntityType: paragraph
+cache: true

@@ -1,0 +1,21 @@
+uuid: 99277718-19bf-4518-9ac3-ff2b72b57f94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.layout_builder__layout
+    - taxonomy.vocabulary.topics
+  module:
+    - layout_builder
+id: taxonomy_term.topics.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: taxonomy_term
+bundle: topics
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

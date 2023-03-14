@@ -1,0 +1,25 @@
+uuid: 6ab68db3-bf2b-45bd-9be1-88acf235a63a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_button
+    - paragraphs.paragraphs_type.uswds_cards_flag
+  module:
+    - link
+_core:
+  default_config_hash: NcK6Z_8QTPzvW5mdeoF7w9uiSQ264JzXjorAn3mSFoE
+id: paragraph.uswds_cards_flag.field_button
+field_name: field_button
+entity_type: paragraph
+bundle: uswds_cards_flag
+label: Button
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

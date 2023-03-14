@@ -1,0 +1,21 @@
+uuid: 76a7bc87-8e55-43a5-aee7-c7dfc90f05d0
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 3IN2e4YLvA35AftDP4w11CvymyY7YSV0OPV45la2SIA
+id: blb_col_4_2_4_4_2
+layout_id: blb_col_4
+label: '2/12 4/12 4/12 2/12'
+structure: '2 4 4 2'
+breakpoints:
+  desktop: desktop
+  mobile: mobile
+  tablet: tablet
+  mobile_large: 0
+  card: 0
+  card_large: 0
+  desktop_large: 0
+  tablet_large: 0
+  widescreen: 0
+weight: 0

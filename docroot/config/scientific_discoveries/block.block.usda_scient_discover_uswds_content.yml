@@ -1,0 +1,22 @@
+uuid: e50ac2d5-092a-4829-8709-63e413a8e1ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - usda_scient_discover_uswds
+_core:
+  default_config_hash: wPWCVTS-5Mspql21UJZytjz1yXQkU-oe3HvazaNQw7M
+id: usda_scient_discover_uswds_content
+theme: usda_scient_discover_uswds
+region: content
+weight: -6
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

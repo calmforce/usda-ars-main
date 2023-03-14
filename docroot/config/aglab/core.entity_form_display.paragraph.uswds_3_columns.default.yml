@@ -1,0 +1,86 @@
+uuid: 17deb88b-1b2d-4148-954c-7543ea63d397
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uswds_3_columns.field_3_column_content
+    - field.field.paragraph.uswds_3_columns.field_column_grid_gap
+    - field.field.paragraph.uswds_3_columns.field_uswds_3_column_breakpoints
+    - paragraphs.paragraphs_type.uswds_3_columns
+  module:
+    - field_group
+    - paragraphs
+    - uswds_paragraph_components
+third_party_settings:
+  field_group:
+    group_breakpoints:
+      children:
+        - field_uswds_3_column_breakpoints
+      label: Breakpoints
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        classes: breakpoints
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
+_core:
+  default_config_hash: WEN_4MzGfdav6x5IUZ92agCnMqE3aDBJvNhzhzWspe4
+id: paragraph.uswds_3_columns.default
+targetEntityType: paragraph
+bundle: uswds_3_columns
+mode: default
+content:
+  field_3_column_content:
+    type: paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: text_field
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_column_grid_gap:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_uswds_3_column_breakpoints:
+    type: uswds_paragraph_components_paragraphs
+    weight: 3
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: '0'
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: uswds_3_column_breakpoints
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: 0
+      disable_breakpoints: false
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

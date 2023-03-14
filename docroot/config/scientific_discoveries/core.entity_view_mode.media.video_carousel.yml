@@ -1,0 +1,10 @@
+uuid: 4e82c6bd-f10a-4c32-b36d-4ed2dae36940
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.video_carousel
+label: 'Video Carousel'
+targetEntityType: media
+cache: true

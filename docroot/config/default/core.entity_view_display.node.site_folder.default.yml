@@ -1,0 +1,101 @@
+uuid: f056fb59-c29b-4e88-850e-b57e69b2a1e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.site_folder.body
+    - field.field.node.site_folder.field_breadcrumb_label
+    - field.field.node.site_folder.field_hide_page_title
+    - field.field.node.site_folder.field_location
+    - field.field.node.site_folder.field_meta_tags
+    - field.field.node.site_folder.field_parent_folder
+    - field.field.node.site_folder.field_site_folder_type
+    - field.field.node.site_folder.field_umbraco_node_url
+    - field.field.node.site_folder.field_umbraco_path
+    - node.type.site_folder
+  module:
+    - metatag
+    - options
+    - text
+    - user
+id: node.site_folder.default
+targetEntityType: node
+bundle: site_folder
+mode: default
+content:
+  body:
+    weight: 0
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_breadcrumb_label:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hide_page_title:
+    weight: 6
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_location:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_meta_tags:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_parent_folder:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_site_folder_type:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_umbraco_node_url:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_umbraco_path:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  content_moderation_control: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

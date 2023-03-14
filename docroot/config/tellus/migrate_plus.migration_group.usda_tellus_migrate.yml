@@ -1,0 +1,10 @@
+uuid: 962a63ed-5a93-4cbf-b430-4718c2b1fff8
+langcode: en
+status: true
+dependencies: {  }
+id: usda_tellus_migrate
+label: 'ARS Tellus Site Migrate'
+description: 'Migrating Tellus Umbraco CMS to Drupal'
+source_type: Umbraco
+module: null
+shared_configuration: null

@@ -1,0 +1,21 @@
+uuid: 9b55ce57-649b-4f1b-8a48-186860e09a68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_location_type
+    - taxonomy.vocabulary.ars_locations
+  module:
+    - options
+id: taxonomy_term.ars_locations.field_location_type
+field_name: field_location_type
+entity_type: taxonomy_term
+bundle: ars_locations
+label: 'Location Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

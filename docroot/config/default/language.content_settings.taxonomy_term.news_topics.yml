@@ -1,0 +1,11 @@
+uuid: 2c9c68b4-f05c-49d1-b501-f827052f9140
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.news_topics
+id: taxonomy_term.news_topics
+target_entity_type_id: taxonomy_term
+target_bundle: news_topics
+default_langcode: site_default
+language_alterable: false

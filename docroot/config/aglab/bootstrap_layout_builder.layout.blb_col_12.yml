@@ -1,0 +1,9 @@
+uuid: afcc2a5e-01cc-4a91-b577-94d283035ae0
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: BrgD2kXVlxqnHphZt6B_o5xOnHLKAhSAjQMWJp0ZkAM
+id: blb_col_12
+label: 'USWDS 12 Cols'
+number_of_columns: '12'

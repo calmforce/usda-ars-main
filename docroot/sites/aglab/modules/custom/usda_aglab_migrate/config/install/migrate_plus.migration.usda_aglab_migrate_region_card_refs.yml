@@ -1,0 +1,52 @@
+id: usda_aglab_migrate_region_card_refs
+label: 17 - ARS Aglab Region Card Refs
+migration_group: usda_aglab_migrate
+
+audit: true
+migration_tags:
+  - Umbraco
+  - Aglab Topics
+  - USDA ARS Aglab
+  - USDA ARS
+# define a forced module dependency. this will cause the migration definition to be reloaded
+# when you uninstall and reinstall your custom module.
+dependencies:
+  enforced:
+    module:
+      - usda_aglab_migrate
+
+source:
+  plugin: usda_aglab_regions_cards_refs
+  key: aglab
+  constants:
+    vid: 'regions'
+    langcode: 'en'
+
+destination:
+  plugin: entity:taxonomy_term
+  overwrite_properties:
+    - field_image_card
+
+process:
+  tid:
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_regions
+      source: regionId
+      no_stub: true
+    -
+      plugin: skip_on_empty
+      method: row
+  vid: 'constants/vid'
+  langcode: 'constants/langcode'
+  field_image_card:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: cardUuid
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_home_page_image_cards
+      no_stub: true
+    -
+      plugin: usda_aglab_paragraph_refs

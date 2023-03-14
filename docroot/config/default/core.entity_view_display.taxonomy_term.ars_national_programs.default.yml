@@ -1,0 +1,72 @@
+uuid: 0ae1e4a0-ab3f-4169-883a-762138571df2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.ars_national_programs.field_breadcrumb_label
+    - field.field.taxonomy_term.ars_national_programs.field_hide_page_title
+    - field.field.taxonomy_term.ars_national_programs.field_meta_tags
+    - field.field.taxonomy_term.ars_national_programs.field_modecode
+    - field.field.taxonomy_term.ars_national_programs.field_np_code
+    - field.field.taxonomy_term.ars_national_programs.field_umbraco_node_url
+    - field.field.taxonomy_term.ars_national_programs.field_umbraco_path
+    - taxonomy.vocabulary.ars_national_programs
+  module:
+    - ds
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col_wrapper
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+    regions:
+      ds_content:
+        - field_np_code
+        - langcode
+        - field_breadcrumb_label
+        - field_hide_page_title
+        - field_meta_tags
+        - field_modecode
+        - field_umbraco_node_url
+        - field_umbraco_path
+        - description
+id: taxonomy_term.ars_national_programs.default
+targetEntityType: taxonomy_term
+bundle: ars_national_programs
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_np_code:
+    weight: 0
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden:
+  field_breadcrumb_label: true
+  field_hide_page_title: true
+  field_meta_tags: true
+  field_modecode: true
+  field_umbraco_node_url: true
+  field_umbraco_path: true
+  langcode: true
+  search_api_excerpt: true

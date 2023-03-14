@@ -1,0 +1,23 @@
+uuid: b98fc262-1ff6-4d6a-96b2-e87e10e4ec9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archived
+    - node.type.page
+id: node.page.field_archived
+field_name: field_archived
+entity_type: node
+bundle: page
+label: Archived
+description: 'When this field is "On", this text is shown at the top: <em>"This page has been archived and is being provided for reference purposes only. The page is no longer being updated, and therefore, links on the page may be invalid."<em>'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

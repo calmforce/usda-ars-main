@@ -1,0 +1,8 @@
+uuid: f5e498b8-d076-4302-983c-836ba1b5ee43
+langcode: en
+status: true
+dependencies: {  }
+id: large_video
+label: 'Large Video'
+revision: 0
+description: 'Reference to Remote Video with Cover Image, plus background color and pattern'

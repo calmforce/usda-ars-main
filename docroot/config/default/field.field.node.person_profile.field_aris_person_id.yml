@@ -1,0 +1,23 @@
+uuid: 0dd81b30-ffdd-4d5b-93c3-61374d3a9546
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_aris_person_id
+    - node.type.person_profile
+id: node.person_profile.field_aris_person_id
+field_name: field_aris_person_id
+entity_type: node
+bundle: person_profile
+label: 'ARIS Person ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

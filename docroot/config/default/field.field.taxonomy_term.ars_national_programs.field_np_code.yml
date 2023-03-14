@@ -1,0 +1,23 @@
+uuid: be5a2fdb-cb58-4b84-b447-1988e6b7990b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_np_code
+    - taxonomy.vocabulary.ars_national_programs
+id: taxonomy_term.ars_national_programs.field_np_code
+field_name: field_np_code
+entity_type: taxonomy_term
+bundle: ars_national_programs
+label: 'NP Code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

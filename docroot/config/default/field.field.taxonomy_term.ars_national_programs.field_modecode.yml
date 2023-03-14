@@ -1,0 +1,19 @@
+uuid: 1c1b794e-d001-432e-bd14-7fa0b14e257c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_modecode
+    - taxonomy.vocabulary.ars_national_programs
+id: taxonomy_term.ars_national_programs.field_modecode
+field_name: field_modecode
+entity_type: taxonomy_term
+bundle: ars_national_programs
+label: MODECODE
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,10 @@
+uuid: b0ea1c4c-244b-4620-ab12-6e5734326aad
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.social_media_icons
+label: 'Social Media Icons'
+targetEntityType: paragraph
+cache: true

@@ -1,0 +1,22 @@
+uuid: bd01eeb9-b7c2-4242-8cf9-cbb97dfc974a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - usda_aglab_uswds
+_core:
+  default_config_hash: ixA8Pirz5hVama0u-a-7iGoNyP_xw9nKxyFjhQWlqoc
+id: usda_aglab_uswds_content
+theme: usda_aglab_uswds
+region: content
+weight: 30
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,8 @@
+uuid: 68403ed3-2c4b-400f-802a-34eb7890610c
+langcode: en
+status: true
+dependencies: {  }
+name: Categories
+vid: tellus_categories
+description: 'ARS Tellus Article Categories'
+weight: 0

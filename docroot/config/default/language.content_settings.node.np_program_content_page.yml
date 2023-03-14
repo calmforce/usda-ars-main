@@ -1,0 +1,11 @@
+uuid: 08dd62b0-54d3-4b7f-957b-0d0bd9f7f25e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.np_program_content_page
+id: node.np_program_content_page
+target_entity_type_id: node
+target_bundle: np_program_content_page
+default_langcode: site_default
+language_alterable: false

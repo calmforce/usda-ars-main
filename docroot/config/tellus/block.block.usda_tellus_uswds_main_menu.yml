@@ -1,0 +1,27 @@
+uuid: 865e0d0a-e12a-44f8-9ac0-eef6100b1d05
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - usda_tellus_uswds
+_core:
+  default_config_hash: CiOVRRFi-zBVLcYE4aBImixhfcA3o29Tof76DZwasgQ
+id: usda_tellus_uswds_main_menu
+theme: usda_tellus_uswds
+region: secondary_menu
+weight: -7
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 2
+  expand_all_items: false
+visibility: {  }

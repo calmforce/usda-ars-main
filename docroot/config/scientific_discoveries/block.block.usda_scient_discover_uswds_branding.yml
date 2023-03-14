@@ -1,0 +1,25 @@
+uuid: 6a3fe91b-8a59-4a5e-bc34-1fc6e4d3b6a5
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - usda_scient_discover_uswds
+_core:
+  default_config_hash: GxM8m5JUeTnzkAvasra-49oV8Qgdgd80Bd0zTtosByY
+id: usda_scient_discover_uswds_branding
+theme: usda_scient_discover_uswds
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

@@ -1,0 +1,166 @@
+id: usda_aglab_migrate_homepage_blocks
+label: 20 - ARS Aglab Home Page Blocks
+migration_group: usda_aglab_migrate
+
+audit: true
+migration_tags:
+  - Umbraco
+  - Aglab Home Page
+  - USDA ARS Aglab
+  - USDA ARS
+# define a forced module dependency. this will cause the migration definition to be reloaded
+# when you uninstall and reinstall your custom module.
+dependencies:
+  enforced:
+    module:
+      - usda_aglab_migrate
+
+source:
+  plugin: usda_aglab_homepage_blocks
+  key: aglab
+  constants:
+    langcode: 'en'
+    html_format: 'rich_text'
+
+destination:
+  plugin: entity:block_content
+
+process:
+  uuid: sectionUuid
+  type:
+    plugin: usda_ars_block_content_type
+    source: dtgeContentTypeAlias
+  langcode: 'constants/langcode'
+  status:
+    plugin: default_value
+    default_value: 1
+  changed:
+    plugin: usda_ars_date2timestamp
+    source: versionDate
+  revision_timestamp: '@changed'
+  info: title
+  uid:
+    -
+      plugin: usda_ars_user
+      source: nodeUser
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_user
+      no_stub: true
+    -
+      plugin: default_value
+      default_value: 1
+  revision_uid: '@uid'
+  # References to Media entities.
+  field_infographic:
+    -
+      plugin: usda_aglab_uuid
+      source: infographicMediaId
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_media
+      no_stub: true
+  field_hide_title: hideTitle
+  field_caption/value: infographicCaption
+  field_caption/format: 'constants/html_format'
+  field_link/uri: infographicLinkUrl
+  field_link/title: infographicLinkText
+  # Large Video section
+  field_video:
+    plugin: migration_lookup
+    migration: usda_aglab_migrate_external_video
+    source: nodeId
+    no_stub: true
+  field_left_item:
+    -
+      plugin: usda_aglab_uuid
+      source: leftItem
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_media
+      no_stub: true
+  field_right_item:
+    -
+      plugin: usda_aglab_uuid
+      source: rightItem
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_media
+      no_stub: true
+  field_left_item_caption: leftItemCaption
+  field_right_item_caption: rightItemCaption
+  field_left_item_link/uri: leftItemLinkUrl
+  field_left_item_link/title: leftItemLinkText
+  field_right_item_link/uri: rightItemLinkUrl
+  field_right_item_link/title: righItemLinkText
+  field_subtitle: subTitle
+  field_background_color/color: backgroundColor
+  field_leaf_motif: leafMotif
+  field_video_list:
+    -
+      plugin: usda_aglab_video_list_ids
+      source:
+        - nodeId
+        - videoList
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_video_list_items
+      no_stub: true
+  field_image_slides:
+    -
+      plugin: usda_aglab_uuid
+      source: imageSlides
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_media
+      no_stub: true
+  field_featured_image:
+    -
+      plugin: usda_aglab_uuid
+      source: featuredImage
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_media
+      no_stub: true
+  field_main_content_images:
+    -
+      plugin: usda_aglab_uuid
+      source: main_content_images
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_media
+      no_stub: true
+  body/value:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: main_content
+    -
+      plugin: usda_aglab_main_content_data
+  body/format: 'constants/html_format'
+  field_uswds_card_group:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: imageCards
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_home_page_image_cards
+      no_stub: true
+    -
+      plugin: usda_aglab_paragraph_refs

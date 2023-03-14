@@ -1,0 +1,8 @@
+uuid: cbc0da13-cf26-4675-866a-37d8716f2f76
+langcode: en
+status: true
+dependencies: {  }
+id: two_column_media_section
+label: 'Two Column Media Section'
+revision: 0
+description: 'Two columns with images, captions and background color.'

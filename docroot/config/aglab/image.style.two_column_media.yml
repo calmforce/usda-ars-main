@@ -1,0 +1,15 @@
+uuid: df5ef34b-d9dc-49f9-ae99-b7d0e3e6aeaa
+langcode: en
+status: true
+dependencies: {  }
+name: two_column_media
+label: 'Two Column Media Section (552px)'
+effects:
+  45acc8ec-05db-42cd-9558-7d672172ba7a:
+    uuid: 45acc8ec-05db-42cd-9558-7d672172ba7a
+    id: image_scale
+    weight: 1
+    data:
+      width: 552
+      height: null
+      upscale: true

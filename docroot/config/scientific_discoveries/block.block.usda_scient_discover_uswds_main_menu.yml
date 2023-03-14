@@ -1,0 +1,27 @@
+uuid: 78889680-2a55-4a3c-8c97-1337720023f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - usda_scient_discover_uswds
+_core:
+  default_config_hash: 98NvbHOsp_4mK5fSs6MdzBmesfW3tgL_QxmpIJweg2k
+id: usda_scient_discover_uswds_main_menu
+theme: usda_scient_discover_uswds
+region: primary_menu
+weight: 10
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }

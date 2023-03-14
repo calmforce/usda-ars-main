@@ -1,0 +1,24 @@
+{
+  "name": "usda_ars_uswds",
+  "version": "1.0.0",
+  "description": "USDA ARS USWDS Custom Theme",
+  "main": "gulpfile.js",
+  "scripts": {
+    "compile:sass": "node-sass src/sass/uswds-theme-custom-styles.scss assets/css/main.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "postcss": "^8.1.2",
+    "postcss-csso": "^5.0.0",
+    "sass": "^1.27.0",
+    "uswds": "^2.9.0",
+    "uswds-gulp": "github:uswds/uswds-gulp"
+  }
+}

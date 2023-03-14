@@ -1,0 +1,19 @@
+uuid: 7a812e9f-85b7-4c88-bfe3-ea650b80cc02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_breadcrumb_label
+    - taxonomy.vocabulary.ars_national_programs
+id: taxonomy_term.ars_national_programs.field_breadcrumb_label
+field_name: field_breadcrumb_label
+entity_type: taxonomy_term
+bundle: ars_national_programs
+label: 'Breadcrumb Label'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

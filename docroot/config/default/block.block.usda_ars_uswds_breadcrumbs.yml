@@ -1,0 +1,22 @@
+uuid: 6f04b189-8e61-4e10-a719-8ae1f2b9ef22
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - usda_ars_uswds
+_core:
+  default_config_hash: QegsOBiGqYHIApDsgm_Yaba6zzNoQUsP-q_dz1KhhH4
+id: usda_ars_uswds_breadcrumbs
+theme: usda_ars_uswds
+region: breadcrumb
+weight: -100
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

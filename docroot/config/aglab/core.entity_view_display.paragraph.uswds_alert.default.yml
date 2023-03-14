@@ -1,0 +1,65 @@
+uuid: 4282c6ce-cd1a-4b3a-b91f-4dbb15ca4e9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uswds_alert.field_alert_body
+    - field.field.paragraph.uswds_alert.field_alert_status
+    - field.field.paragraph.uswds_alert.field_alert_title
+    - field.field.paragraph.uswds_alert.field_no_icon
+    - field.field.paragraph.uswds_alert.field_slim
+    - paragraphs.paragraphs_type.uswds_alert
+  module:
+    - options
+    - text
+_core:
+  default_config_hash: cgH2b2awWPzLBWxQg_iz5cqrI3r6AeG6AbBl0pHrmRE
+id: paragraph.uswds_alert.default
+targetEntityType: paragraph
+bundle: uswds_alert
+mode: default
+content:
+  field_alert_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_alert_status:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_alert_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_no_icon:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_slim:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

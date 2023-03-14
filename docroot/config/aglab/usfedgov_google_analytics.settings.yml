@@ -1,0 +1,29 @@
+usfedgov_google_analytics__load_from_cdn: true
+usfedgov_google_analytics__disable: false
+usfedgov_google_analytics__load_minified: true
+usfedgov_google_analytics__settings:
+  agency: ''
+  subagency: ''
+  extra:
+    sp: ''
+    exts: ''
+    yt: true
+    sdor: true
+    dclink: false
+    aip: true
+    pua: ''
+    enhlink: false
+    autotracker: true
+    forcessl: false
+    optout: false
+    fedagencydim: ''
+    fedsubagencydim: ''
+    fedversiondim: ''
+    palagencydim: ''
+    palsubagencydim: ''
+    palversiondim: ''
+    maincd: true
+    parallelcd: false
+    cto: ''
+_core:
+  default_config_hash: c6IvpmmuCTLYjsF6zbcwoJol8Z0bz7YFl916qXCSCL8

@@ -1,0 +1,42 @@
+uuid: 43a6d9c1-f06b-4c85-866b-6f8fe2635d95
+langcode: en
+status: false
+dependencies:
+  module:
+    - hierarchical_taxonomy_menu
+    - system
+  theme:
+    - usda_tellus_uswds
+id: usda_tellus_uswds_hierarchicaltaxonomymenu
+theme: usda_tellus_uswds
+region: sidebar_first
+weight: -7
+provider: null
+plugin: hierarchical_taxonomy_menu
+settings:
+  id: hierarchical_taxonomy_menu
+  label: 'National Programs'
+  provider: hierarchical_taxonomy_menu
+  label_display: visible
+  vocabulary: ars_national_programs|
+  max_depth: 100
+  dynamic_block_title: false
+  collapsible: false
+  stay_open: true
+  interactive_parent: true
+  hide_block: true
+  use_image_style: false
+  image_height: 16
+  image_width: 16
+  image_style: crop_freeform
+  max_age: '0'
+  base_term: ''
+  dynamic_base_term: false
+  show_count: 0
+  referencing_field: _none
+  calculate_count_recursively: false
+visibility:
+  request_path:
+    id: request_path
+    pages: '/taxonomy/term/*'
+    negate: false

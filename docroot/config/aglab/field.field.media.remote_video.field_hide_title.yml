@@ -1,0 +1,23 @@
+uuid: 45147dcc-6350-43cf-89a8-e930508e66b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_hide_title
+    - media.type.remote_video
+id: media.remote_video.field_hide_title
+field_name: field_hide_title
+entity_type: media
+bundle: remote_video
+label: 'Hide Title'
+description: 'If true, the title won''t be shown above the section. If false, it will be shown.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -1,0 +1,41 @@
+uuid: 593eda3e-fe78-4309-a0b5-a2714f8fb577
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.site_folder.body
+    - field.field.node.site_folder.field_breadcrumb_label
+    - field.field.node.site_folder.field_hide_page_title
+    - field.field.node.site_folder.field_location
+    - field.field.node.site_folder.field_meta_tags
+    - field.field.node.site_folder.field_parent_folder
+    - field.field.node.site_folder.field_site_folder_type
+    - field.field.node.site_folder.field_umbraco_node_url
+    - field.field.node.site_folder.field_umbraco_path
+    - node.type.site_folder
+  module:
+    - user
+id: node.site_folder.teaser
+targetEntityType: node
+bundle: site_folder
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  field_breadcrumb_label: true
+  field_hide_page_title: true
+  field_location: true
+  field_meta_tags: true
+  field_parent_folder: true
+  field_site_folder_type: true
+  field_umbraco_node_url: true
+  field_umbraco_path: true
+  langcode: true
+  search_api_excerpt: true

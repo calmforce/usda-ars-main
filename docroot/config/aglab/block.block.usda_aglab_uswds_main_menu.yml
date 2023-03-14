@@ -1,0 +1,27 @@
+uuid: 7b7b7300-5e13-4f84-ad85-dd47cc9153b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - usda_aglab_uswds
+_core:
+  default_config_hash: QwU8y5W9xRq9Bv1tqeNCDNEgZ-YjOLo55IPocc7EXhw
+id: usda_aglab_uswds_main_menu
+theme: usda_aglab_uswds
+region: primary_menu
+weight: 10
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: false
+visibility: {  }

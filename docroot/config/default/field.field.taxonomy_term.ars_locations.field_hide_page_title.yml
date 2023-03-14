@@ -1,0 +1,23 @@
+uuid: 2a279b6f-4a22-442c-91ea-e0d15cf3a3d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_hide_page_title
+    - taxonomy.vocabulary.ars_locations
+id: taxonomy_term.ars_locations.field_hide_page_title
+field_name: field_hide_page_title
+entity_type: taxonomy_term
+bundle: ars_locations
+label: 'Hide Page Title'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

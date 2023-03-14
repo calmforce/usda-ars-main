@@ -1,0 +1,4 @@
+administer ars scientific discoveries migrations:
+  title: 'Administer ARS Scientific Discoveries Migrations'
+migrate ars scientific discoveries data:
+  title: 'Migrate ARS Scientific Discoveries Data'

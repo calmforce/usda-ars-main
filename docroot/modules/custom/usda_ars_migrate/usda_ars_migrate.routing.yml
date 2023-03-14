@@ -1,0 +1,6 @@
+examples.advancedhello:
+  path: '/mssql-connection-test'
+  defaults:
+    _controller: '\Drupal\usda_ars_migrate\Controller\MssqlTestController::testConnection'
+  requirements:
+    _permission: 'access content'

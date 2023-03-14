@@ -1,0 +1,72 @@
+uuid: 686142d0-7913-4f8e-a10e-87ef0d546878
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uswds_step_indicator_list.field_centered
+    - field.field.paragraph.uswds_step_indicator_list.field_counters
+    - field.field.paragraph.uswds_step_indicator_list.field_header
+    - field.field.paragraph.uswds_step_indicator_list.field_no_labels
+    - field.field.paragraph.uswds_step_indicator_list.field_small_counters
+    - field.field.paragraph.uswds_step_indicator_list.field_step_indicator_items
+    - paragraphs.paragraphs_type.uswds_step_indicator_list
+  module:
+    - paragraphs
+_core:
+  default_config_hash: 8HZYMSYMTbCH84Ol0tXd-VoM1LTYaKMbIKF4VJ1XSkE
+id: paragraph.uswds_step_indicator_list.default
+targetEntityType: paragraph
+bundle: uswds_step_indicator_list
+mode: default
+content:
+  field_centered:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_counters:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_header:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_no_labels:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_small_counters:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_step_indicator_items:
+    type: entity_reference_paragraphs
+    weight: 5
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,38 @@
+uuid: 01f8fbec-bdd6-4f88-8ecf-d1d2593f21f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.infographic
+    - field.field.block_content.infographic.field_caption
+    - field.field.block_content.infographic.field_hide_title
+    - field.field.block_content.infographic.field_infographic
+    - field.field.block_content.infographic.field_link
+  module:
+    - text
+id: block_content.infographic.default
+targetEntityType: block_content
+bundle: infographic
+mode: default
+content:
+  field_caption:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_infographic:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_hide_title: true
+  field_link: true
+  langcode: true
+  search_api_excerpt: true

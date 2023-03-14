@@ -1,0 +1,28 @@
+uuid: d9e44192-b118-4707-8d82-b18205f6573d
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.facet_news_topics_names
+  module:
+    - facets
+    - system
+  theme:
+    - usda_ars_uswds
+id: facet_news_topics
+theme: usda_ars_uswds
+region: sidebar_first
+weight: -5
+provider: null
+plugin: 'facet_block:facet_news_topics_names'
+settings:
+  id: 'facet_block:facet_news_topics_names'
+  label: 'News Topics'
+  provider: facets
+  label_display: '0'
+  block_id: facet_news_topics
+visibility:
+  request_path:
+    id: request_path
+    pages: /search/news
+    negate: false

@@ -1,0 +1,129 @@
+uuid: f53be8ef-48ca-4f10-8e26-aa9cf20d2c83
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.front_page
+  module:
+    - panels
+id: front_page-http_status_code-0
+label: 'Scientific Discoveries Home Page'
+weight: 0
+variant: panels_variant
+variant_settings:
+  id: panels_variant
+  label: null
+  weight: 0
+  uuid: 38bd40e9-38f9-46d3-ac63-9b1bfa6c60fd
+  blocks: {  }
+  page_title: null
+  layout: 'bootstrap_layout_builder:blb_col_1'
+  layout_settings:
+    label: 'Home Page'
+    context_mapping: {  }
+    container_wrapper_classes: ''
+    container_wrapper_attributes: null
+    container_wrapper:
+      bootstrap_styles:
+        background:
+          background_type: color
+        background_color:
+          class: null
+        background_media:
+          image:
+            media_id: null
+          video:
+            media_id: null
+          background_options:
+            background_position: center
+            background_repeat: no-repeat
+            background_attachment: not_fixed
+            background_size: cover
+        text_color:
+          class: null
+        text_alignment:
+          class: null
+        padding:
+          class: _none
+        padding_left:
+          class: _none
+        padding_top:
+          class: _none
+        padding_right:
+          class: _none
+        padding_bottom:
+          class: _none
+        margin:
+          class: _none
+        margin_left:
+          class: _none
+        margin_top:
+          class: _none
+        margin_right:
+          class: _none
+        margin_bottom:
+          class: _none
+        border:
+          border_style:
+            class: null
+          border_width:
+            class: _none
+          border_color:
+            class: null
+          rounded_corners:
+            class: _none
+          border_left_style:
+            class: null
+          border_left_width:
+            class: _none
+          border_left_color:
+            class: null
+          border_top_style:
+            class: null
+          border_top_width:
+            class: _none
+          border_top_color:
+            class: null
+          border_right_style:
+            class: null
+          border_right_width:
+            class: _none
+          border_right_color:
+            class: null
+          border_bottom_style:
+            class: null
+          border_bottom_width:
+            class: _none
+          border_bottom_color:
+            class: null
+          rounded_corner_top_left:
+            class: _none
+          rounded_corner_top_right:
+            class: _none
+          rounded_corner_bottom_left:
+            class: _none
+          rounded_corner_bottom_right:
+            class: _none
+        scroll_effects:
+          class: null
+    container_wrapper_bg_color_class: ''
+    container_wrapper_bg_media: null
+    container: w-100
+    section_classes: ''
+    section_attributes: null
+    regions_classes:
+      blb_region_col_1: ''
+    regions_attributes:
+      blb_region_col_1: {  }
+    breakpoints: {  }
+    layout_regions_classes: {  }
+    remove_gutters: '1'
+  builder: standard
+  storage_type: page_manager
+  storage_id: front_page-http_status_code-0
+  status_code: '404'
+  redirect_location: ''
+page: front_page
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

@@ -1,0 +1,1094 @@
+uuid: 27689484-2471-459f-b79e-d0a9143e16e9
+langcode: en
+status: true
+dependencies: {  }
+id: asian_giant_hornet_page
+label: 'Asian Giant Hornet Page'
+targetEntityType: node
+targetBundle: article
+layout:
+  -
+    layout_id: 'bootstrap_layout_builder:blb_col_1'
+    layout_settings:
+      label: 'AGH Page Title'
+      context_mapping: {  }
+      container_wrapper_classes: article-title
+      container_wrapper_attributes: null
+      container_wrapper:
+        bootstrap_styles:
+          background:
+            background_type: color
+          background_color:
+            class: bg-base-light
+          background_media:
+            image:
+              media_id: null
+            video:
+              media_id: null
+            background_options:
+              background_position: center
+              background_repeat: no-repeat
+              background_attachment: not_fixed
+              background_size: cover
+          text_color:
+            class: null
+          text_alignment:
+            class: null
+          padding:
+            class: _none
+          padding_left:
+            class: _none
+          padding_top:
+            class: _none
+          padding_right:
+            class: _none
+          padding_bottom:
+            class: _none
+          margin:
+            class: _none
+          margin_left:
+            class: _none
+          margin_top:
+            class: _none
+          margin_right:
+            class: _none
+          margin_bottom:
+            class: _none
+          border:
+            border_style:
+              class: null
+            border_width:
+              class: _none
+            border_color:
+              class: null
+            rounded_corners:
+              class: _none
+            border_left_style:
+              class: null
+            border_left_width:
+              class: _none
+            border_left_color:
+              class: null
+            border_top_style:
+              class: null
+            border_top_width:
+              class: _none
+            border_top_color:
+              class: null
+            border_right_style:
+              class: null
+            border_right_width:
+              class: _none
+            border_right_color:
+              class: null
+            border_bottom_style:
+              class: null
+            border_bottom_width:
+              class: _none
+            border_bottom_color:
+              class: null
+            rounded_corner_top_left:
+              class: _none
+            rounded_corner_top_right:
+              class: _none
+            rounded_corner_bottom_left:
+              class: _none
+            rounded_corner_bottom_right:
+              class: _none
+          scroll_effects:
+            class: null
+      container_wrapper_bg_color_class: ''
+      container_wrapper_bg_media: null
+      container: container-fluid
+      section_classes: ''
+      section_attributes: null
+      regions_classes:
+        blb_region_col_1: ''
+      regions_attributes:
+        blb_region_col_1: {  }
+      breakpoints: {  }
+      layout_regions_classes: {  }
+      remove_gutters: '0'
+    components:
+      39ab8bd1-7d58-40a1-9df4-a73159f77251:
+        uuid: 39ab8bd1-7d58-40a1-9df4-a73159f77251
+        region: blb_region_col_1
+        configuration:
+          id: 'block_content:3ed7e2f1-30e3-4a69-5ecf-76a93cc11886'
+          label: 'Asian Giant Hornet Central'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: 'bootstrap_layout_builder:blb_col_1'
+    layout_settings:
+      label: 'Breaking News Block'
+      context_mapping: {  }
+      container_wrapper_classes: ''
+      container_wrapper_attributes: null
+      container_wrapper:
+        bootstrap_styles:
+          background:
+            background_type: color
+          background_color:
+            class: bg-gold
+          background_media:
+            image:
+              media_id: null
+            video:
+              media_id: null
+            background_options:
+              background_position: center
+              background_repeat: no-repeat
+              background_attachment: not_fixed
+              background_size: cover
+          text_color:
+            class: null
+          text_alignment:
+            class: null
+          padding:
+            class: _none
+          padding_left:
+            class: _none
+          padding_top:
+            class: _none
+          padding_right:
+            class: _none
+          padding_bottom:
+            class: _none
+          margin:
+            class: _none
+          margin_left:
+            class: _none
+          margin_top:
+            class: _none
+          margin_right:
+            class: _none
+          margin_bottom:
+            class: _none
+          border:
+            border_style:
+              class: null
+            border_width:
+              class: _none
+            border_color:
+              class: null
+            rounded_corners:
+              class: _none
+            border_left_style:
+              class: null
+            border_left_width:
+              class: _none
+            border_left_color:
+              class: null
+            border_top_style:
+              class: null
+            border_top_width:
+              class: _none
+            border_top_color:
+              class: null
+            border_right_style:
+              class: null
+            border_right_width:
+              class: _none
+            border_right_color:
+              class: null
+            border_bottom_style:
+              class: null
+            border_bottom_width:
+              class: _none
+            border_bottom_color:
+              class: null
+            rounded_corner_top_left:
+              class: _none
+            rounded_corner_top_right:
+              class: _none
+            rounded_corner_bottom_left:
+              class: _none
+            rounded_corner_bottom_right:
+              class: _none
+          scroll_effects:
+            class: null
+      container_wrapper_bg_color_class: ''
+      container_wrapper_bg_media: null
+      container: container-fluid
+      section_classes: ''
+      section_attributes: null
+      regions_classes:
+        blb_region_col_1: ''
+      regions_attributes:
+        blb_region_col_1: {  }
+      breakpoints: {  }
+      layout_regions_classes: {  }
+      remove_gutters: '0'
+    components:
+      b3548f85-5f22-4200-b37e-e58aa92da019:
+        uuid: b3548f85-5f22-4200-b37e-e58aa92da019
+        region: blb_region_col_1
+        configuration:
+          id: 'block_content:c5c1b40a-afce-7f00-7eec-501a738b1ea7'
+          label: 'Breaking News'
+          label_display: '0'
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: 'bootstrap_layout_builder:blb_col_1'
+    layout_settings:
+      label: 'Featured Videos'
+      context_mapping: {  }
+      container_wrapper_classes: grid-container
+      container_wrapper_attributes: null
+      container_wrapper:
+        bootstrap_styles:
+          background:
+            background_type: color
+          background_color:
+            class: null
+          background_media:
+            image:
+              media_id: null
+            video:
+              media_id: null
+            background_options:
+              background_position: center
+              background_repeat: no-repeat
+              background_attachment: not_fixed
+              background_size: cover
+          text_color:
+            class: null
+          text_alignment:
+            class: null
+          padding:
+            class: _none
+          padding_left:
+            class: _none
+          padding_top:
+            class: _none
+          padding_right:
+            class: _none
+          padding_bottom:
+            class: _none
+          margin:
+            class: _none
+          margin_left:
+            class: _none
+          margin_top:
+            class: _none
+          margin_right:
+            class: _none
+          margin_bottom:
+            class: _none
+          border:
+            border_style:
+              class: null
+            border_width:
+              class: _none
+            border_color:
+              class: null
+            rounded_corners:
+              class: _none
+            border_left_style:
+              class: null
+            border_left_width:
+              class: _none
+            border_left_color:
+              class: null
+            border_top_style:
+              class: null
+            border_top_width:
+              class: _none
+            border_top_color:
+              class: null
+            border_right_style:
+              class: null
+            border_right_width:
+              class: _none
+            border_right_color:
+              class: null
+            border_bottom_style:
+              class: null
+            border_bottom_width:
+              class: _none
+            border_bottom_color:
+              class: null
+            rounded_corner_top_left:
+              class: _none
+            rounded_corner_top_right:
+              class: _none
+            rounded_corner_bottom_left:
+              class: _none
+            rounded_corner_bottom_right:
+              class: _none
+          scroll_effects:
+            class: null
+      container_wrapper_bg_color_class: ''
+      container_wrapper_bg_media: null
+      container: container
+      section_classes: home-video-slide
+      section_attributes: null
+      regions_classes:
+        blb_region_col_1: ''
+      regions_attributes:
+        blb_region_col_1: {  }
+      breakpoints: {  }
+      layout_regions_classes: {  }
+      remove_gutters: '0'
+    components:
+      9c6b0f44-3eb8-4130-9a8a-b1cbb943d9f9:
+        uuid: 9c6b0f44-3eb8-4130-9a8a-b1cbb943d9f9
+        region: blb_region_col_1
+        configuration:
+          id: 'block_content:533a8b52-4379-745a-40b7-2aa8000a637d'
+          label: 'Featured Videos'
+          label_display: visible
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: 'bootstrap_layout_builder:blb_col_1'
+    layout_settings:
+      label: 'Get Involved'
+      context_mapping: {  }
+      container_wrapper_classes: ''
+      container_wrapper_attributes: null
+      container_wrapper:
+        bootstrap_styles:
+          background:
+            background_type: color
+          background_color:
+            class: bg-gold
+          background_media:
+            image:
+              media_id: null
+            video:
+              media_id: null
+            background_options:
+              background_position: center
+              background_repeat: no-repeat
+              background_attachment: not_fixed
+              background_size: cover
+          text_color:
+            class: null
+          text_alignment:
+            class: null
+          padding:
+            class: _none
+          padding_left:
+            class: _none
+          padding_top:
+            class: _none
+          padding_right:
+            class: _none
+          padding_bottom:
+            class: _none
+          margin:
+            class: _none
+          margin_left:
+            class: _none
+          margin_top:
+            class: _none
+          margin_right:
+            class: _none
+          margin_bottom:
+            class: _none
+          border:
+            border_style:
+              class: null
+            border_width:
+              class: _none
+            border_color:
+              class: null
+            rounded_corners:
+              class: _none
+            border_left_style:
+              class: null
+            border_left_width:
+              class: _none
+            border_left_color:
+              class: null
+            border_top_style:
+              class: null
+            border_top_width:
+              class: _none
+            border_top_color:
+              class: null
+            border_right_style:
+              class: null
+            border_right_width:
+              class: _none
+            border_right_color:
+              class: null
+            border_bottom_style:
+              class: null
+            border_bottom_width:
+              class: _none
+            border_bottom_color:
+              class: null
+            rounded_corner_top_left:
+              class: _none
+            rounded_corner_top_right:
+              class: _none
+            rounded_corner_bottom_left:
+              class: _none
+            rounded_corner_bottom_right:
+              class: _none
+          scroll_effects:
+            class: null
+      container_wrapper_bg_color_class: ''
+      container_wrapper_bg_media: null
+      container: container-fluid
+      section_classes: ''
+      section_attributes: null
+      regions_classes:
+        blb_region_col_1: ''
+      regions_attributes:
+        blb_region_col_1: {  }
+      breakpoints: {  }
+      layout_regions_classes: {  }
+      remove_gutters: '0'
+    components:
+      eeb2ba5c-8fed-4be4-aff8-2eb68ac84ead:
+        uuid: eeb2ba5c-8fed-4be4-aff8-2eb68ac84ead
+        region: blb_region_col_1
+        configuration:
+          id: 'block_content:bae78ed8-ad86-0750-f560-f25257db46cf'
+          label: 'Get Involved and Stay Connected'
+          label_display: visible
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: 'bootstrap_layout_builder:blb_col_1'
+    layout_settings:
+      label: 'Research Image Cards'
+      context_mapping: {  }
+      container_wrapper_classes: grid-container
+      container_wrapper_attributes: null
+      container_wrapper:
+        bootstrap_styles:
+          background:
+            background_type: color
+          background_color:
+            class: null
+          background_media:
+            image:
+              media_id: null
+            video:
+              media_id: null
+            background_options:
+              background_position: center
+              background_repeat: no-repeat
+              background_attachment: not_fixed
+              background_size: cover
+          text_color:
+            class: null
+          text_alignment:
+            class: null
+          padding:
+            class: _none
+          padding_left:
+            class: _none
+          padding_top:
+            class: _none
+          padding_right:
+            class: _none
+          padding_bottom:
+            class: _none
+          margin:
+            class: _none
+          margin_left:
+            class: _none
+          margin_top:
+            class: _none
+          margin_right:
+            class: _none
+          margin_bottom:
+            class: _none
+          border:
+            border_style:
+              class: null
+            border_width:
+              class: _none
+            border_color:
+              class: null
+            rounded_corners:
+              class: _none
+            border_left_style:
+              class: null
+            border_left_width:
+              class: _none
+            border_left_color:
+              class: null
+            border_top_style:
+              class: null
+            border_top_width:
+              class: _none
+            border_top_color:
+              class: null
+            border_right_style:
+              class: null
+            border_right_width:
+              class: _none
+            border_right_color:
+              class: null
+            border_bottom_style:
+              class: null
+            border_bottom_width:
+              class: _none
+            border_bottom_color:
+              class: null
+            rounded_corner_top_left:
+              class: _none
+            rounded_corner_top_right:
+              class: _none
+            rounded_corner_bottom_left:
+              class: _none
+            rounded_corner_bottom_right:
+              class: _none
+          scroll_effects:
+            class: null
+      container_wrapper_bg_color_class: ''
+      container_wrapper_bg_media: null
+      container: container-fluid
+      section_classes: ''
+      section_attributes: null
+      regions_classes:
+        blb_region_col_1: ''
+      regions_attributes:
+        blb_region_col_1: {  }
+      breakpoints: {  }
+      layout_regions_classes: {  }
+      remove_gutters: '0'
+    components:
+      a915a977-7d2e-4e3b-a113-49dae3c65dde:
+        uuid: a915a977-7d2e-4e3b-a113-49dae3c65dde
+        region: blb_region_col_1
+        configuration:
+          id: 'block_content:1137447e-9582-5760-4e94-32f71ebf3c04'
+          label: 'Research on the Asian Giant Hornet'
+          label_display: visible
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: 'bootstrap_layout_builder:blb_col_1'
+    layout_settings:
+      label: 'Image Gallery'
+      context_mapping: {  }
+      container_wrapper_classes: image-gallery
+      container_wrapper_attributes: null
+      container_wrapper:
+        bootstrap_styles:
+          background:
+            background_type: color
+          background_color:
+            class: bg-gold
+          background_media:
+            image:
+              media_id: null
+            video:
+              media_id: null
+            background_options:
+              background_position: center
+              background_repeat: no-repeat
+              background_attachment: not_fixed
+              background_size: cover
+          text_color:
+            class: null
+          text_alignment:
+            class: null
+          padding:
+            class: _none
+          padding_left:
+            class: _none
+          padding_top:
+            class: _none
+          padding_right:
+            class: _none
+          padding_bottom:
+            class: _none
+          margin:
+            class: _none
+          margin_left:
+            class: _none
+          margin_top:
+            class: _none
+          margin_right:
+            class: _none
+          margin_bottom:
+            class: _none
+          border:
+            border_style:
+              class: null
+            border_width:
+              class: _none
+            border_color:
+              class: null
+            rounded_corners:
+              class: _none
+            border_left_style:
+              class: null
+            border_left_width:
+              class: _none
+            border_left_color:
+              class: null
+            border_top_style:
+              class: null
+            border_top_width:
+              class: _none
+            border_top_color:
+              class: null
+            border_right_style:
+              class: null
+            border_right_width:
+              class: _none
+            border_right_color:
+              class: null
+            border_bottom_style:
+              class: null
+            border_bottom_width:
+              class: _none
+            border_bottom_color:
+              class: null
+            rounded_corner_top_left:
+              class: _none
+            rounded_corner_top_right:
+              class: _none
+            rounded_corner_bottom_left:
+              class: _none
+            rounded_corner_bottom_right:
+              class: _none
+          scroll_effects:
+            class: null
+      container_wrapper_bg_color_class: ''
+      container_wrapper_bg_media: null
+      container: container-fluid
+      section_classes: grid-container
+      section_attributes: null
+      regions_classes:
+        blb_region_col_1: ''
+      regions_attributes:
+        blb_region_col_1: {  }
+      breakpoints: {  }
+      layout_regions_classes: {  }
+      remove_gutters: '1'
+    components:
+      fe46bdc7-cd0f-403d-bc13-bf91bdb94d43:
+        uuid: fe46bdc7-cd0f-403d-bc13-bf91bdb94d43
+        region: blb_region_col_1
+        configuration:
+          id: 'block_content:94c161e8-9553-8b18-eeb3-952b0e365773'
+          label: 'Image Gallery'
+          label_display: visible
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: 'bootstrap_layout_builder:blb_col_1'
+    layout_settings:
+      label: 'Additional Resources'
+      context_mapping: {  }
+      container_wrapper_classes: ''
+      container_wrapper_attributes: null
+      container_wrapper:
+        bootstrap_styles:
+          background:
+            background_type: color
+          background_color:
+            class: null
+          background_media:
+            image:
+              media_id: null
+            video:
+              media_id: null
+            background_options:
+              background_position: center
+              background_repeat: no-repeat
+              background_attachment: not_fixed
+              background_size: cover
+          text_color:
+            class: null
+          text_alignment:
+            class: null
+          padding:
+            class: _none
+          padding_left:
+            class: _none
+          padding_top:
+            class: _none
+          padding_right:
+            class: _none
+          padding_bottom:
+            class: _none
+          margin:
+            class: _none
+          margin_left:
+            class: _none
+          margin_top:
+            class: _none
+          margin_right:
+            class: _none
+          margin_bottom:
+            class: _none
+          border:
+            border_style:
+              class: null
+            border_width:
+              class: _none
+            border_color:
+              class: null
+            rounded_corners:
+              class: _none
+            border_left_style:
+              class: null
+            border_left_width:
+              class: _none
+            border_left_color:
+              class: null
+            border_top_style:
+              class: null
+            border_top_width:
+              class: _none
+            border_top_color:
+              class: null
+            border_right_style:
+              class: null
+            border_right_width:
+              class: _none
+            border_right_color:
+              class: null
+            border_bottom_style:
+              class: null
+            border_bottom_width:
+              class: _none
+            border_bottom_color:
+              class: null
+            rounded_corner_top_left:
+              class: _none
+            rounded_corner_top_right:
+              class: _none
+            rounded_corner_bottom_left:
+              class: _none
+            rounded_corner_bottom_right:
+              class: _none
+          scroll_effects:
+            class: null
+      container_wrapper_bg_color_class: ''
+      container_wrapper_bg_media: null
+      container: container-fluid
+      section_classes: ''
+      section_attributes: null
+      regions_classes:
+        blb_region_col_1: ''
+      regions_attributes:
+        blb_region_col_1: {  }
+      breakpoints: {  }
+      layout_regions_classes: {  }
+      remove_gutters: '0'
+    components:
+      d0ba01c1-9804-4eb7-89b9-e2f618b941ef:
+        uuid: d0ba01c1-9804-4eb7-89b9-e2f618b941ef
+        region: blb_region_col_1
+        configuration:
+          id: 'block_content:252cfaf5-c7be-de67-312d-727549058925'
+          label: 'Additional resources:'
+          label_display: visible
+          provider: block_content
+          status: true
+          info: ''
+          view_mode: full
+          context_mapping: {  }
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: 'bootstrap_layout_builder:blb_col_1'
+    layout_settings:
+      label: Topic
+      context_mapping: {  }
+      container_wrapper_classes: 'grid-container content-with-image'
+      container_wrapper_attributes: null
+      container_wrapper:
+        bootstrap_styles:
+          background:
+            background_type: color
+          background_color:
+            class: null
+          background_media:
+            image:
+              media_id: null
+            video:
+              media_id: null
+            background_options:
+              background_position: center
+              background_repeat: no-repeat
+              background_attachment: not_fixed
+              background_size: cover
+          text_color:
+            class: null
+          text_alignment:
+            class: null
+          padding:
+            class: _none
+          padding_left:
+            class: _none
+          padding_top:
+            class: _none
+          padding_right:
+            class: _none
+          padding_bottom:
+            class: _none
+          margin:
+            class: _none
+          margin_left:
+            class: _none
+          margin_top:
+            class: _none
+          margin_right:
+            class: _none
+          margin_bottom:
+            class: _none
+          border:
+            border_style:
+              class: null
+            border_width:
+              class: _none
+            border_color:
+              class: null
+            rounded_corners:
+              class: _none
+            border_left_style:
+              class: null
+            border_left_width:
+              class: _none
+            border_left_color:
+              class: null
+            border_top_style:
+              class: null
+            border_top_width:
+              class: _none
+            border_top_color:
+              class: null
+            border_right_style:
+              class: null
+            border_right_width:
+              class: _none
+            border_right_color:
+              class: null
+            border_bottom_style:
+              class: null
+            border_bottom_width:
+              class: _none
+            border_bottom_color:
+              class: null
+            rounded_corner_top_left:
+              class: _none
+            rounded_corner_top_right:
+              class: _none
+            rounded_corner_bottom_left:
+              class: _none
+            rounded_corner_bottom_right:
+              class: _none
+          scroll_effects:
+            class: null
+      container_wrapper_bg_color_class: ''
+      container_wrapper_bg_media: null
+      container: container-fluid
+      section_classes: ''
+      section_attributes: null
+      regions_classes:
+        blb_region_col_1: ''
+      regions_attributes:
+        blb_region_col_1: {  }
+      breakpoints: {  }
+      layout_regions_classes: {  }
+      remove_gutters: '0'
+    components:
+      ec1a163f-5375-4477-9b13-1104ec2b8993:
+        uuid: ec1a163f-5375-4477-9b13-1104ec2b8993
+        region: blb_region_col_1
+        configuration:
+          id: 'field_block:node:article:field_topic'
+          label: Topic
+          label_display: '0'
+          provider: layout_builder
+          context_mapping:
+            entity: layout_builder.entity
+            view_mode: view_mode
+          formatter:
+            type: entity_reference_label
+            label: above
+            settings:
+              link: true
+            third_party_settings: {  }
+        weight: 0
+        additional: {  }
+      db710d68-d528-4cad-a51d-a0034bb8ec3b:
+        uuid: db710d68-d528-4cad-a51d-a0034bb8ec3b
+        region: blb_region_col_1
+        configuration:
+          id: 'field_block:node:article:field_tags'
+          label: Tags
+          label_display: visible
+          provider: layout_builder
+          context_mapping:
+            entity: layout_builder.entity
+            view_mode: view_mode
+          formatter:
+            type: entity_reference_label
+            label: hidden
+            settings:
+              link: true
+            third_party_settings: {  }
+        weight: 1
+        additional: {  }
+    third_party_settings: {  }
+  -
+    layout_id: 'bootstrap_layout_builder:blb_col_1'
+    layout_settings:
+      label: 'More Like This block'
+      context_mapping: {  }
+      container_wrapper_classes: 'grid-container content-with-image'
+      container_wrapper_attributes: null
+      container_wrapper:
+        bootstrap_styles:
+          background:
+            background_type: color
+          background_color:
+            class: null
+          background_media:
+            image:
+              media_id: null
+            video:
+              media_id: null
+            background_options:
+              background_position: center
+              background_repeat: no-repeat
+              background_attachment: not_fixed
+              background_size: cover
+          text_color:
+            class: null
+          text_alignment:
+            class: null
+          padding:
+            class: _none
+          padding_left:
+            class: _none
+          padding_top:
+            class: _none
+          padding_right:
+            class: _none
+          padding_bottom:
+            class: _none
+          margin:
+            class: _none
+          margin_left:
+            class: _none
+          margin_top:
+            class: _none
+          margin_right:
+            class: _none
+          margin_bottom:
+            class: _none
+          border:
+            border_style:
+              class: null
+            border_width:
+              class: _none
+            border_color:
+              class: null
+            rounded_corners:
+              class: _none
+            border_left_style:
+              class: null
+            border_left_width:
+              class: _none
+            border_left_color:
+              class: null
+            border_top_style:
+              class: null
+            border_top_width:
+              class: _none
+            border_top_color:
+              class: null
+            border_right_style:
+              class: null
+            border_right_width:
+              class: _none
+            border_right_color:
+              class: null
+            border_bottom_style:
+              class: null
+            border_bottom_width:
+              class: _none
+            border_bottom_color:
+              class: null
+            rounded_corner_top_left:
+              class: _none
+            rounded_corner_top_right:
+              class: _none
+            rounded_corner_bottom_left:
+              class: _none
+            rounded_corner_bottom_right:
+              class: _none
+          scroll_effects:
+            class: null
+      container_wrapper_bg_color_class: ''
+      container_wrapper_bg_media: null
+      container: container-fluid
+      section_classes: ''
+      section_attributes: null
+      regions_classes:
+        blb_region_col_1: ''
+      regions_attributes:
+        blb_region_col_1: {  }
+      breakpoints: {  }
+      layout_regions_classes: {  }
+      remove_gutters: '0'
+    components:
+      975c1054-fc78-434a-b193-c39eb4764bff:
+        uuid: 975c1054-fc78-434a-b193-c39eb4764bff
+        region: blb_region_col_1
+        configuration:
+          id: 'views_block:content_archive-more_like_this_block'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+        weight: 0
+        additional: {  }
+    third_party_settings: {  }

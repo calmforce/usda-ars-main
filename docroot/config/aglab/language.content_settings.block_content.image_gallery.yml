@@ -1,0 +1,11 @@
+uuid: bafff114-cbbd-48a5-881d-e200820849a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_gallery
+id: block_content.image_gallery
+target_entity_type_id: block_content
+target_bundle: image_gallery
+default_langcode: site_default
+language_alterable: false

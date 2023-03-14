@@ -1,0 +1,47 @@
+id: usda_scientific_discoveries_migrate_i_card_titles
+label: 11 - ARS Scientific Discoveries Articles' I-Card Titles
+migration_group: usda_scientific_discoveries_migrate
+
+audit: true
+migration_tags:
+  - Umbraco
+  - Scientific Discoveries Articles
+  - USDA ARS Scientific Discoveries
+  - USDA ARS
+# define a forced module dependency. this will cause the migration definition to be reloaded
+# when you uninstall and reinstall your custom module.
+dependencies:
+  enforced:
+    module:
+      - usda_scientific_discoveries_migrate
+migration_dependencies:
+  required:
+    - usda_scientific_discoveries_migrate_articles
+
+source:
+  plugin: usda_scientific_discoveries_i_card_titles
+  key: scientific_discoveries
+  constants:
+    bundle: 'article'
+    langcode: 'en'
+
+destination:
+  plugin: entity:node
+  overwrite_properties:
+    - field_short_name
+    - field_featured_image
+
+process:
+  type: 'constants/bundle'
+  langcode: 'constants/langcode'
+  nid:
+    plugin: migration_lookup
+    migration: usda_scientific_discoveries_migrate_articles
+    source: cardId
+    no_stub: true
+  field_short_name: cardTitle
+  field_featured_image:
+    plugin: migration_lookup
+    migration: usda_scientific_discoveries_migrate_media
+    source: cardImageUuid
+    no_stub: true

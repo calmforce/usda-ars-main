@@ -1,0 +1,13 @@
+usda_scientific_discoveries_migrate.mssql_connection_test:
+  path: '/mssql-scientific-discoveries-connection-test'
+  defaults:
+    _controller: '\Drupal\usda_scientific_discoveries_migrate\Controller\MssqlTestController::testConnection'
+  requirements:
+    _permission: 'migrate ars scientific discoveries data'
+usda_scientific_discoveries_migrate.settings:
+  path: '/admin/config/system/scientific-discoveries-migrate'
+  defaults:
+    _form: 'Drupal\usda_scientific_discoveries_migrate\Form\ArsScientificDiscoveriesMigrateSettingsForm'
+    _title: 'USDA Scientific Discoveries Migrate Settings'
+  requirements:
+    _permission: 'administer ars scientific discoveries migrations'

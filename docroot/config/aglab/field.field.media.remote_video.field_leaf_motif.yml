@@ -1,0 +1,23 @@
+uuid: d6cd0265-95a0-4097-9761-f07a8c3073d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_leaf_motif
+    - media.type.remote_video
+id: media.remote_video.field_leaf_motif
+field_name: field_leaf_motif
+entity_type: media
+bundle: remote_video
+label: 'Leaf Motif'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

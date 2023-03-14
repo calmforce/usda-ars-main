@@ -1,0 +1,23 @@
+uuid: a274a780-41d3-4075-af59-ddc585d8daf6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.content_with_image
+    - field.storage.block_content.field_leaf_motif
+id: block_content.content_with_image.field_leaf_motif
+field_name: field_leaf_motif
+entity_type: block_content
+bundle: content_with_image
+label: 'Leaf Motif'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

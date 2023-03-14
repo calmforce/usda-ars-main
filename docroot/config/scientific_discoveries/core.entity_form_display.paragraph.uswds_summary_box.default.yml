@@ -1,0 +1,36 @@
+uuid: 1a4b92f4-6223-42a5-b614-bb2b5fc91b80
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uswds_summary_box.field_header
+    - field.field.paragraph.uswds_summary_box.field_text
+    - paragraphs.paragraphs_type.uswds_summary_box
+  module:
+    - text
+_core:
+  default_config_hash: KG4L9vjV9W8S6RAxMQvvhVrbxQsLrHDWRGmbLerrEWU
+id: paragraph.uswds_summary_box.default
+targetEntityType: paragraph
+bundle: uswds_summary_box
+mode: default
+content:
+  field_header:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_text:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

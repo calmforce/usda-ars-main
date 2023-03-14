@@ -1,0 +1,30 @@
+uuid: 89bd7a65-a2db-4da2-b8e4-4c1b19baecfc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_document_type
+field_name: field_document_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: NPProgramInputs
+      label: 'NP Program Inputs'
+    -
+      value: NPProgramPlanning
+      label: 'NP Program Planning'
+    -
+      value: NPProgramReports
+      label: 'NP Program Reports'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

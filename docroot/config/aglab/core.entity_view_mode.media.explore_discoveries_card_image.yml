@@ -1,0 +1,10 @@
+uuid: b3db3367-354e-4314-9fff-654b91f3b9df
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.explore_discoveries_card_image
+label: 'Explore Discoveries Card Image'
+targetEntityType: media
+cache: true

@@ -1,0 +1,8 @@
+uuid: 56fe16bf-2cc7-4107-b56d-33a1b0c3586c
+langcode: en
+status: true
+dependencies: {  }
+id: infographic
+label: Infographic
+revision: 0
+description: 'Infographic: Image + Caption + Link'

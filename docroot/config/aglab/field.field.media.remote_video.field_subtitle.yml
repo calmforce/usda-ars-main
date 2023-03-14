@@ -1,0 +1,19 @@
+uuid: 82daed0d-1c10-4a3a-ad96-88c2c8ee4237
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_subtitle
+    - media.type.remote_video
+id: media.remote_video.field_subtitle
+field_name: field_subtitle
+entity_type: media
+bundle: remote_video
+label: Subtitle
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

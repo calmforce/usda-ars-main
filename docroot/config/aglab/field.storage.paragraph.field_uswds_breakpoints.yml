@@ -1,0 +1,22 @@
+uuid: ad4c7059-4ff2-4f49-aaac-a197969c348c
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+_core:
+  default_config_hash: okJe514PHvU5aDyGTJzJgq4vCNoHyjPvX7TJym8GJEw
+id: paragraph.field_uswds_breakpoints
+field_name: field_uswds_breakpoints
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

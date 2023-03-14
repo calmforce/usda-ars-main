@@ -1,0 +1,29 @@
+uuid: b8336f10-da92-45ff-a1b9-8c13d993f83d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_popular_content
+    - node.type.article
+    - node.type.front_page
+id: node.front_page.field_popular_content
+field_name: field_popular_content
+entity_type: node
+bundle: front_page
+label: 'Popular Content'
+description: 'Picking a featured article will replace a popular article in the popular articles card slide.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

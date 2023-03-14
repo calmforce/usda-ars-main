@@ -1,0 +1,94 @@
+uuid: 06410e04-55f1-40b9-afaa-0d0cfbce01ed
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_ars_migrate
+id: usda_ars_migrate_news_articles
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'ARS News Articles'
+  - 'USDA ARS'
+migration_group: usda_ars_migrate
+label: '11 - USDA ARS News Articles'
+source:
+  plugin: usda_ars_news_articles
+  constants:
+    bundle: news_article
+    langcode: en
+    html_format: rich_text
+process:
+  nid: nodeId
+  type: constants/bundle
+  langcode: constants/langcode
+  title: nodeName
+  body/value:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: body
+    -
+      plugin: usda_ars_html_body_tokens
+  body/summary:
+    plugin: skip_on_empty
+    method: process
+    source: body_summary
+  body/format: constants/html_format
+  field_year:
+    plugin: migration_lookup
+    migration: usda_ars_migrate_news_years
+    source: parentID
+    no_stub: true
+  field_article_date:
+    plugin: format_date
+    source: article_date
+    from_format: 'Y-m-d H:i:s.v'
+    to_format: 'Y-m-d\TH:i:s'
+    from_timezone: America/New_York
+    to_timezone: UTC
+  field_umbraco_path: path
+  field_umbraco_node_url: node_url
+  status:
+    plugin: default_value
+    default_value: 1
+  created: created
+  changed: changed
+  revision_timestamp: changed
+  uid:
+    -
+      plugin: migration_lookup
+      migration: usda_ars_migrate_user
+      source: nodeUser
+      no_stub: true
+    -
+      plugin: usda_ars_user
+  revision_uid: '@uid'
+  metatags/0/title: htmlTitle
+  metatags/0/description: pageDescription
+  metatags/0/keywords: keywords
+  metatags/0/news_keywords: keywords
+  field_meta_tags:
+    plugin: callback
+    callable: serialize
+    source: '@metatags'
+  field_breadcrumb_label: breadcrumbLabel
+  field_hide_page_title: hidePageTitle
+  field_archived: archiveOption
+  field_news_topics:
+    -
+      plugin: usda_ars_news_topics
+      source: newsTopicsList
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_ars_migrate_news_topics
+      no_stub: true
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

@@ -1,0 +1,48 @@
+uuid: b714e0c3-e531-44a8-9f82-028e8da597b0
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_aglab_migrate
+_core:
+  default_config_hash: ONGdFaCnOvlAqBJnNvmfbtoVPpC-q7xe2r3jUGmmuQA
+id: usda_aglab_migrate_image_links
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'USDA ARS Aglab'
+  - 'Aglab Media'
+  - 'USDA ARS'
+migration_group: usda_aglab_migrate
+label: '6 - ARS Aglab Image Links'
+source:
+  plugin: usda_aglab_image_links
+  key: aglab
+  constants:
+    html_format: rich_text
+    langcode: en
+    type: image
+process:
+  bundle: constants/type
+  langcode: constants/langcode
+  mid:
+    plugin: migration_lookup
+    migration: usda_aglab_migrate_media
+    source: imageUuid
+    no_stub: true
+  created:
+    plugin: usda_ars_date2timestamp
+    source: createDate
+  changed: '@created'
+  field_image_link/uri: imageLinkUrl
+  field_image_link/title: imageLinkName
+  field_caption: imageCaption
+destination:
+  plugin: 'entity:media'
+  overwrite_properties:
+    - field_image_link
+    - field_caption
+migration_dependencies: null

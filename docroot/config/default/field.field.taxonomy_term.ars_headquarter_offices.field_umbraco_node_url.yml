@@ -1,0 +1,19 @@
+uuid: df9fd0d8-bb46-4530-83f6-754cfa92ca22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_umbraco_node_url
+    - taxonomy.vocabulary.ars_headquarter_offices
+id: taxonomy_term.ars_headquarter_offices.field_umbraco_node_url
+field_name: field_umbraco_node_url
+entity_type: taxonomy_term
+bundle: ars_headquarter_offices
+label: 'Umbraco Node URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

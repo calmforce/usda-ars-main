@@ -1,0 +1,21 @@
+uuid: e460c99c-8377-4edd-9ae9-ab74f590c131
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.layout_selection
+    - taxonomy.vocabulary.topics
+id: taxonomy_term.topics.layout_selection
+field_name: layout_selection
+entity_type: taxonomy_term
+bundle: topics
+label: Layout
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: layout_library
+  handler_settings: {  }
+field_type: entity_reference

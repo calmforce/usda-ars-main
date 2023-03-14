@@ -1,0 +1,22 @@
+uuid: 6d4a2e50-cf1a-4d65-ba9e-533770ed7159
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - usda_scient_discover_uswds
+_core:
+  default_config_hash: I9gfS5qiKE7_eL5PoZ3PnKjkGFkBxZNUZwp7eCJcJE0
+id: usda_scient_discover_uswds_help
+theme: usda_scient_discover_uswds
+region: help
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

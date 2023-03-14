@@ -1,0 +1,30 @@
+uuid: cfd6466f-7d68-4f97-8b1e-6194b8996794
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_image
+    - media.type.image
+    - paragraphs.paragraphs_type.uswds_cards_flag
+_core:
+  default_config_hash: dVbpRANRTbn5rAvm0KEwijjytShpX-o9pCXAk6piYFY
+id: paragraph.uswds_cards_flag.field_card_image
+field_name: field_card_image
+entity_type: paragraph
+bundle: uswds_cards_flag
+label: 'Card Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

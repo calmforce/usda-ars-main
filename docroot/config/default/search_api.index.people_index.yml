@@ -1,0 +1,223 @@
+uuid: bb490e29-121f-460e-9f32-961b190eb58f
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+    - node
+    - taxonomy
+    - search_api
+  config:
+    - field.storage.node.field_aris_person_id
+    - field.storage.node.body
+    - field.storage.node.field_email
+    - field.storage.node.field_perfname
+    - field.storage.node.field_perlname
+    - field.storage.node.field_location
+    - field.storage.node.field_office_phone
+    - field.storage.node.field_ofcaddress
+    - field.storage.node.field_workingtitle
+    - search_api.server.usda_ars_solr
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    term_modifiers:
+      slop: 3
+      fuzzy: 1
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+id: people_index
+name: 'People Index'
+description: ''
+read_only: false
+field_settings:
+  aris_person_id:
+    label: 'ARIS Person ID'
+    datasource_id: 'entity:node'
+    property_path: field_aris_person_id
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_aris_person_id
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  content_type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  email:
+    label: EMail
+    datasource_id: 'entity:node'
+    property_path: field_email
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_email
+  first_name:
+    label: 'First Name'
+    datasource_id: 'entity:node'
+    property_path: field_perfname
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_perfname
+  last_name:
+    label: 'Last Name'
+    datasource_id: 'entity:node'
+    property_path: field_perlname
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_perlname
+  location_name:
+    label: 'Location or Office » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_location:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location
+      module:
+        - taxonomy
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
+    dependencies:
+      module:
+        - node
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  office_phone:
+    label: 'Office Phone'
+    datasource_id: 'entity:node'
+    property_path: field_office_phone
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_office_phone
+  office_state:
+    label: 'Office Address » State'
+    datasource_id: 'entity:node'
+    property_path: 'field_ofcaddress:administrative_area'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_ofcaddress
+  status:
+    label: null
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  uid:
+    label: null
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  working_title:
+    label: 'Working Title'
+    datasource_id: 'entity:node'
+    property_path: field_workingtitle
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_workingtitle
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - person_profile
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  entity_status: {  }
+  ignorecase:
+    all_fields: true
+    fields:
+      - body
+      - content_type
+      - email
+      - first_name
+      - last_name
+      - location_name
+      - office_phone
+      - office_state
+      - working_title
+  language_with_fallback: {  }
+  rendered_item: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 500
+server: usda_ars_solr

@@ -1,0 +1,17 @@
+uuid: 2c08e722-9bfd-4620-8151-963c942671a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: search_results_block_image
+label: 'Search Results Page Image (190x236)'
+effects:
+  bdab69ab-158a-439b-bc09-4d14c4c75c17:
+    uuid: bdab69ab-158a-439b-bc09-4d14c4c75c17
+    id: focal_point_scale_and_crop
+    weight: 2
+    data:
+      width: 190
+      height: 236
+      crop_type: focal_point

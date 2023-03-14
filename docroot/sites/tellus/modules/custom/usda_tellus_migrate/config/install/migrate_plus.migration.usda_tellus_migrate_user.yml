@@ -1,0 +1,40 @@
+id: usda_tellus_migrate_user
+label: 1 - ARS Tellus Users
+migration_group: usda_tellus_migrate
+
+audit: true
+migration_tags:
+  - Umbraco
+  - Tellus Users
+  - USDA ARS Tellus
+  - USDA ARS
+
+# define a forced module dependency. this will cause the migration definition to be reloaded
+# when you uninstall and reinstall your custom module.
+dependencies:
+  enforced:
+    module:
+      - usda_tellus_migrate
+
+source:
+  plugin: usda_tellus_user
+  key: tellus
+
+destination:
+  plugin: entity:user
+
+process:
+  uid: id
+  name: userName
+  pass: userPassword
+  mail: userEmail
+  roles: userType
+  status:
+    plugin: default_value
+    default_value: 1
+  created: createDate
+  changed: updateDate
+  access: lastLoginDate
+  login: lastLoginDate
+
+

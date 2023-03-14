@@ -1,0 +1,81 @@
+uuid: 679b2133-e9f7-46c9-b6d7-9988d1571fc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_breakpoints
+    - paragraphs.paragraphs_type.uswds_card_breakpoints
+    - paragraphs.paragraphs_type.uswds_card_regular
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: atEk97ayaS23CHdjXoeIBkOwaz8kaT_siabf_NDF79Q
+id: paragraph.uswds_card_regular.field_card_breakpoints
+field_name: field_card_breakpoints
+entity_type: paragraph
+bundle: uswds_card_regular
+label: 'Card Breakpoints'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      uswds_card_breakpoints: uswds_card_breakpoints
+    negate: 0
+    target_bundles_drag_drop:
+      text_field:
+        weight: 19
+        enabled: false
+      uswds_2_column_breakpoints:
+        weight: 20
+        enabled: false
+      uswds_2_columns:
+        weight: 21
+        enabled: false
+      uswds_3_column_breakpoints:
+        weight: 22
+        enabled: false
+      uswds_3_columns:
+        weight: 23
+        enabled: false
+      uswds_accordion:
+        weight: 24
+        enabled: false
+      uswds_alert:
+        weight: 25
+        enabled: false
+      uswds_card_breakpoints:
+        weight: 18
+        enabled: true
+      uswds_card_group_flag:
+        weight: 26
+        enabled: false
+      uswds_card_group_regular:
+        weight: 27
+        enabled: false
+      uswds_card_regular:
+        weight: 28
+        enabled: false
+      uswds_cards_flag:
+        weight: 29
+        enabled: false
+      uswds_process_item:
+        weight: 30
+        enabled: false
+      uswds_process_list:
+        weight: 31
+        enabled: false
+      uswds_step_indicator_item:
+        weight: 32
+        enabled: false
+      uswds_step_indicator_list:
+        weight: 33
+        enabled: false
+      uswds_summary_box:
+        weight: 34
+        enabled: false
+field_type: entity_reference_revisions

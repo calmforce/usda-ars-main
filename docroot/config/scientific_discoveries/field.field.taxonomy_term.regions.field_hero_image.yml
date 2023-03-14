@@ -1,0 +1,29 @@
+uuid: 4d538101-5e09-4fc4-9a2e-120aa2047068
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_hero_image
+    - media.type.image
+    - taxonomy.vocabulary.regions
+id: taxonomy_term.regions.field_hero_image
+field_name: field_hero_image
+entity_type: taxonomy_term
+bundle: regions
+label: 'Hero Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

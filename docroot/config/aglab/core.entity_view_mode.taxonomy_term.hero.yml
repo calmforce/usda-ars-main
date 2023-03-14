@@ -1,0 +1,10 @@
+uuid: 02f80664-eeeb-4bbe-9774-2afc3b2ae49b
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.hero
+label: 'Hero Image'
+targetEntityType: taxonomy_term
+cache: true

@@ -1,0 +1,23 @@
+uuid: 7026a0c3-1d14-434f-b25b-12075c6e0d89
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: news_year_taxonomy_url_pattern
+label: 'News Year taxonomy URL pattern'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/news-events/news-archive/[term:name]'
+selection_criteria:
+  a5af7031-1f75-4e10-92f3-28f6d1ad4243:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      ars_news_years: ars_news_years
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: a5af7031-1f75-4e10-92f3-28f6d1ad4243
+selection_logic: and
+weight: -5
+relationships: {  }

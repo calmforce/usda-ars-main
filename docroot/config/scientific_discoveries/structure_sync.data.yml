@@ -1,0 +1,650 @@
+taxonomies:
+  topics:
+    -
+      vid: topics
+      tid: '1348'
+      langcode: en
+      name: 'Animal Production & Protection'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c4a5113c-95fd-49f1-a2cf-b15c53e16b6f
+      field_hero_image_overlay_title: {  }
+      field_hide_page_title:
+        -
+          value: '1'
+      field_image_card:
+        -
+          target_id: '107'
+          target_revision_id: '107'
+      field_meta_tags:
+        -
+          value: 'a:2:{s:11:"description";s:55:"ARS research relating to animal production & protection";s:8:"keywords";s:325:"ARS animal production and protection research program, ARS research relating to animal production and protection, ARS animal production research, ARS research to improve the health of livestock, ARS livestock research, ARS research relating to animal diseases, ARS research to eradicate diseases that threaten the food supply";}'
+    -
+      vid: topics
+      tid: '5442'
+      langcode: en
+      name: 'ARS National Programs'
+      description__value: null
+      description__format: null
+      weight: '8'
+      parent: '0'
+      uuid: 17eb3eff-29a4-4594-82d5-04a79c7f0db6
+      field_hero_image_overlay_title:
+        -
+          value: 'ARS National Program Areas'
+      field_hide_page_title:
+        -
+          value: '1'
+      field_image_card: {  }
+      field_meta_tags:
+        -
+          value: 'a:2:{s:11:"description";s:153:"ARS research is organized into National Programs that serve to bring coordination, communication, and empowerment to approximately 690 research projects.";s:8:"keywords";s:201:"ARS National Program areas, ARS Crop Production and Protection, ARS Animal Production and Protection, ARS Natural Resources and Sustainable Agricultural Systems,  ARS Nutrition Food Safety and Quality ";}'
+    -
+      vid: topics
+      tid: '1349'
+      langcode: en
+      name: 'Award Winners'
+      description__value: null
+      description__format: null
+      weight: '7'
+      parent: '0'
+      uuid: bb78e141-91c5-4319-8eb5-26c152152396
+      field_hero_image_overlay_title:
+        -
+          value: 'ARS Prestigious Award Winners'
+      field_hide_page_title:
+        -
+          value: '1'
+      field_image_card: {  }
+      field_meta_tags:
+        -
+          value: 'a:1:{s:11:"description";s:111:"ARS is proud to highlight the achievements of researchers who exemplify innovation, creativity, and commitment.";}'
+    -
+      vid: topics
+      tid: '1352'
+      langcode: en
+      name: 'Crop Production & Protection'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '0'
+      uuid: ccbbb402-e60a-411a-a431-fd5dc3415131
+      field_hero_image_overlay_title: {  }
+      field_hide_page_title:
+        -
+          value: '1'
+      field_image_card:
+        -
+          target_id: '120'
+          target_revision_id: '120'
+      field_meta_tags:
+        -
+          value: 'a:2:{s:11:"description";s:151:"ARS’s Crop Production and Protection program helps ensure that Americans continue to enjoy an abundant, affordable, safe, and nutritious food supply.";s:8:"keywords";s:325:"ARS Crop Production and Protection program, ARS research related to crop production, environmentally sustainable methods of crop production, ARS research to protect crops from diseases and pests, research to control stink bugs, contender peanut variety, controlling mold in strawberries, disrupting mating in peachtree borers";}'
+    -
+      vid: topics
+      tid: '1350'
+      langcode: en
+      name: Highlights
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '0'
+      uuid: 5cba91dd-927a-44d6-8302-97b6bac45e96
+      field_hero_image_overlay_title:
+        -
+          value: 'ARS Highlights'
+      field_hide_page_title:
+        -
+          value: '1'
+      field_image_card: {  }
+      field_meta_tags:
+        -
+          value: 'a:1:{s:11:"description";s:106:"Each of these stories highlights the vital work of our talented and innovative researchers and scientists.";}'
+    -
+      vid: topics
+      tid: '1353'
+      langcode: en
+      name: 'Natural Resources & Sustainable Agricultural Systems'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '0'
+      uuid: 396a6a88-feed-4dd4-b10a-defe975eab0f
+      field_hero_image_overlay_title: {  }
+      field_hide_page_title:
+        -
+          value: '1'
+      field_image_card:
+        -
+          target_id: '124'
+          target_revision_id: '124'
+      field_meta_tags:
+        -
+          value: 'a:2:{s:11:"description";s:184:"ARS’s Natural Resources and Sustainable Agricultural Systems program provides innovative solutions to  ensure sustainable food production while also protecting our natural resources.";s:8:"keywords";s:261:"ARS Natural Resources and Sustainable Agricultural Systems program, innovative solutions to ensure sustainable food production, protecting natural resources, adapting agricultural production to climate change, controlling cheatgrass, controlling nitrate runoff ";}'
+    -
+      vid: topics
+      tid: '1354'
+      langcode: en
+      name: 'Nutrition, Food Safety & Quality'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '0'
+      uuid: a8fd85a4-0913-4499-bc26-6b544e185b24
+      field_hero_image_overlay_title: {  }
+      field_hide_page_title:
+        -
+          value: '1'
+      field_image_card:
+        -
+          target_id: '116'
+          target_revision_id: '116'
+      field_meta_tags:
+        -
+          value: 'a:2:{s:11:"description";s:158:"ARS’s Nutrition, Food Safety, and Quality program coordinates and leads research to define the role of food and its components in optimizing health for all.";s:8:"keywords";s:232:"ARS Nutrition Food Safety and Quality program, ARS food safety research, ARS research related to nutrition, ARS nutrition research, ARS research to keep the food supply safe, ARS research to reduce pathogens in agricultural products";}'
+    -
+      vid: topics
+      tid: '2552'
+      langcode: en
+      name: Regions
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6486a451-3913-44c1-93e3-ad2334ac5a69
+      field_hero_image_overlay_title:
+        -
+          value: 'Explore Our Discoveries'
+      field_hide_page_title:
+        -
+          value: '1'
+      field_image_card: {  }
+      field_meta_tags:
+        -
+          value: 'a:2:{s:11:"description";s:88:"Take a look across the country to see what ARS scientists are doing to enrich our lives.";s:8:"keywords";s:166:"ARS research locations, ARS Plains Area locations, ARS Northeast Area locations, ARS Southwest Area Locations, ARS Midwest Area locations, where is ARS doing research";}'
+    -
+      vid: topics
+      tid: '1355'
+      langcode: en
+      name: 'Scientific Discoveries Abroad'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '0'
+      uuid: 38cb6fd5-4877-49bb-ae47-9895b7d6017c
+      field_hero_image_overlay_title: {  }
+      field_hide_page_title:
+        -
+          value: '1'
+      field_image_card:
+        -
+          target_id: '128'
+          target_revision_id: '128'
+      field_meta_tags:
+        -
+          value: 'a:2:{s:11:"description";s:111:"The Office of International Research Engagement and Cooperation coordinates ARS’s international relationships";s:8:"keywords";s:96:"Office of International Research Engagement and Cooperation, OIREC, ARS''s international research";}'
+blocks:
+  -
+    info: 'Scientific Discoveries Publication'
+    langcode: en
+    uuid: 46f9c666-f341-48b4-a3ea-66d8e793bf23
+    bundle: infographic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_caption:
+        -
+          value: '<p>Want to explore offline?<span> </span><a style="color: #d2f9fa;" href="https://scientificdiscoveries.ars.usda.gov/media/2xkamurs/scientificdiscoveries2021.pdf" class="external">Download</a><span> a pdf of the entire publication.</span></p>'
+          format: rich_text
+      field_hide_title:
+        -
+          value: '1'
+      field_infographic:
+        -
+          target_id: '3021'
+      field_link:
+        -
+          uri: 'public://media/2xkamurs/scientificdiscoveries2021.pdf'
+          title: Scientificdiscoveries2021
+          options: {  }
+  -
+    info: 'ARS Awards'
+    langcode: en
+    uuid: e7e05d76-09a2-4bf7-be55-6bbdd84cb562
+    bundle: infographic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_caption:
+        -
+          value: '<p><a style="color: #d2f9fa;" href="/ars-prestigious-award-winners/2021-ars-award-winners/">Learn</a><span> about the prestigious awards received by some of ARS''s scientists.</span></p>'
+          format: rich_text
+      field_hide_title:
+        -
+          value: '0'
+      field_infographic:
+        -
+          target_id: '3051'
+      field_link:
+        -
+          uri: 'internal:/ars-prestigious-award-winners/2021-ars-award-winners/'
+          title: '2021 ARS Award Winners'
+          options: {  }
+  -
+    info: 'ARS by the Numbers'
+    langcode: en
+    uuid: 3b3fab4d-08ff-4b1d-914a-8dc3d477ccd0
+    bundle: infographic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_caption:
+        -
+          value: '<p><a style="color: #d2f9fa;" href="https://www.ars.usda.gov/ARSUserFiles/oc/discoveries/2021/arsbtn.pdf" class="external"> ARS by the Numbers </a><span> is a snapshot of our funding, employees and locations, new licenses issued, and outreach events.</span></p>'
+          format: rich_text
+      field_hide_title:
+        -
+          value: '0'
+      field_infographic:
+        -
+          target_id: '3424'
+      field_link: {  }
+menus:
+  -
+    menu_name: main
+    title: Home
+    parent: null
+    uri: 'internal:/'
+    link_title: ''
+    description: null
+    enabled: '0'
+    expanded: '0'
+    weight: '-43'
+    langcode: en
+    uuid: 91cbfb51-2cdb-4cff-bbbd-ee6374063cad
+  -
+    menu_name: main
+    title: About
+    parent: null
+    uri: 'entity:node/1'
+    link_title: ''
+    description: null
+    enabled: '0'
+    expanded: '0'
+    weight: '-42'
+    langcode: en
+    uuid: 58286aad-f087-4d58-8fa7-7407422e82bc
+  -
+    menu_name: main
+    title: Articles
+    parent: null
+    uri: 'internal:/stories'
+    link_title: ''
+    description: null
+    enabled: '0'
+    expanded: '0'
+    weight: '-41'
+    langcode: en
+    uuid: 6ad2fa04-405c-4b03-895f-eaa11ad03148
+  -
+    menu_name: main
+    title: 'ARS Home'
+    parent: null
+    uri: 'https://www.ars.usda.gov/'
+    link_title: ''
+    description: null
+    enabled: '0'
+    expanded: '0'
+    weight: '-40'
+    langcode: en
+    uuid: 29b7d578-c483-4d50-9125-d918217ccc7f
+  -
+    menu_name: main
+    title: 'ARS Image Gallery'
+    parent: null
+    uri: 'https://www.ars.usda.gov/oc/images/image-gallery/'
+    link_title: ''
+    description: null
+    enabled: '0'
+    expanded: '0'
+    weight: '-39'
+    langcode: en
+    uuid: 98116adf-41e9-488a-b1d2-749e21938030
+  -
+    menu_name: main
+    title: 'AgResearch Magazine'
+    parent: null
+    uri: 'https://agresearchmag.ars.usda.gov/'
+    link_title: ''
+    description: null
+    enabled: '0'
+    expanded: '0'
+    weight: '-38'
+    langcode: en
+    uuid: bb554a63-427a-487f-b11d-dcebc207c0d2
+  -
+    menu_name: main
+    title: 'ARS National Program Areas'
+    parent: null
+    uri: 'internal:/ars-national-program-areas'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-49'
+    langcode: en
+    uuid: e5240d83-74e3-412c-9e3d-97648578ea11
+  -
+    menu_name: main
+    title: 'Animal Production & Protection'
+    parent: 'menu_link_content:e5240d83-74e3-412c-9e3d-97648578ea11'
+    uri: 'internal:/animal-production-protection'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-50'
+    langcode: en
+    uuid: 2f93fa09-2a23-4f4c-9b34-24b1fc9f9884
+  -
+    menu_name: main
+    title: 'Nutrition, Food Safety, & Quality'
+    parent: 'menu_link_content:e5240d83-74e3-412c-9e3d-97648578ea11'
+    uri: 'internal:/nutrition-food-safety-quality'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '1'
+    weight: '-49'
+    langcode: en
+    uuid: f258c70b-580c-4020-8a07-63128bff3ca5
+  -
+    menu_name: main
+    title: 'Crop Production & Protection'
+    parent: 'menu_link_content:e5240d83-74e3-412c-9e3d-97648578ea11'
+    uri: 'internal:/crop-production-protection'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '1'
+    weight: '-48'
+    langcode: en
+    uuid: fb441a63-9c4c-4330-a7ce-8ccccea1eead
+  -
+    menu_name: main
+    title: 'Natural Resources & Sustainable Agricultural Systems'
+    parent: 'menu_link_content:e5240d83-74e3-412c-9e3d-97648578ea11'
+    uri: 'internal:/natural-resources-sustainable-agricultural-systems'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '1'
+    weight: '-47'
+    langcode: en
+    uuid: a6760aba-b439-46e5-b947-0fed41f17fa7
+  -
+    menu_name: main
+    title: 'Scientific Discoveries Abroad'
+    parent: 'menu_link_content:e5240d83-74e3-412c-9e3d-97648578ea11'
+    uri: 'internal:/scientific-discoveries-abroad'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '1'
+    weight: '-45'
+    langcode: en
+    uuid: 9f9276e3-65de-4972-a04a-3e4d2f5be686
+  -
+    menu_name: main
+    title: 'ARS Prestigious Award Winners'
+    parent: null
+    uri: 'internal:/ars-prestigious-award-winners'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '1'
+    weight: '-48'
+    langcode: en
+    uuid: 366d9b8a-ffc4-498d-98b5-2671b51257dc
+  -
+    menu_name: main
+    title: 'Explore Our Discoveries'
+    parent: null
+    uri: 'internal:/explore-our-discoveries'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '1'
+    weight: '-47'
+    langcode: en
+    uuid: a56a3983-3a52-4847-ac03-80280c2fb4de
+  -
+    menu_name: main
+    title: Highlights
+    parent: null
+    uri: 'internal:/highlights'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '1'
+    weight: '-46'
+    langcode: en
+    uuid: 737858de-7740-446e-a1f6-dcc201edf76c
+  -
+    menu_name: main
+    title: 'Scientific Discoveries Abroad'
+    parent: null
+    uri: 'internal:/scientific-discoveries-abroad'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '1'
+    weight: '-45'
+    langcode: en
+    uuid: a7bb9043-904a-42ca-b1e3-d29fac38c51f
+  -
+    menu_name: main
+    title: Articles
+    parent: null
+    uri: 'internal:/stories'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-44'
+    langcode: en
+    uuid: 7c5ea6ac-d930-4528-8c8f-f3ca50d48ab7
+  -
+    menu_name: main
+    title: 'About Us'
+    parent: null
+    uri: 'internal:/about-us'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-50'
+    langcode: en
+    uuid: e6051573-f4b6-425b-889a-732f67f6512c
+  -
+    menu_name: footer
+    title: 'ARS Home'
+    parent: null
+    uri: 'https://www.ars.usda.gov/'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-50'
+    langcode: en
+    uuid: f8acbd2c-3bee-4336-8301-5755b84967c4
+  -
+    menu_name: footer
+    title: 'ARS News Room'
+    parent: null
+    uri: 'https://www.ars.usda.gov/news-events/news-events/'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-48'
+    langcode: en
+    uuid: b55ac07e-5c0a-462c-b93e-bb3bb32aa35f
+  -
+    menu_name: footer
+    title: 'AgResearch Magazine'
+    parent: null
+    uri: 'https://agresearchmag.ars.usda.gov/'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-46'
+    langcode: en
+    uuid: 4a145c2d-5923-4254-954b-26245fe32575
+  -
+    menu_name: footer
+    title: 'Accessibility Statement'
+    parent: null
+    uri: 'https://www.usda.gov/accessibility-statement?customVal=hello'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-44'
+    langcode: en
+    uuid: 012cd48e-f2ba-4519-b187-d9322f8f8a28
+  -
+    menu_name: footer
+    title: 'Plain Writing'
+    parent: null
+    uri: 'https://www.usda.gov/plain-writing'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-42'
+    langcode: en
+    uuid: f9fc886b-d709-49f9-a80a-32357cfca2fa
+  -
+    menu_name: footer
+    title: WhiteHouse.gov
+    parent: null
+    uri: 'https://www.whitehouse.gov/'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-40'
+    langcode: en
+    uuid: 95b5a49a-becc-4505-b451-3cc856c4494e
+  -
+    menu_name: footer
+    title: ' USDA.gov'
+    parent: null
+    uri: 'https://www.usda.gov/'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-49'
+    langcode: en
+    uuid: 558dc1f4-ad4d-4975-98c8-8f268177ffc8
+  -
+    menu_name: footer
+    title: ' ARS Featured Photos'
+    parent: null
+    uri: 'https://www.ars.usda.gov/oc/images/photos/photos-featured-photo/'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-47'
+    langcode: en
+    uuid: b3681017-457e-4bd0-9fee-008897b4ca3f
+  -
+    menu_name: footer
+    title: ' FOIA'
+    parent: null
+    uri: 'https://www.ars.usda.gov/oc/foia/freedom-of-information-act-and-privacy-act-reference-guide/'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-45'
+    langcode: en
+    uuid: bbb98d71-f1ec-464e-bcf2-2553dc614506
+  -
+    menu_name: footer
+    title: ' Privacy Policy'
+    parent: null
+    uri: 'https://www.usda.gov/privacy-policy'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-43'
+    langcode: en
+    uuid: 1e141d2f-3aa8-4543-a692-3bcf1acf07ee
+  -
+    menu_name: footer
+    title: ' Non-Discrimination Statement'
+    parent: null
+    uri: 'https://www.usda.gov/non-discrimination-statement'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-41'
+    langcode: en
+    uuid: b305cdc6-d025-41ed-9d81-7936dcffc24c
+  -
+    menu_name: footer
+    title: Tellus
+    parent: null
+    uri: 'https://tellus.ars.usda.gov/'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-47'
+    langcode: en
+    uuid: d0012527-9f0b-4df4-bcea-b0d6aebf7cbb
+  -
+    menu_name: footer
+    title: 'Civil Rights Statements'
+    parent: null
+    uri: 'https://www.usda.gov/oascr/civil-rights-statements'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-45'
+    langcode: en
+    uuid: 4e426d81-43a1-4bb2-98c2-30ac6b22aa55
+  -
+    menu_name: footer
+    title: 'Contact Us'
+    parent: null
+    uri: 'https://www.ars.usda.gov/oc/key-contacts-at-ars-office-of-communications/'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-40'
+    langcode: en
+    uuid: 42d1ce84-ebf3-468c-bef2-cead818f4bb0
+  -
+    menu_name: footer
+    title: Sitemap
+    parent: null
+    uri: 'https://scientificdiscoveriesstaging.arsnet.usda.gov/sitemap/'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-38'
+    langcode: en
+    uuid: 72342923-9e03-4f86-ab57-a8bc666cfc59

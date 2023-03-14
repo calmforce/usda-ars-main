@@ -1,0 +1,92 @@
+id: usda_aglab_migrate_homepage
+label: 19 - ARS Aglab Home Page
+migration_group: usda_aglab_migrate
+
+audit: true
+migration_tags:
+  - Umbraco
+  - Aglab Home Page
+  - USDA ARS Aglab
+  - USDA ARS
+# define a forced module dependency. this will cause the migration definition to be reloaded
+# when you uninstall and reinstall your custom module.
+dependencies:
+  enforced:
+    module:
+      - usda_aglab_migrate
+
+source:
+  plugin: usda_aglab_homepage
+  key: aglab
+  constants:
+    bundle: 'front_page'
+    langcode: 'en'
+    html_format: 'rich_text'
+    layout: 'home_page'
+
+destination:
+  plugin: entity:node
+
+process:
+  nid: nodeId
+  type: 'constants/bundle'
+  langcode: 'constants/langcode'
+  status:
+    plugin: default_value
+    default_value: 1
+  created:
+    plugin: usda_ars_date2timestamp
+    source: createDate
+  changed:
+    plugin: usda_ars_date2timestamp
+    source: updateDate
+  revision_timestamp: '@changed'
+  title: nodeName
+  uid:
+    -
+      plugin: usda_ars_user
+      source: nodeUser
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_user
+      no_stub: true
+    -
+      plugin: default_value
+      default_value: 1
+  revision_uid: '@uid'
+  layout_selection: 'constants/layout'
+  # References to Media entities.
+  field_hero_image:
+    -
+      plugin: usda_aglab_uuid
+      source: hero_image
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_media
+      no_stub: true
+  field_hero_image_overlay_image:
+    -
+      plugin: usda_aglab_uuid
+      source: hero_image_overlay_image
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_media
+      no_stub: true
+  # Some utilities fields
+  field_hide_page_title:
+    plugin: default_value
+    default_value: 1
+  # SEO and page presentation params.
+  metatags/0/title: htmlTitle
+  metatags/0/description: pageDescription
+  metatags/0/keywords: keywords
+  field_meta_tags:
+    plugin: callback
+    callable: serialize
+    source: '@metatags'

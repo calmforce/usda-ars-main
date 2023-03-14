@@ -1,0 +1,15 @@
+uuid: a6ab8216-8166-4e0b-b19c-1152f6063d34
+langcode: en
+status: true
+dependencies: {  }
+name: region_card_image
+label: 'Region Card Image (196 x 500)'
+effects:
+  5f3c035d-f08a-41ea-9c5c-89417ce12c2f:
+    uuid: 5f3c035d-f08a-41ea-9c5c-89417ce12c2f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 196
+      height: 500
+      anchor: center-center

@@ -1,0 +1,19 @@
+uuid: ce5b2432-0d3d-4b5d-863a-7b859ea6949d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mode_code
+    - node.type.person_profile
+id: node.person_profile.field_mode_code
+field_name: field_mode_code
+entity_type: node
+bundle: person_profile
+label: 'Mode code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

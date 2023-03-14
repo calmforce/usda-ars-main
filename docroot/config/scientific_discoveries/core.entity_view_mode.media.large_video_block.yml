@@ -1,0 +1,10 @@
+uuid: 59e4b16e-9974-48ff-8148-e7854af96f24
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.large_video_block
+label: 'Large Video Block'
+targetEntityType: media
+cache: true

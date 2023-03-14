@@ -1,0 +1,172 @@
+uuid: 911b3cdf-00d4-4cec-ab85-8b7b3c8f0b5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.article_featured_image_form
+    - field.field.node.article.body
+    - field.field.node.article.field_category
+    - field.field.node.article.field_external_video
+    - field.field.node.article.field_featured_image
+    - field.field.node.article.field_main_content_images
+    - field.field.node.article.field_meta_tags
+    - field.field.node.article.field_publish_date
+    - field.field.node.article.field_publish_year
+    - field.field.node.article.field_slideshow
+    - node.type.article
+  module:
+    - datetime
+    - field_group
+    - inline_entity_form
+    - media_library
+    - metatag
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_media:
+      children:
+        - field_external_video
+        - field_slideshow
+      parent_name: ''
+      weight: 11
+      format_type: details
+      region: content
+      format_settings:
+        description: ''
+        show_empty_fields: true
+        required_fields: true
+        id: ''
+        classes: ''
+        open: false
+      label: 'Media: External Video and Slideshow images'
+id: node.article.default
+targetEntityType: node
+bundle: article
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 1
+    settings:
+      rows: 12
+      placeholder: ''
+      summary_rows: 3
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_category:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_external_video:
+    type: media_library_widget
+    weight: 12
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_featured_image:
+    type: inline_entity_form_simple
+    weight: 9
+    settings:
+      form_mode: article_featured_image_form
+      label_singular: ''
+      label_plural: ''
+      revision: false
+      override_labels: false
+      collapsible: false
+      collapsed: false
+    third_party_settings: {  }
+    region: content
+  field_meta_tags:
+    weight: 13
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_publish_date:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_publish_year:
+    weight: 10
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_slideshow:
+    type: media_library_widget
+    weight: 13
+    settings:
+      media_types:
+        - image
+        - remote_video
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 14
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_main_content_images: true
+  sticky: true

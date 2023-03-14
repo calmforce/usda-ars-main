@@ -1,0 +1,82 @@
+# Migration configuration for ARS usda_scientific_discoveries media content.
+id: usda_scientific_discoveries_migrate_media
+label: 5 - ARS Scientific Discoveries Media Entities
+migration_group: usda_scientific_discoveries_migrate
+audit: true
+migration_tags:
+  - Umbraco
+  - Scientific Discoveries Media
+  - USDA ARS Scientific Discoveries
+  - USDA ARS
+
+source:
+  plugin: usda_scientific_discoveries_media
+  key: scientific_discoveries
+  constants:
+    langcode: 'en'
+    html_format: 'rich_text'
+destination:
+  plugin: entity:media
+process:
+  mid:  nodeId
+  vid: nodeId
+  bundle: type
+  name: mediaName
+  langcode: 'constants/langcode'
+  default_langcode:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+  created:
+    plugin: usda_ars_date2timestamp
+    source: createDate
+  changed: '@created'
+  uid:
+    -
+      plugin: usda_ars_user
+      source: nodeUser
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_user
+      no_stub: true
+    -
+      plugin: default_value
+      default_value: 1
+  field_caption/value: caption
+  field_caption/format: 'constants/html_format'
+  field_media_in_library:
+    plugin: default_value
+    default_value: 1
+  field_media_image/target_id:
+    plugin: migration_lookup
+    migration: usda_scientific_discoveries_migrate_media_files
+    source: uuid
+    no_stub: true
+  field_media_image/alt: image_alt
+  field_media_image/title: '@name'
+  field_media_image/width: image_width
+  field_media_image/height: image_height
+  field_media_video_file/target_id:
+    plugin: migration_lookup
+    migration: usda_scientific_discoveries_migrate_media_files
+    source: uuid
+    no_stub: true
+  field_media_video_file/display:
+    plugin: default_value
+    default_value: 1
+  field_media_video_file/description: '@name'
+  field_media_document/target_id:
+    plugin: migration_lookup
+    migration: usda_scientific_discoveries_migrate_media_files
+    source: uuid
+    no_stub: true
+migration_dependencies:
+  required:
+    - usda_scientific_discoveries_migrate_user
+    - usda_scientific_discoveries_migrate_media_files
+dependencies:
+  enforced:
+    module:
+      - usda_scientific_discoveries_migrate

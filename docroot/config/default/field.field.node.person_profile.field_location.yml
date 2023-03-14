@@ -1,0 +1,31 @@
+uuid: 50c874f8-d77a-484f-9892-feda6a08a2dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.person_profile
+    - taxonomy.vocabulary.ars_headquarter_offices
+    - taxonomy.vocabulary.ars_locations
+id: node.person_profile.field_location
+field_name: field_location
+entity_type: node
+bundle: person_profile
+label: 'Location or Office'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ars_headquarter_offices: ars_headquarter_offices
+      ars_locations: ars_locations
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ars_headquarter_offices
+field_type: entity_reference

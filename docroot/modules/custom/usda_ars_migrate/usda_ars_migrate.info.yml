@@ -1,0 +1,7 @@
+name: USDA ARS Migrate
+type: module
+description: 'Performs data migration from MSSQL Umbraco DB.'
+package: USDA ARS
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:migrate

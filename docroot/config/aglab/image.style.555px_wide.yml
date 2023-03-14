@@ -1,0 +1,15 @@
+uuid: cc76e27d-e8fc-4f89-8d12-1fd4aca55236
+langcode: en
+status: true
+dependencies: {  }
+name: 555px_wide
+label: 555px-wide
+effects:
+  06331762-e87e-44c1-8888-c3565b7aa57c:
+    uuid: 06331762-e87e-44c1-8888-c3565b7aa57c
+    id: image_scale
+    weight: 1
+    data:
+      width: 555
+      height: null
+      upscale: true

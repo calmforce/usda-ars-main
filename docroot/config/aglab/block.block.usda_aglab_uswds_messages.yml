@@ -1,0 +1,22 @@
+uuid: b0ef4cf9-36ab-4f57-b8a7-3aaab691d736
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - usda_aglab_uswds
+_core:
+  default_config_hash: XAEK5R7LW_bttFw3XbS8y-I_KJL6nggxhIHlyC0tePE
+id: usda_aglab_uswds_messages
+theme: usda_aglab_uswds
+region: highlighted
+weight: -50
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

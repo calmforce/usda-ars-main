@@ -1,0 +1,19 @@
+uuid: c502c42d-687b-4e6f-b67b-ede72a44db99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_name
+    - node.type.article
+id: node.article.field_short_name
+field_name: field_short_name
+entity_type: node
+bundle: article
+label: 'Short Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

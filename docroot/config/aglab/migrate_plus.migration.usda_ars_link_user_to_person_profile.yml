@@ -1,0 +1,37 @@
+uuid: f3a3d2ec-85d2-4232-8f98-27b5929c827d
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_ars_migrate
+id: usda_ars_link_user_to_person_profile
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: usda_ars_migrate
+label: '6 - USDA ARS Link Users to Person Profiles'
+source:
+  plugin: usda_ars_user_profile_link
+  target: migrate
+process:
+  uid:
+    -
+      plugin: migration_lookup
+      migration: usda_ars_migrate_user
+      source: id
+      no_stub: true
+    -
+      plugin: usda_ars_user
+  field_profile:
+    plugin: usda_ars_user_profile_ref
+    source: userEmail
+destination:
+  plugin: 'entity:user'
+  overwrite_properties:
+    - field_profile
+migration_dependencies:
+  required:
+    - usda_ars_migrate_user
+    - usda_ars_migrate_person_site_pages

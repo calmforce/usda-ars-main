@@ -1,0 +1,52 @@
+id: usda_scientific_discoveries_migrate_region_tiles
+label: 15 - ARS Scientific Discoveries Region Tiles
+migration_group: usda_scientific_discoveries_migrate
+
+audit: true
+migration_tags:
+  - Umbraco
+  - Scientific Discoveries Articles
+  - USDA ARS Scientific Discoveries
+  - USDA ARS
+# define a forced module dependency. this will cause the migration definition to be reloaded
+# when you uninstall and reinstall your custom module.
+dependencies:
+  enforced:
+    module:
+      - usda_scientific_discoveries_migrate
+migration_dependencies:
+  required:
+    - usda_scientific_discoveries_migrate_regions
+
+source:
+  plugin: usda_scientific_discoveries_region_tiles
+  key: scientific_discoveries
+  constants:
+    vid: 'regions'
+    langcode: 'en'
+    html_format: 'rich_text'
+
+destination:
+  plugin: entity:taxonomy_term
+  overwrite_properties:
+    - body
+    - field_featured_image
+
+process:
+  vid: 'constants/vid'
+  langcode: 'constants/langcode'
+  tid:
+    plugin: migration_lookup
+    migration: usda_scientific_discoveries_migrate_regions
+    source: regionId
+    no_stub: true
+  body/summary: regionSummary
+  body/value:
+    plugin: usda_scientific_discoveries_region_tile_body
+    source: "@tid"
+  body/format: 'constants/html_format'
+  field_featured_image:
+    plugin: migration_lookup
+    migration: usda_scientific_discoveries_migrate_media
+    source: regionImageUuid
+    no_stub: true

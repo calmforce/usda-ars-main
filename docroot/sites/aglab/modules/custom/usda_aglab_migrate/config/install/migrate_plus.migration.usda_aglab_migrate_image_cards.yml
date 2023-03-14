@@ -1,0 +1,46 @@
+id: usda_aglab_migrate_image_cards
+label: 10.2 - ARS Aglab Articles Image Cards
+migration_group: usda_aglab_migrate
+
+audit: true
+migration_tags:
+  - Umbraco
+  - Aglab Articles
+  - USDA ARS Aglab
+  - USDA ARS
+# define a forced module dependency. this will cause the migration definition to be reloaded
+# when you uninstall and reinstall your custom module.
+dependencies:
+  enforced:
+    module:
+      - usda_aglab_migrate
+migration_dependencies:
+  required:
+    - usda_aglab_migrate_articles
+
+source:
+  plugin: usda_aglab_image_cards
+  key: aglab
+  constants:
+    bundle: 'article'
+    langcode: 'en'
+
+destination:
+  plugin: entity:node
+  overwrite_properties:
+    - field_explore_other_discoveries
+    - field_image_cards_section_title
+
+process:
+  type: 'constants/bundle'
+  langcode: 'constants/langcode'
+  nid:
+    plugin: migration_lookup
+    migration: usda_aglab_migrate_articles
+    source: nodeId
+    no_stub: true
+  field_image_cards_section_title: imageCardsSectionTitle
+  field_explore_other_discoveries:
+    plugin: usda_lookup_image_card_id
+    source: imageCardsSourceIds
+    no_stub: true

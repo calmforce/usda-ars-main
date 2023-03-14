@@ -1,0 +1,57 @@
+uuid: 8facb4d8-06ad-4b53-975a-3ce8cb177e6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uswds_card_group_flag.field_alternating_flags
+    - field.field.paragraph.uswds_card_group_flag.field_cards
+    - field.field.paragraph.uswds_card_group_flag.field_uswds_classes
+    - paragraphs.paragraphs_type.uswds_card_group_flag
+  module:
+    - paragraphs
+_core:
+  default_config_hash: JHiI53tQZ1dxG6y564G6E4p6d4TmssE3KQ1Ca6d3-YY
+id: paragraph.uswds_card_group_flag.default
+targetEntityType: paragraph
+bundle: uswds_card_group_flag
+mode: default
+content:
+  field_alternating_flags:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_cards:
+    type: paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: uswds_cards_flag
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_uswds_classes:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,23 @@
+uuid: 79a26ada-c806-473a-92e9-c31dedba79b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.image_card
+  module:
+    - text
+id: node.image_card.body
+field_name: body
+entity_type: node
+bundle: image_card
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

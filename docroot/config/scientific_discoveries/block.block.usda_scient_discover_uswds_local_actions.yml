@@ -1,0 +1,20 @@
+uuid: 28d6324d-4a96-411a-86ba-1f52bc9749b8
+langcode: en
+status: true
+dependencies:
+  theme:
+    - usda_scient_discover_uswds
+_core:
+  default_config_hash: vJYN-WCYwUEFpFMou5cQsR41oBrCF75Ba3ikuVtRIBU
+id: usda_scient_discover_uswds_local_actions
+theme: usda_scient_discover_uswds
+region: content
+weight: -8
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,23 @@
+uuid: d69f670d-2f41-4255-9580-197e17018a1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_hide_page_title
+    - taxonomy.vocabulary.ars_headquarter_offices
+id: taxonomy_term.ars_headquarter_offices.field_hide_page_title
+field_name: field_hide_page_title
+entity_type: taxonomy_term
+bundle: ars_headquarter_offices
+label: 'Hide Page Title'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -1,0 +1,8 @@
+uuid: 6f39007c-e556-4769-955e-4aba49f2ba0e
+langcode: en
+status: true
+dependencies: {  }
+name: Regions
+vid: regions
+description: 'Scientific Discoveries Regions'
+weight: 0

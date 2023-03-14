@@ -1,0 +1,29 @@
+uuid: badae073-c7eb-4e04-8311-16f787160b5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.tags
+  module:
+    - facets
+    - system
+  theme:
+    - usda_aglab_uswds
+id: tags
+theme: usda_aglab_uswds
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:tags'
+settings:
+  id: 'facet_block:tags'
+  label: Tags
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: tags
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/stories\r\n/stories/*\r\n"

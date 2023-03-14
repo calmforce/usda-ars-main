@@ -1,0 +1,21 @@
+uuid: 691bd82b-9155-4be4-a5ae-33a1df222ea7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.news_article
+  module:
+    - metatag
+id: node.news_article.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: news_article
+label: 'Meta tags'
+description: 'Meta tags used by the search engines'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

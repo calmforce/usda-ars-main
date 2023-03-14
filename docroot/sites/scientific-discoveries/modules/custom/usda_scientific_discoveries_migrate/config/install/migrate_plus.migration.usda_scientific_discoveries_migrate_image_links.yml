@@ -1,0 +1,43 @@
+id: usda_scientific_discoveries_migrate_image_links
+label: 6 - ARS Scientific Discoveries Image Links
+migration_group: usda_scientific_discoveries_migrate
+
+audit: true
+migration_tags:
+  - Umbraco
+  - USDA ARS Scientific Discoveries
+  - Scientific Discoveries Media
+  - USDA ARS
+# define a forced module dependency. this will cause the migration definition to be reloaded
+# when you uninstall and reinstall your custom module.
+dependencies:
+  enforced:
+    module:
+      - usda_scientific_discoveries_migrate
+source:
+  plugin: usda_scientific_discoveries_image_links
+  key: scientific_discoveries
+  constants:
+    html_format: 'rich_text'
+    langcode: 'en'
+    type: 'image'
+
+destination:
+  plugin: entity:media
+  overwrite_properties:
+    - field_image_link
+
+process:
+  bundle: 'constants/type'
+  langcode: 'constants/langcode'
+  mid:
+    plugin: migration_lookup
+    migration: usda_scientific_discoveries_migrate_media
+    source: imageUuid
+    no_stub: true
+  created:
+    plugin: usda_ars_date2timestamp
+    source: createDate
+  changed: '@created'
+  field_image_link/uri: imageLinkUrl
+  field_image_link/title: imageLinkName

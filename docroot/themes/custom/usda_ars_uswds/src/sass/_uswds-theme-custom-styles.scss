@@ -1,0 +1,37 @@
+.usa-accordion__button h1, 
+.usa-accordion__button h2,
+.usa-accordion__button h3,
+.usa-accordion__button h4,
+.usa-accordion__button h5,
+.usa-accordion__button h6 {
+    margin: 0;
+}
+.ars-li-style-none {
+    list-style-type: none;
+}
+.ars-columnedpage-section {
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+}
+.usa-accordion__content {
+    background-color: #ffffff;
+    overflow: auto;
+    padding: 2rem;
+}
+.ars-grid-image {
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+p {
+    line-height: 1.5;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+.small {
+    font-size: small;
+}
+.xsmall {
+    font-size: x-small;
+}
+

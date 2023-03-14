@@ -1,0 +1,22 @@
+uuid: d143b9d0-bba4-4cf1-9897-e6b321d61866
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.np_program_content_page
+id: node.np_program_content_page.promote
+field_name: promote
+entity_type: node
+bundle: np_program_content_page
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

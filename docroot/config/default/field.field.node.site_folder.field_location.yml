@@ -1,0 +1,31 @@
+uuid: cea68872-508a-4fab-84d4-014a91729cbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.site_folder
+    - taxonomy.vocabulary.ars_headquarter_offices
+    - taxonomy.vocabulary.ars_locations
+id: node.site_folder.field_location
+field_name: field_location
+entity_type: node
+bundle: site_folder
+label: 'Location or Office'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ars_headquarter_offices: ars_headquarter_offices
+      ars_locations: ars_locations
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ars_headquarter_offices
+field_type: entity_reference

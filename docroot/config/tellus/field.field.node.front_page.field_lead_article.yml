@@ -1,0 +1,29 @@
+uuid: d0b378d7-040e-41b0-9be7-dc23334165d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lead_article
+    - node.type.article
+    - node.type.front_page
+id: node.front_page.field_lead_article
+field_name: field_lead_article
+entity_type: node
+bundle: front_page
+label: 'Lead Article'
+description: "This will be the article you want featured on the top of the homepage.\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

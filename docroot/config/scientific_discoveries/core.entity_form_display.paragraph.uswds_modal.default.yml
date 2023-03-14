@@ -1,0 +1,124 @@
+uuid: 620949d0-cc3b-4d7f-ae61-0c14dd6c8297
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uswds_modal.field_button_text
+    - field.field.paragraph.uswds_modal.field_display_as_button
+    - field.field.paragraph.uswds_modal.field_force_action
+    - field.field.paragraph.uswds_modal.field_large_modal
+    - field.field.paragraph.uswds_modal.field_modal_body
+    - field.field.paragraph.uswds_modal.field_modal_no_button_text
+    - field.field.paragraph.uswds_modal.field_modal_title
+    - field.field.paragraph.uswds_modal.field_modal_yes_button_text
+    - paragraphs.paragraphs_type.uswds_modal
+  module:
+    - field_group
+    - text
+third_party_settings:
+  field_group:
+    group_modal:
+      children:
+        - field_large_modal
+        - field_force_action
+        - field_display_as_button
+        - field_button_text
+      label: 'Modal Settings'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        classes: ''
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+    group_modal_fields:
+      children:
+        - field_modal_title
+        - field_modal_body
+        - field_modal_yes_button_text
+        - field_modal_no_button_text
+      label: 'Modal Fields'
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: details
+      format_settings:
+        classes: ''
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+_core:
+  default_config_hash: 2qCE4iB2mkyx9ZXdP-YbXt2mYeONu5EA3mWizSDmD9I
+id: paragraph.uswds_modal.default
+targetEntityType: paragraph
+bundle: uswds_modal
+mode: default
+content:
+  field_button_text:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_display_as_button:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_force_action:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_large_modal:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_modal_body:
+    type: text_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_modal_no_button_text:
+    type: string_textfield
+    weight: 9
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_modal_title:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_modal_yes_button_text:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

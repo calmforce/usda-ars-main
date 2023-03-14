@@ -1,0 +1,22 @@
+uuid: 2a85d3a2-e62e-4c51-a139-17e960ec7353
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - usda_scient_discover_uswds
+_core:
+  default_config_hash: rKbzSsQRSxmZuan1vzMjaSQoKsaMdnBn_b8VCcRFgaI
+id: usda_scient_discover_uswds_breadcrumbs
+theme: usda_scient_discover_uswds
+region: breadcrumb
+weight: -100
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

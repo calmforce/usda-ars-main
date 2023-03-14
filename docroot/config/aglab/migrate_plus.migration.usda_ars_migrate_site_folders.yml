@@ -1,0 +1,83 @@
+uuid: 99d9e641-2795-4093-a0d1-3a15cc44c34c
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_ars_migrate
+id: usda_ars_migrate_site_folders
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'ARS Top Site/Locations Folders'
+  - 'USDA ARS'
+migration_group: usda_ars_migrate
+label: '4 - USDA ARS Top Sites/Locations Folders (Careers, News, Docs, Research etc)'
+source:
+  plugin: usda_ars_site_folders
+  constants:
+    bundle: site_folder
+    langcode: en
+    html_format: rich_text
+process:
+  nid: nodeId
+  type: constants/bundle
+  langcode: constants/langcode
+  title: nodeName
+  parent_id:
+    -
+      plugin: usda_ars_parent_id
+      source: parentID
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: usda_lookup_term_id
+      no_stub: true
+    -
+      plugin: skip_on_empty
+      method: process
+  field_location:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+  field_site_folder_type: folder_type
+  field_umbraco_path: path
+  field_umbraco_node_url: node_url
+  body/value:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: body
+    -
+      plugin: usda_ars_html_body_tokens
+  body/format: constants/html_format
+  status:
+    plugin: default_value
+    default_value: 1
+  created: created
+  changed: changed
+  revision_timestamp: changed
+  uid:
+    -
+      plugin: migration_lookup
+      migration: usda_ars_migrate_user
+      source: nodeUser
+      no_stub: true
+    -
+      plugin: usda_ars_user
+  revision_uid: '@uid'
+  metatags/0/title: htmlTitle
+  metatags/0/description: pageDescription
+  metatags/0/keywords: keywords
+  field_meta_tags:
+    plugin: callback
+    callable: serialize
+    source: '@metatags'
+  field_breadcrumb_label: breadcrumbLabel
+  field_hide_page_title: hidePageTitle
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

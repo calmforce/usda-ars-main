@@ -1,0 +1,10 @@
+uuid: a94e0cc8-1ea9-431c-af6f-ab526b7cec2d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.hero
+label: 'Hero Image'
+targetEntityType: node
+cache: true

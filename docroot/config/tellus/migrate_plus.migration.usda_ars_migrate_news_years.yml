@@ -1,0 +1,39 @@
+uuid: 44c0eb38-7f9e-4327-aff4-03918cb7aece
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_ars_migrate
+id: usda_ars_migrate_news_years
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'ARS News Years'
+  - 'USDA ARS'
+migration_group: usda_ars_migrate
+label: '9 - USDA ARS News Years'
+source:
+  plugin: usda_ars_news_years
+  constants:
+    vid: ars_news_years
+    langcode: en
+    html_format: rich_text
+process:
+  tid: nodeId
+  vid: constants/vid
+  langcode: constants/langcode
+  name: nodeName
+  weight: nodeName
+  status:
+    plugin: default_value
+    default_value: 1
+  changed: datetime
+  uid:
+    plugin: usda_ars_user
+    source: nodeUser
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies: null

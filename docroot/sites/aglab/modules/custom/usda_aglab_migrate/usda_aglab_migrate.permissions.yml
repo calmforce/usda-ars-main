@@ -1,0 +1,4 @@
+administer ars aglab migrations:
+  title: 'Administer ARS Aglab Migrations'
+migrate ars aglab data:
+  title: 'Migrate ARS Aglab Data'

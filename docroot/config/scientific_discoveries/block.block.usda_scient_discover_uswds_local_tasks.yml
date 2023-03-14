@@ -1,0 +1,22 @@
+uuid: b46576ff-8a9b-4919-8d09-a219c99dd456
+langcode: en
+status: true
+dependencies:
+  theme:
+    - usda_scient_discover_uswds
+_core:
+  default_config_hash: SMBYT4shy-Z030K_dwoMf_pafd5WM1y9WG461MuCfCQ
+id: usda_scient_discover_uswds_local_tasks
+theme: usda_scient_discover_uswds
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

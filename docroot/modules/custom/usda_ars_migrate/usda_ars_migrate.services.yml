@@ -1,0 +1,9 @@
+services:
+  usda_ars_migrate.query.umbraco_db:
+    class: Drupal\usda_ars_migrate\UmbracoDbQueryService
+    tags:
+      - { name: mssql_query_service }
+  usda_ars_migrate.query.aris_db:
+    class: Drupal\usda_ars_migrate\ArisDbQueryService
+    tags:
+      - { name: mssql_query_service }

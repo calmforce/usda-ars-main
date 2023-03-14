@@ -1,0 +1,18 @@
+uuid: 54b6888c-b29e-4b7c-b0e1-be369ca89867
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.site_folder
+id: node.site_folder.title
+field_name: title
+entity_type: node
+bundle: site_folder
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

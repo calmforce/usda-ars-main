@@ -1,0 +1,73 @@
+uuid: 24737fdb-28af-4c2a-bed5-6df759ef7974
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_tellus_migrate
+id: usda_tellus_migrate_external_video
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'Tellus External Video'
+  - 'USDA ARS Tellus'
+  - 'USDA ARS'
+migration_group: usda_tellus_migrate
+label: '5 - ARS Tellus External Video'
+source:
+  plugin: usda_tellus_external_video
+  key: tellus
+  constants:
+    langcode: en
+    html_format: rich_text
+    bundle: remote_video
+process:
+  mid: nodeId
+  vid: nodeId
+  bundle: constants/bundle
+  name:
+    plugin: usda_tellus_media_name
+    source: mediaName
+  langcode: constants/langcode
+  default_langcode:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+  created:
+    plugin: usda_ars_date2timestamp
+    source: createDate
+  changed: '@created'
+  uid:
+    plugin: migration_lookup
+    migration: usda_tellus_migrate_user
+    source: nodeUser
+    no_stub: true
+  field_media_oembed_video:
+    -
+      plugin: usda_tellus_external_video_url
+      source: main_content
+    -
+      plugin: skip_on_empty
+      method: row
+    -
+      plugin: usda_tellus_youtube_url
+  field_caption/value:
+    -
+      plugin: usda_tellus_external_video_caption
+      source: main_content
+    -
+      plugin: skip_on_empty
+      method: process
+  field_caption/format: constants/html_format
+  field_media_in_library:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: 'entity:media'
+migration_dependencies:
+  required:
+    - usda_tellus_migrate_user

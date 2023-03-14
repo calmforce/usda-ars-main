@@ -1,0 +1,110 @@
+uuid: 2c94b44b-d50d-477f-b876-b1dcfb25e839
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_ars_migrate
+id: usda_ars_migrate_site_subfolders
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'ARS Site/Locations SubFolders'
+  - 'USDA ARS'
+migration_group: usda_ars_migrate
+label: '7 - USDA ARS Sites/Locations SubFolders'
+source:
+  plugin: usda_ars_site_subfolders
+  include_parent_types:
+    - Research
+    - Careers
+    - NewsHome
+    - Software
+    - PeopleLocations
+    - PersonSite
+    - SitesCareers
+    - SitesNews
+    - SitesResearch
+    - DocsFolder
+    - DocsFolderWithFiles
+    - PeopleFolder
+    - SiteSoftwareFolder
+    - SiteCarouselFolder
+    - SiteNavFolder
+  include_subfolder_types:
+    - SitesCareers
+    - SitesNews
+    - SitesResearch
+    - DocsFolder
+    - DocsFolderWithFiles
+    - PeopleFolder
+    - SiteSoftwareFolder
+    - SiteCarouselFolder
+    - SiteNavFolder
+  constants:
+    bundle: site_folder
+    langcode: en
+    html_format: rich_text
+process:
+  nid: nodeId
+  type: constants/bundle
+  langcode: constants/langcode
+  title: nodeName
+  body/value:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: body
+    -
+      plugin: usda_ars_html_body_tokens
+  body/format: constants/html_format
+  field_parent_folder:
+    -
+      plugin: usda_lookup_parent_folder_id
+      source: parentID
+      no_stub: true
+    -
+      plugin: skip_on_empty
+      method: row
+      message: 'No parent found for the node, skipping the row'
+  term_id:
+    plugin: usda_parent_location_term_id
+    source: '@field_parent_folder'
+  field_location:
+    plugin: skip_on_empty
+    method: process
+    source: '@term_id'
+  field_site_folder_type: folder_type
+  field_umbraco_path: path
+  field_umbraco_node_url: node_url
+  status:
+    plugin: default_value
+    default_value: 1
+  created: created
+  changed: changed
+  revision_timestamp: changed
+  uid:
+    -
+      plugin: migration_lookup
+      migration: usda_ars_migrate_user
+      source: nodeUser
+      no_stub: true
+    -
+      plugin: usda_ars_user
+  revision_uid: '@uid'
+  metatags/0/title: htmlTitle
+  metatags/0/description: pageDescription
+  metatags/0/keywords: keywords
+  field_meta_tags:
+    plugin: callback
+    callable: serialize
+    source: '@metatags'
+  field_breadcrumb_label: breadcrumbLabel
+  field_hide_page_title: hidePageTitle
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - usda_ars_migrate_site_folders

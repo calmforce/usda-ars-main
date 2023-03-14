@@ -1,0 +1,19 @@
+uuid: ac7ae890-253c-45fb-a674-6f6d9d48032a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_image_overlay_title
+    - node.type.article
+id: node.article.field_hero_image_overlay_title
+field_name: field_hero_image_overlay_title
+entity_type: node
+bundle: article
+label: 'Hero Image Overlay Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

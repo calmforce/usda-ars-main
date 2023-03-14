@@ -1,0 +1,31 @@
+uuid: 8ff519d9-0a85-4bf8-9ad4-1371a82bd966
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_main_content_images
+    - media.type.image
+    - media.type.video
+    - node.type.article
+id: node.article.field_main_content_images
+field_name: field_main_content_images
+entity_type: node
+bundle: article
+label: 'Main Content Images'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      video: video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

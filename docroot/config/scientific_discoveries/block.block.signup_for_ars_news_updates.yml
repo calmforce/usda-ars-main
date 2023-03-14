@@ -1,0 +1,25 @@
+uuid: f95e8429-2a70-4807-8e08-83065891c21d
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:html_code:dd8164ff-15f7-4358-8170-e5e899b700c5'
+  module:
+    - block_content
+  theme:
+    - usda_scient_discover_uswds
+id: signup_for_ars_news_updates
+theme: usda_scient_discover_uswds
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:dd8164ff-15f7-4358-8170-e5e899b700c5'
+settings:
+  id: 'block_content:dd8164ff-15f7-4358-8170-e5e899b700c5'
+  label: 'Sign up for ARS News updates'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

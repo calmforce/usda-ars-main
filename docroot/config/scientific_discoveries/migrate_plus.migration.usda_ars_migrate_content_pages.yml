@@ -1,0 +1,119 @@
+uuid: 690c66a8-8350-410e-8e67-eeb851cb933d
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_ars_migrate
+id: usda_ars_migrate_content_pages
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'ARS Content Web Pages'
+  - 'USDA ARS'
+migration_group: usda_ars_migrate
+label: '8 - USDA ARS Content Web Pages'
+source:
+  plugin: usda_ars_content_pages
+  parent_node_types:
+    - Homepage
+    - Subsite
+    - Research
+    - Software
+    - PeopleLocations
+    - NewsHome
+    - Careers
+    - Area
+    - City
+    - ResearchUnit
+    - PersonSite
+    - SitesCareers
+    - SitesNews
+    - SitesResearch
+    - DocsFolder
+    - DocsFolderWithFiles
+    - PeopleFolder
+    - SiteSoftwareFolder
+    - SiteCarouselFolder
+    - SiteNavFolder
+    - SiteStandardWebpage
+    - StandardWebpage
+    - Standardcolumnedwebpage
+  constants:
+    bundle: page
+    langcode: en
+    html_format: rich_text
+process:
+  nid: nodeId
+  type: constants/bundle
+  langcode: constants/langcode
+  title: nodeName
+  body/value:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: body
+    -
+      plugin: usda_ars_html_body_tokens
+  body/format: constants/html_format
+  field_body_columned_text: bodyColumnedText
+  field_parent_folder:
+    plugin: usda_lookup_parent_folder_id
+    source: parentID
+    no_stub: true
+  parent_term:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@field_parent_folder'
+    -
+      plugin: usda_parent_location_term_id
+  term_id:
+    -
+      plugin: null_coalesce
+      source:
+        - '@parent_term'
+        - parentID
+    -
+      plugin: usda_lookup_term_id
+      no_stub: true
+    -
+      plugin: skip_on_empty
+      method: row
+      message: 'No Location or Office found for the node, skipping the row'
+  field_location:
+    plugin: skip_on_empty
+    method: process
+    source: '@term_id'
+  field_umbraco_path: path
+  field_umbraco_node_url: node_url
+  status:
+    plugin: default_value
+    default_value: 1
+  created: created
+  changed: changed
+  revision_timestamp: changed
+  uid:
+    -
+      plugin: migration_lookup
+      migration: usda_ars_migrate_user
+      source: nodeUser
+      no_stub: true
+    -
+      plugin: usda_ars_user
+  revision_uid: '@uid'
+  metatags/0/title: htmlTitle
+  metatags/0/description: pageDescription
+  metatags/0/keywords: keywords
+  field_meta_tags:
+    plugin: callback
+    callable: serialize
+    source: '@metatags'
+  field_breadcrumb_label: breadcrumbLabel
+  field_hide_page_title: hidePageTitle
+  field_archived: archiveOption
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

@@ -1,0 +1,71 @@
+{#
+/**
+ * @file
+ * Default view template to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the field.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this field.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a field.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set name = fields.name.content|lower|striptags|trim|replace({' ': '-'}) %}
+{% set url = fields.view_taxonomy_term.content|striptags|trim %}
+
+{% set featured_image = fields.field_featured_image.content|striptags|trim %}
+
+{% if featured_image is empty %}
+  {% if name == 'food-safety' %}
+    {% set featured_image = '/sites/aglab/files/img/region-tile-beach.jpg' %}
+  {% elseif name == 'aquaculture' %}
+    {% set featured_image = '/sites/aglab/files/img/region-tile-plains.jpg' %}
+  {% elseif name == 'sustainability' %}
+    {% set featured_image = '/sites/aglab/files/img/region-tile-southeast.jpg' %}
+  {% elseif name == 'organic-farming' %}
+    {% set featured_image = '/sites/aglab/files/img/region-tile-northeast.jpg' %}
+  {% elseif name == 'biodiversity' %}
+    {% set featured_image = '/sites/aglab/files/img/region-tile-midwest.jpg' %}
+  {% endif %}
+{% endif %}
+
+<a href="{{ url }}" class="region-tile {{ name }}" aria-label="visit the {{ fields.name.content }}">
+  <div class="region-tile-content">
+    <div class="rt-element title">
+      <h3 class="region-tile-title"><span>{{ fields.name.content }}</span></h3>
+    </div>
+    <div class="rt-element image">
+      <div class="color-fade"></div>
+      <div class="field_media_image">
+        <img src="{{ featured_image }}" loading="lazy" width="196" height="500">
+      </div>
+    </div>
+    <div class="rt-element text">
+      <p class="skew-text">{{ fields.body.content|striptags }}</p>
+    </div>
+    <div class="rt-element button">
+      <span class="usa-button usa-button--big usa-button--outline usa-button--inverse">Visit</span>
+    </div>
+  </div>
+</a>

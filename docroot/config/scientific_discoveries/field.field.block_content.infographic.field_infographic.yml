@@ -1,0 +1,29 @@
+uuid: 6cd33ec7-b3c8-4e87-a571-6f7d5e4e606c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.infographic
+    - field.storage.block_content.field_infographic
+    - media.type.image
+id: block_content.infographic.field_infographic
+field_name: field_infographic
+entity_type: block_content
+bundle: infographic
+label: Infographic
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

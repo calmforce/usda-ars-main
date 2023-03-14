@@ -1,0 +1,47 @@
+uuid: 76a44e8e-3886-44a9-9a33-6cbe1961e253
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.video_list
+    - field.field.block_content.video_list.field_video_list
+  module:
+    - slick_entityreference
+id: block_content.video_list.default
+targetEntityType: block_content
+bundle: video_list
+mode: default
+content:
+  field_video_list:
+    type: slick_entityreference_vanilla
+    label: visually_hidden
+    settings:
+      optionset: ars_video_carousel
+      view_mode: video_carousel
+      cache: 0
+      skin: default
+      lazy: ''
+      style: ''
+      loading: lazy
+      preload: false
+      current_view_mode: default
+      fx: ''
+      overridables:
+        arrows: '0'
+        autoplay: '0'
+        dots: '0'
+        draggable: '0'
+        infinite: '0'
+        mouseWheel: '0'
+        randomize: '0'
+        variableWidth: '0'
+      override: false
+      skin_arrows: ''
+      skin_dots: ''
+      use_theme_field: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

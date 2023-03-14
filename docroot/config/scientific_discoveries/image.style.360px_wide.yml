@@ -1,0 +1,15 @@
+uuid: b7b403d6-c7a9-4384-970a-7af36aef853a
+langcode: en
+status: true
+dependencies: {  }
+name: 360px_wide
+label: 360px-wide
+effects:
+  8e18dbbc-43e3-4f7a-9513-ee3676be5e82:
+    uuid: 8e18dbbc-43e3-4f7a-9513-ee3676be5e82
+    id: image_scale
+    weight: 1
+    data:
+      width: 360
+      height: null
+      upscale: true

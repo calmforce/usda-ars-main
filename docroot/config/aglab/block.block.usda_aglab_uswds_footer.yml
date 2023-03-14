@@ -1,0 +1,27 @@
+uuid: c358b80d-c908-434a-ba09-c2addd90a7ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - usda_aglab_uswds
+_core:
+  default_config_hash: iwtlKyuC1m11d9T76xDFsHDHFqK1MhqHdlmMAxCUMic
+id: usda_aglab_uswds_footer
+theme: usda_aglab_uswds
+region: footer_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

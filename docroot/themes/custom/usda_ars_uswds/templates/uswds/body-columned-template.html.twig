@@ -1,0 +1,15 @@
+<div class="grid-section">
+  {% for bSectionsText in content.sections  %}
+    <div class="grid-section">
+      {% for bRowText in bSectionsText.rows  %}
+        <div class="grid-row clearfix">
+          {% for area in bRowText.areas  %}
+            <div class="grid-col-{{ area.grid }} column">
+              {{ area.controls.0.value|raw }}
+            </div> 
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>

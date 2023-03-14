@@ -1,0 +1,13 @@
+usda_aglab_migrate.mssql_connection_test:
+  path: '/mssql-scientific-discoveries-connection-test'
+  defaults:
+    _controller: '\Drupal\usda_aglab_migrate\Controller\MssqlTestController::testConnection'
+  requirements:
+    _permission: 'migrate ars aglab data'
+usda_aglab_migrate.settings:
+  path: '/admin/config/system/scientific-discoveries-migrate'
+  defaults:
+    _form: 'Drupal\usda_aglab_migrate\Form\ArsAglabMigrateSettingsForm'
+    _title: 'USDA Aglab Migrate Settings'
+  requirements:
+    _permission: 'administer ars aglab migrations'

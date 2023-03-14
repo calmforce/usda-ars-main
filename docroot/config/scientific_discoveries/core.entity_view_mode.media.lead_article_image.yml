@@ -1,0 +1,10 @@
+uuid: 200a994a-4a17-459d-94ea-17aa20595847
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.lead_article_image
+label: 'Lead Article Image'
+targetEntityType: media
+cache: true

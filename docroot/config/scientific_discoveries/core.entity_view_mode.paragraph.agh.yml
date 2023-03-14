@@ -1,0 +1,10 @@
+uuid: df939258-6bad-4b1d-a2a1-92ba0981e66d
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.agh
+label: 'AGH Page Image Card'
+targetEntityType: paragraph
+cache: true

@@ -1,0 +1,54 @@
+uuid: 69bf9645-772c-4bf5-bfaf-3aed78541a7a
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_scientific_discoveries_migrate
+id: usda_scientific_discoveries_migrate_topic_card_refs
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'Scientific Discoveries Topics'
+  - 'USDA ARS Scientific Discoveries'
+  - 'USDA ARS'
+migration_group: usda_scientific_discoveries_migrate
+label: '17 - ARS Scientific Discoveries Topic Card Refs'
+source:
+  plugin: usda_scientific_discoveries_topics_cards_refs
+  key: scientific_discoveries
+  constants:
+    vid: topics
+    langcode: en
+process:
+  tid:
+    -
+      plugin: usda_scientific_discoveries_uuid
+      source: topicUuid
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_topics
+      no_stub: true
+  vid: constants/vid
+  langcode: constants/langcode
+  field_image_card:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: cardUuid
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_hornet_page_image_cards
+      no_stub: true
+    -
+      plugin: usda_scientific_discoveries_paragraph_refs
+destination:
+  plugin: 'entity:taxonomy_term'
+  overwrite_properties:
+    - field_image_card
+migration_dependencies: null

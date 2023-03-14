@@ -1,0 +1,52 @@
+id: usda_aglab_migrate_region_tiles
+label: 15 - ARS Aglab Region Tiles
+migration_group: usda_aglab_migrate
+
+audit: true
+migration_tags:
+  - Umbraco
+  - Aglab Articles
+  - USDA ARS Aglab
+  - USDA ARS
+# define a forced module dependency. this will cause the migration definition to be reloaded
+# when you uninstall and reinstall your custom module.
+dependencies:
+  enforced:
+    module:
+      - usda_aglab_migrate
+migration_dependencies:
+  required:
+    - usda_aglab_migrate_regions
+
+source:
+  plugin: usda_aglab_region_tiles
+  key: aglab
+  constants:
+    vid: 'regions'
+    langcode: 'en'
+    html_format: 'rich_text'
+
+destination:
+  plugin: entity:taxonomy_term
+  overwrite_properties:
+    - body
+# No featured images for now: they have empty images there.    - field_featured_image
+
+process:
+  vid: 'constants/vid'
+  langcode: 'constants/langcode'
+  tid:
+    plugin: migration_lookup
+    migration: usda_aglab_migrate_regions
+    source: regionId
+    no_stub: true
+  body/summary: regionSummary
+  body/value:
+    plugin: usda_aglab_region_tile_body
+    source: "@tid"
+  body/format: 'constants/html_format'
+#  field_featured_image:
+#    plugin: migration_lookup
+#    migration: usda_aglab_migrate_media
+#    source: regionImageUuid
+#    no_stub: true

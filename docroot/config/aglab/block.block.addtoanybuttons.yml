@@ -1,0 +1,20 @@
+uuid: 56ca1bd3-8bc6-44e9-b55d-d17d9604cd81
+langcode: en
+status: true
+dependencies:
+  module:
+    - addtoany
+  theme:
+    - usda_aglab_uswds
+id: addtoanybuttons
+theme: usda_aglab_uswds
+region: content
+weight: 0
+provider: null
+plugin: addtoany_block
+settings:
+  id: addtoany_block
+  label: Share
+  label_display: visible
+  provider: addtoany
+visibility: {  }

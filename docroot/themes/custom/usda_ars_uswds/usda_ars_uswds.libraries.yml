@@ -1,0 +1,11 @@
+assets:
+  version: VERSION
+  css:
+    theme:
+      assets/css/styles.css: {}
+      assets/css/usda_ars_uswds.css: {}
+      assets/css/main.css: {}
+  js:
+    assets/js/uswds.js: {}
+
+      

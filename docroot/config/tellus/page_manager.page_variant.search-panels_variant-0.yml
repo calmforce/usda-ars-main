@@ -1,0 +1,84 @@
+uuid: 379db4cc-a9d8-410c-8e82-ee3fc56200c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.search
+    - views.view.recommended_by_ars
+    - views.view.search_sd_content_block
+    - views.view.search_tellus_articles_block
+  module:
+    - panels
+    - views
+id: search-panels_variant-0
+label: Search
+variant: panels_variant
+variant_settings:
+  blocks:
+    3fa9f306-29bc-4b2e-afe5-0e533b05747f:
+      id: 'views_block:search_tellus_articles_block-search_results_block'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: ds_content
+      weight: 1
+      uuid: 3fa9f306-29bc-4b2e-afe5-0e533b05747f
+      context_mapping: {  }
+    fb3b8254-e9b6-403e-b76d-a8af5008e1dc:
+      id: 'views_block:recommended_by_ars-best_bets_block'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: ds_content
+      weight: 0
+      uuid: fb3b8254-e9b6-403e-b76d-a8af5008e1dc
+      context_mapping: {  }
+    6061daf0-69c2-47dc-9391-e17d4c5bbe88:
+      id: 'views_exposed_filter_block:search_tellus_articles_block-search_results_block'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      region: ds_content
+      weight: -1
+      uuid: 6061daf0-69c2-47dc-9391-e17d4c5bbe88
+      context_mapping: {  }
+    9626b54b-3785-4e27-9cc0-f21106d34dc2:
+      id: 'views_block:search_sd_content_block-sd_content_block'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: ds_content
+      weight: 2
+      uuid: 9626b54b-3785-4e27-9cc0-f21106d34dc2
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 5bc179d7-88cd-4c27-bde0-898a2aa145e4
+  label: null
+  weight: 0
+  layout: ds_1col_wrapper
+  layout_settings:
+    label: ''
+    wrappers:
+      ds_content: div
+    outer_wrapper: div
+    attributes: ''
+    link_attribute: ''
+    link_custom: ''
+    classes:
+      layout_class: {  }
+  page_title: 'Search Results'
+  storage_type: page_manager
+  storage_id: search-panels_variant-0
+  builder: standard
+page: search
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

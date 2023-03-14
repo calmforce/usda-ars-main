@@ -1,0 +1,26 @@
+uuid: 68fde2e7-940a-45bf-b338-ad51fd7604b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - usda_aglab_uswds
+_core:
+  default_config_hash: CKToX_3vcpIXcuNpOUK4-rTQ1XKSEBSXpaCQwTGvKqo
+id: usda_aglab_uswds_breadcrumbs
+theme: usda_aglab_uswds
+region: breadcrumb
+weight: -100
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

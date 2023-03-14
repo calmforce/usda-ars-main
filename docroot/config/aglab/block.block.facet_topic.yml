@@ -1,0 +1,29 @@
+uuid: 655523d0-01fe-44b0-a912-ffaba03f4915
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.topic
+  module:
+    - facets
+    - system
+  theme:
+    - uswds_base
+id: facet_topic
+theme: uswds_base
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:topic'
+settings:
+  id: 'facet_block:topic'
+  label: Categories
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: facet_topic
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/stories\r\n/stories/*"

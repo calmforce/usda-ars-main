@@ -1,0 +1,19 @@
+uuid: 1439c55c-26b5-48dd-9081-9613e3a273f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_breadcrumb_label
+    - taxonomy.vocabulary.ars_locations
+id: taxonomy_term.ars_locations.field_breadcrumb_label
+field_name: field_breadcrumb_label
+entity_type: taxonomy_term
+bundle: ars_locations
+label: 'Breadcrumb Label'
+description: 'How the page is labeled in the breadcrumb. (Will default to page name if nothing is entered)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

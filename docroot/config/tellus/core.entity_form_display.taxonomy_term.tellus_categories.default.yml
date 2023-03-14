@@ -1,0 +1,43 @@
+uuid: 9743918e-a6a3-4c89-b208-a366a5f2112e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tellus_categories
+  module:
+    - path
+id: taxonomy_term.tellus_categories.default
+targetEntityType: taxonomy_term
+bundle: tellus_categories
+mode: default
+content:
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+hidden:
+  description: true

@@ -1,0 +1,94 @@
+# Migration configuration for ARS Aglab External Video content.
+id: usda_aglab_migrate_external_video
+label: 7 - ARS Aglab External Video
+migration_group: usda_aglab_migrate
+audit: true
+migration_tags:
+  - Umbraco
+  - Aglab External Video
+  - USDA ARS Aglab
+  - USDA ARS
+
+source:
+  plugin: usda_aglab_external_video
+  key: aglab
+  constants:
+    langcode: 'en'
+    html_format: 'rich_text'
+    bundle: 'remote_video'
+destination:
+  plugin: entity:media
+process:
+  bundle: 'constants/bundle'
+  name: mediaName
+  langcode: 'constants/langcode'
+  default_langcode:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+  created:
+    plugin: usda_ars_date2timestamp
+    source: createDate
+  changed: '@created'
+  uid:
+    -
+      plugin: usda_ars_user
+      source: nodeUser
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_user
+      no_stub: true
+    -
+      plugin: default_value
+      default_value: 1
+  field_media_oembed_video:
+    -
+      plugin: skip_on_empty
+      method: row
+      source: videoUrl
+    -
+      plugin: usda_aglab_youtube_url
+  field_caption/value:
+    -
+      plugin: usda_aglab_external_video_caption
+      source: textBelowVideo
+    -
+      plugin: skip_on_empty
+      method: process
+  field_caption/format: 'constants/html_format'
+  field_subtitle: subTitle
+  field_video_alt_text:
+    -
+      plugin: usda_aglab_external_video_caption
+      source: videoAltText
+    -
+      plugin: skip_on_empty
+      method: process
+  field_media_in_library:
+    plugin: default_value
+    default_value: 1
+  # Cover Image.
+  field_image:
+    -
+      plugin: usda_aglab_uuid
+      source: imageUmbMediaId
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_media
+      no_stub: true
+  # Hide section title.
+  field_hide_title: hideTitle
+  field_background_color/color: backgroundColor
+  field_leaf_motif: leafMotif
+migration_dependencies:
+  required:
+    - usda_aglab_migrate_user
+dependencies:
+  enforced:
+    module:
+      - usda_aglab_migrate

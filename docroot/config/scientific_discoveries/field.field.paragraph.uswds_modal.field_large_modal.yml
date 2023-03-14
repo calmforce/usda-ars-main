@@ -1,0 +1,25 @@
+uuid: 8e1fd524-abef-4d7d-b630-c0aa8eee9ce2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_large_modal
+    - paragraphs.paragraphs_type.uswds_modal
+_core:
+  default_config_hash: _Q-lafie7dpQWaNATTXZ7YezCQklUWMEfx6V-srgeQ4
+id: paragraph.uswds_modal.field_large_modal
+field_name: field_large_modal
+entity_type: paragraph
+bundle: uswds_modal
+label: 'Large Modal'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

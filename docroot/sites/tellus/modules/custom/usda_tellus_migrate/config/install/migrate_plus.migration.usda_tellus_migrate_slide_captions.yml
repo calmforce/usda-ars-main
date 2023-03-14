@@ -1,0 +1,46 @@
+id: usda_tellus_migrate_slide_captions
+label: 6 - ARS Tellus Slide Captions
+migration_group: usda_tellus_migrate
+
+audit: true
+migration_tags:
+  - Umbraco
+  - USDA ARS Tellus
+  - Tellus Media
+  - USDA ARS
+# define a forced module dependency. this will cause the migration definition to be reloaded
+# when you uninstall and reinstall your custom module.
+dependencies:
+  enforced:
+    module:
+      - usda_tellus_migrate
+source:
+  plugin: usda_tellus_slides_json_captions
+  key: tellus
+  constants:
+    html_format: 'rich_text'
+    langcode: 'en'
+    type: 'image'
+
+destination:
+  plugin: entity:media
+  overwrite_properties:
+    - field_caption
+
+process:
+  bundle: 'constants/type'
+  langcode: 'constants/langcode'
+  mid:
+    plugin: migration_lookup
+    migration: usda_tellus_migrate_media
+    source: slideUuid
+    no_stub: true
+  created:
+    plugin: usda_ars_date2timestamp
+    source: createDate
+  changed: '@created'
+  field_caption/format: 'constants/html_format'
+  field_caption/value:
+    plugin: skip_on_empty
+    method: row
+    source: slideCaption

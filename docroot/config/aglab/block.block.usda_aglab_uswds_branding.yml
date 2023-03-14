@@ -1,0 +1,25 @@
+uuid: beb5fb60-fc81-4c4e-a7d9-ec5206e64140
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - usda_aglab_uswds
+_core:
+  default_config_hash: OO_Hq1shIZgN60ZY8wEq9MAnh1FtIowVIXlKQDKuGKw
+id: usda_aglab_uswds_branding
+theme: usda_aglab_uswds
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

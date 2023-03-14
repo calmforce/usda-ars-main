@@ -1,0 +1,6 @@
+usda_tellus_migrate.mssql_connection_test:
+  path: '/mssql-tellus-connection-test'
+  defaults:
+    _controller: '\Drupal\usda_tellus_migrate\Controller\MssqlTestController::testConnection'
+  requirements:
+    _permission: 'migrate ars tellus data'

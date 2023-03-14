@@ -1,0 +1,48 @@
+uuid: a003f4e4-a3ab-495c-a8d9-56d10526be44
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_aglab_migrate
+_core:
+  default_config_hash: kYZ5w-tUUE5oa5P2PELr811W2zHo6yERIERKwH3Y4bg
+id: usda_aglab_migrate_i_card_titles
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'Aglab Articles'
+  - 'USDA ARS Aglab'
+  - 'USDA ARS'
+migration_group: usda_aglab_migrate
+label: '11 - ARS Aglab Articles'' I-Card Titles'
+source:
+  plugin: usda_aglab_i_card_titles
+  key: aglab
+  constants:
+    bundle: article
+    langcode: en
+process:
+  type: constants/bundle
+  langcode: constants/langcode
+  nid:
+    plugin: migration_lookup
+    migration: usda_aglab_migrate_articles
+    source: cardId
+    no_stub: true
+  field_short_name: cardTitle
+  field_featured_image:
+    plugin: migration_lookup
+    migration: usda_aglab_migrate_media
+    source: cardImageUuid
+    no_stub: true
+destination:
+  plugin: 'entity:node'
+  overwrite_properties:
+    - field_short_name
+    - field_featured_image
+migration_dependencies:
+  required:
+    - usda_aglab_migrate_articles

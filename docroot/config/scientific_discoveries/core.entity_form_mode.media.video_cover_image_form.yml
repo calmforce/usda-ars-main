@@ -1,0 +1,10 @@
+uuid: c549d38e-4aba-431f-a835-d0794e856b5f
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.video_cover_image_form
+label: 'Video Cover Image form'
+targetEntityType: media
+cache: true

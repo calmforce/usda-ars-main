@@ -1,0 +1,48 @@
+uuid: 5456fb37-5210-4897-b599-eff67f03bb01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uswds_3_columns.field_3_column_content
+    - field.field.paragraph.uswds_3_columns.field_column_grid_gap
+    - field.field.paragraph.uswds_3_columns.field_uswds_3_column_breakpoints
+    - paragraphs.paragraphs_type.uswds_3_columns
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: 1S8PC-HbSko1vjKoVI-ed9DecVx25-BTN-px9jS1NYQ
+id: paragraph.uswds_3_columns.default
+targetEntityType: paragraph
+bundle: uswds_3_columns
+mode: default
+content:
+  field_3_column_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_column_grid_gap:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_uswds_3_column_breakpoints:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

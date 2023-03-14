@@ -1,0 +1,23 @@
+uuid: 6da6fd76-082f-4c61-8a4b-34a6193ef937
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: region
+label: Region
+type: 'canonical_entities:taxonomy_term'
+pattern: 'explore-our-discoveries/[term:name]'
+selection_criteria:
+  21e75f32-8245-4f56-b712-4b896a57583d:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 21e75f32-8245-4f56-b712-4b896a57583d
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      regions: regions
+selection_logic: and
+weight: -5
+relationships: {  }

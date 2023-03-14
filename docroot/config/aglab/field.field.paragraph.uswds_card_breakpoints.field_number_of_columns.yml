@@ -1,0 +1,25 @@
+uuid: 9501748b-083c-480f-b3b5-09ed6acb5b10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_number_of_columns
+    - paragraphs.paragraphs_type.uswds_card_breakpoints
+_core:
+  default_config_hash: lDKOrLnx6Rj-5LzebQUfCJKFPDgfpD0k9sG-wZLS1so
+id: paragraph.uswds_card_breakpoints.field_number_of_columns
+field_name: field_number_of_columns
+entity_type: paragraph
+bundle: uswds_card_breakpoints
+label: 'Number of Columns to Span'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: 12
+  prefix: ''
+  suffix: ''
+field_type: integer

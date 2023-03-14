@@ -1,0 +1,10 @@
+uuid: 68363b2e-fb3f-4608-8e6b-b67d2bf9200b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.360px_wide
+label: 360px-wide
+targetEntityType: media
+cache: true

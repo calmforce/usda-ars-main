@@ -1,0 +1,49 @@
+uuid: 41298fa4-158e-4d73-896f-a25ed74706af
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page.body
+    - field.field.node.page.field_archived
+    - field.field.node.page.field_breadcrumb_label
+    - field.field.node.page.field_hide_page_title
+    - field.field.node.page.field_meta_tags
+    - field.field.node.page.field_umbraco_path
+    - field.field.node.page.layout_selection
+    - node.type.page
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: 5LgpWwg6HIBQ1CW3MZaz81YFkqmyQEc2RakDWut74EY
+id: node.page.teaser
+targetEntityType: node
+bundle: page
+mode: teaser
+content:
+  addtoany:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 100
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 101
+    region: content
+hidden:
+  field_archived: true
+  field_breadcrumb_label: true
+  field_hide_page_title: true
+  field_meta_tags: true
+  field_umbraco_path: true
+  langcode: true
+  layout_selection: true
+  search_api_excerpt: true

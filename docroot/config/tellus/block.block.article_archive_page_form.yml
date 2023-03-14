@@ -1,0 +1,28 @@
+uuid: f3c5ea8c-dc2d-4c27-b067-67ac052ec320
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search_tellus_articles
+  module:
+    - system
+    - views
+  theme:
+    - usda_tellus_uswds
+id: article_archive_page_form
+theme: usda_tellus_uswds
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:search_tellus_articles-article_archive_page'
+settings:
+  id: 'views_exposed_filter_block:search_tellus_articles-article_archive_page'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /stories
+    negate: false

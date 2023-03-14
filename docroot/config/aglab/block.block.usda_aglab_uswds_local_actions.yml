@@ -1,0 +1,20 @@
+uuid: 1b990c13-5ad4-4fba-a2bc-4a7367950290
+langcode: en
+status: true
+dependencies:
+  theme:
+    - usda_aglab_uswds
+_core:
+  default_config_hash: g8nAbd8E-jSbe60G4txDNw4Ef_KIljsdMe5mHz6y7DA
+id: usda_aglab_uswds_local_actions
+theme: usda_aglab_uswds
+region: content
+weight: 10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

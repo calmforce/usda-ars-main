@@ -1,0 +1,23 @@
+uuid: ef5394ae-c687-41d3-b971-2e6740bcc858
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_gallery
+    - field.storage.block_content.field_hide_title
+id: block_content.image_gallery.field_hide_title
+field_name: field_hide_title
+entity_type: block_content
+bundle: image_gallery
+label: 'Hide Title'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

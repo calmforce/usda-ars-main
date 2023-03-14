@@ -1,0 +1,11 @@
+entity_type_groups:
+  node:
+    article:
+      basic: basic
+    front_page:
+      basic: basic
+    page:
+      basic: basic
+  taxonomy_term:
+    tellus_categories:
+      basic: basic

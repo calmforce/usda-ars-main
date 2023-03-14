@@ -1,0 +1,21 @@
+uuid: 3fdd8841-92db-4a41-9458-87b7119d8d5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_type
+    - node.type.np_program_content_page
+  module:
+    - options
+id: node.np_program_content_page.field_document_type
+field_name: field_document_type
+entity_type: node
+bundle: np_program_content_page
+label: 'Document Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,15 @@
+uuid: 1eda7d6c-2038-4986-b2c8-89de29d3d38c
+langcode: en
+status: true
+dependencies: {  }
+name: lead_article_image
+label: 'Lead Article Image (450px wide)'
+effects:
+  b2ed139a-55ff-4ef9-a507-62d32302adf2:
+    uuid: b2ed139a-55ff-4ef9-a507-62d32302adf2
+    id: image_scale
+    weight: 1
+    data:
+      width: 450
+      height: null
+      upscale: true

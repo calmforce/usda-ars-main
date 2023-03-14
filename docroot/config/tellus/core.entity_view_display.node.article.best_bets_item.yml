@@ -1,0 +1,117 @@
+uuid: 69943faa-425c-4ccd-9dc3-a21876cdae4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.best_bets_item
+    - field.field.node.article.body
+    - field.field.node.article.field_category
+    - field.field.node.article.field_external_video
+    - field.field.node.article.field_featured_image
+    - field.field.node.article.field_main_content_images
+    - field.field.node.article.field_meta_tags
+    - field.field.node.article.field_publish_date
+    - field.field.node.article.field_publish_year
+    - field.field.node.article.field_slideshow
+    - node.type.article
+  module:
+    - datetime
+    - ds
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+  ds:
+    layout:
+      id: ds_2col_stacked
+      library: ds/ds_2col_stacked
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          header: div
+          left: div
+          right: div
+          footer: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      left:
+        - field_featured_image
+      right:
+        - node_title
+        - field_category
+        - body
+        - field_publish_date
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          'link class': best-bets-item-title-link
+          wrapper: h2
+          class: best-bets-item-title
+id: node.article.best_bets_item
+targetEntityType: node
+bundle: article
+mode: best_bets_item
+content:
+  body:
+    label: visually_hidden
+    type: text_summary_or_trimmed
+    weight: 3
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: right
+  field_category:
+    type: entity_reference_label
+    weight: 2
+    region: right
+    label: visually_hidden
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+  field_featured_image:
+    type: entity_reference_entity_view
+    weight: 0
+    region: left
+    label: visually_hidden
+    settings:
+      view_mode: popular_content_card_image
+      link: false
+    third_party_settings: {  }
+  field_publish_date:
+    type: datetime_custom
+    weight: 4
+    region: right
+    label: visually_hidden
+    settings:
+      timezone_override: ''
+      date_format: 'M d, Y'
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_external_video: true
+  field_main_content_images: true
+  field_meta_tags: true
+  field_publish_year: true
+  field_slideshow: true
+  langcode: true
+  like_and_dislike: true
+  like_and_dislike_bottom: true
+  links: true
+  search_api_excerpt: true

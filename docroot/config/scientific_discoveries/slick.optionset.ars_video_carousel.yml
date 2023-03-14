@@ -1,0 +1,22 @@
+uuid: 7662e580-425b-431b-9809-4c6420dddf21
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - slick
+id: ars_video_carousel
+name: ars_video_carousel
+weight: -2
+label: 'ARS Video Carousel'
+group: main
+skin: classic
+breakpoints: 0
+optimized: true
+options:
+  options__active_tab: edit-options-settings
+  settings:
+    lazyLoad: ondemand
+    rows: 0
+    slidesPerRow: 3
+    slidesToShow: 3

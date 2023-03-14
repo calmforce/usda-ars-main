@@ -1,0 +1,73 @@
+# Migration configuration for ARS Tellus media content.
+id: usda_tellus_migrate_media
+label: 4 - ARS Tellus Media Entities
+migration_group: usda_tellus_migrate
+audit: true
+migration_tags:
+  - Umbraco
+  - Tellus Media
+  - USDA ARS Tellus
+  - USDA ARS
+
+source:
+  plugin: usda_tellus_media
+  key: tellus
+  constants:
+    langcode: 'en'
+    html_format: 'rich_text'
+destination:
+  plugin: entity:media
+process:
+  mid:  nodeId
+  vid: nodeId
+  bundle: type
+  name:
+    plugin: usda_tellus_media_name
+    source: mediaName
+  langcode: 'constants/langcode'
+  default_langcode:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+  created:
+    plugin: usda_ars_date2timestamp
+    source: createDate
+  changed: '@created'
+  uid:
+    plugin: migration_lookup
+    migration: usda_tellus_migrate_user
+    source: nodeUser
+    no_stub: true
+  field_caption/value: caption
+  field_caption/format: 'constants/html_format'
+  field_media_in_library:
+    plugin: default_value
+    default_value: 1
+  field_media_image/target_id:
+    plugin: migration_lookup
+    migration: usda_tellus_migrate_media_files
+    source: uuid
+    no_stub: true
+  field_media_image/alt: image_alt
+  field_media_image/title: '@name'
+  field_media_image/width: image_width
+  field_media_image/height: image_height
+  field_media_video_file/target_id:
+    plugin: migration_lookup
+    migration: usda_tellus_migrate_media_files
+    source: uuid
+    no_stub: true
+  field_media_video_file/display:
+    plugin: default_value
+    default_value: 1
+  field_media_video_file/description: '@name'
+migration_dependencies:
+  required:
+    - usda_tellus_migrate_user
+    - usda_tellus_migrate_media_files
+dependencies:
+  enforced:
+    module:
+      - usda_tellus_migrate

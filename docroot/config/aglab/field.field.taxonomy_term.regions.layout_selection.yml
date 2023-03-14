@@ -1,0 +1,21 @@
+uuid: cf4134e2-e4aa-492b-8e7a-27d3ecd00d3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.layout_selection
+    - taxonomy.vocabulary.regions
+id: taxonomy_term.regions.layout_selection
+field_name: layout_selection
+entity_type: taxonomy_term
+bundle: regions
+label: Layout
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: layout_library
+  handler_settings: {  }
+field_type: entity_reference

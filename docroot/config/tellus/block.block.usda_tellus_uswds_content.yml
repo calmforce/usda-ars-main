@@ -1,0 +1,22 @@
+uuid: 5dea1ec5-cf41-4b82-8008-553f306c2b2e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - usda_tellus_uswds
+_core:
+  default_config_hash: FvOVFiMTVN45_3fO53AWUhghw_CpXVYTU_WY4l_Rgbo
+id: usda_tellus_uswds_content
+theme: usda_tellus_uswds
+region: content
+weight: -5
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 979ad81d-20ba-4b0c-9de9-1d6b9c9fccdb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: taxonomy_term.field_recommended_articles
+field_name: field_recommended_articles
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

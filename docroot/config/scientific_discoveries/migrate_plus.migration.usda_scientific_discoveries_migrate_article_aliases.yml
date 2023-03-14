@@ -1,0 +1,58 @@
+uuid: 1f99c910-148f-4b86-8cd3-0adb01011699
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_scientific_discoveries_migrate
+id: usda_scientific_discoveries_migrate_article_aliases
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'Scientific Discoveries Articles'
+  - 'USDA ARS Scientific Discoveries'
+  - 'USDA ARS'
+migration_group: usda_scientific_discoveries_migrate
+label: '12 - ARS Scientific Discoveries Article Aliases'
+source:
+  constants:
+    source_prefix: /node/
+    bundle: article
+    default_bundle: article
+    langcode: en
+  plugin: usda_scientific_discoveries_article_aliases
+  key: scientific_discoveries
+process:
+  nid:
+    plugin: migration_lookup
+    source: nodeId
+    migration: usda_scientific_discoveries_migrate_articles
+  node_type: constants/bundle
+  source:
+    plugin: concat
+    source:
+      - constants/source_prefix
+      - '@nid'
+  path: '@source'
+  topicId:
+    -
+      plugin: usda_scientific_discoveries_uuid
+      source: topic
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_topics
+      no_stub: true
+  alias:
+    plugin: usda_scientific_discoveries_node_alias
+    source: nodeAlias
+  langcode: constants/langcode
+destination:
+  plugin: 'entity:path_alias'
+migration_dependencies:
+  required:
+    - usda_scientific_discoveries_migrate_articles

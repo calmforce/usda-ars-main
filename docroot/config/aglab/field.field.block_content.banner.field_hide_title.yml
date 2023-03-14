@@ -1,0 +1,23 @@
+uuid: b301191a-7b0a-45ac-bffd-3ce1f1359554
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.banner
+    - field.storage.block_content.field_hide_title
+id: block_content.banner.field_hide_title
+field_name: field_hide_title
+entity_type: block_content
+bundle: banner
+label: 'Hide Title'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

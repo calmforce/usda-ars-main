@@ -1,0 +1,23 @@
+uuid: 61dbb1d0-9997-476d-af14-69d67f17b8d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publish_year
+    - node.type.article
+id: node.article.field_publish_year
+field_name: field_publish_year
+entity_type: node
+bundle: article
+label: 'Publish Year'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,10 @@
+uuid: 0ea4cc15-3247-4f74-aef1-1759018eaf17
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.more_like_this
+label: 'More Like This item'
+targetEntityType: node
+cache: true

@@ -1,0 +1,17 @@
+uuid: 128fedf5-6293-4e44-a53e-b4e6ff7a1204
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: explore_discoveries_card_image_216x270_
+label: 'Explore Discoveries Card Image (216x270)'
+effects:
+  81dd7d2e-5c9e-42e3-8c11-6df9e17ea86f:
+    uuid: 81dd7d2e-5c9e-42e3-8c11-6df9e17ea86f
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 216
+      height: 270
+      crop_type: focal_point

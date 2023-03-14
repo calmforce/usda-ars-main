@@ -1,0 +1,59 @@
+uuid: 1fbc6d52-ecfc-43bf-926f-31c1fa6c6443
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uswds_alert.field_alert_body
+    - field.field.paragraph.uswds_alert.field_alert_status
+    - field.field.paragraph.uswds_alert.field_alert_title
+    - field.field.paragraph.uswds_alert.field_no_icon
+    - field.field.paragraph.uswds_alert.field_slim
+    - paragraphs.paragraphs_type.uswds_alert
+  module:
+    - text
+_core:
+  default_config_hash: lkcV38rkTo6uN5CkV-F4WcEGHpMMvTgxZ1BPlQEAnQY
+id: paragraph.uswds_alert.default
+targetEntityType: paragraph
+bundle: uswds_alert
+mode: default
+content:
+  field_alert_body:
+    type: text_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_alert_status:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_alert_title:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_no_icon:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_slim:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

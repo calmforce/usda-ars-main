@@ -1,0 +1,66 @@
+uuid: f607fae5-5773-4119-9eab-17247c55d952
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.page.body
+    - field.field.node.page.field_archived
+    - field.field.node.page.field_body_columned_text
+    - field.field.node.page.field_breadcrumb_label
+    - field.field.node.page.field_hide_page_title
+    - field.field.node.page.field_location
+    - field.field.node.page.field_meta_tags
+    - field.field.node.page.field_parent_folder
+    - field.field.node.page.field_umbraco_path
+    - field.field.node.page.layout_selection
+    - node.type.page
+  module:
+    - layout_builder
+    - layout_library
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  layout_library:
+    enable: true
+_core:
+  default_config_hash: Kfxnq5Imio9VFBoNa_PIkzXoTmjz_T-EY3mOrwDTddU
+id: node.page.full
+targetEntityType: node
+bundle: page
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_body_columned_text:
+    type: basic_string
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_archived: true
+  field_breadcrumb_label: true
+  field_hide_page_title: true
+  field_location: true
+  field_meta_tags: true
+  field_parent_folder: true
+  field_umbraco_path: true
+  langcode: true
+  layout_selection: true
+  search_api_excerpt: true

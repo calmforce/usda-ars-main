@@ -1,0 +1,11 @@
+uuid: e656fd0d-ebf7-4383-8e75-db60b765e02a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.large_video
+id: block_content.large_video
+target_entity_type_id: block_content
+target_bundle: large_video
+default_langcode: site_default
+language_alterable: false

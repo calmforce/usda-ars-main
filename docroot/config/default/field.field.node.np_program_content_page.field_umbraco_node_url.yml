@@ -1,0 +1,19 @@
+uuid: 7151800f-687e-4a53-83aa-1b58e7c9c607
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umbraco_node_url
+    - node.type.np_program_content_page
+id: node.np_program_content_page.field_umbraco_node_url
+field_name: field_umbraco_node_url
+entity_type: node
+bundle: np_program_content_page
+label: 'Umbraco Node URL'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

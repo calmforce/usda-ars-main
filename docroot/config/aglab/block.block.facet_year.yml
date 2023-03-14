@@ -1,0 +1,29 @@
+uuid: 65d12245-af9b-40b7-b4ad-9bd63f2bd8e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.year
+  module:
+    - facets
+    - system
+  theme:
+    - usda_aglab_uswds
+id: facet_year
+theme: usda_aglab_uswds
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:year'
+settings:
+  id: 'facet_block:year'
+  label: 'Filter by Year'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: facet_year
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/stories\r\n/stories/*\r\n"

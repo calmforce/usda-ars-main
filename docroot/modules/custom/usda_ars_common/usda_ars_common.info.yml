@@ -1,0 +1,9 @@
+name: USDA ARS Common
+type: module
+description: 'Provides Drupal customizations common to all ARS sites.'
+package: USDA ARS
+core_version_requirement: ^8 || ^9
+version: '1.0.0'
+dependencies:
+  - drupal:ckeditor
+  - drupal:media

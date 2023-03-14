@@ -1,0 +1,15 @@
+uuid: 312dc2c0-a2a2-4be4-9f7b-77706af8b3f9
+langcode: en
+status: true
+dependencies: {  }
+name: video_carousel_cover
+label: 'Video Carousel Cover (310 x 175)'
+effects:
+  3646ba7b-3e2d-4621-9634-59860a84fa23:
+    uuid: 3646ba7b-3e2d-4621-9634-59860a84fa23
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 310
+      height: 175
+      anchor: center-center

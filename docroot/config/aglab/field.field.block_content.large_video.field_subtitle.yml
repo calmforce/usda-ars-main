@@ -1,0 +1,19 @@
+uuid: 16e776f2-443b-4e87-a6a3-0eff807eb717
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.large_video
+    - field.storage.block_content.field_subtitle
+id: block_content.large_video.field_subtitle
+field_name: field_subtitle
+entity_type: block_content
+bundle: large_video
+label: Subtitle
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

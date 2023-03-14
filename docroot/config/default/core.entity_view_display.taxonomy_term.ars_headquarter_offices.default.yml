@@ -1,0 +1,79 @@
+uuid: 7e73538c-6130-49f8-81ab-bad0d40fd889
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.ars_headquarter_offices.field_breadcrumb_label
+    - field.field.taxonomy_term.ars_headquarter_offices.field_hide_page_title
+    - field.field.taxonomy_term.ars_headquarter_offices.field_meta_tags
+    - field.field.taxonomy_term.ars_headquarter_offices.field_modecode
+    - field.field.taxonomy_term.ars_headquarter_offices.field_umbraco_node_url
+    - field.field.taxonomy_term.ars_headquarter_offices.field_umbraco_path
+    - taxonomy.vocabulary.ars_headquarter_offices
+  module:
+    - metatag
+    - text
+id: taxonomy_term.ars_headquarter_offices.default
+targetEntityType: taxonomy_term
+bundle: ars_headquarter_offices
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_breadcrumb_label:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hide_page_title:
+    weight: 5
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_meta_tags:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_modecode:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_umbraco_node_url:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_umbraco_path:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

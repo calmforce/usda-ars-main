@@ -1,0 +1,8 @@
+uuid: 16232c26-4b91-41e7-b1ef-40d96d0f3711
+langcode: en
+status: true
+dependencies: {  }
+name: 'ARS Best Bets'
+vid: best_bets_search_results
+description: 'A block of links that will display if the search/phrase term matches a term in this vocabulary.'
+weight: 0

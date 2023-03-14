@@ -1,0 +1,85 @@
+uuid: 9c7e9869-91a8-42f8-92f2-05351697bb23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_image_card
+    - paragraphs.paragraphs_type.uswds_card_regular
+    - taxonomy.vocabulary.regions
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.regions.field_image_card
+field_name: field_image_card
+entity_type: taxonomy_term
+bundle: regions
+label: 'Image Card'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      uswds_card_regular: uswds_card_regular
+    negate: 0
+    target_bundles_drag_drop:
+      text_field:
+        weight: 20
+        enabled: false
+      uswds_2_column_breakpoints:
+        weight: 22
+        enabled: false
+      uswds_2_columns:
+        weight: 21
+        enabled: false
+      uswds_3_column_breakpoints:
+        weight: 24
+        enabled: false
+      uswds_3_columns:
+        weight: 23
+        enabled: false
+      uswds_accordion:
+        weight: 25
+        enabled: false
+      uswds_accordion_section:
+        weight: 26
+        enabled: false
+      uswds_alert:
+        weight: 27
+        enabled: false
+      uswds_card_breakpoints:
+        weight: 29
+        enabled: false
+      uswds_card_group_flag:
+        weight: 30
+        enabled: false
+      uswds_card_group_regular:
+        weight: 31
+        enabled: false
+      uswds_card_regular:
+        weight: 32
+        enabled: true
+      uswds_cards_flag:
+        weight: 28
+        enabled: false
+      uswds_modal:
+        weight: 33
+        enabled: false
+      uswds_process_item:
+        weight: 34
+        enabled: false
+      uswds_process_list:
+        weight: 35
+        enabled: false
+      uswds_step_indicator_item:
+        weight: 36
+        enabled: false
+      uswds_step_indicator_list:
+        weight: 37
+        enabled: false
+      uswds_summary_box:
+        weight: 38
+        enabled: false
+field_type: entity_reference_revisions

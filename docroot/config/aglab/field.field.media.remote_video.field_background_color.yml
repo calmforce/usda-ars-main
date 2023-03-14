@@ -1,0 +1,22 @@
+uuid: 43cb8c0b-5f8a-4924-bd65-3dea15a0533b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_background_color
+    - media.type.remote_video
+  module:
+    - color_field
+id: media.remote_video.field_background_color
+field_name: field_background_color
+entity_type: media
+bundle: remote_video
+label: 'Background Color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

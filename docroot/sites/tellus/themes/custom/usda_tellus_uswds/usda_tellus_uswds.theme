@@ -1,0 +1,113 @@
+<?php
+
+use Drupal\media\Entity\Media;
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function usda_tellus_uswds_preprocess_page(&$variables) {
+
+  // Provide the agency information for the footer.
+  $variables['display_footer_agency'] = theme_get_setting('uswds_footer_agency');
+  $footer_variables = [
+    'footer_agency_name',
+    'footer_agency_url',
+    'footer_agency_logo',
+    'contact_center',
+    'phone',
+    'email',
+    'facebook',
+    'twitter',
+    'linkedin',
+    'youtube',
+    'rss',
+  ];
+  foreach ($footer_variables as $footer_variable) {
+    $variables[$footer_variable] = theme_get_setting('uswds_' . $footer_variable);
+  }
+}
+
+/**
+ * Implements hook_preprocess_region().
+ */
+function usda_tellus_uswds_preprocess_region(&$variables) {
+  $variables['logopath'] = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
+}
+
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function usda_tellus_uswds_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (is_object($node)) {
+    $content_type = $node->getType();
+    if ($content_type == 'article') {
+      $suggestions[] = 'page__' . $content_type;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function usda_tellus_uswds_preprocess_field(&$variables) {
+  $element = $variables['element'];
+  if ($element['#field_name'] == 'field_category') {
+    $variables['items'] = [];
+    $delta = 0;
+    while (!empty($element[$delta])) {
+      $variables['items'][$delta]['content'] = $element[$delta];
+      $categoy_class = $variables['items'][$delta]['content']['#plain_text'];
+      $categoy_class = str_replace(" ", "-", $categoy_class);
+      $variables['items'][$delta]['field_color_class'] = $categoy_class;
+
+      $delta++;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_slick_slide().
+ */
+function usda_tellus_uswds_preprocess_slick_slide(&$variables) {
+  $item = $variables['item']['slide']['#item'];
+
+  $element = $variables['element'];
+  $variables['items'] = [];
+  
+  foreach ($element['#item'] as $delta => $item) {
+   
+    if($delta == 'slide'){    
+      $item_data = $item['#item'];
+      $mtarget_id = $item_data->getValue()['target_id'];
+     
+      $media = Media::load($mtarget_id);
+      $media_link_url = $media->field_image_link->getValue();
+      
+      if(!empty($media_link_url)){       
+        $variables['item']['media_link_url'] = $media_link_url[0]['uri'];
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_media().
+ */
+function usda_tellus_uswds_preprocess_media(array &$variables) {
+  $variables['media_image_link'] = 'false';
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (is_object($node)) {
+    $content_type = $node->getType();
+    if ($content_type == 'article') {
+      $variables['media_image_link'] = 'true';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_image().
+ */
+function usda_tellus_uswds_preprocess_image(&$variables) {
+  unset($variables['attributes']['title']);
+}

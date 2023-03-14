@@ -1,0 +1,22 @@
+uuid: 39ad9c68-6b7a-46f8-a8db-4d162a34333e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - usda_ars_uswds
+_core:
+  default_config_hash: pKkXMbeFZ_QhtnE3PRwUxct5NCrbn6kVTegKlsvj71c
+id: usda_ars_uswds_messages
+theme: usda_ars_uswds
+region: highlighted
+weight: -50
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

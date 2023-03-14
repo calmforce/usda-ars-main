@@ -1,0 +1,20 @@
+uuid: 80de04bc-741b-461d-93ef-ce68068918dd
+langcode: en
+status: true
+dependencies:
+  theme:
+    - usda_ars_uswds
+_core:
+  default_config_hash: JKZASPT3lMWKyIVj_2Q0cWkTo14wEhnJAb0pM5R3ZVY
+id: usda_ars_uswds_local_actions
+theme: usda_ars_uswds
+region: content
+weight: 10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

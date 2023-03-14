@@ -1,0 +1,29 @@
+uuid: ea2751f5-ce51-46be-9a85-ab861803fb8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_year
+    - node.type.news_article
+    - taxonomy.vocabulary.ars_news_years
+id: node.news_article.field_year
+field_name: field_year
+entity_type: node
+bundle: news_article
+label: Year
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ars_news_years: ars_news_years
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

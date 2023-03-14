@@ -1,0 +1,26 @@
+assets:
+  version: VERSION
+  css:
+    theme:
+      assets/css/styles.css: {}      
+
+fancybox-cdn:
+  css:
+    theme:
+      '//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css':
+        type: external
+        minified: true
+  js:
+    '//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js':
+      type: external
+  dependencies:
+   - core/jquery
+   - core/drupal
+   
+twitter-js:
+  version: VERSION
+  js:
+    'assets/js/twitter.js': {}
+  dependencies:
+    - core/drupal
+    

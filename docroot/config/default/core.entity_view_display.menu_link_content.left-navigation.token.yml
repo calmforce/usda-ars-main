@@ -1,0 +1,26 @@
+uuid: 575acab8-30fa-4239-ac6a-8d4c09d0d368
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.menu_link_content.token
+    - system.menu.left-navigation
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: menu_link_content.left-navigation.token
+targetEntityType: menu_link_content
+bundle: left-navigation
+mode: token
+content:
+  children:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

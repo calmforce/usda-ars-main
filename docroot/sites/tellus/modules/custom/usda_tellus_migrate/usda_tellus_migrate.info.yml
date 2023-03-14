@@ -1,0 +1,8 @@
+name: ARS Tellus Migrate
+type: module
+description: 'Performs Tellus data migration from MSSQL Umbraco DB.'
+package: USDA ARS
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:migrate
+  - like_and_dislike:like_and_dislike

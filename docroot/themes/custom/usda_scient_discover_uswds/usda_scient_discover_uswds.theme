@@ -1,0 +1,182 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\node\Entity\Node;
+
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function usda_scient_discover_uswds_preprocess_page(&$variables) {
+
+  // Provide the agency information for the footer.
+  $variables['display_footer_agency'] = theme_get_setting('uswds_footer_agency');
+  $footer_variables = [
+    'footer_agency_name',
+    'footer_agency_url',
+    'footer_agency_logo',
+    'contact_center',
+    'phone',
+    'email',
+    'facebook',
+    'twitter',
+    'linkedin',
+    'youtube',
+    'rss',
+  ];
+  foreach ($footer_variables as $footer_variable) {
+    $variables[$footer_variable] = theme_get_setting('uswds_' . $footer_variable);
+  }
+
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $node_type = $node->getType();
+    if ($node_type == 'article') {
+      $variables['title_status'] = 'true';
+      $hide_page_title = $node->get('field_hide_page_title')->value;
+      if($hide_page_title){
+        // unset($variables['page']['content']['usda_scient_discover_uswds_page_title']);
+        $variables['title_status'] = 'false';
+      }
+    }
+  }
+  
+  if ($term = \Drupal::routeMatch()->getParameter('taxonomy_term')) {
+    $term_type = $term->getName();
+    $vid = $term->get('vid')->getValue();
+    $variables['title_status'] = 'true';
+    if($vid[0]['target_id'] == 'regions' || $vid[0]['target_id'] == 'topics'){
+      $hide_page_title = $term->get('field_hide_page_title')->value;
+      if($hide_page_title){
+        $variables['title_status'] = 'false';
+      }
+    }
+  }
+  
+  $variables['#attached']['library'][] = 'usda_scient_discover_uswds/fancybox-cdn';    
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function usda_scient_discover_uswds_preprocess_node(&$variables) {
+  if ($variables['node']->getType() == 'article') {
+    $hide_page_title = $variables['node']->get('field_hide_page_title')->value;
+    if($hide_page_title){
+      $variables['hide_page_title'] = 'true';
+    } else {
+      $variables['hide_page_title'] = 'false';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_region().
+ */
+function usda_scient_discover_uswds_preprocess_region(&$variables) {
+  $variables['logopath'] = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
+}
+
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function usda_scient_discover_uswds_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (is_object($node)) {
+    $content_type = $node->bundle();
+    if ($content_type == 'article') {
+      $suggestions[] = 'page__' . $content_type;
+    }
+  }
+
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
+    $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+    $term_type = $term->get('vid')->getValue();
+    $suggestions[] = 'page__taxonomy__term__' . $term_type[0]['target_id'];
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function usda_scient_discover_uswds_preprocess_field(&$variables) {
+  $element = $variables['element'];
+  if ($element['#field_name'] == 'field_topic') {
+    
+    $variables['items'] = [];
+    $delta = 0;
+    while (!empty($element[$delta])) { 
+      $variables['items'][$delta]['content'] = $element[$delta];
+      if(isset($element[$delta]['#title']) && !empty(isset($element[$delta]['#title']))) {
+        $categoy_class = $variables['items'][$delta]['content']['#title'];
+        $categoy_class = str_replace(" ", "-", $categoy_class);
+        $categoy_class = preg_replace('/[^A-Za-z0-9\-]/', '', $categoy_class);
+        $categoy_class = str_replace("--", "-", $categoy_class);
+        $variables['items'][$delta]['field_color_class'] = strtolower($categoy_class);
+      }elseif(isset($element[$delta]['#plain_text']) && !empty($element[$delta]['#plain_text'])){
+        $categoy_class = $variables['items'][$delta]['content']['#plain_text'];
+        $categoy_class = str_replace(" ", "-", $categoy_class);
+        $categoy_class = preg_replace('/[^A-Za-z0-9\-]/', '', $categoy_class);
+        $categoy_class = str_replace("--", "-", $categoy_class);
+        $variables['items'][$delta]['field_color_class'] = strtolower($categoy_class);
+      }
+      $delta++;
+    }
+  }
+  
+  if ($element['#field_name'] == 'field_tags') {
+    //$variables['items'] = [];
+    $delta = 0;
+
+    while (!empty($element[$delta])) {
+      if(isset($element[$delta]['#options'])){
+        $term_entity = $element[$delta]['#options']['entity'];
+        $term_data = $term_entity->get('field_color')->getValue();
+        if(!empty($term_data)){
+          $variables['items'][$delta]['bg_color'] = $term_data[0]['color'];
+        }else{
+          $variables['items'][$delta]['bg_color'] = '';
+        }      
+      }
+      $delta++;
+    }
+  }
+}
+
+
+function usda_scient_discover_uswds_preprocess_facets_item_list(array &$variables) {
+  if($variables['facet']->label() == 'Topic'){
+    foreach ($variables['items'] as $key => $item){
+      $id = $item['value']['#title']['#raw_value'];
+      $variables['items'][$key]['value']['#attributes']['id'] = ['topic-'.$id];
+    }
+  }
+  
+  if($variables['facet']->label() == 'Publish Date Year'){
+    foreach ($variables['items'] as $key => $item){
+      $id = $item['value']['#title']['#raw_value'];
+      $variables['items'][$key]['value']['#attributes']['id'] = ['pdateyear-'.$id];
+    }
+  }
+  
+  if($variables['facet']->label() == 'Tags'){
+    foreach ($variables['items'] as $key => $item){
+      $id = $item['value']['#title']['#raw_value'];
+      $term = \Drupal\taxonomy\Entity\Term::load($id);
+      $term_color = $term->get('field_color')->getValue()[0]['color'];
+      $variables['items'][$key]['value']['#attributes']['style'] = ['border-color:'.$term_color];
+      $variables['items'][$key]['value']['#attributes']['id'] = ['tags-'.$id];
+    }
+  }
+  
+}
+
+
+function usda_scient_discover_uswds_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}

@@ -1,0 +1,21 @@
+uuid: f4788a38-0acf-4d0f-b662-f0dab1594f4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_cards_section_title
+    - node.type.article
+  module:
+    - text
+id: node.article.field_image_cards_section_title
+field_name: field_image_cards_section_title
+entity_type: node
+bundle: article
+label: 'Image Cards Section Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

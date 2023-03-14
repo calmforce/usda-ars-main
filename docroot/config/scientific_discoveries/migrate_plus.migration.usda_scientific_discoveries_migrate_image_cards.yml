@@ -1,0 +1,44 @@
+uuid: ab43814b-cab0-413e-995c-4f1edadb2730
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_scientific_discoveries_migrate
+id: usda_scientific_discoveries_migrate_image_cards
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'Scientific Discoveries Articles'
+  - 'USDA ARS Scientific Discoveries'
+  - 'USDA ARS'
+migration_group: usda_scientific_discoveries_migrate
+label: '10 - ARS Scientific Discoveries Articles Image Cards'
+source:
+  plugin: usda_scientific_discoveries_image_cards
+  key: scientific_discoveries
+  constants:
+    bundle: article
+    langcode: en
+process:
+  type: constants/bundle
+  langcode: constants/langcode
+  nid:
+    plugin: migration_lookup
+    migration: usda_scientific_discoveries_migrate_articles
+    source: nodeId
+    no_stub: true
+  field_explore_other_discoveries:
+    plugin: migration_lookup
+    migration: usda_scientific_discoveries_migrate_articles
+    source: imageCardsNodeIds
+    no_stub: true
+destination:
+  plugin: 'entity:node'
+  overwrite_properties:
+    - field_explore_other_discoveries
+migration_dependencies:
+  required:
+    - usda_scientific_discoveries_migrate_articles

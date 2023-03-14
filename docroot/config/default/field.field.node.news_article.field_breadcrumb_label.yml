@@ -1,0 +1,19 @@
+uuid: 7639bc60-f560-4c7f-835d-10502abcf3f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_breadcrumb_label
+    - node.type.news_article
+id: node.news_article.field_breadcrumb_label
+field_name: field_breadcrumb_label
+entity_type: node
+bundle: news_article
+label: 'Breadcrumb Label'
+description: 'How the page is labeled in the breadcrumb. (Will default to page name if nothing is entered)'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

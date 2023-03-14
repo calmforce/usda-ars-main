@@ -1,0 +1,42 @@
+{% if content %}
+  <ul class="usa-accordion usa-accordion--bordered">
+    <li>
+      <button class="usa-accordion__button" aria-expanded="false" aria-controls="b-projecs">
+        <h4>Projects</h4>
+      </button>
+      <div id="b-projecs" class="usa-accordion__content">
+        <table id="Projects">
+          <tbody>
+            {% for prj in content  %}
+              <tr>
+                <td>
+                  <a href="research/project/?accnNo={{ prj.accn_no }}" class="projectNav" id="anch_53">{{ prj.prj_title }}</a>
+
+                  <table border="0">
+                    <tbody>
+                      <tr>
+                        <td></td>  
+                        <td class="bodyTextBlack">
+                          {% if prj.prj_type_code %}
+                            {{ prj.prj_type_code }} ({{ prj.prj_type }})
+                          {% endif %}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;</td>
+                        <td class="bodyTextBlack">Accession Number: {{ prj.accn_no }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td><img src='{{ image_path }}/img/content-divider.gif' ></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </li>
+  </ul>
+{% endif %}

@@ -1,0 +1,10 @@
+uuid: 90f6c1c7-d77d-4c1d-b466-f269ba6b259b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.two_column_media
+label: 'Two Column Media Section'
+targetEntityType: media
+cache: true

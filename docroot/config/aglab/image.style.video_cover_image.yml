@@ -1,0 +1,17 @@
+uuid: 85c03fbc-ba4c-45ca-803a-47166fbd6b63
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: video_cover_image
+label: 'Video Cover Image (960 x 540)'
+effects:
+  d3e6d6fd-9803-4ce5-81c9-6d5d3985c00a:
+    uuid: d3e6d6fd-9803-4ce5-81c9-6d5d3985c00a
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 960
+      height: 540
+      crop_type: focal_point

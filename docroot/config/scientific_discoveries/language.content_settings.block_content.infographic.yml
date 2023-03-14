@@ -1,0 +1,11 @@
+uuid: ef7b5452-2608-4a10-bb47-868eece4f7c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.infographic
+id: block_content.infographic
+target_entity_type_id: block_content
+target_bundle: infographic
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,23 @@
+uuid: 54e5562d-5cd2-4dfe-82bb-8fdff632421c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.person_profile
+  module:
+    - text
+id: node.person_profile.body
+field_name: body
+entity_type: node
+bundle: person_profile
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,19 @@
+uuid: e95ee89b-92af-4e57-85dd-cae7759da3ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publications
+    - node.type.person_profile
+id: node.person_profile.field_publications
+field_name: field_publications
+entity_type: node
+bundle: person_profile
+label: Publications
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

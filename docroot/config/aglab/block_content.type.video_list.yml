@@ -1,0 +1,8 @@
+uuid: e4abfd5e-0ec1-4004-a77b-97fa18ded297
+langcode: en
+status: true
+dependencies: {  }
+id: video_list
+label: 'Video List'
+revision: 0
+description: 'Collection of Remote Video entities, such as YouTube video clips.'

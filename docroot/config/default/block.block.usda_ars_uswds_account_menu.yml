@@ -1,0 +1,27 @@
+uuid: 511c59ec-013b-4211-9fb9-6305c9122aa0
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - usda_ars_uswds
+_core:
+  default_config_hash: yAMGW2QOvyEGFdnOM7VXv-8RF75CIWKaZdWqoom2Bxc
+id: usda_ars_uswds_account_menu
+theme: usda_ars_uswds
+region: secondary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,60 @@
+uuid: 4b7d18bf-fc88-4c7c-a56e-dc0a0a512341
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_site_folder_type
+field_name: field_site_folder_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: DocsFolder
+      label: 'Documents Folder'
+    -
+      value: DocsFolderWithFiles
+      label: 'Documents Folder with Files'
+    -
+      value: PeopleFolder
+      label: 'People Folder'
+    -
+      value: SiteSoftwareFolder
+      label: 'Software Folder'
+    -
+      value: SitesCareers
+      label: 'Site Careers'
+    -
+      value: SitesNews
+      label: 'Site News'
+    -
+      value: SitesResearch
+      label: 'Site Research'
+    -
+      value: SiteCarouselFolder
+      label: 'Site Carousel'
+    -
+      value: SiteNavFolder
+      label: 'Site Navigation'
+    -
+      value: Research
+      label: Research
+    -
+      value: Careers
+      label: Careers
+    -
+      value: NewsHome
+      label: 'News Home'
+    -
+      value: PeopleLocations
+      label: 'People & Locations'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

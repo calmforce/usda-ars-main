@@ -1,0 +1,40 @@
+uuid: 4f43a379-385b-4d5d-9d7d-99d81c92b4d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.np_program_content_page.body
+    - field.field.node.np_program_content_page.field_document_type
+    - field.field.node.np_program_content_page.field_national_program
+    - field.field.node.np_program_content_page.field_umbraco_node_url
+    - field.field.node.np_program_content_page.field_umbraco_path
+    - node.type.np_program_content_page
+  module:
+    - text
+    - user
+id: node.np_program_content_page.teaser
+targetEntityType: node
+bundle: np_program_content_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_document_type: true
+  field_national_program: true
+  field_umbraco_node_url: true
+  field_umbraco_path: true
+  langcode: true
+  search_api_excerpt: true

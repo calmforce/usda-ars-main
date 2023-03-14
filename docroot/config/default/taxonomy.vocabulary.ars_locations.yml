@@ -1,0 +1,8 @@
+uuid: c89b118f-9473-41fa-a807-60abe2900695
+langcode: en
+status: true
+dependencies: {  }
+name: 'ARS Locations'
+vid: ars_locations
+description: 'All ARS locations and their hierarchy, starting with Areas and ending with Labs/Research Units'
+weight: 0

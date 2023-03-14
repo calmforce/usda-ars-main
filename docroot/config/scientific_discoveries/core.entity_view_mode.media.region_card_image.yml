@@ -1,0 +1,10 @@
+uuid: 53070942-2f5f-4da9-9b86-019f49a0bace
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.region_card_image
+label: 'Region Card Image'
+targetEntityType: media
+cache: true

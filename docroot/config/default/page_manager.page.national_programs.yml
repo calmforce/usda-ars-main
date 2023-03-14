@@ -1,0 +1,16 @@
+uuid: 166d3600-2b14-41a3-8cfd-7e9d1c6a5e45
+langcode: en
+status: true
+dependencies: {  }
+id: national_programs
+label: 'National Programs'
+description: 'National Programs Groups and Program pages'
+use_admin_theme: false
+path: '/taxonomy/term/{taxonomy_term}'
+access_logic: and
+access_conditions: {  }
+parameters:
+  taxonomy_term:
+    machine_name: taxonomy_term
+    type: 'entity:taxonomy_term'
+    label: 'National Programs term pages'

@@ -1,0 +1,19 @@
+uuid: 7c1378e5-201e-4239-b23c-8ca36594b7d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_video_alt_text
+    - media.type.remote_video
+id: media.remote_video.field_video_alt_text
+field_name: field_video_alt_text
+entity_type: media
+bundle: remote_video
+label: 'Video Alt Text'
+description: 'For accessibility - this is the alt text that will be used.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,12 @@
+uuid: f9650984-9c1d-498b-88f8-ef0471b3254e
+langcode: en
+status: true
+dependencies: {  }
+id: front_page
+label: Tellus
+description: ''
+use_admin_theme: false
+path: /home
+access_logic: and
+access_conditions: {  }
+parameters: {  }

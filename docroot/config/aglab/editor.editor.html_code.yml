@@ -1,0 +1,76 @@
+uuid: b0620a1a-78ad-4274-998d-1ce73d81ba79
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.html_code
+  module:
+    - ckeditor
+format: html_code
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - Underline
+            - Format
+            - HorizontalRule
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - DrupalImage
+            - DrupalMediaLibrary
+        -
+          name: Tools
+          items:
+            - Source
+            - Table
+            - ShowBlocks
+            - Undo
+            - Redo
+            - Cut
+            - Copy
+            - Paste
+            - PasteText
+            - PasteFromWord
+        -
+          name: USWDS
+          items:
+            - uswds_grid
+            - Accordion
+        -
+          name: Styles
+          items:
+            - Styles
+  plugins:
+    drupallink:
+      linkit_enabled: false
+      linkit_profile: ''
+    stylescombo:
+      styles: "span.text-blue|Text Color: blue\r\nspan.text-red|Text Color: red"
+    uswds_table:
+      override_table: 1
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

@@ -1,0 +1,20 @@
+uuid: cede99a4-cf46-4f15-bf52-a00d4d81bd0d
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - media
+id: media.field_background_color
+field_name: field_background_color
+entity_type: media
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

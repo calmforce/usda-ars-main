@@ -1,0 +1,51 @@
+uuid: a67ad136-9946-447f-9f02-46720912d693
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cards
+    - paragraphs.paragraphs_type.uswds_card_group_flag
+    - paragraphs.paragraphs_type.uswds_cards_flag
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: VQ27GLbRns1HKESAwQqaysQWA_c64m0zA3ae4cJkaZs
+id: paragraph.uswds_card_group_flag.field_cards
+field_name: field_cards
+entity_type: paragraph
+bundle: uswds_card_group_flag
+label: Cards
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      uswds_cards_flag: uswds_cards_flag
+    negate: 0
+    target_bundles_drag_drop:
+      text_field:
+        weight: 9
+        enabled: false
+      uswds_accordion:
+        weight: 10
+        enabled: false
+      uswds_accordion_section:
+        weight: 11
+        enabled: false
+      uswds_card_group_flag:
+        weight: 8
+        enabled: false
+      uswds_card_group_regular:
+        weight: 12
+        enabled: false
+      uswds_card_regular:
+        weight: 13
+        enabled: false
+      uswds_cards_flag_:
+        weight: 14
+        enabled: true
+field_type: entity_reference_revisions

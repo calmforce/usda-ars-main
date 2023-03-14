@@ -1,0 +1,17 @@
+uuid: 657b624c-af26-459c-ace8-57c89c882d06
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Site Folder'
+type: site_folder
+description: 'The "Site Folder" node that will have all Location/Office documents/pages attached to. The field "Site Folder Type" used to specify the Site Folder type.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

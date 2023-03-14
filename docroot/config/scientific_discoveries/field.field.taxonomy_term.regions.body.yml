@@ -1,0 +1,23 @@
+uuid: 593aedce-f37a-4f7b-8634-ea7751b95cf0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.body
+    - taxonomy.vocabulary.regions
+  module:
+    - text
+id: taxonomy_term.regions.body
+field_name: body
+entity_type: taxonomy_term
+bundle: regions
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

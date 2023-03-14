@@ -1,0 +1,10 @@
+uuid: 7a769f6f-020e-4736-8ac9-ea68d7d3e587
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.video_cover_image
+label: 'Video Cover Image'
+targetEntityType: media
+cache: true

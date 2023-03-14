@@ -1,0 +1,41 @@
+id: usda_ars_migrate_user
+label: 1 - USDA ARS Users
+migration_group: usda_ars_migrate
+
+audit: true
+
+# define a forced module dependency. this will cause the migration definition to be reloaded
+# when you uninstall and reinstall your custom module.
+dependencies:
+  enforced:
+    module:
+      - usda_ars_migrate
+
+source:
+  plugin: usda_ars_user
+  target: migrate
+
+destination:
+  plugin: entity:user
+
+process:
+  uid: id
+  name: userName
+  pass: userPassword
+  mail: userEmail
+  roles: userType
+#  field_profile:
+#    plugin: usda_ars_user_profile_ref
+#    source: userEmail
+  status:
+    plugin: default_value
+    default_value: 1
+  created: lastPasswordChangeDate
+  changed: lastPasswordChangeDate
+  access: lastLoginDate
+  login: lastLoginDate
+#  timezone: timezone
+#  langcode: language
+#  preferred_langcode: language
+#  preferred_admin_langcode: language
+

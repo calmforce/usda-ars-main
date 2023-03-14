@@ -1,0 +1,22 @@
+uuid: da4a77c2-a67c-42de-967f-7979f3ca4158
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - usda_scient_discover_uswds
+_core:
+  default_config_hash: AET8Ft04sOf07hRz2sjBySLZDM4rEbPkA6HYasXRozw
+id: usda_scient_discover_uswds_messages
+theme: usda_scient_discover_uswds
+region: highlighted
+weight: -50
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,29 @@
+uuid: 85dce694-1469-4f29-9f0b-493417f61ac9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_image
+    - media.type.image
+    - node.type.article
+id: node.article.field_featured_image
+field_name: field_featured_image
+entity_type: node
+bundle: article
+label: 'Featured Image'
+description: 'This will be the displayed image when being referenced from a different page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

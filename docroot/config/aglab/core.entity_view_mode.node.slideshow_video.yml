@@ -1,0 +1,10 @@
+uuid: 4a5a5ea3-0fc0-4805-b3cc-f31ac742c1f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.slideshow_video
+label: 'Slideshow Video'
+targetEntityType: node
+cache: true

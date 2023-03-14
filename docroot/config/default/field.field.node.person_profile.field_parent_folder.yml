@@ -1,0 +1,29 @@
+uuid: 3eb339fb-be3b-4f36-989b-461106967b83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parent_folder
+    - node.type.person_profile
+    - node.type.site_folder
+id: node.person_profile.field_parent_folder
+field_name: field_parent_folder
+entity_type: node
+bundle: person_profile
+label: 'Parent People Folder'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      site_folder: site_folder
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

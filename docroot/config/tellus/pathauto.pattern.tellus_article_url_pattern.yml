@@ -1,0 +1,22 @@
+uuid: a4fb5c1e-1412-4474-b9fd-1412a574eeaa
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: tellus_article_url_pattern
+label: 'Tellus Article URL pattern'
+type: 'canonical_entities:node'
+pattern: 'stories/articles/[node:title]'
+selection_criteria:
+  514d89fb-3d01-4220-9e7f-ce4905e22e1e:
+    id: node_type
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 514d89fb-3d01-4220-9e7f-ce4905e22e1e
+selection_logic: and
+weight: -5
+relationships: {  }

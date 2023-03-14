@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * ARS Tellus Migrate
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+
+/**
+ * Implements hook_entity_view().
+ */
+function usda_tellus_migrate_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+
+  if (!$display->getComponent('like_and_dislike') || !$entity->id()) {
+    return;
+  }
+
+  if (like_and_dislike_is_enabled($entity)) {
+    $entity_type_id = $entity->getEntityTypeId();
+    $entity_id = $entity->id();
+    $build['like_and_dislike_bottom'] = [
+      '#lazy_builder' => [
+        'like_and_dislike.vote_builder:build', [$entity_type_id, $entity_id],
+      ],
+      '#create_placeholder' => TRUE,
+    ];
+  }
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function usda_tellus_migrate_entity_extra_field_info() {
+  $extra = [];
+  $entity_type_manager = \Drupal::entityTypeManager();
+  foreach (\Drupal::config('like_and_dislike.settings')->get('enabled_types') as $entity_type_id => $bundles) {
+
+    if (!$entity_type_manager->getDefinition($entity_type_id)->hasKey('bundle')) {
+      $extra[$entity_type_id][$entity_type_id]['display']['like_and_dislike_bottom'] = [
+        'label' => t('Like and dislike - Bottom'),
+        'visible' => FALSE,
+      ];
+      continue;
+    }
+
+    foreach ($bundles as $bundle) {
+      $extra[$entity_type_id][$bundle]['display']['like_and_dislike_bottom'] = [
+        'label' => t('Like and dislike - Bottom'),
+        'visible' => FALSE,
+      ];
+    }
+  }
+  return $extra;
+}

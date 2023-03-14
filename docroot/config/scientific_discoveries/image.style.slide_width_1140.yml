@@ -1,0 +1,15 @@
+uuid: 9369b676-1d8d-4b43-9fff-f921d47a2527
+langcode: en
+status: true
+dependencies: {  }
+name: slide_width_1140
+label: 'Slide, width 1140'
+effects:
+  3523b7ce-14e7-4432-bf7f-4a765f497c07:
+    uuid: 3523b7ce-14e7-4432-bf7f-4a765f497c07
+    id: image_scale
+    weight: 1
+    data:
+      width: 1140
+      height: null
+      upscale: true

@@ -1,0 +1,160 @@
+uuid: c6a3f65d-b0f3-47d1-b9a2-e4eef90f7fb7
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_scientific_discoveries_migrate
+id: usda_scientific_discoveries_migrate_articles
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'Scientific Discoveries Articles'
+  - 'USDA ARS Scientific Discoveries'
+  - 'USDA ARS'
+migration_group: usda_scientific_discoveries_migrate
+label: '9 - ARS Scientific Discoveries Articles'
+source:
+  plugin: usda_scientific_discoveries_articles
+  key: scientific_discoveries
+  constants:
+    bundle: article
+    langcode: en
+    html_format: rich_text
+process:
+  nid: nodeId
+  type: constants/bundle
+  langcode: constants/langcode
+  status:
+    plugin: default_value
+    default_value: 1
+  created:
+    plugin: usda_ars_date2timestamp
+    source: createDate
+  changed:
+    plugin: usda_ars_date2timestamp
+    source: updateDate
+  revision_timestamp: '@changed'
+  title: nodeName
+  field_main_content_images:
+    -
+      plugin: usda_scientific_discoveries_uuid
+      source: main_content_images
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_media
+      no_stub: true
+  body/value:
+    plugin: usda_scientific_discoveries_main_content_data
+    source: main_content
+  body/summary:
+    plugin: skip_on_empty
+    method: process
+    source: body_summary
+  body/format: constants/html_format
+  field_publish_date:
+    plugin: format_date
+    source: publish_date
+    from_format: 'Y-m-d H:i:s.v'
+    to_format: Y-m-d
+    from_timezone: America/New_York
+    to_timezone: UTC
+  uid:
+    -
+      plugin: usda_ars_user
+      source: nodeUser
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_user
+      no_stub: true
+    -
+      plugin: default_value
+      default_value: 1
+  revision_uid: '@uid'
+  field_tags:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: tags
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: usda_scientific_discoveries_uuid
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_tags
+      no_stub: true
+  field_topic:
+    -
+      plugin: usda_scientific_discoveries_uuid
+      source: category
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_topics
+      no_stub: true
+  field_region:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: regionId
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_regions
+      no_stub: true
+  layout_selection:
+    plugin: skip_on_empty
+    method: process
+    source: layout
+  field_hero_image:
+    -
+      plugin: usda_scientific_discoveries_uuid
+      source: hero_image
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_media
+      no_stub: true
+  field_featured_image:
+    -
+      plugin: usda_scientific_discoveries_uuid
+      source: featured_image
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_media
+      no_stub: true
+  field_external_video:
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_external_video
+      no_stub: true
+      source: nodeId
+    -
+      plugin: skip_on_empty
+      method: process
+  field_hide_page_title: hidePageTitle
+  field_short_name: shortName
+  field_hero_image_overlay_title: heroSlideOverlayTitle
+  metatags/0/title: htmlTitle
+  metatags/0/description: pageDescription
+  metatags/0/keywords: keywords
+  field_meta_tags:
+    plugin: callback
+    callable: serialize
+    source: '@metatags'
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

@@ -1,0 +1,10 @@
+uuid: 4aecdf00-1b22-48dd-b705-7c3a8ec05795
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.search_results_block_image
+label: 'Search Results Page Image'
+targetEntityType: media
+cache: true

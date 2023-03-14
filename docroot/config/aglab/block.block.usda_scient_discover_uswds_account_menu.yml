@@ -1,0 +1,27 @@
+uuid: d0ee6209-d6f7-41e2-9fec-f6756cb695cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - usda_scient_discover_uswds
+_core:
+  default_config_hash: 2ixVWzW_rQqismk49cL7p8cHWYhOMbtg6x37A9xbngc
+id: usda_scient_discover_uswds_account_menu
+theme: usda_scient_discover_uswds
+region: secondary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

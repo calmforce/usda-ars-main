@@ -1,0 +1,25 @@
+uuid: 5ffc0468-c86f-44f9-9852-f266611873fc
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - slick
+id: ars_slick_slider
+name: ars_slick_slider
+weight: -2
+label: 'ARS Slick Slider'
+group: main
+skin: classic
+breakpoints: 0
+optimized: true
+options:
+  options__active_tab: edit-options-settings
+  settings:
+    autoplay: true
+    pauseOnDotsHover: true
+    autoplaySpeed: 4000
+    dots: true
+    lazyLoad: ondemand
+    rows: 0
+    slidesToShow: 1

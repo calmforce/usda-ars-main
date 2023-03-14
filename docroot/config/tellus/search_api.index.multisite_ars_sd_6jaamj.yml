@@ -1,0 +1,202 @@
+uuid: dedd0117-54b9-4d85-86b6-7c991e2a5459
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+    - search_api
+  config:
+    - search_api.server.ars_multisite
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    debug_finalize: false
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    term_modifiers:
+      slop: 3
+      fuzzy: 1
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+id: multisite_ars_sd_6jaamj
+name: 'Multisite ARS SD 6jaamj'
+description: ''
+read_only: true
+field_settings:
+  body:
+    label: 'Main Content » Processed text'
+    datasource_id: solr_multisite_document
+    property_path: tm_X3b_und_body
+    type: text
+    boost: !!float 8
+  body_summary:
+    label: 'Main Content » Processed summary'
+    datasource_id: solr_multisite_document
+    property_path: tm_X3b_und_body_summary
+    type: text
+    boost: !!float 13
+  changed:
+    label: Changed
+    datasource_id: solr_multisite_document
+    property_path: ds_changed
+    type: date
+  content_type:
+    label: 'Content type'
+    datasource_id: solr_multisite_document
+    property_path: ss_content_type
+    type: string
+  featured_image_alt:
+    label: 'Featured Image » Media » Image » Alternative text'
+    datasource_id: solr_multisite_document
+    property_path: tm_X3b_und_featured_image_alt
+    type: text
+    boost: !!float 2
+  featured_image_caption:
+    label: 'Featured Image » Media » Caption » Processed text'
+    datasource_id: solr_multisite_document
+    property_path: tm_X3b_und_featured_image_caption
+    type: text
+    boost: !!float 5
+  featured_image_filename:
+    label: 'Featured Image » Media » Image » File » Filename'
+    datasource_id: solr_multisite_document
+    property_path: tm_X3b_und_featured_image_filename
+    type: text
+  featured_image_title:
+    label: 'Featured Image » Media » Image » Title'
+    datasource_id: solr_multisite_document
+    property_path: tm_X3b_und_featured_image_title
+    type: text
+  publish_date:
+    label: 'Publish Date'
+    datasource_id: solr_multisite_document
+    property_path: ds_publish_date
+    type: date
+  region:
+    label: Region
+    datasource_id: solr_multisite_document
+    property_path: itm_region
+    type: integer
+  region_name:
+    label: 'Region » Name'
+    datasource_id: solr_multisite_document
+    property_path: tm_X3b_und_region_name
+    type: text
+    boost: !!float 5
+  rendered_item:
+    label: 'Rendered HTML output'
+    datasource_id: solr_multisite_document
+    property_path: tm_X3b_und_rendered_item
+    type: text
+  spellcheck:
+    label: 'Spellcheck - Body+Title'
+    datasource_id: solr_multisite_document
+    property_path: spellcheck_und
+    type: solr_text_spellcheck
+    boost: !!float 21
+  title:
+    label: Title
+    datasource_id: solr_multisite_document
+    property_path: tm_X3b_und_title
+    type: text
+    boost: !!float 21
+  topic:
+    label: Topic
+    datasource_id: solr_multisite_document
+    property_path: itm_topic
+    type: integer
+  topic_name:
+    label: 'Topic » Name'
+    datasource_id: solr_multisite_document
+    property_path: tm_X3b_und_topic_name
+    type: text
+    boost: !!float 5
+  url:
+    label: URI
+    datasource_id: solr_multisite_document
+    property_path: ss_url
+    type: string
+  video_caption:
+    label: 'External Video » Media » Caption » Processed text'
+    datasource_id: solr_multisite_document
+    property_path: tm_X3b_und_video_caption
+    type: text
+    boost: !!float 3
+  video_media_type:
+    label: 'External Video » Media » Media type'
+    datasource_id: solr_multisite_document
+    property_path: tm_X3b_und_video_media_type
+    type: text
+    boost: !!float 2
+datasource_settings:
+  solr_multisite_document:
+    id_field: id
+    target_index: ars_sd_multisite
+    target_index_machine_name: ars_sd_multisite
+    target_hash: 6jaamj
+    request_handler: ''
+    default_query: '*:*'
+    label_field: ''
+    language_field: ss_search_api_language
+    url_field: site
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_type: {  }
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_always: false
+    excerpt_length: 256
+    exclude_fields:
+      - spellcheck
+      - video_media_type
+    prefix: '<span class="bg-yellow"><strong>'
+    suffix: '</strong></span>'
+    weights:
+      postprocess_query: 0
+  language_with_fallback: {  }
+  rendered_item: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  track_changes_in_references: true
+  cron_limit: 50
+server: ars_multisite

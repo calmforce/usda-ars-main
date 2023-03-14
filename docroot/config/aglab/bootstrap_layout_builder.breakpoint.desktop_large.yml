@@ -1,0 +1,10 @@
+uuid: 38d130e1-cf91-4cc3-92a5-a12e7a9cb976
+langcode: en
+status: 0
+dependencies: {  }
+_core:
+  default_config_hash: PmKGPjSp8GdPWnUju71i-kcxlFdpRtno_1OdrZrZEnk
+id: desktop_large
+label: 'Desktop Large'
+base_class: 'desktop-lg:grid-col'
+weight: 0

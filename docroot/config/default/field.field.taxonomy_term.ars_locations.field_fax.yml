@@ -1,0 +1,21 @@
+uuid: c53d20ff-5520-461b-9103-eccc39a0f18f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_fax
+    - taxonomy.vocabulary.ars_locations
+  module:
+    - telephone
+id: taxonomy_term.ars_locations.field_fax
+field_name: field_fax
+entity_type: taxonomy_term
+bundle: ars_locations
+label: Fax
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

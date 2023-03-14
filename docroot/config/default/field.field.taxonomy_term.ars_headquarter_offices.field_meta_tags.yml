@@ -1,0 +1,21 @@
+uuid: 21601d2f-4164-4722-bafa-240813202bdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_meta_tags
+    - taxonomy.vocabulary.ars_headquarter_offices
+  module:
+    - metatag
+id: taxonomy_term.ars_headquarter_offices.field_meta_tags
+field_name: field_meta_tags
+entity_type: taxonomy_term
+bundle: ars_headquarter_offices
+label: 'Meta tags'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

@@ -1,0 +1,28 @@
+uuid: a6eb9a9b-499d-4a4b-9e54-34122d618d62
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.filter_by_year
+  module:
+    - facets
+    - system
+  theme:
+    - usda_tellus_uswds
+id: filter_by_year
+theme: usda_tellus_uswds
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:filter_by_year'
+settings:
+  id: 'facet_block:filter_by_year'
+  label: 'Filter by Year'
+  provider: facets
+  label_display: '0'
+  block_id: filter_by_year
+visibility:
+  request_path:
+    id: request_path
+    pages: /stories
+    negate: false

@@ -1,0 +1,32 @@
+uuid: 94341d64-611c-461e-96b5-dc78e59db5b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_cards
+    - core.entity_view_mode.block_content.social_media_icons
+    - field.field.block_content.image_cards.field_uswds_card_group
+  module:
+    - entity_reference_revisions
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: block_content.image_cards.social_media_icons
+targetEntityType: block_content
+bundle: image_cards
+mode: social_media_icons
+content:
+  field_uswds_card_group:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: social_media_icons
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

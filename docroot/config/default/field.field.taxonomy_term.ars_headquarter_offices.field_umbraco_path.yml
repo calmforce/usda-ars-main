@@ -1,0 +1,19 @@
+uuid: 20398cff-d31d-49d9-80b0-3e0394c9e9cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_umbraco_path
+    - taxonomy.vocabulary.ars_headquarter_offices
+id: taxonomy_term.ars_headquarter_offices.field_umbraco_path
+field_name: field_umbraco_path
+entity_type: taxonomy_term
+bundle: ars_headquarter_offices
+label: 'Umbraco Path'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

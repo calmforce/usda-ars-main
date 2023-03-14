@@ -1,0 +1,27 @@
+uuid: b8a6b096-de44-4d47-8e65-6bdd28826801
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parent_folder
+    - node.type.site_folder
+id: node.site_folder.field_parent_folder
+field_name: field_parent_folder
+entity_type: node
+bundle: site_folder
+label: 'Parent Folder'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      site_folder: site_folder
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

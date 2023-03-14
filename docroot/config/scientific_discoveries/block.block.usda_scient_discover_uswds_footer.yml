@@ -1,0 +1,27 @@
+uuid: c2be0f71-9c8e-4096-8cb0-99d56530182e
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - usda_scient_discover_uswds
+_core:
+  default_config_hash: N1wQdDVi672R0w_BKYfJaQ1WI3Rx5k56ed-Fv4Sv4O0
+id: usda_scient_discover_uswds_footer
+theme: usda_scient_discover_uswds
+region: footer_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

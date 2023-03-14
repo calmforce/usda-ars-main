@@ -1,0 +1,22 @@
+uuid: 9b7bef32-774a-45dd-bf90-f6ac0077ae1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - usda_ars_uswds
+_core:
+  default_config_hash: GsEzVMgTr4L5Y9_Y-BVPkVCR51butt-jow7DoTLY83E
+id: usda_ars_uswds_help
+theme: usda_ars_uswds
+region: help
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

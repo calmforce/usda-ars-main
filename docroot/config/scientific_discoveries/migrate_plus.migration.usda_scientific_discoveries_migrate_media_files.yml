@@ -1,0 +1,53 @@
+uuid: e6a9257b-9aa5-4a66-934f-3cdaa105dfd8
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_scientific_discoveries_migrate
+id: usda_scientific_discoveries_migrate_media_files
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'Scientific Discoveries Media'
+  - 'USDA ARS Scientific Discoveries'
+  - 'USDA ARS'
+migration_group: usda_scientific_discoveries_migrate
+label: '4 - ARS Scientific Discoveries Media Files'
+source:
+  plugin: usda_scientific_discoveries_media_files
+  key: scientific_discoveries
+  scheme: public
+  constants:
+    langcode: en
+process:
+  fid: fid
+  filename: mediaName
+  langcode: constants/langcode
+  uri:
+    plugin: usda_scientific_discoveries_dest_uri
+    scheme: public
+    source: filepath
+  status:
+    plugin: default_value
+    default_value: 1
+  created: createDate
+  changed: createDate
+  uid:
+    -
+      plugin: usda_ars_user
+      source: nodeUser
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_user
+      no_stub: true
+    -
+      plugin: default_value
+      default_value: 1
+destination:
+  plugin: 'entity:file'
+migration_dependencies:
+  required:
+    - usda_scientific_discoveries_migrate_user

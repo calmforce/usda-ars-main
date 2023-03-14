@@ -1,0 +1,8 @@
+uuid: 46eec6c6-7a38-42c0-b62c-ad1c8b20c86d
+langcode: en
+status: true
+dependencies: {  }
+id: image_gallery
+label: 'Image Gallery'
+revision: 0
+description: 'Collection of images with captions, presented as a slideshow.'

@@ -1,0 +1,60 @@
+# The machine name for a migration, used to uniquely identify it.
+id: usda_aglab_migrate_media_files
+
+# A human-friendly description of the migration.
+label: 4 - ARS Aglab Media Files
+
+# The machine name of the group containing this migration (which contains shared
+# configuration to be merged with our own configuration here).
+migration_group: usda_aglab_migrate
+
+audit: true
+migration_tags:
+  - Umbraco
+  - Aglab Media
+  - USDA ARS Aglab
+  - USDA ARS
+
+source:
+  plugin: usda_aglab_media_files
+  key: aglab
+  scheme: public
+  constants:
+    langcode: 'en'
+process:
+  # If you are using this file to build a custom migration consider removing
+  # the fid field to allow incremental migrations.
+  fid: fid
+  filename: mediaName
+  langcode: constants/langcode
+  uri:
+    plugin: usda_aglab_dest_uri
+    scheme: public
+    source: filepath
+  # No need to migrate filesize or filemime,
+  # they is computed when file entities are saved.
+  status:
+    plugin: default_value
+    default_value: 1
+  created: createDate
+  changed: createDate
+  uid:
+    -
+      plugin: usda_ars_user
+      source: nodeUser
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_user
+      no_stub: true
+    -
+      plugin: default_value
+      default_value: 1
+destination:
+  plugin: entity:file
+migration_dependencies:
+  required:
+    - usda_aglab_migrate_user
+dependencies:
+  enforced:
+    module:
+      - usda_aglab_migrate

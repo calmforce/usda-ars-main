@@ -1,0 +1,29 @@
+uuid: 2b176b7d-5698-4d89-b851-f1b602683af9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_national_program
+    - node.type.np_program_content_page
+    - taxonomy.vocabulary.ars_national_programs
+id: node.np_program_content_page.field_national_program
+field_name: field_national_program
+entity_type: node
+bundle: np_program_content_page
+label: 'National Program'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ars_national_programs: ars_national_programs
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

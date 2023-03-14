@@ -1,0 +1,23 @@
+uuid: e58f2f7c-10b7-4db0-b105-1404379b2213
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_hide_page_title
+    - taxonomy.vocabulary.topics
+id: taxonomy_term.topics.field_hide_page_title
+field_name: field_hide_page_title
+entity_type: taxonomy_term
+bundle: topics
+label: 'Hide Page Title'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

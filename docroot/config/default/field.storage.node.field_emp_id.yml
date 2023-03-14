@@ -1,0 +1,21 @@
+uuid: b6dee7ad-18d7-4129-9a2b-9dcecf14aa75
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_emp_id
+field_name: field_emp_id
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

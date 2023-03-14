@@ -1,0 +1,8 @@
+allow_cancel_vote: true
+hide_vote_widget: false
+enabled_types:
+  node:
+    - article
+  vote_result: {  }
+_core:
+  default_config_hash: v8zOJVZLS-en7NcVdxnPvhRbnakYqCV9dd1eTRtPf-g

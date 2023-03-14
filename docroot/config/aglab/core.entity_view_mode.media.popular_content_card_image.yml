@@ -1,0 +1,10 @@
+uuid: 57b4337d-624c-4e94-bfad-9623151be312
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.popular_content_card_image
+label: 'Popular Content Card Image'
+targetEntityType: media
+cache: true

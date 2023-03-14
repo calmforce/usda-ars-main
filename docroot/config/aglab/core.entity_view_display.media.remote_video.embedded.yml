@@ -1,0 +1,80 @@
+uuid: 633fc08d-6110-400d-bae0-5153b6a8f724
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.embedded
+    - field.field.media.remote_video.field_background_color
+    - field.field.media.remote_video.field_caption
+    - field.field.media.remote_video.field_hide_title
+    - field.field.media.remote_video.field_image
+    - field.field.media.remote_video.field_leaf_motif
+    - field.field.media.remote_video.field_media_in_library
+    - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.field_subtitle
+    - field.field.media.remote_video.field_video_alt_text
+    - media.type.remote_video
+  module:
+    - color_field
+    - media
+    - text
+_core:
+  default_config_hash: Lc_ZVpyTIAvXY-TuS2886QfyYMqfF9MeeESRidiHo8M
+id: media.remote_video.embedded
+targetEntityType: media
+bundle: remote_video
+mode: embedded
+content:
+  field_background_color:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_caption:
+    type: text_default
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media_oembed_video:
+    type: oembed
+    label: hidden
+    settings:
+      max_width: 960
+      max_height: 540
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_subtitle:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  addtoany: true
+  created: true
+  field_hide_title: true
+  field_image: true
+  field_leaf_motif: true
+  field_media_in_library: true
+  field_video_alt_text: true
+  langcode: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

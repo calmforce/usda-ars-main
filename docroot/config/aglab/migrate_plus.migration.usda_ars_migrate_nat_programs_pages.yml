@@ -1,0 +1,76 @@
+uuid: c59374bc-86bb-4791-b7de-a4db99bb5b39
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_ars_migrate
+id: usda_ars_migrate_nat_programs_pages
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'ARS National Programs'
+  - 'USDA ARS'
+migration_group: usda_ars_migrate
+label: '14 - USDA ARS National Programs Pages'
+source:
+  plugin: usda_ars_nat_programs_pages
+  constants:
+    bundle: np_program_content_page
+    langcode: en
+    html_format: rich_text
+process:
+  nid: nodeId
+  type: constants/bundle
+  langcode: constants/langcode
+  title: nodeName
+  body/value:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: body
+    -
+      plugin: usda_ars_html_body_tokens
+  body/format: constants/html_format
+  program_id:
+    -
+      plugin: usda_ars_parent_id
+      source: program_id
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_ars_migrate_national_programs
+      no_stub: true
+  field_national_program:
+    plugin: skip_on_empty
+    method: row
+    message: 'No Program found for the node, skipping the row'
+    source: '@program_id'
+  field_document_type:
+    plugin: usda_ars_np_doc_type
+    source: node_type
+  field_umbraco_path:
+    plugin: usda_ars_np_path
+    source: path
+  field_umbraco_node_url: node_url
+  status:
+    plugin: default_value
+    default_value: 1
+  changed: datetime
+  uid:
+    plugin: usda_ars_user
+    source: nodeUser
+  metatags/0/title: htmlTitle
+  metatags/0/description: pageDescription
+  metatags/0/keywords: keywords
+  field_meta_tags:
+    plugin: callback
+    callable: serialize
+    source: '@metatags'
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

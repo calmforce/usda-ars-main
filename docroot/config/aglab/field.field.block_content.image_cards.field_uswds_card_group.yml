@@ -1,0 +1,85 @@
+uuid: dc33b2fc-f57a-48ee-8875-9e0f2fbc3ef3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_cards
+    - field.storage.block_content.field_uswds_card_group
+    - paragraphs.paragraphs_type.uswds_card_regular
+  module:
+    - entity_reference_revisions
+id: block_content.image_cards.field_uswds_card_group
+field_name: field_uswds_card_group
+entity_type: block_content
+bundle: image_cards
+label: 'USWDS Card Group'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      uswds_card_regular: uswds_card_regular
+    negate: 0
+    target_bundles_drag_drop:
+      text_field:
+        weight: 20
+        enabled: false
+      uswds_2_column_breakpoints:
+        weight: 22
+        enabled: false
+      uswds_2_columns:
+        weight: 21
+        enabled: false
+      uswds_3_column_breakpoints:
+        weight: 24
+        enabled: false
+      uswds_3_columns:
+        weight: 23
+        enabled: false
+      uswds_accordion:
+        weight: 25
+        enabled: false
+      uswds_accordion_section:
+        weight: 26
+        enabled: false
+      uswds_alert:
+        weight: 27
+        enabled: false
+      uswds_card_breakpoints:
+        weight: 29
+        enabled: false
+      uswds_card_group_flag:
+        weight: 30
+        enabled: false
+      uswds_card_group_regular:
+        weight: 31
+        enabled: false
+      uswds_card_regular:
+        weight: 32
+        enabled: true
+      uswds_cards_flag:
+        weight: 28
+        enabled: false
+      uswds_modal:
+        weight: 33
+        enabled: false
+      uswds_process_item:
+        weight: 34
+        enabled: false
+      uswds_process_list:
+        weight: 35
+        enabled: false
+      uswds_step_indicator_item:
+        weight: 36
+        enabled: false
+      uswds_step_indicator_list:
+        weight: 37
+        enabled: false
+      uswds_summary_box:
+        weight: 38
+        enabled: false
+field_type: entity_reference_revisions

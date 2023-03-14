@@ -1,0 +1,29 @@
+uuid: 5b46830e-c0a3-41d8-b9a7-82d2edebe5c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_in_this_section
+    - node.type.article
+    - taxonomy.vocabulary.topics
+id: taxonomy_term.topics.field_in_this_section
+field_name: field_in_this_section
+entity_type: taxonomy_term
+bundle: topics
+label: 'In This Section'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

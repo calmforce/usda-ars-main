@@ -1,0 +1,100 @@
+blocks:
+  -
+    info: 'Tellus-Site branding'
+    langcode: en
+    uuid: e1baf158-39cc-44df-8671-fd141a3788cc
+    bundle: html_code
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<div class=\"usa-logo site-logo site-branding\" id=\"logo\">\r\n  <img src=\"/sites/tellus/files/images/USDA_logo.png\" alt=\"Home\">\r\n  <div class=\"site-branding__text\">\r\n    <div class=\"site-branding__site-name\">\r\n      <a href=\"/\" title=\"Home\" rel=\"home\">Tellus</a>\r\n    </div>\r\n    <div class=\"site-branding__usda\">\r\n      <a href=\"https://www.usda.gov\">U.S. Department of Agriculture</a>\r\n    </div>\r\n  </div>\r\n</div>"
+          summary: ''
+          format: rich_text
+  -
+    info: 'Sign up for ARS News updates'
+    langcode: en
+    uuid: dd8164ff-15f7-4358-8170-e5e899b700c5
+    bundle: html_code
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<div aria-label=\"Subscribe Form\" class=\"subscribe-form-wrap\" role=\"complementary\">\r\n<div class=\"container\">\r\n<div class=\"row\">\r\n<div class=\"col-md-6 offset-md-3\">\r\n<div class=\"sub-title-section\">\r\n<h2 class=\"signup-title\">Subscribe</h2>\r\n<img class=\"subscribe-logo\" src=\"/sites/tellus/files/images/logo-tellus-color-transparent.png\" /></div>\r\n\r\n<div class=\"ars-form subscribe-form\">\r\n<form accept-charset=\"UTF-8\" action=\"https://public.govdelivery.com/accounts/USDAARS/subscriber/qualify?qsp=CODE_RED\" class=\"sign-up\" data-drupal-form-fields=\"email,go\" id=\"GD-snippet-form\" method=\"post\" target=\"_blank\"><input name=\"utf8\" type=\"hidden\" value=\"✓\" /> <input name=\"authenticity_token\" type=\"hidden\" value=\"tV2OquJR5xnmtrmmZS3UWsIp7QddNiZcKotw2AMMUx2u9nfu4b3aL1Fb4L6RnJCoF5VYhXZ85qUPjpOyJiUlhg==\" />\r\n<h3 class=\"usa-sign_up-header\">Email</h3>\r\n\r\n<div class=\"EmailSignup-Footer\"><input id=\"email\" name=\"email\" placeholder=\"Sign up for ARS News updates\" style=\"display: inline-block;\" type=\"text\" value=\"\" /> <input class=\"form_button subscribe-button\" id=\"go\" name=\"commit\" style=\"display: inline-block;\" type=\"submit\" value=\"Go\" /></div>\r\n</form>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n"
+          summary: ''
+          format: html_code
+menus:
+  -
+    menu_name: main
+    title: Home
+    parent: null
+    uri: 'internal:/'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '0'
+    langcode: en
+    uuid: 91cbfb51-2cdb-4cff-bbbd-ee6374063cad
+  -
+    menu_name: main
+    title: About
+    parent: null
+    uri: 'entity:node/1'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '10'
+    langcode: en
+    uuid: 58286aad-f087-4d58-8fa7-7407422e82bc
+  -
+    menu_name: main
+    title: Articles
+    parent: null
+    uri: 'internal:/stories'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '20'
+    langcode: en
+    uuid: 6ad2fa04-405c-4b03-895f-eaa11ad03148
+  -
+    menu_name: main
+    title: 'ARS Home'
+    parent: null
+    uri: 'https://www.ars.usda.gov/'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '30'
+    langcode: en
+    uuid: 29b7d578-c483-4d50-9125-d918217ccc7f
+  -
+    menu_name: main
+    title: 'ARS Image Gallery'
+    parent: null
+    uri: 'https://www.ars.usda.gov/oc/images/image-gallery/'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '40'
+    langcode: en
+    uuid: 98116adf-41e9-488a-b1d2-749e21938030
+  -
+    menu_name: main
+    title: 'AgResearch Magazine'
+    parent: null
+    uri: 'https://agresearchmag.ars.usda.gov/'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '50'
+    langcode: en
+    uuid: bb554a63-427a-487f-b11d-dcebc207c0d2

@@ -1,0 +1,114 @@
+{
+    "fieldsets": [
+        {
+            "properties": [
+                {
+                    "alias": "newsTopic",
+                    "value": "Animals"
+                }
+            ],
+            "alias": "newsTopics",
+            "disabled": false,
+            "id": "c46c34fb-c5dc-48ab-a6fd-f9ec2d8f9bd7"
+        },
+        {
+            "properties": [
+                {
+                    "alias": "newsTopic",
+                    "value": "Bees"
+                }
+            ],
+            "alias": "newsTopics",
+            "disabled": false,
+            "id": "d84f85e2-dd71-4012-bdfb-e813e4be0845"
+        },
+        {
+            "properties": [
+                {
+                    "alias": "newsTopic",
+                    "value": "Biofuels"
+                }
+            ],
+            "alias": "newsTopics",
+            "disabled": false,
+            "id": "3ca3cf8e-b27c-4c0b-ac5b-8988a0a7bf7b"
+        },
+        {
+            "properties": [
+                {
+                    "alias": "newsTopic",
+                    "value": "Bio Products"
+                }
+            ],
+            "alias": "newsTopics",
+            "disabled": false,
+            "id": "a9e1576f-8051-41c1-920f-a7c53918ba68"
+        },
+        {
+            "properties": [
+                {
+                    "alias": "newsTopic",
+                    "value": "Climate Change"
+                }
+            ],
+            "alias": "newsTopics",
+            "disabled": false,
+            "id": "4caf99c2-dcb9-4408-b369-31349e3dabb0"
+        },
+        {
+            "properties": [
+                {
+                    "alias": "newsTopic",
+                    "value": "Crops"
+                }
+            ],
+            "alias": "newsTopics",
+            "disabled": false,
+            "id": "2ed1cdbe-1110-411c-b10b-7247acffce2c"
+        },
+        {
+            "properties": [
+                {
+                    "alias": "newsTopic",
+                    "value": "Food Safety"
+                }
+            ],
+            "alias": "newsTopics",
+            "disabled": false,
+            "id": "e2547c46-1ac3-4faf-ab60-81ee840917af"
+        },
+        {
+            "properties": [
+                {
+                    "alias": "newsTopic",
+                    "value": "Invasive Species"
+                }
+            ],
+            "alias": "newsTopics",
+            "disabled": false,
+            "id": "ca2865f4-fbe8-4382-9eee-a45fbafc6e9d"
+        },
+        {
+            "properties": [
+                {
+                    "alias": "newsTopic",
+                    "value": "Nutrition and Health"
+                }
+            ],
+            "alias": "newsTopics",
+            "disabled": false,
+            "id": "ecdec841-3123-4186-8abd-4a226f22489d"
+        },
+        {
+            "properties": [
+                {
+                    "alias": "newsTopic",
+                    "value": "Organics"
+                }
+            ],
+            "alias": "newsTopics",
+            "disabled": false,
+            "id": "02c03d88-1c3e-49ff-a426-ab19ce62ee75"
+        }
+    ]
+}

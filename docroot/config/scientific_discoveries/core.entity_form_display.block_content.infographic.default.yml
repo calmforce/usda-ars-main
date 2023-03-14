@@ -1,0 +1,60 @@
+uuid: 294e9f8e-915a-4fcb-828c-df68c275780c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.infographic
+    - field.field.block_content.infographic.field_caption
+    - field.field.block_content.infographic.field_hide_title
+    - field.field.block_content.infographic.field_infographic
+    - field.field.block_content.infographic.field_link
+  module:
+    - link
+    - media_library
+    - text
+id: block_content.infographic.default
+targetEntityType: block_content
+bundle: infographic
+mode: default
+content:
+  field_caption:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_hide_title:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_infographic:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  template_suggestion:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  info: true
+  langcode: true

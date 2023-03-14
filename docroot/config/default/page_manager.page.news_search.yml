@@ -1,0 +1,12 @@
+uuid: 61c8dd0a-74ae-4fdf-8dd2-f225bbae1350
+langcode: en
+status: true
+dependencies: {  }
+id: news_search
+label: 'News Search'
+description: ''
+use_admin_theme: false
+path: /search/news
+access_logic: and
+access_conditions: {  }
+parameters: {  }

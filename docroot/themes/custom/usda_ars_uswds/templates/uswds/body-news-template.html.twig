@@ -1,0 +1,20 @@
+{% if content %}
+
+{% else %}
+  <ul class="usa-accordion usa-accordion--bordered">
+    <li>
+      <button class="usa-accordion__button" aria-expanded="false" aria-controls="b-news">
+        <h4>ARS News Articles</h4>
+      </button>
+      <div id="b-news" class="usa-accordion__content">
+        <table id="News" width="368">
+          <tbody> 
+            <tr>
+              <td>No news articles listed for this employee.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </li>
+  </ul>
+{% endif %}

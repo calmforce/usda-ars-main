@@ -1,0 +1,15 @@
+uuid: a89bf860-e27e-4cf5-90cf-6f7a1ab23295
+langcode: en
+status: true
+dependencies: {  }
+name: 700px_wide
+label: 700px-wide
+effects:
+  19339d49-7cd7-42c0-a5ff-d404247725eb:
+    uuid: 19339d49-7cd7-42c0-a5ff-d404247725eb
+    id: image_scale
+    weight: 1
+    data:
+      width: 700
+      height: null
+      upscale: true

@@ -1,0 +1,35 @@
+uuid: 4f7dc063-9080-4aac-b240-5b8d5053b36d
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.people_search
+    - views.view.find_a_person
+  module:
+    - views
+id: people_search-block_display-0
+label: 'People Search'
+variant: block_display
+variant_settings:
+  blocks:
+    b4abc4eb-c700-4c73-a50f-df3cae8f6664:
+      id: 'views_block:find_a_person-find_person_block'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: top
+      weight: 0
+      uuid: b4abc4eb-c700-4c73-a50f-df3cae8f6664
+      context_mapping: {  }
+  id: block_display
+  uuid: e0d6fa19-307c-4f73-a663-bb3d947f8d62
+  label: null
+  weight: 0
+  page_title: 'Find A Person'
+page: people_search
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

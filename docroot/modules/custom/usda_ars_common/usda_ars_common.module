@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Provides Drupal customizations common to all USDA ARS sites.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function usda_ars_common_form_editor_media_dialog_alter(&$form, FormStateInterface $form_state) {
+  // Remove Caption checkbox and Alternate text input box from the form,
+  // since we use Media form for these fields.
+  unset($form['caption']);
+  unset($form['alt']);
+}

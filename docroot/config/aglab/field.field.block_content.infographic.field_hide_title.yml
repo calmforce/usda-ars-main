@@ -1,0 +1,23 @@
+uuid: 414a605b-f655-4656-b24f-90c44b5d1293
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.infographic
+    - field.storage.block_content.field_hide_title
+id: block_content.infographic.field_hide_title
+field_name: field_hide_title
+entity_type: block_content
+bundle: infographic
+label: 'Hide Title'
+description: 'If true, the title won''t be shown above the section. If false, it will be shown.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

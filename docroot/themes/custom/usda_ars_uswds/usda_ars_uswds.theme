@@ -1,0 +1,239 @@
+<?php
+
+/**
+ * @file
+ * USWDS Base sub-theme.
+ */
+
+use Drupal\Component\Serialization\Json;
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function usda_ars_uswds_preprocess_node(&$variables) {
+  if ($variables['node']->getType() == 'person_profile') {
+
+    $contentBody = $variables['node']->get('body')->value;
+
+    $contentBodyColumned = $variables['node']->get('field_body_columned_text')->value;
+
+    $body_columned_text = usda_ars_uswds_body_columned_text($contentBodyColumned, $variables['node']);
+
+    $variables['body_columned_text'] = $body_columned_text;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function usda_ars_uswds_theme($existing, $type, $theme, $path) {
+  return [
+    'body_columned_template' => [
+      'variables' => ['content' => NULL],
+      'template' => 'body-columned-template',
+      'path' => $path . '/templates/uswds',
+    ],
+    'body_projects_template' => [
+      'variables' => ['content' => NULL, 'image_path' => NULL],
+      'template' => 'body-projects-template',
+      'path' => $path . '/templates/uswds',
+    ],
+    'body_publications_template' => [
+      'variables' => ['content' => NULL, 'image_path' => NULL],
+      'template' => 'body-publications-template',
+      'path' => $path . '/templates/uswds',
+    ],
+    'body_news_template' => [
+      'variables' => ['content' => NULL, 'image_path' => NULL],
+      'template' => 'body-news-template',
+      'path' => $path . '/templates/uswds',
+    ],
+  ];
+}
+
+/**
+ * Converts json format into a html.
+ *
+ * @param string $text
+ * @param $node
+ *
+ * @return string|empty
+ */
+function usda_ars_uswds_body_columned_text($text, $node) {
+  $output = '';
+
+  $bodyText = Json::decode($text);
+
+  $i = 0;
+  foreach ($bodyText['sections'] as $bSectionsText) {
+    $j = 0;
+    foreach ($bSectionsText['rows'] as $bRowText) {
+      $k = 0;
+      foreach ($bRowText['areas'] as $area) {
+        if (!empty($area['controls'])) {
+          $output = $area['controls'][0]['value'];
+          // {{PROJECTS}}
+          if (strpos($output, '{{PROJECTS}}') !== FALSE) {
+            $field_projects = $node->get('field_projects')->value;
+            $_projects = usda_ars_uswds_replace_projecs_tag($field_projects);
+            $output = str_replace("{{PROJECTS}}", $_projects, $output);
+            $bodyText['sections'][$i]['rows'][$j]['areas'][$k]['controls'][0]['value'] = $output;
+          }
+
+          // {{PUBLICATIONS}}
+          if (strpos($output, '{{PUBLICATIONS}}') !== FALSE) {
+            $field_publications = $node->get('field_publications')->value;
+            $_publications = usda_ars_uswds_replace_publications_tag($field_publications);
+            $output = str_replace("{{PUBLICATIONS}}", $_publications, $output);
+            $bodyText['sections'][$i]['rows'][$j]['areas'][$k]['controls'][0]['value'] = $output;
+          }
+
+          // {{NEWS}}
+          if (strpos($output, '{{NEWS}}') !== FALSE) {
+            $field_news = $node->get('field_news')->value;
+            $_news = usda_ars_uswds_replace_news_tag($field_news);
+            $output = str_replace("{{NEWS}}", $_news, $output);
+            $bodyText['sections'][$i]['rows'][$j]['areas'][$k]['controls'][0]['value'] = $output;
+          }
+        }
+        $k++;
+      }
+      $j++;
+    }
+    $i++;
+  }
+
+  return [
+    '#theme' => 'body_columned_template',
+    '#content' => $bodyText,
+  ];
+}
+
+/**
+ * Replaces {{PROJECTS}} token with HTML.
+ *
+ * @param $text
+ *
+ * @return string|empty
+ */
+function usda_ars_uswds_replace_projecs_tag($text) {
+  $bodyText = Json::decode($text);
+  $imgpath = \Drupal::theme()->getActiveTheme()->getPath();
+
+  if (!empty($bodyText)) {
+    $i = 0;
+    foreach ($bodyText as $prj) {
+      $projectTypeByCode = projectTypeByCode($prj['prj_type']);
+      $bodyText[$i]['prj_type_code'] = $projectTypeByCode;
+      $i++;
+    }
+  }
+
+  $renderable = [
+    '#theme' => 'body_projects_template',
+    '#content' => $bodyText,
+    '#image_path' => base_path() . $imgpath,
+  ];
+
+  $rendered = \Drupal::service('renderer')->renderPlain($renderable);
+
+  return $rendered;
+}
+
+/**
+ * Replaces {{NEWS}} token with HTML.
+ *
+ * @param $text
+ *
+ * @return string|empty
+ */
+function usda_ars_uswds_replace_news_tag($text) {
+  $bodyText = Json::decode($text);
+  $imgpath = \Drupal::theme()->getActiveTheme()->getPath();
+
+  $renderable = [
+    '#theme' => 'body_news_template',
+    '#content' => $bodyText,
+    '#image_path' => base_path() . $imgpath,
+  ];
+
+  $rendered = \Drupal::service('renderer')->renderPlain($renderable);
+
+  return $rendered;
+}
+
+/**
+ * Replaces {{PUBLICATIONS}} token with HTML.
+ *
+ * @param $text
+ *
+ * @return string|empty
+ */
+function usda_ars_uswds_replace_publications_tag($text) {
+  $bodyText = Json::decode($text);
+  $imgpath = \Drupal::theme()->getActiveTheme()->getPath();
+
+  if (!empty($bodyText)) {
+    $i = 0;
+    foreach ($bodyText as $pub) {
+      $publicationType = "";
+
+      if ($pub['PUB_TYPE_CODE'] == "J") {
+        $publicationType = "Peer Reviewed Journal";
+      }
+      elseif ($pub['PUB_TYPE_CODE'] == "A") {
+        $publicationType = "Abstract Only";
+      }
+      elseif ($pub['PUB_TYPE_CODE'] == "P") {
+        $publicationType = "Proceedings";
+      }
+      $bodyText[$i]['PUB_TYPE_VALUE'] = $publicationType;
+      $i++;
+    }
+  }
+
+  $renderable = [
+    '#theme' => 'body_publications_template',
+    '#content' => $bodyText,
+    '#image_path' => base_path() . $imgpath,
+  ];
+
+  $rendered = \Drupal::service('renderer')->renderPlain($renderable);
+
+  return $rendered;
+}
+
+/**
+ * Return the project type by code.
+ *
+ * @param $code
+ * The project code.
+ *
+ * @return string|empty
+ * The project type.
+ */
+function projectTypeByCode($code) {
+  $project_type = [
+    'A' => 'Cooperative Agreement',
+    'B' => 'Standard Cooperative Agreement',
+    'C' => 'Cooperative Research and Development Agreement',
+    'D' => 'In-House Appropriated',
+    'G' => 'Grant',
+    'H' => 'Material Transfer Research Agreement',
+    'I' => 'Interagency Reimbursable Agreement',
+    'J' => 'Research Support Agreement',
+    'L' => 'Cross Location',
+    'M' => 'Memorandum of Understanding',
+    'N' => 'Non-Funded Cooperative Agreement',
+    'O' => 'Outgoing Interagency Agreement',
+    'P' => 'PL-480 Agreement',
+    'Q' => 'General Cooperative Agreement',
+    'R' => 'Reimbursable Cooperative Agreement',
+    'S' => 'Non-Assistance Cooperative Agreement',
+    'T' => 'Trust Fund Cooperative Agreement',
+    'X' => 'Other',
+    'Y' => 'Contract',
+  ];
+
+  return empty($project_type[$code]) ? '' : $project_type[$code];
+}

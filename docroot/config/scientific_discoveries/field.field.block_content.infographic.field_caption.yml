@@ -1,0 +1,21 @@
+uuid: 59da1015-4311-48e0-8df6-52263eb9cc64
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.infographic
+    - field.storage.block_content.field_caption
+  module:
+    - text
+id: block_content.infographic.field_caption
+field_name: field_caption
+entity_type: block_content
+bundle: infographic
+label: 'Infographic Caption'
+description: 'This text will display below the infographic.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

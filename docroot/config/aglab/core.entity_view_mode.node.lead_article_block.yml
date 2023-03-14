@@ -1,0 +1,10 @@
+uuid: 635e7da4-3ea6-4b31-9fb1-7461fca5cd1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.lead_article_block
+label: 'Lead Article Block'
+targetEntityType: node
+cache: true

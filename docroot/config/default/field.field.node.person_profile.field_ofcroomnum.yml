@@ -1,0 +1,19 @@
+uuid: 78e3231f-c6c2-4b14-a75f-5ac355ae50cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ofcroomnum
+    - node.type.person_profile
+id: node.person_profile.field_ofcroomnum
+field_name: field_ofcroomnum
+entity_type: node
+bundle: person_profile
+label: 'Office Room Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

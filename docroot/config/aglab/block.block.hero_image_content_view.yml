@@ -1,0 +1,36 @@
+uuid: a148dd98-8667-4f03-8026-ab904e3835e4
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - node
+    - system
+  theme:
+    - uswds_base
+id: hero_image_content_view
+theme: uswds_base
+region: hero
+weight: 0
+provider: null
+plugin: 'entity_view:node'
+settings:
+  id: 'entity_view:node'
+  label: 'Hero Image view (Content)'
+  label_display: '0'
+  provider: ctools
+  view_mode: hero
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/node/*\r\n"

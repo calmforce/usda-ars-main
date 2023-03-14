@@ -1,0 +1,80 @@
+uuid: 62d0009a-e065-40e8-b31e-4b62572b4d9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.rich_text
+  module:
+    - ckeditor
+_core:
+  default_config_hash: heCSHfqc7ODs3Yj-2KDI3jSFaF9SCLgv8_LKR2Gt9Dg
+format: rich_text
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - Strike
+            - Superscript
+            - Subscript
+            - '-'
+            - RemoveFormat
+        -
+          name: Linking
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - Table
+            - HorizontalRule
+            - DrupalMediaLibrary
+        -
+          name: 'Block Formatting'
+          items:
+            - Format
+        -
+          name: Tools
+          items:
+            - ShowBlocks
+            - Source
+            - Paste
+            - PasteText
+            - PasteFromWord
+        -
+          name: USWDS
+          items:
+            - uswds_grid
+            - Accordion
+        -
+          name: Styles
+          items:
+            - Styles
+  plugins:
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: default
+    stylescombo:
+      styles: "span.text-red|Text: red\r\nspan.text-orange|Text: orange\r\nspan.text-gold|Text: gold\r\nspan.text-yellow|Text: yellow\r\nspan.text-green|Text: green\r\nspan.text-mint|Text: mint\r\nspan.text-cyan|Text: cyan\r\nspan.text-blue|Text: blue\r\nspan.text-indigo|Text: indigo\r\nspan.text-violet|Text: violet\r\nspan.text-magenta|Text: magenta\r\np.bg-gray-30|Bkg: silver\r\np.bg-red|Bkg: red\r\np.bg-orange|Bkg: orange\r\np.bg-gold|Bkg: gold\r\np.bg-yellow|Bkg: yellow\r\np.bg-green|Bkg: green\r\np.bg-mint|Bkg: mint\r\np.bg-cyan|Bkg: cyan\r\np.bg-blue|Bkg: blue\r\np.bg-indigo|Bkg: indigo\r\np.bg-violet|Bkg: violet\r\np.bg-magenta|Bkg: magenta\r\n"
+    uswds_table:
+      override_table: 1
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

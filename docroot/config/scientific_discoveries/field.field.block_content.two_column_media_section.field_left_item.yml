@@ -1,0 +1,31 @@
+uuid: 5f15ece0-2181-41c5-a069-f3782eb16bdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.two_column_media_section
+    - field.storage.block_content.field_left_item
+    - media.type.image
+    - media.type.remote_video
+id: block_content.two_column_media_section.field_left_item
+field_name: field_left_item
+entity_type: block_content
+bundle: two_column_media_section
+label: 'Left Item'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      remote_video: remote_video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

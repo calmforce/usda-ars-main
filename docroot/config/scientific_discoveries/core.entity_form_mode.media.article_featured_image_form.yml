@@ -1,0 +1,10 @@
+uuid: d9f61f5e-1559-4765-908d-745fcdc85cec
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.article_featured_image_form
+label: 'Article Featured Image form'
+targetEntityType: media
+cache: true

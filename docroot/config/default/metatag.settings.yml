@@ -1,0 +1,24 @@
+entity_type_groups:
+  node:
+    news_article:
+      basic: basic
+      advanced: advanced
+    np_program_content_page:
+      basic: basic
+      advanced: advanced
+    page:
+      basic: basic
+      advanced: advanced
+    person_profile:
+      basic: basic
+      advanced: advanced
+    site_folder:
+      basic: basic
+      advanced: advanced
+  taxonomy_term:
+    ars_headquarter_offices:
+      basic: basic
+      advanced: advanced
+    ars_locations:
+      basic: basic
+      advanced: advanced

@@ -1,0 +1,56 @@
+uuid: 68f302ce-3c1e-4bf2-8f8c-4558cf60038b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.article_featured_image_form
+    - field.field.media.image.field_caption
+    - field.field.media.image.field_image_link
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_media_in_library
+    - image.style.embedded
+    - media.type.image
+  module:
+    - focal_point
+    - text
+_core:
+  default_config_hash: MhGC-0dK5T_kLyHSPIctI9OztGTG1uCBBRjO8t1gcd0
+id: media.image.article_featured_image_form
+targetEntityType: media
+bundle: image
+mode: article_featured_image_form
+content:
+  field_caption:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_image:
+    type: image_focal_point
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: embedded
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_image_link: true
+  field_media_in_library: true
+  langcode: true
+  path: true
+  status: true
+  uid: true

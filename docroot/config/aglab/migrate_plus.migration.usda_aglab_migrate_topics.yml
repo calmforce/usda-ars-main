@@ -1,0 +1,47 @@
+uuid: 9f296834-c6f9-4f20-addd-356c7670a0af
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_aglab_migrate
+_core:
+  default_config_hash: YQxtFoIAbHYH6lON0FW9W8N9NORMBIlDtOk7Ay-3fbo
+id: usda_aglab_migrate_topics
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'Aglab Categories'
+  - 'USDA ARS Aglab'
+  - 'USDA ARS'
+migration_group: usda_aglab_migrate
+label: '2.2 - ARS Aglab Topics'
+source:
+  plugin: usda_aglab_topics
+  key: aglab
+  constants:
+    vid: topics
+    langcode: en
+    html_format: rich_text
+process:
+  tid: nodeId
+  vid: constants/vid
+  langcode: constants/langcode
+  name: nodeName
+  description/value: description
+  description/format: rich_text
+  field_color/color: color
+  weight: sortOrder
+  status:
+    plugin: default_value
+    default_value: 1
+  changed: datetime
+  uid:
+    plugin: default_value
+    source: documentUser
+    default_value: 1
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies: null

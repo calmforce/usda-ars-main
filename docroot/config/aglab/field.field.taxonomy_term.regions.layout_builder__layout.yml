@@ -1,0 +1,21 @@
+uuid: 98f4f5de-797e-49f4-9921-9fe906e3d793
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.layout_builder__layout
+    - taxonomy.vocabulary.regions
+  module:
+    - layout_builder
+id: taxonomy_term.regions.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: taxonomy_term
+bundle: regions
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

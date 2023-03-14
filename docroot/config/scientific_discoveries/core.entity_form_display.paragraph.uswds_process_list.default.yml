@@ -1,0 +1,31 @@
+uuid: a5f28820-ce31-401a-af5d-a23dfb52bb68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uswds_process_list.field_process_items
+    - paragraphs.paragraphs_type.uswds_process_list
+  module:
+    - paragraphs
+_core:
+  default_config_hash: tNoBRKO5rC9LKljIe-65roQcrvMkYZADa2lQBT5b63A
+id: paragraph.uswds_process_list.default
+targetEntityType: paragraph
+bundle: uswds_process_list
+mode: default
+content:
+  field_process_items:
+    type: entity_reference_paragraphs
+    weight: 0
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

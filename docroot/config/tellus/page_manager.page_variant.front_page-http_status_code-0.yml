@@ -1,0 +1,88 @@
+uuid: f53be8ef-48ca-4f10-8e26-aa9cf20d2c83
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.front_page
+    - views.view.front_page_top_image_block
+    - views.view.latest_content
+    - views.view.lead_article_block
+    - views.view.popular_content_block
+  module:
+    - panels
+    - views
+id: front_page-http_status_code-0
+label: 'Tellus Home Page'
+variant: panels_variant
+variant_settings:
+  blocks:
+    c5f0f0e5-9111-46f1-827f-780bd3287bbb:
+      id: 'views_block:lead_article_block-lead_article_block'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: ds_content
+      weight: 0
+      uuid: c5f0f0e5-9111-46f1-827f-780bd3287bbb
+      context_mapping: {  }
+    c293ce33-c78d-4e9c-843e-e5b39d10bf4f:
+      id: 'views_block:popular_content_block-popular_content_block'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: ds_content
+      weight: 2
+      uuid: c293ce33-c78d-4e9c-843e-e5b39d10bf4f
+      context_mapping: {  }
+    970a2b53-0d63-402a-b9f9-13765e496e06:
+      id: 'views_block:latest_content-latest_content_block'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: ds_content
+      weight: 1
+      uuid: 970a2b53-0d63-402a-b9f9-13765e496e06
+      context_mapping: {  }
+    96cb62ce-8508-4763-a157-731cc2c709d1:
+      id: 'views_block:front_page_top_image_block-top_image_block'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: ds_content
+      weight: -1
+      uuid: 96cb62ce-8508-4763-a157-731cc2c709d1
+      context_mapping: {  }
+  id: panels_variant
+  label: null
+  uuid: 38bd40e9-38f9-46d3-ac63-9b1bfa6c60fd
+  weight: 0
+  status_code: '404'
+  redirect_location: ''
+  layout: ds_1col_wrapper
+  layout_settings:
+    label: ''
+    wrappers:
+      ds_content: div
+    outer_wrapper: div
+    attributes: ''
+    link_attribute: ''
+    link_custom: ''
+    classes:
+      layout_class: {  }
+  page_title: null
+  storage_type: page_manager
+  storage_id: front_page-http_status_code-0
+  builder: standard
+page: front_page
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

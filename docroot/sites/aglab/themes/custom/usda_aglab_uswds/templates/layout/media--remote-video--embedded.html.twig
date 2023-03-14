@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present a media item.
+ *
+ * Available variables:
+ * - media: The media item, with limited access to object properties and
+ *   methods. Only method names starting with "get", "has", or "is" and
+ *   a few common methods such as "id", "label", and "bundle" are available.
+ *   For example:
+ *   - entity.getEntityTypeId() will return the entity type ID.
+ *   - entity.hasField('field_example') returns TRUE if the entity includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   Calling other methods, such as entity.delete(), will result in
+ *   an exception.
+ *   See \Drupal\Core\Entity\EntityInterface for a full list of methods.
+ * - name: Name of the media item.
+ * - content: Media content.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - attributes: HTML attributes for the containing element.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set bgcolor = '' %}
+{% if content.field_background_color[0] is not empty %}
+  {% set bgcolor = "background-color:" ~ content.field_background_color[0]['#markup'] %}
+{% endif %}
+
+{% if content.field_leaf_motif[0] is not empty and content.field_leaf_motif[0]['#markup'] == 'On'  %}
+  {% set classes = 'leaf-motif' %}
+{% else %}
+  {% set classes = 'no-leaves' %}
+{% endif %}
+
+<div class="media_video_wrap {{ classes }}" style="{{ bgcolor }}">
+  <div class="grid-container">
+    <h2 class="media-name">{{ name }}</h2>
+    <div class="media_external_video">  
+      {{ content|without('field_caption') }}
+    </div>
+    {% if content.field_caption.0 %}
+      <div class="field_caption">
+        <div class="info-icon">
+          <span class="fal fa-info" aria-hidden="true"></span>
+        </div>
+        {{ content.field_caption.0 }}
+      </div>
+    {% endif %}
+  </div>
+</div>

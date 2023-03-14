@@ -1,0 +1,21 @@
+uuid: 99d33ac2-8429-48fc-afb4-a54a9604cc57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_phone
+    - taxonomy.vocabulary.ars_locations
+  module:
+    - telephone
+id: taxonomy_term.ars_locations.field_phone
+field_name: field_phone
+entity_type: taxonomy_term
+bundle: ars_locations
+label: Phone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

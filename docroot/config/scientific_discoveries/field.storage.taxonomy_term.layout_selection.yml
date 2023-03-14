@@ -1,0 +1,20 @@
+uuid: 6ab52285-2d02-4383-b9da-5dc020e90ae0
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_library
+    - taxonomy
+id: taxonomy_term.layout_selection
+field_name: layout_selection
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: layout
+module: core
+locked: true
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

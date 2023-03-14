@@ -1,0 +1,34 @@
+uuid: ca538c12-6cbb-42f5-80e6-9df05c54b059
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uswds_card_breakpoints.field_number_of_columns
+    - field.field.paragraph.uswds_card_breakpoints.field_uswds_breakpoints
+    - paragraphs.paragraphs_type.uswds_card_breakpoints
+_core:
+  default_config_hash: voFn8lPG_nkNqwx1moiCCpkkVC7g3-UXUA0l1OPusIo
+id: paragraph.uswds_card_breakpoints.default
+targetEntityType: paragraph
+bundle: uswds_card_breakpoints
+mode: default
+content:
+  field_number_of_columns:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_uswds_breakpoints:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

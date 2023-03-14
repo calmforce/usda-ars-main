@@ -1,0 +1,8 @@
+uuid: 330582e8-aee1-466a-b762-534378779a8a
+langcode: en
+status: true
+dependencies: {  }
+id: image_cards
+label: 'Image Cards'
+revision: 0
+description: 'A set of image cards with external and internal links.'

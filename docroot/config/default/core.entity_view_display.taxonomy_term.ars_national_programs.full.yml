@@ -1,0 +1,70 @@
+uuid: 6cb6e0a0-9e45-429a-b031-243341072856
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.full
+    - field.field.taxonomy_term.ars_national_programs.field_breadcrumb_label
+    - field.field.taxonomy_term.ars_national_programs.field_hide_page_title
+    - field.field.taxonomy_term.ars_national_programs.field_meta_tags
+    - field.field.taxonomy_term.ars_national_programs.field_modecode
+    - field.field.taxonomy_term.ars_national_programs.field_np_code
+    - field.field.taxonomy_term.ars_national_programs.field_umbraco_node_url
+    - field.field.taxonomy_term.ars_national_programs.field_umbraco_path
+    - taxonomy.vocabulary.ars_national_programs
+  module:
+    - ds
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+  ds:
+    layout:
+      id: ds_1col_wrapper
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - taxonomy_term_title
+        - description
+    fields:
+      taxonomy_term_title:
+        plugin_id: taxonomy_term_title
+        weight: 0
+        label: hidden
+        formatter: default
+id: taxonomy_term.ars_national_programs.full
+targetEntityType: taxonomy_term
+bundle: ars_national_programs
+mode: full
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 1
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_breadcrumb_label: true
+  field_hide_page_title: true
+  field_meta_tags: true
+  field_modecode: true
+  field_np_code: true
+  field_umbraco_node_url: true
+  field_umbraco_path: true
+  langcode: true
+  search_api_excerpt: true

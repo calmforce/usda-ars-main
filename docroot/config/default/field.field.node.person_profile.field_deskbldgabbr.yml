@@ -1,0 +1,19 @@
+uuid: 20f7d2fe-4fb4-4191-b964-1db2b8a8ce7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_deskbldgabbr
+    - node.type.person_profile
+id: node.person_profile.field_deskbldgabbr
+field_name: field_deskbldgabbr
+entity_type: node
+bundle: person_profile
+label: 'Desk Bldg Abbr'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

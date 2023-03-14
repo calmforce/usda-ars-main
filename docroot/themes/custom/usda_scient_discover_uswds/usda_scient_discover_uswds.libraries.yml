@@ -1,0 +1,21 @@
+assets:
+  version: VERSION
+  css:
+    theme:
+      assets/css/styles.css: {}      
+  js:
+    assets/js/uswds.js: {}
+    '//kit.fontawesome.com/98dc920c01.js': { type: external }
+
+fancybox-cdn:
+  css:
+    theme:
+      '//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css':
+        type: external
+        minified: true
+  js:
+    '//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js':
+      type: external
+  dependencies:
+   - core/jquery
+   - core/drupal

@@ -1,0 +1,8 @@
+uuid: a117248e-9ffe-4430-8c77-a1f513975013
+langcode: en
+status: true
+dependencies: {  }
+id: content_with_image
+label: 'Content With Image'
+revision: 0
+description: 'HTML body + Featured Image on a colored background'

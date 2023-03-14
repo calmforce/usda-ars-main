@@ -1,0 +1,22 @@
+uuid: 953b228a-7792-456d-9044-d76a0fa95d6a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - usda_tellus_uswds
+_core:
+  default_config_hash: fYogw1FsBVhAWg84yO16U1rrJsGgI2gGnywZ7CMqujM
+id: usda_tellus_uswds_local_tasks
+theme: usda_tellus_uswds
+region: content
+weight: -6
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

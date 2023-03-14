@@ -1,0 +1,10 @@
+uuid: eee64953-dcf1-43f4-9241-50854793b29b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.popular_content_card
+label: 'Popular Content Card'
+targetEntityType: node
+cache: true

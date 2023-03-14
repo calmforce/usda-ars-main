@@ -1,0 +1,22 @@
+uuid: cf860007-325d-43ba-8397-f7079efed2af
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.image_card
+id: node.image_card.promote
+field_name: promote
+entity_type: node
+bundle: image_card
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

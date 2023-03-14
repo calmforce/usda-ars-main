@@ -1,0 +1,19 @@
+uuid: ffd0f617-6fbe-41ce-b264-fc1a72431ef9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_emp_id
+    - node.type.person_profile
+id: node.person_profile.field_emp_id
+field_name: field_emp_id
+entity_type: node
+bundle: person_profile
+label: 'Emp Id'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

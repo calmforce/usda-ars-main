@@ -1,0 +1,10 @@
+uuid: 6262f8fb-704f-4142-a64c-b2b38b9a140c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.best_bets_item
+label: 'Best Bets Item'
+targetEntityType: node
+cache: true

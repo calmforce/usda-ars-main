@@ -1,0 +1,22 @@
+uuid: 42c7b948-5469-4283-b1b2-225e06f9ea35
+langcode: en
+status: true
+dependencies:
+  theme:
+    - usda_ars_uswds
+_core:
+  default_config_hash: fYogw1FsBVhAWg84yO16U1rrJsGgI2gGnywZ7CMqujM
+id: usda_ars_uswds_local_tasks
+theme: usda_ars_uswds
+region: content
+weight: 20
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

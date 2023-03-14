@@ -1,0 +1,20 @@
+uuid: adaedea4-8d56-49a2-8785-236cb25712e9
+langcode: en
+status: true
+dependencies:
+  theme:
+    - usda_tellus_uswds
+_core:
+  default_config_hash: 9uLzzgbfmr4D9woWMPImyBUoRVd1grSXxdkIqnSXpyI
+id: usda_tellus_uswds_page_title
+theme: usda_tellus_uswds
+region: content
+weight: -8
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

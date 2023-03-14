@@ -1,0 +1,19 @@
+uuid: 1be652ac-fb25-4b92-8c2b-9d42f73babd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_umbraco_node_url
+    - taxonomy.vocabulary.ars_national_programs
+id: taxonomy_term.ars_national_programs.field_umbraco_node_url
+field_name: field_umbraco_node_url
+entity_type: taxonomy_term
+bundle: ars_national_programs
+label: 'Umbraco Node URL'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

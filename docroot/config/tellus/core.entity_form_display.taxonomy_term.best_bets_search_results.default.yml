@@ -1,0 +1,44 @@
+uuid: 3fb7bf44-4dd9-4dfa-b5d6-280b7e8a7f6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.best_bets_search_results.field_keywords
+    - field.field.taxonomy_term.best_bets_search_results.field_recommended_articles
+    - taxonomy.vocabulary.best_bets_search_results
+id: taxonomy_term.best_bets_search_results.default
+targetEntityType: taxonomy_term
+bundle: best_bets_search_results
+mode: default
+content:
+  field_keywords:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_recommended_articles:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  path: true
+  status: true

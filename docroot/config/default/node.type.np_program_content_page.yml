@@ -1,0 +1,17 @@
+uuid: 9ce56a46-8041-4497-8c1c-ef0683fbd5c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'NP Program Content Page'
+type: np_program_content_page
+description: 'National Program Inputs, Planning and Reports pages'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

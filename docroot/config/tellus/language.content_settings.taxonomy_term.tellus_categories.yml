@@ -1,0 +1,11 @@
+uuid: 6d966e37-cd29-4040-95a7-8d42c908c575
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tellus_categories
+id: taxonomy_term.tellus_categories
+target_entity_type_id: taxonomy_term
+target_bundle: tellus_categories
+default_langcode: site_default
+language_alterable: false

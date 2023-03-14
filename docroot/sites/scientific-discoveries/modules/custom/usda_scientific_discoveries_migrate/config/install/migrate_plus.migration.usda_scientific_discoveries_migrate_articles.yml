@@ -1,0 +1,182 @@
+# A "migration" is, in technical terms, a plugin whose configuration describes
+# how to read source data, process it (generally by mapping source fields to
+# destination fields), and write it to Drupal.
+
+# The machine name for a migration, used to uniquely identify it.
+id: usda_scientific_discoveries_migrate_articles
+
+# A human-friendly description of the migration.
+label: 9 - ARS Scientific Discoveries Articles
+
+# The machine name of the group containing this migration (which contains shared
+# configuration to be merged with our own configuration here).
+migration_group: usda_scientific_discoveries_migrate
+
+audit: true
+migration_tags:
+  - Umbraco
+  - Scientific Discoveries Articles
+  - USDA ARS Scientific Discoveries
+  - USDA ARS
+
+# Every migration must have a source plugin, which controls the delivery of our
+# source data.
+source:
+  plugin: usda_scientific_discoveries_articles
+  key: scientific_discoveries
+  constants:
+    bundle: 'article'
+    langcode: 'en'
+    html_format: 'rich_text'
+# Every migration must also have a destination plugin, which handles writing
+# the migrated data in the appropriate form for that particular kind of data.
+# Most Drupal content is an "entity" of one type or another, and we need to
+# specify what entity type we are populating.
+destination:
+  plugin: entity:node
+# Here's the meat of the migration - the processing pipeline. This describes how
+# each destination field is to be populated based on the source data. For each
+# destination field, one or more process plugins may be invoked.
+process:
+  nid: nodeId
+  type: 'constants/bundle'
+  langcode: 'constants/langcode'
+  status:
+    plugin: default_value
+    default_value: 1
+  created:
+    plugin: usda_ars_date2timestamp
+    source: createDate
+  changed:
+    plugin: usda_ars_date2timestamp
+    source: updateDate
+  revision_timestamp: '@changed'
+  title: nodeName
+  field_main_content_images:
+    -
+      plugin: usda_scientific_discoveries_uuid
+      source: main_content_images
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_media
+      no_stub: true
+  body/value:
+    plugin: usda_scientific_discoveries_main_content_data
+    source: main_content
+  body/summary:
+    plugin: skip_on_empty
+    method: process
+    source: body_summary
+  body/format: 'constants/html_format'
+  field_publish_date:
+    plugin: format_date
+    source: publish_date
+    from_format: 'Y-m-d H:i:s.v'
+    to_format: 'Y-m-d'
+    from_timezone: 'America/New_York'
+    to_timezone: 'UTC'
+  uid:
+    -
+      plugin: usda_ars_user
+      source: nodeUser
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_user
+      no_stub: true
+    -
+      plugin: default_value
+      default_value: 1
+  revision_uid: '@uid'
+  field_tags:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: tags
+    -
+      plugin: explode
+      delimiter: ,
+    -
+      plugin: usda_scientific_discoveries_uuid
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_tags
+      no_stub: true
+  field_topic:
+    -
+      plugin: usda_scientific_discoveries_uuid
+      source: category
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_topics
+      no_stub: true
+  field_region:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: regionId
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_regions
+      no_stub: true
+  layout_selection:
+    plugin: skip_on_empty
+    method: process
+    source: layout
+# References to Media entities.
+  field_hero_image:
+    -
+      plugin: usda_scientific_discoveries_uuid
+      source: hero_image
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_media
+      no_stub: true
+  field_featured_image:
+    -
+      plugin: usda_scientific_discoveries_uuid
+      source: featured_image
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_media
+      no_stub: true
+  field_external_video:
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_external_video
+      no_stub: true
+      source: nodeId
+    -
+      plugin: skip_on_empty
+      method: process
+# Some utilities fields
+  field_hide_page_title: hidePageTitle
+  field_short_name: shortName
+  field_hero_image_overlay_title: heroSlideOverlayTitle
+  # SEO and page presentation params.
+  metatags/0/title: htmlTitle
+  metatags/0/description: pageDescription
+  metatags/0/keywords: keywords
+  field_meta_tags:
+    plugin: callback
+    callable: serialize
+    source: '@metatags'
+# By default, configuration entities (like this migration) are not automatically
+# removed when the migration which installed them is uninstalled. To have your
+# migrations uninstalled with your migration module, add an enforced dependency
+# on your module.
+dependencies:
+  enforced:
+    module:
+      - usda_scientific_discoveries_migrate

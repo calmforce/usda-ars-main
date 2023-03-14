@@ -1,0 +1,62 @@
+uuid: 942c18d0-0266-43a4-b21f-a71f7cde4270
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.remote_video.field_background_color
+    - field.field.media.remote_video.field_caption
+    - field.field.media.remote_video.field_hide_title
+    - field.field.media.remote_video.field_image
+    - field.field.media.remote_video.field_leaf_motif
+    - field.field.media.remote_video.field_media_in_library
+    - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.field_subtitle
+    - field.field.media.remote_video.field_video_alt_text
+    - image.style.thumbnail
+    - media.type.remote_video
+  module:
+    - image
+    - text
+_core:
+  default_config_hash: e65xhZZmLk4zYV8wys5_oOV0Cylm1apPypAPHAc_Kh4
+id: media.remote_video.media_library
+targetEntityType: media
+bundle: remote_video
+mode: media_library
+content:
+  field_caption:
+    type: text_trimmed
+    label: inline
+    settings:
+      trim_length: 40
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  addtoany: true
+  created: true
+  field_background_color: true
+  field_hide_title: true
+  field_image: true
+  field_leaf_motif: true
+  field_media_in_library: true
+  field_media_oembed_video: true
+  field_media_video_embed_field: true
+  field_subtitle: true
+  field_video_alt_text: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  uid: true

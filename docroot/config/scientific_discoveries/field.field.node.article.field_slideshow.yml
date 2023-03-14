@@ -1,0 +1,31 @@
+uuid: 05eb8116-495c-46a5-8dfe-102dae44ccc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slideshow
+    - media.type.image
+    - media.type.remote_video
+    - node.type.article
+id: node.article.field_slideshow
+field_name: field_slideshow
+entity_type: node
+bundle: article
+label: Slideshow
+description: 'Please upload images 1140 pixels or more in width for the full-page slide show.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      remote_video: remote_video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

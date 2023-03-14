@@ -1,0 +1,19 @@
+uuid: 02f383d0-16f7-459c-9611-d188f077ee20
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_homepageurl
+field_name: field_homepageurl
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

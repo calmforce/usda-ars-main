@@ -1,0 +1,11 @@
+uuid: 40bf0e9f-57d4-4e76-8819-caaa2056b610
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.best_bets_search_results
+id: taxonomy_term.best_bets_search_results
+target_entity_type_id: taxonomy_term
+target_bundle: best_bets_search_results
+default_langcode: site_default
+language_alterable: false

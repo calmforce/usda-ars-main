@@ -1,0 +1,10 @@
+uuid: 159c18b8-a0be-42c2-8acf-ce490150470b
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.social_media_icons
+label: 'Social Media Icons'
+targetEntityType: block_content
+cache: true

@@ -1,0 +1,51 @@
+uuid: 076546f8-a740-48df-8fd9-8bca9a75f499
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.tellus_articles_index
+    - views.view.search_tellus_articles_block
+  module:
+    - views
+    - search_api_autocomplete
+    - search_api_solr
+id: search_tellus_articles_block
+label: 'Search Tellus Articles Block'
+index_id: tellus_articles_index
+suggester_settings:
+  live_results:
+    fields: {  }
+    view_modes:
+      'entity:node':
+        article: ''
+    highlight:
+      enabled: false
+      field: ''
+  server:
+    fields: {  }
+  search_api_solr_spellcheck: {  }
+  search_api_solr_suggester:
+    search_api_solr/site_hash: 1
+    search_api/index: tellus_articles_index
+    drupal/langcode: any
+  search_api_solr_terms:
+    fields: {  }
+suggester_weights:
+  live_results: 0
+  server: 0
+  search_api_solr_spellcheck: 0
+  search_api_solr_suggester: 0
+  search_api_solr_terms: 0
+suggester_limits: {  }
+search_settings:
+  'views:search_tellus_articles_block':
+    displays:
+      default: true
+      selected: {  }
+options:
+  limit: 15
+  min_length: 3
+  show_count: true
+  autosubmit: true
+  submit_button_selector: ':submit'
+  delay: null

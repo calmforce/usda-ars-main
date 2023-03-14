@@ -1,0 +1,19 @@
+uuid: 9bb18770-9686-4353-94e5-99f64209d025
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umbraco_path
+    - node.type.np_program_content_page
+id: node.np_program_content_page.field_umbraco_path
+field_name: field_umbraco_path
+entity_type: node
+bundle: np_program_content_page
+label: 'Umbraco Path'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,17 @@
+uuid: b2750342-e2ef-46d9-9347-27f3b0a27fbc
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Person profile'
+type: person_profile
+description: 'This Content type is for Adding user profile fields.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

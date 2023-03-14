@@ -1,0 +1,13 @@
+uuid: 62399122-d808-4efd-9946-bea5dc32c79f
+langcode: en
+status: true
+dependencies: {  }
+id: weekly_files_backup_schedule
+label: 'Weekly Files Backup Schedule'
+enabled: true
+keep: 4
+period: 604800
+cron: null
+source_id: public_files
+destination_id: private_files
+settings_profile_id: null

@@ -1,0 +1,23 @@
+uuid: 557b3cb0-286d-45a9-a041-07f82e5b38c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.large_video
+    - field.storage.block_content.field_leaf_motif
+id: block_content.large_video.field_leaf_motif
+field_name: field_leaf_motif
+entity_type: block_content
+bundle: large_video
+label: 'Leaf Motif'
+description: 'Displays a leaf background image on the top of the Background Color specified below'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

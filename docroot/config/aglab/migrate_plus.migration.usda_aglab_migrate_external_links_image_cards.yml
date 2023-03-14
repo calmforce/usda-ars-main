@@ -1,0 +1,57 @@
+uuid: 8c8ef6a2-c176-437e-ad27-562268c1285f
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_aglab_migrate
+_core:
+  default_config_hash: RtO79y9jNpp4fBUr81kRdYJ7rOqlEmf8jdrX0touki8
+id: usda_aglab_migrate_external_links_image_cards
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'Aglab Topics and Articles External Links Image Cards'
+  - 'USDA ARS Aglab'
+  - 'USDA ARS'
+migration_group: usda_aglab_migrate
+label: '10.1 - ARS Aglab External Links Image Cards'
+source:
+  plugin: usda_aglab_external_links_image_cards
+  key: aglab
+  constants:
+    bundle: image_card
+    langcode: en
+    html_format: rich_text
+process:
+  type: constants/bundle
+  langcode: constants/langcode
+  status:
+    plugin: default_value
+    default_value: 1
+  created:
+    plugin: usda_ars_date2timestamp
+    source: createDate
+  changed: '@created'
+  revision_timestamp: '@created'
+  title: cardTitle
+  body/value: cardBody
+  body/format: constants/html_format
+  field_featured_image:
+    -
+      plugin: usda_aglab_uuid
+      source: cardImageUuid
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_media
+      no_stub: true
+  field_link/uri: actionLinkUrl
+  field_link/title: actionLinkName
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

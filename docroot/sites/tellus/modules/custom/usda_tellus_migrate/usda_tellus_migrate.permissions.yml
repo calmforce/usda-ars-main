@@ -1,0 +1,4 @@
+administer ars tellus migrations:
+  title: 'Administer ARS Tellus Migrations'
+migrate ars tellus data:
+  title: 'Migrate ARS Tellus Data'

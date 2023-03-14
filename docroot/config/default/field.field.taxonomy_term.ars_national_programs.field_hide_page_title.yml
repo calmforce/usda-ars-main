@@ -1,0 +1,23 @@
+uuid: e48fe60c-62a8-4a83-93bc-c9267e89b484
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_hide_page_title
+    - taxonomy.vocabulary.ars_national_programs
+id: taxonomy_term.ars_national_programs.field_hide_page_title
+field_name: field_hide_page_title
+entity_type: taxonomy_term
+bundle: ars_national_programs
+label: 'Hide Page Title'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

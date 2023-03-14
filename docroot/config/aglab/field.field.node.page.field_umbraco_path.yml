@@ -1,0 +1,19 @@
+uuid: 3ea1a780-6fc3-437b-9d5e-6607eb47213f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umbraco_path
+    - node.type.page
+id: node.page.field_umbraco_path
+field_name: field_umbraco_path
+entity_type: node
+bundle: page
+label: 'Umbraco Path'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

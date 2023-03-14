@@ -1,0 +1,19 @@
+uuid: d5eeaa2f-8507-426a-acfb-33fffb4ead1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umbraco_path
+    - node.type.person_profile
+id: node.person_profile.field_umbraco_path
+field_name: field_umbraco_path
+entity_type: node
+bundle: person_profile
+label: 'Umbraco Path'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

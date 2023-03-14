@@ -1,0 +1,30 @@
+uuid: d3dc743c-1051-4d86-b476-7d04e44d02d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_location_type
+field_name: field_location_type
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: area
+      label: Area
+    -
+      value: city
+      label: City
+    -
+      value: research_unit
+      label: 'Research Unit'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,27 @@
+{% if content %}
+  <ul class="usa-accordion usa-accordion--bordered">
+    <li>
+      <button class="usa-accordion__button" aria-expanded="false" aria-controls="b-publications">
+        <h4>Publications</h4> </button>
+      <div id="b-publications" class="usa-accordion__content">
+        <ul class="ars-grid-image">
+          <li class="ars-li-style-none" >
+            <span class='xsmall'>
+              (Clicking on the reprint icon
+              <img src='{{ image_path }}/img/reprintURLIcon.gif' alt='Reprint Icon' border='0' />  will take you to the publication reprint.)
+            </span>
+            <img src='{{ image_path }}/img/headline_bar.gif' />
+          </li>
+          {% for pub in content  %}
+            <li class="ars-columnedpage-section">
+              <a href ="/research/publications/publication/?seqNo115={{ pub.SEQ_NO_115 }}" class="projectNav" id="anch_60">{{ pub.MANUSCRIPT_TITLE }}</a>
+              -({{ pub.PUB_TYPE_VALUE }}) <br>
+              {{ pub.citation }}
+              <br><img src='{{ image_path }}/img/content-divider.gif' />
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </li>
+  </ul>
+{% endif %}

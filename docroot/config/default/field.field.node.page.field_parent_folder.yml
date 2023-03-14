@@ -1,0 +1,32 @@
+uuid: 24285be3-0606-4fe3-82fa-aa894fc38059
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parent_folder
+    - node.type.page
+    - node.type.person_profile
+    - node.type.site_folder
+id: node.page.field_parent_folder
+field_name: field_parent_folder
+entity_type: node
+bundle: page
+label: 'Parent Folder or Page'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+      person_profile: person_profile
+      site_folder: site_folder
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: page
+field_type: entity_reference

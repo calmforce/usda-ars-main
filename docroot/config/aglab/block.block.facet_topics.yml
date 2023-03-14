@@ -1,0 +1,29 @@
+uuid: 2c740154-3633-4f64-b271-179f8415bfd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.topic
+  module:
+    - facets
+    - system
+  theme:
+    - usda_aglab_uswds
+id: facet_topics
+theme: usda_aglab_uswds
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:topic'
+settings:
+  id: 'facet_block:topic'
+  label: Categories
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: facet_topics
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/stories\r\n/stories/*\r\n"

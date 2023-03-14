@@ -1,0 +1,29 @@
+uuid: 812ef148-fcbe-415d-b018-a8daf97afd9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_recommended_articles
+    - node.type.article
+    - taxonomy.vocabulary.best_bets_search_results
+id: taxonomy_term.best_bets_search_results.field_recommended_articles
+field_name: field_recommended_articles
+entity_type: taxonomy_term
+bundle: best_bets_search_results
+label: 'Recommended Articles'
+description: 'A list of ARS Best Bets - articles to display for keywords listed above.  You can add, delete items and/or reorder the list. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

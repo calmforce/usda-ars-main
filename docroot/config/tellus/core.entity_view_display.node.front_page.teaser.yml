@@ -1,0 +1,41 @@
+uuid: b8d6de67-2da1-4812-bd3e-28ee48d718f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.front_page.body
+    - field.field.node.front_page.field_featured_image
+    - field.field.node.front_page.field_lead_article
+    - field.field.node.front_page.field_meta_tags
+    - field.field.node.front_page.field_popular_content
+    - node.type.front_page
+  module:
+    - text
+    - user
+id: node.front_page.teaser
+targetEntityType: node
+bundle: front_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_featured_image: true
+  field_lead_article: true
+  field_meta_tags: true
+  field_popular_content: true
+  langcode: true
+  search_api_excerpt: true

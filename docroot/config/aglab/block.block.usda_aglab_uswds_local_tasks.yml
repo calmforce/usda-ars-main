@@ -1,0 +1,22 @@
+uuid: fe0a44f6-a428-42be-bd42-f6f383a305f3
+langcode: en
+status: true
+dependencies:
+  theme:
+    - usda_aglab_uswds
+_core:
+  default_config_hash: 6ibwlhEAxACVCJ-HVUFsr9KAU1oRe6D7n6vy4-A9sOw
+id: usda_aglab_uswds_local_tasks
+theme: usda_aglab_uswds
+region: content
+weight: 20
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

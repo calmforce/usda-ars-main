@@ -1,0 +1,129 @@
+uuid: 51cf1101-b14b-41e0-83d4-0e9a7c9831a5
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_ars_migrate
+id: usda_ars_migrate_person_site_pages
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'ARS PersonSite Pages'
+  - 'USDA ARS'
+migration_group: usda_ars_migrate
+label: '5 - USDA ARS PersonSite Pages'
+source:
+  plugin: usda_ars_person_site_pages
+  constants:
+    bundle: person_profile
+    langcode: en
+    html_format: rich_text
+process:
+  nid: nodeId
+  type: constants/bundle
+  langcode: constants/langcode
+  title: nodeName
+  body/value:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: body
+    -
+      plugin: usda_ars_html_body_tokens
+  body/format: constants/html_format
+  field_body_columned_text: bodyColumnedText
+  field_projects: profileProjects
+  field_publications: profilePublications
+  field_parent_folder:
+    -
+      plugin: usda_lookup_parent_folder_id
+      source: parentID
+      no_stub: true
+    -
+      plugin: skip_on_empty
+      method: row
+      message: 'No parent found for the node, skipping the row'
+  term_id:
+    plugin: usda_parent_location_term_id
+    source: '@field_parent_folder'
+  field_location:
+    plugin: skip_on_empty
+    method: process
+    source: '@term_id'
+  field_umbraco_path: path
+  field_umbraco_node_url: node_url
+  status:
+    plugin: default_value
+    default_value: 1
+  created: created
+  changed: changed
+  revision_timestamp: changed
+  uid:
+    -
+      plugin: migration_lookup
+      migration: usda_ars_migrate_user
+      source: nodeUser
+      no_stub: true
+    -
+      plugin: usda_ars_user
+  revision_uid: '@uid'
+  field_aris_person_id: person_id
+  field_emp_id: EmpID
+  field_perlname: PerLName
+  field_perfname: PerFName
+  field_permname: PerMName
+  field_percommonname: PerCommonName
+  field_email: EMail
+  field_homepageurl: HomepageURL
+  field_honorificname: honorificname
+  field_imageurl: Imageurl
+  field_mode_code: Mode_code
+  field_mod_date: Mod_Date
+  field_deskaddr/country_code:
+    plugin: default_value
+    default_value: US
+  field_deskaddr/address_line1: DeskAddr1
+  field_deskaddr/address_line2: DeskAddr2
+  field_deskaddr/locality: DeskCity
+  field_deskaddr/administrative_area: DeskState
+  field_deskaddr/postal_code: DeskZip4
+  field_deskbldgabbr: DeskBldgAbbr
+  field_deskext: DeskExt
+  field_desk_phone: DeskPhone
+  field_deskroomnum: DeskRoomNum
+  field_ofcaddress/country_code:
+    plugin: default_value
+    default_value: US
+  field_ofcaddress/address_line1: OfcAddr1
+  field_ofcaddress/address_line2: OfcAddr2
+  field_ofcaddress/locality: OfcCity
+  field_ofcaddress/administrative_area: OfcState
+  field_ofcaddress/postal_code: OfcZip4
+  field_ofcbldgabbr: OfcBldgAbbr
+  field_office_fax: OfcFax
+  field_ofcmailstop: OfcMailStop
+  field_office_phone: OfcPhone
+  field_ofcroomnum: OfcRoomNum
+  field_officialtitle: OfficialTitle
+  field_payscale: PayScale
+  field_pos_id: Pos_Id
+  field_p_emp_id: P_Emp_Id
+  field_seriesid: SeriesID
+  field_status: Status
+  field_suffix: suffix
+  field_workingtitle: WorkingTitle
+  metatags/0/title: htmlTitle
+  metatags/0/description: pageDescription
+  metatags/0/keywords: keywords
+  field_meta_tags:
+    plugin: callback
+    callable: serialize
+    source: '@metatags'
+  field_breadcrumb_label: breadcrumbLabel
+  field_hide_page_title: hidePageTitle
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

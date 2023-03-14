@@ -1,0 +1,53 @@
+uuid: fafe1ad9-0f28-42b5-aca4-0b72cb569bfb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.front_page.body
+    - field.field.node.front_page.field_featured_image
+    - field.field.node.front_page.field_lead_article
+    - field.field.node.front_page.field_meta_tags
+    - field.field.node.front_page.field_popular_content
+    - node.type.front_page
+  module:
+    - user
+id: node.front_page.default
+targetEntityType: node
+bundle: front_page
+mode: default
+content:
+  field_featured_image:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_lead_article:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_popular_content:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  body: true
+  field_meta_tags: true
+  langcode: true
+  search_api_excerpt: true

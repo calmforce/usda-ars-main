@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region <div>.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region_header()
+ */
+#}
+{%
+  set classes = [
+  'region',
+  'region-' ~ region|clean_class,
+  'usa-navbar',
+]
+%}
+{% if content %}
+  <div{{ attributes.addClass(classes) }} role="banner">
+    {% if logopath %}
+      <div class="usa-logo site-logo site-branding" id="logo"><img alt="Home" src="{{ logopath }}" />
+        <div class="site-branding__text">
+          <div class="site-branding__site-name"><a href="{{ path('<front>') }}">U.S. Department of Agriculture</a></div>
+          <div class="site-branding__usda">
+            <a href="https://www.ars.usda.gov/">Agricultural Research Service</a>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {{ content }}
+    <button class="usa-menu-btn hamburger hamburger--slider" aria-label="open mobile menu" type="button" id="skip-to-mobile-nav">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+
+    <a class="dscv-agency-logo" href="/" alt="Logo: a small beaker and the text &quot;AgLab&quot;">
+      <img src="/{{ base_path ~ directory }}//assets/img/aglab-logo-right.png">
+    </a>
+  </div>
+{% endif %}

@@ -1,0 +1,29 @@
+uuid: b20395cb-2cd0-4388-96c8-89f1e195c8ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_image
+    - media.type.image
+    - node.type.front_page
+id: node.front_page.field_featured_image
+field_name: field_featured_image
+entity_type: node
+bundle: front_page
+label: 'Top Image with Caption'
+description: 'The image shown at the top of the front page.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,10 @@
+uuid: 4d69e781-e23a-49b1-8535-c6539adec04f
+langcode: en
+status: true
+dependencies: {  }
+id: writer
+label: Writer
+weight: 4
+is_admin: false
+permissions:
+  - 'use text format rich_text'

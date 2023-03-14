@@ -1,0 +1,91 @@
+# Migration configuration for ARS Aglab External Video content.
+id: usda_aglab_migrate_video_list_items
+label: 18 - ARS Aglab Video List Items
+migration_group: usda_aglab_migrate
+audit: true
+migration_tags:
+  - Umbraco
+  - Aglab External Video
+  - USDA ARS Aglab
+  - USDA ARS
+
+source:
+  plugin: usda_aglab_video_list_items
+  key: aglab
+  constants:
+    langcode: 'en'
+    html_format: 'rich_text'
+    bundle: 'remote_video'
+destination:
+  plugin: entity:media
+process:
+  bundle: 'constants/bundle'
+  name: mediaName
+  langcode: 'constants/langcode'
+  default_langcode:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+  created:
+    plugin: usda_ars_date2timestamp
+    source: createDate
+  changed: '@created'
+  uid:
+    -
+      plugin: usda_ars_user
+      source: nodeUser
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_user
+      no_stub: true
+    -
+      plugin: default_value
+      default_value: 1
+  field_media_oembed_video:
+    -
+      plugin: skip_on_empty
+      method: row
+      source: videoUrl
+    -
+      plugin: usda_aglab_youtube_url
+  field_caption/value:
+    -
+      plugin: usda_aglab_external_video_caption
+      source: textBelowVideo
+    -
+      plugin: skip_on_empty
+      method: process
+  field_caption/format: 'constants/html_format'
+  field_video_alt_text:
+    -
+      plugin: usda_aglab_external_video_caption
+      source: videoAltText
+    -
+      plugin: skip_on_empty
+      method: process
+  field_media_in_library:
+    plugin: default_value
+    default_value: 1
+  # Cover Image.
+  field_image:
+    -
+      plugin: usda_aglab_uuid
+      source: imageUmbMediaId
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_aglab_migrate_media
+      no_stub: true
+  # Hide section title.
+  field_hide_title: hideTitle
+migration_dependencies:
+  required:
+    - usda_aglab_migrate_user
+dependencies:
+  enforced:
+    module:
+      - usda_aglab_migrate

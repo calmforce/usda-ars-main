@@ -1,0 +1,25 @@
+uuid: b53c12b0-6ccf-4baf-99ea-61888400ca8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_column_grid_gap
+    - paragraphs.paragraphs_type.uswds_3_columns
+_core:
+  default_config_hash: r1HZl5g-F5zrbqD1mvq1axLB4gYPhdm3GsZRToDDtAA
+id: paragraph.uswds_3_columns.field_column_grid_gap
+field_name: field_column_grid_gap
+entity_type: paragraph
+bundle: uswds_3_columns
+label: 'Grid Gap'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

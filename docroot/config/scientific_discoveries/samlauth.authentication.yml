@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: oDGEkhP0h5rXXqlDplxeBDre0goLigOJupHKMDMwcqM
+local_login_saml_error: false
+metadata_valid_secs: 60
+metadata_cache_http: false
+request_set_name_id_policy: true
+strict: true
+security_authn_requests_sign: true
+security_logout_requests_sign: true
+security_logout_responses_sign: true
+security_messages_sign: true
+security_want_name_id: true
+security_request_authn_context: true
+security_lowercase_url_encoding: true
+use_base_url: true

@@ -1,0 +1,27 @@
+uuid: 31c9c372-a3c3-4604-a2ab-aa552c36718c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uswds_process_list.field_process_items
+    - paragraphs.paragraphs_type.uswds_process_list
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: BEtqvrbARkkS3B3bFw-OiddLJ4mbYhtcBZdCljRD5Uw
+id: paragraph.uswds_process_list.default
+targetEntityType: paragraph
+bundle: uswds_process_list
+mode: default
+content:
+  field_process_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

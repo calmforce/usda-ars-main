@@ -1,0 +1,29 @@
+type: theme
+base theme: usda_scient_discover_uswds
+
+name: 'USDA AgLab USWDS Theme'
+description: 'Uses the USWDS Base and requires download of the USWDS assets'
+package: 'USWDS Base'
+core_version_requirement: ^8 || ^9
+logo: 'logo.png'
+screenshot: 'screenshot.png'
+
+regions:
+  header_top: 'Above Header'
+  header: 'Header'
+  primary_menu: 'Primary Menu'
+  secondary_menu: 'Secondary Menu'
+  sidebar_first: 'First sidebar'
+  sidebar_second: 'Second sidebar'
+  breadcrumb: 'Breadcrumb'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  hero: 'Hero'
+  title: 'Title'
+  content: 'Content'
+  footer_menu: 'Footer Menu'
+  footer: 'Primary Footer'
+  footer_secondary: 'Secondary Footer'
+
+libraries:
+  - 'usda_aglab_uswds/assets'

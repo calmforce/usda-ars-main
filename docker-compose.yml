@@ -1,0 +1,85 @@
+version: '2'
+services:
+  apache:
+    container_name: "${PROJECT_NAME}_apache"
+    image: usdadaito/gov-drupal:php73
+    environment:
+      DOCROOT: $DOCROOT
+      PHP_INI_SCAN_DIR: "/usr/local/etc/php/custom.d:/etc/php.d"
+    stdin_open: true
+    links:
+      - mariadb:db
+    ports:
+      - '8888:80'
+      - '8080:8080'
+      - '8181:8181'
+      - '8282:8282'
+      - '44300:44300'
+    volumes:
+      - .:/var/www/public
+      - ./mount:/usr/local/etc/php/custom.d
+    tty: true
+    command: bash "${SCRIPT_ROOT}/cmd.sh"
+  varnish:
+    container_name: "${PROJECT_NAME}_varnish"
+    image: usdaoc/varnish-cache:eea-varnish
+    stdin_open: true
+    tty: true
+    links:
+      - apache
+    ports:
+      - 8020:6081
+    environment:
+      BACKENDS: apache
+      CACHE_SIZE: 512M
+      BACKENDS_PROBE_INTERVAL: 3s
+      BACKENDS_PROBE_THRESHOLD: '2'
+      BACKENDS_PROBE_TIMEOUT: 1s
+      BACKENDS_PROBE_WINDOW: '3'
+      BACKENDS_PROBE_URL: '/robots.txt'
+      DNS_ENABLED: 'true'
+      DNS_TTL: '1'
+  mariadb:
+    container_name: "${PROJECT_NAME}_mariadb"
+    image: mariadb
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: $DB_NAME
+      MYSQL_PASSWORD: $DB_PASSWORD
+      MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
+      MYSQL_USER: $DB_USER
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./init_site_dbs:/docker-entrypoint-initdb.d
+  mssql:
+    container_name: "${PROJECT_NAME}_mssql"
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+      SA_PASSWORD: $MSSQL_PASSWORD
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - ./db:/tmp/db
+  solr:
+    container_name: "${PROJECT_NAME}_solr"
+    image: solr:8
+    environment:
+      - SOLR_ENABLE_AUTHENTICATION=no
+    ports:
+      - "8983:8983"
+    volumes:
+      - solr_data:/var/solr
+      - ./solr_8.x_config:/tmp/solr_config
+    command: solr-precreate $SOLR_CORE /tmp/solr_config
+  adminer:
+    container_name: "${PROJECT_NAME}_adminer"
+    image: adminer
+    restart: always
+    ports:
+      - 8998:8080
+volumes:
+  solr_data:
+    driver: local

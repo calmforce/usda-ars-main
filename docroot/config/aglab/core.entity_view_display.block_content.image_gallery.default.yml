@@ -1,0 +1,45 @@
+uuid: fbd8572b-58e3-4e84-a477-6481781292a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_gallery
+    - field.field.block_content.image_gallery.field_background_color
+    - field.field.block_content.image_gallery.field_hide_title
+    - field.field.block_content.image_gallery.field_image_slides
+    - field.field.block_content.image_gallery.field_leaf_motif
+  module:
+    - slick_entityreference
+id: block_content.image_gallery.default
+targetEntityType: block_content
+bundle: image_gallery
+mode: default
+content:
+  field_image_slides:
+    type: slick_entityreference_vanilla
+    label: visually_hidden
+    settings:
+      optionset: default
+      view_mode: default
+      cache: 0
+      skin: ''
+      lazy: ''
+      style: ''
+      loading: lazy
+      preload: false
+      current_view_mode: ''
+      fx: ''
+      overridables: {  }
+      override: false
+      skin_arrows: ''
+      skin_dots: ''
+      use_theme_field: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_background_color: true
+  field_hide_title: true
+  field_leaf_motif: true
+  langcode: true
+  search_api_excerpt: true

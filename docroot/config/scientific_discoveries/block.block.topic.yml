@@ -1,0 +1,29 @@
+uuid: 27068b05-1160-41ba-aa45-622768e129dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.topic
+  module:
+    - facets
+    - system
+  theme:
+    - usda_scient_discover_uswds
+id: topic
+theme: usda_scient_discover_uswds
+region: sidebar_first
+weight: -9
+provider: null
+plugin: 'facet_block:topic'
+settings:
+  id: 'facet_block:topic'
+  label: Categories
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: topic
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/stories\r\n/stories/*"

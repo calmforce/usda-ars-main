@@ -1,0 +1,54 @@
+uuid: e18d530a-52e5-4a4c-8eb8-a564373c0036
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_aglab_migrate
+_core:
+  default_config_hash: 85s6JUsWvQeZtFmot6z6UWpC1wh-ugRj2hnZjasf7cc
+id: usda_aglab_migrate_region_fields
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'Aglab Topics'
+  - 'USDA ARS Aglab'
+  - 'USDA ARS'
+migration_group: usda_aglab_migrate
+label: '14 - ARS Aglab Region Fields'
+source:
+  plugin: usda_aglab_regions_topics
+  key: aglab
+  source_node_types:
+    - regionalPage
+  constants:
+    vid: regions
+    langcode: en
+    html_format: rich_text
+process:
+  tid: nodeId
+  vid: constants/vid
+  langcode: constants/langcode
+  name: nodeName
+  field_image_cards_section_title: imageCardsSectionTitle
+  field_in_this_section:
+    plugin: usda_lookup_image_card_id
+    source: imageCardsSourceIds
+    no_stub: true
+  body/value:
+    plugin: usda_aglab_main_content_data
+    source: main_content
+  body/summary:
+    plugin: skip_on_empty
+    method: process
+    source: body_summary
+  body/format: constants/html_format
+destination:
+  plugin: 'entity:taxonomy_term'
+  overwrite_properties:
+    - body
+    - field_in_this_section
+    - field_image_cards_section_title
+migration_dependencies: null

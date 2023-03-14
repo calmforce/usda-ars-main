@@ -1,0 +1,27 @@
+uuid: 9c7da4d3-0665-42dd-9203-5f69f8cdb5d0
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - usda_tellus_uswds
+_core:
+  default_config_hash: yAMGW2QOvyEGFdnOM7VXv-8RF75CIWKaZdWqoom2Bxc
+id: usda_tellus_uswds_account_menu
+theme: usda_tellus_uswds
+region: secondary_menu
+weight: -6
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

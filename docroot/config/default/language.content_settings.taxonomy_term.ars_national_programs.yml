@@ -1,0 +1,11 @@
+uuid: a6021a8d-ab3d-47d9-afd5-2431b85e99e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.ars_national_programs
+id: taxonomy_term.ars_national_programs
+target_entity_type_id: taxonomy_term
+target_bundle: ars_national_programs
+default_langcode: site_default
+language_alterable: false

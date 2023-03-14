@@ -1,0 +1,48 @@
+id: usda_tellus_migrate_slide_links
+label: 7 - ARS Tellus Slide Links
+migration_group: usda_tellus_migrate
+
+audit: true
+migration_tags:
+  - Umbraco
+  - USDA ARS Tellus
+  - Tellus Media
+  - USDA ARS
+# define a forced module dependency. this will cause the migration definition to be reloaded
+# when you uninstall and reinstall your custom module.
+dependencies:
+  enforced:
+    module:
+      - usda_tellus_migrate
+source:
+  plugin: usda_tellus_slides_json_links
+  key: tellus
+  constants:
+    langcode: 'en'
+    type: 'image'
+
+destination:
+  plugin: entity:media
+  overwrite_properties:
+    - field_image_link
+
+process:
+  bundle: 'constants/type'
+  langcode: 'constants/langcode'
+  mid:
+    plugin: migration_lookup
+    migration: usda_tellus_migrate_media
+    source: slideUuid
+    no_stub: true
+  created:
+    plugin: usda_ars_date2timestamp
+    source: createDate
+  changed: '@created'
+  field_image_link/uri:
+    plugin: skip_on_empty
+    method: row
+    source: slideLinkUrl
+  field_image_link/title:
+    plugin: skip_on_empty
+    method: process
+    source: slideLinkName

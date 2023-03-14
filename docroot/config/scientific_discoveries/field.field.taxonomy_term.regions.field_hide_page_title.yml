@@ -1,0 +1,23 @@
+uuid: 29b15641-3740-4e92-9301-9c9adf280644
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_hide_page_title
+    - taxonomy.vocabulary.regions
+id: taxonomy_term.regions.field_hide_page_title
+field_name: field_hide_page_title
+entity_type: taxonomy_term
+bundle: regions
+label: 'Hide Page Title'
+description: 'If set, hides the default page title from the page.  This is typically needed if you are using a hero or large video component in the content, and want to use the title within that component as the primary page title instead of the default page title.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

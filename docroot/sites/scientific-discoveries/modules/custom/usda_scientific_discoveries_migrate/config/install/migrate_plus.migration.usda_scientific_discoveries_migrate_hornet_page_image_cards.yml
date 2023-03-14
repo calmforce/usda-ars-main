@@ -1,0 +1,71 @@
+id: usda_scientific_discoveries_migrate_hornet_page_image_cards
+label: 16 - ARS Scientific Discoveries Topics and Hornet Page Image Cards
+migration_group: usda_scientific_discoveries_migrate
+
+audit: true
+migration_tags:
+  - Umbraco
+  - Scientific Discoveries Topics and Hornet Page Image Cards
+  - USDA ARS Scientific Discoveries
+  - USDA ARS
+# define a forced module dependency. this will cause the migration definition to be reloaded
+# when you uninstall and reinstall your custom module.
+dependencies:
+  module:
+    - paragraphs
+  enforced:
+    module:
+      - usda_scientific_discoveries_migrate
+migration_dependencies:
+  required:
+    - usda_scientific_discoveries_migrate_media
+
+source:
+  plugin: usda_scientific_discoveries_hornet_page_image_cards
+  key: scientific_discoveries
+  constants:
+    type: 'uswds_card_regular'
+    langcode: 'en'
+    html_format: 'rich_text'
+
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+
+process:
+  type: 'constants/type'
+  langcode: 'constants/langcode'
+  uuid: cardUuid
+  status:
+    plugin: default_value
+    default_value: 1
+  created:
+    plugin: usda_ars_date2timestamp
+    source: versionDate
+  field_text/value: text
+  field_text/format: 'constants/html_format'
+  field_card_title: title
+  field_card_image:
+    -
+      plugin: usda_scientific_discoveries_uuid
+      source: image
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: migration_lookup
+      migration: usda_scientific_discoveries_migrate_media
+      no_stub: true
+  field_title_first:
+    plugin: default_value
+    default_value: 0
+  field_indent_media:
+    plugin: default_value
+    default_value: 0
+  field_extend_media:
+    plugin: default_value
+    default_value: 0
+  field_make_card_link:
+    plugin: usda_scientific_discoveries_card_link
+    source: cardType
+  field_button/uri: actionLinkUrl
+  field_button/title: actionLinkName

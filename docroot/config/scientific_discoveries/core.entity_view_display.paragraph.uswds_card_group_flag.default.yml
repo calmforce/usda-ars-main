@@ -1,0 +1,47 @@
+uuid: 652836c0-678e-485a-bbec-839887cb52d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uswds_card_group_flag.field_alternating_flags
+    - field.field.paragraph.uswds_card_group_flag.field_cards
+    - field.field.paragraph.uswds_card_group_flag.field_uswds_classes
+    - paragraphs.paragraphs_type.uswds_card_group_flag
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: 8VlAlVmR2ClsBiUIIUntxswvKa_f2HgAa3uWKLJIke0
+id: paragraph.uswds_card_group_flag.default
+targetEntityType: paragraph
+bundle: uswds_card_group_flag
+mode: default
+content:
+  field_alternating_flags:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_cards:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_uswds_classes:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true
