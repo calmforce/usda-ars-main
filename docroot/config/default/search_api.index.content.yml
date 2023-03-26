@@ -2,13 +2,13 @@ uuid: 6100a969-d496-405e-8f48-fc53c79f04c7
 langcode: en
 status: false
 dependencies:
+  config:
+    - search_api.server.database
+    - core.entity_view_mode.node.full
   module:
     - node
     - search_api
     - search_api_solr
-  config:
-    - search_api.server.database
-    - core.entity_view_mode.node.full
 _core:
   default_config_hash: qEX0c8Yf878jYMC-3TrFlGSSNQeGbl3u0Hs6GJfxA38
 id: content
@@ -37,7 +37,7 @@ field_settings:
     type: text
     configuration:
       roles:
-        anonymous: anonymous
+        - anonymous
       view_mode:
         'entity:node':
           landing_page: full
@@ -80,6 +80,10 @@ processor_settings:
     weights:
       preprocess_query: -10
   html_filter:
+    weights:
+      preprocess_index: -10
+      preprocess_query: -9
+    all_fields: false
     fields:
       - label
       - rendered
@@ -91,22 +95,22 @@ processor_settings:
       h2: 3
       h3: 2
       strong: 2
-    weights:
-      preprocess_index: -10
-      preprocess_query: -9
-    all_fields: false
   ignorecase:
-    fields:
-      - label
-      - rendered
     weights:
       preprocess_index: -9
       preprocess_query: -8
     all_fields: false
+    fields:
+      - label
+      - rendered
   language_with_fallback: {  }
   rendered_item: {  }
   solr_date_range: {  }
   stopwords:
+    weights:
+      preprocess_index: -5
+      preprocess_query: -4
+    all_fields: false
     fields:
       - label
       - rendered
@@ -146,34 +150,30 @@ processor_settings:
       - was
       - will
       - with
-    weights:
-      preprocess_index: -5
-      preprocess_query: -4
-    all_fields: false
   tokenizer:
-    fields:
-      - label
-      - rendered
-    spaces: ''
-    overlap_cjk: 1
-    minimum_word_size: '3'
     weights:
       preprocess_index: -6
       preprocess_query: -5
     all_fields: false
-    ignored: ._-
-  transliteration:
     fields:
       - label
       - rendered
+    spaces: ''
+    ignored: ._-
+    overlap_cjk: 1
+    minimum_word_size: '3'
+  transliteration:
     weights:
       preprocess_index: -4
       preprocess_query: -3
     all_fields: false
+    fields:
+      - label
+      - rendered
 tracker_settings:
   default:
     indexing_order: fifo
 options:
-  index_directly: true
   cron_limit: 50
+  index_directly: true
 server: database

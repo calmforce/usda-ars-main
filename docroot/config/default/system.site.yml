@@ -1,14 +1,14 @@
-uuid: 63b88d5f-1f0f-41d7-99bf-b2bc5bf860fe
+_core:
+  default_config_hash: l58O_yEXSo-SeJi19LXdzTU1tNJG3lmnIhCitRkM1tk
+langcode: en
+uuid: 8baebdce-a4b3-4175-8ac5-0ca3317651c9
 name: 'USDA ARS'
-mail: vladimir.ivanov@technikinc.com
+mail: ars@usda.gov
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node
+  front: /user/login
 admin_compact_mode: false
 weight_select_max: 100
-langcode: en
 default_langcode: en
-_core:
-  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

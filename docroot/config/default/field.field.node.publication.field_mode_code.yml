@@ -1,0 +1,19 @@
+uuid: 2eb6475a-bd7c-4ada-9883-2b3eab7a0316
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mode_code
+    - node.type.publication
+id: node.publication.field_mode_code
+field_name: field_mode_code
+entity_type: node
+bundle: publication
+label: MODECODE
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

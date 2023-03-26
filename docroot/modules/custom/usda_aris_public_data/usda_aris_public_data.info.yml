@@ -1,0 +1,8 @@
+name: USDA ARIS Public Data
+type: module
+description: 'Performs data retrieval, Solr indexing and dynamic pages building from ARIS Public Data DB.'
+package: USDA ARS
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:migrate
+  - drupal:search_api_solr

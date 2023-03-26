@@ -1,0 +1,42 @@
+uuid: c9f9617e-1200-461a-83d5-791cdd5649ff
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_aris_public_data
+id: aris_pubs
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: usda_aris_data_search_index
+label: '2 - USDA ARS Publications -> Search Index'
+source:
+  plugin: usda_aris_data_pubs
+  key: aris_public_web
+  constants:
+    index_id: aris_public_data
+    datasource: 'aris:aris_pubs'
+    status: 1
+process:
+  index_id: constants/index_id
+  datasource: constants/datasource
+  item_id: publication_item_id
+  changed: changed
+  status: constants/status
+destination:
+  plugin: table
+  database_key: default
+  table_name: search_api_item
+  batch_size: 10
+  id_fields:
+    item_id:
+      type: string
+  fields:
+    index_id: index_id
+    datasource: datasource
+    item_id: publication_item_id
+    changed: changed
+    status: status
+migration_dependencies: null

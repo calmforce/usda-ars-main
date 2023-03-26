@@ -12,14 +12,20 @@ dependencies:
     - views
 id: national_programs-panels_variant-0
 label: 'National Programs Page'
+weight: 0
 variant: panels_variant
 variant_settings:
+  id: panels_variant
+  label: null
+  weight: 0
+  uuid: 6223787f-5795-44a6-932b-3c7c49478411
   blocks:
     eb99afe0-7e56-49bc-90be-fbde83c798bc:
       id: hierarchical_taxonomy_menu
       label: 'Hierarchical Taxonomy Menu'
-      provider: hierarchical_taxonomy_menu
       label_display: '0'
+      provider: hierarchical_taxonomy_menu
+      context_mapping: {  }
       vocabulary: ars_national_programs|
       max_depth: 100
       dynamic_block_title: true
@@ -40,33 +46,29 @@ variant_settings:
       region: left
       weight: 1
       uuid: eb99afe0-7e56-49bc-90be-fbde83c798bc
-      context_mapping: {  }
     7bbd4cea-f9b9-4eaa-98e6-e90e68724b4d:
       id: 'views_block:ars_national_programs-program_area'
       label: ''
-      provider: views
       label_display: '0'
+      provider: views
+      context_mapping: {  }
       views_label: ''
       items_per_page: none
       region: right
       weight: -1
       uuid: 7bbd4cea-f9b9-4eaa-98e6-e90e68724b4d
-      context_mapping: {  }
     5271207a-6b8b-4c49-a38d-8b82f96780a9:
       id: 'views_block:ars_national_programs-program'
       label: ''
-      provider: views
       label_display: '0'
+      provider: views
+      context_mapping: {  }
       views_label: ''
       items_per_page: none
       region: right
       weight: 0
       uuid: 5271207a-6b8b-4c49-a38d-8b82f96780a9
-      context_mapping: {  }
-  id: panels_variant
-  uuid: 6223787f-5795-44a6-932b-3c7c49478411
-  label: null
-  weight: 0
+  page_title: ''
   layout: ds_2col_stacked
   layout_settings:
     label: ''
@@ -81,19 +83,17 @@ variant_settings:
     link_custom: ''
     classes:
       layout_class: {  }
-  page_title: ''
+  builder: standard
   storage_type: page_manager
   storage_id: national_programs-panels_variant-0
-  builder: standard
 page: national_programs
-weight: 0
 selection_criteria:
   -
     id: 'entity_bundle:taxonomy_term'
-    bundles:
-      ars_national_programs: ars_national_programs
     negate: false
     context_mapping:
       taxonomy_term: taxonomy_term
+    bundles:
+      ars_national_programs: ars_national_programs
 selection_logic: and
 static_context: {  }

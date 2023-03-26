@@ -1,0 +1,29 @@
+uuid: a314edc1-5653-4412-96a8-cf9abdfcf314
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.facet_state
+  module:
+    - facets
+    - system
+  theme:
+    - usda_ars_uswds
+id: facet_state_block
+theme: usda_ars_uswds
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:facet_state'
+settings:
+  id: 'facet_block:facet_state'
+  label: State
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: facet_state_block
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/people-locations/find-a-person\r\n/people-locations/find-a-person/*"

@@ -1,0 +1,51 @@
+id: aris_pubs
+label: 2 - USDA ARS Publications -> Search Index
+migration_group: usda_aris_data_search_index
+description: Importing Publications from ARIS Public Web DB directly to Solr
+
+audit: true
+
+# Define a forced module dependency. This will cause the migration definition to be reloaded,
+# when you uninstall and reinstall your custom module.
+dependencies:
+  enforced:
+    module:
+      - usda_aris_public_data
+
+source:
+  plugin: usda_aris_data_pubs
+  key: aris_public_web
+  # Enable "track changes" feature.
+  # track_changes: true
+  constants:
+    index_id: 'aris_public_data'
+    datasource: 'aris:aris_pubs'
+    status: 1
+
+process:
+  index_id: 'constants/index_id'
+  datasource: 'constants/datasource'
+  item_id: publication_item_id
+  changed: changed
+  status: 'constants/status'
+
+destination:
+  plugin: table
+  # Key for the database connection to use for inserting records.
+  database_key: default
+  # DB table for storage.
+  table_name: search_api_item
+  # Maximum number of rows to insert in one query.
+  batch_size: 10
+  # Fields used by migrate to identify table rows uniquely. At least one
+  # field is required.
+  id_fields:
+    item_id:
+      type: string
+  # Mapping of column names to values set in migrate process, as column:value.
+  fields:
+    index_id: index_id
+    datasource: datasource
+    item_id: publication_item_id
+    changed: changed
+    status: status

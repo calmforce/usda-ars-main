@@ -1,0 +1,10 @@
+uuid: 9abbfbd2-2b1d-4a0e-8748-6f966e08b45e
+langcode: en
+status: 0
+dependencies: {  }
+_core:
+  default_config_hash: DOGlFzItwJmTTtGj7cnOlT_fLiG9VBenQ-ofp8xVhSw
+id: widescreen
+label: Widescreen
+base_class: 'widescreen:grid-col'
+weight: 0

@@ -1,0 +1,12 @@
+uuid: 4d97b52d-5f8f-4238-a398-d22f1b00bf0c
+langcode: en
+status: true
+dependencies: {  }
+id: publication_search
+label: 'Publication Search'
+description: ''
+use_admin_theme: false
+path: /research/publications/find-a-publication
+access_logic: and
+access_conditions: {  }
+parameters: {  }

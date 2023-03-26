@@ -46,20 +46,20 @@ bundle: ars_national_programs
 mode: default
 content:
   description:
-    label: hidden
     type: text_default
-    weight: 1
-    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 1
+    region: content
   field_np_code:
-    weight: 0
+    type: number_integer
     label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    type: number_integer
+    weight: 0
     region: content
 hidden:
   field_breadcrumb_label: true

@@ -5,6 +5,6 @@ dependencies: {  }
 id: usda_ars_update_from_ree_aris
 label: 'USDA ARS  Update from REE/ARIS'
 description: 'Scripts for the periodic update from REE/ARIS external sources'
-source_type: REE/ARIS
+source_type: 'USDA ARIS/REE'
 module: null
 shared_configuration: null

@@ -1,0 +1,21 @@
+uuid: 0faf3ea0-60e3-4d64-bae4-2db950b82f55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_geo_location
+    - taxonomy.vocabulary.ars_locations
+  module:
+    - geofield
+id: taxonomy_term.ars_locations.field_geo_location
+field_name: field_geo_location
+entity_type: taxonomy_term
+bundle: ars_locations
+label: 'Geo Location'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

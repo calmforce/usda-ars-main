@@ -1,0 +1,10 @@
+uuid: b9c6b008-cf88-4a7d-95ba-9c05a15f1ca7
+langcode: en
+status: 0
+dependencies: {  }
+_core:
+  default_config_hash: YK-ikagyG8JIXGcbgJVLX91w6rxYpcw5zLB-ZE3q76A
+id: card_large
+label: 'Card Large'
+base_class: 'card-lg:grid-col'
+weight: 0

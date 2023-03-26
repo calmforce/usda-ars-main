@@ -5,7 +5,6 @@ dependencies:
   config:
     - views.view.image_browser
   module:
-    - lightning_media
     - views
 _core:
   default_config_hash: hQwJmE0YVnT4OoarVqAaXQ_u1m1ZboQN7bb70mIGL-I
@@ -23,23 +22,27 @@ widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
   44d52e51-9627-43b5-a637-3b0462041d1c:
+    id: media_image_upload
+    uuid: 44d52e51-9627-43b5-a637-3b0462041d1c
+    label: Upload
+    weight: -9
     settings:
       submit_text: Select
+      upload_location: 'public://'
+      multiple: true
+      extensions: 'jpg jpeg png gif'
+      media_type: null
       target_bundles: {  }
       form_mode: media_browser
       return_file: true
       upload_validators: {  }
-    uuid: 44d52e51-9627-43b5-a637-3b0462041d1c
-    weight: -9
-    label: Upload
-    id: file_upload
   e7f78bae-bc54-4234-9d09-945dd8fc0398:
+    id: view
+    uuid: e7f78bae-bc54-4234-9d09-945dd8fc0398
+    label: Library
+    weight: -10
     settings:
-      view: image_browser
-      view_display: entity_browser
       submit_text: Select
       auto_select: false
-    uuid: e7f78bae-bc54-4234-9d09-945dd8fc0398
-    weight: -10
-    label: Library
-    id: view
+      view: image_browser
+      view_display: entity_browser

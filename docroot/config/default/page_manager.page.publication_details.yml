@@ -1,0 +1,12 @@
+uuid: c37d6182-4f85-48a2-9f8f-0fd0d4017a71
+langcode: en
+status: true
+dependencies: {  }
+id: publication_details
+label: ''
+description: ''
+use_admin_theme: false
+path: '/research/publications/publication/{arg_0}'
+access_logic: and
+access_conditions: {  }
+parameters: {  }

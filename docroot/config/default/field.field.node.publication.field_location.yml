@@ -1,0 +1,29 @@
+uuid: 8f00f331-2719-414e-bf4e-345c16cd564d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.publication
+    - taxonomy.vocabulary.ars_locations
+id: node.publication.field_location
+field_name: field_location
+entity_type: node
+bundle: publication
+label: Location
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ars_locations: ars_locations
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

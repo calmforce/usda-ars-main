@@ -19,8 +19,8 @@ dependencies:
     - user
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: layout_onecol
@@ -31,45 +31,45 @@ third_party_settings:
             uuid: adf1ba83-6278-42da-a79f-fe74253959c3
             region: content
             configuration:
+              id: 'field_block:node:landing_page:field_umbraco_node_url'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:landing_page:field_umbraco_node_url'
               formatter:
+                type: string
                 label: above
                 settings:
                   link_to_entity: false
                 third_party_settings: {  }
-                type: string
-            additional: {  }
             weight: 0
+            additional: {  }
           f8a28857-ff63-42fb-b789-0ac60d861559:
             uuid: f8a28857-ff63-42fb-b789-0ac60d861559
             region: content
             configuration:
+              id: 'field_block:node:landing_page:field_umbraco_path'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:landing_page:field_umbraco_path'
               formatter:
+                type: string
                 label: above
                 settings:
                   link_to_entity: false
                 third_party_settings: {  }
-                type: string
-            additional: {  }
             weight: 1
+            additional: {  }
         third_party_settings: {  }
   layout_library:
     enable: true
   layout_builder_restrictions:
     entity_view_mode_restriction:
-      whitelisted_blocks: {  }
       allowed_layouts:
         - layout_onecol
         - layout_twocol_section
         - layout_threecol_section
         - layout_fourcol_section
+      whitelisted_blocks: {  }
 _core:
   default_config_hash: LSefcEOqN7djHmmcvteasL4ahegCSrEj1l0YLmj8vyY
 id: node.landing_page.default
@@ -79,26 +79,26 @@ mode: default
 content:
   field_meta_tags:
     type: metatag_empty_formatter
-    region: content
     label: hidden
-    weight: 0
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
   field_umbraco_node_url:
-    weight: 1
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 1
     region: content
   field_umbraco_path:
-    weight: 2
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
     region: content
 hidden:
   body: true

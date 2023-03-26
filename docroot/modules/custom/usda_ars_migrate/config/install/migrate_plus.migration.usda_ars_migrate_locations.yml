@@ -58,6 +58,7 @@ process:
     -
       plugin: migration_lookup
       migration: usda_ars_migrate_locations
+      no_stub: true
   parent:
     plugin: default_value
     default_value: 0

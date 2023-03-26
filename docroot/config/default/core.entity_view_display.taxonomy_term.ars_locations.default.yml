@@ -6,6 +6,7 @@ dependencies:
     - field.field.taxonomy_term.ars_locations.field_address
     - field.field.taxonomy_term.ars_locations.field_breadcrumb_label
     - field.field.taxonomy_term.ars_locations.field_fax
+    - field.field.taxonomy_term.ars_locations.field_geo_location
     - field.field.taxonomy_term.ars_locations.field_hide_page_title
     - field.field.taxonomy_term.ars_locations.field_left_custom_content
     - field.field.taxonomy_term.ars_locations.field_location_type
@@ -16,6 +17,7 @@ dependencies:
     - taxonomy.vocabulary.ars_locations
   module:
     - address
+    - geofield
     - options
     - telephone
     - text
@@ -25,63 +27,72 @@ bundle: ars_locations
 mode: default
 content:
   description:
-    label: hidden
     type: text_default
-    weight: 0
-    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
   field_address:
-    weight: 2
+    type: address_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: address_default
+    weight: 2
     region: content
   field_fax:
-    weight: 4
+    type: telephone_link
     label: above
     settings:
       title: ''
     third_party_settings: {  }
-    type: telephone_link
+    weight: 4
+    region: content
+  field_geo_location:
+    type: geofield_default
+    label: above
+    settings:
+      output_format: wkt
+      output_escape: true
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_left_custom_content:
-    weight: 6
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 6
     region: content
   field_location_type:
-    weight: 1
+    type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: list_default
+    weight: 1
     region: content
   field_modecode:
-    weight: 5
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 5
     region: content
   field_phone:
-    weight: 3
+    type: telephone_link
     label: above
     settings:
       title: ''
     third_party_settings: {  }
-    type: telephone_link
+    weight: 3
     region: content
   field_right_custom_content:
-    weight: 7
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 7
     region: content
 hidden:
   field_breadcrumb_label: true

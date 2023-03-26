@@ -1,0 +1,23 @@
+uuid: 6f74e007-ad09-4b4d-b1e9-c365e347bed2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_seq_no_115
+    - node.type.publication
+id: node.publication.field_seq_no_115
+field_name: field_seq_no_115
+entity_type: node
+bundle: publication
+label: SEQ_NO_115
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

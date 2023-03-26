@@ -14,7 +14,7 @@ migration_tags:
   - 'ARS Content Web Pages'
   - 'USDA ARS'
 migration_group: usda_ars_migrate
-label: '8 - USDA ARS Content Web Pages'
+label: '10 - USDA ARS Content Web Pages'
 source:
   plugin: usda_ars_content_pages
   parent_node_types:

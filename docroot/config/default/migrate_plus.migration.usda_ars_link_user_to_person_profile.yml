@@ -11,7 +11,7 @@ field_plugin_method: null
 cck_plugin_method: null
 migration_tags: null
 migration_group: usda_ars_migrate
-label: '6 - USDA ARS Link Users to Person Profiles'
+label: '8 - USDA ARS Link Users to Person Profiles'
 source:
   plugin: usda_ars_user_profile_link
   target: migrate

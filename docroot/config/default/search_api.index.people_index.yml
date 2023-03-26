@@ -1,12 +1,7 @@
 uuid: bb490e29-121f-460e-9f32-961b190eb58f
 langcode: en
-status: true
+status: false
 dependencies:
-  module:
-    - search_api_solr
-    - node
-    - taxonomy
-    - search_api
   config:
     - field.storage.node.field_aris_person_id
     - field.storage.node.body
@@ -18,24 +13,26 @@ dependencies:
     - field.storage.node.field_ofcaddress
     - field.storage.node.field_workingtitle
     - search_api.server.usda_ars_solr
+  module:
+    - search_api_solr
+    - node
+    - taxonomy
+    - search_api
 third_party_settings:
   search_api_solr:
     finalize: false
     commit_before_finalize: false
     commit_after_finalize: false
-    multilingual:
-      limit_to_content_language: false
-      include_language_independent: true
     highlighter:
       maxAnalyzedChars: 51200
       fragmenter: gap
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
       regex:
         slop: 0.5
         pattern: blank
         maxAnalyzedChars: 10000
-      usePhraseHighlighter: true
-      highlightMultiTerm: true
-      preserveMulti: false
       highlight:
         mergeContiguous: false
         requireFieldMatch: false
@@ -59,6 +56,11 @@ third_party_settings:
       index_prefix: ''
       collection: ''
       timezone: ''
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+      use_language_undefined_as_fallback_language: false
+      use_universal_collation: false
 id: people_index
 name: 'People Index'
 description: ''
@@ -193,10 +195,12 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  auto_aggregated_fulltext_field: {  }
   content_access:
     weights:
       preprocess_query: -30
   entity_status: {  }
+  entity_type: {  }
   ignorecase:
     all_fields: true
     fields:
@@ -218,6 +222,7 @@ tracker_settings:
   default:
     indexing_order: fifo
 options:
-  index_directly: true
   cron_limit: 500
+  index_directly: true
+  track_changes_in_references: true
 server: usda_ars_solr

@@ -2,6 +2,8 @@
 
 namespace Drupal\usda_ars_migrate;
 
+use Drupal;
+
 /**
  * Provides methods to query the Aris MSSQL Migration DB.
  */
@@ -104,17 +106,17 @@ class ArisDbQueryService extends MssqlDbConnection {
    public function getPersonProfileProjects($person_id) {
     try {
       $connection = $this->getConnection();
-      $query = $connection->select('w_person_projects', 'pp');      
-      $query->innerJoin('w_clean_projects', 'cp', 'cp.accn_no = pp.accn_no');      
+      $query = $connection->select('w_person_projects', 'pp');
+      $query->innerJoin('w_clean_projects', 'cp', 'cp.accn_no = pp.accn_no');
       $query->innerJoin('people', 'p', 'p.empid = pp.emp_id');
       $query->fields('pp', ['accn_no', 'prj_title']);
       $query->fields('cp', ['prj_type']);
       $query->condition('cp.PRJ_TYPE', 'J', '!=');
       $query->condition('p.PersonID', $person_id);
       $query->orderBy('cp.prj_type');
-     
+
       $raw_data = $query->execute()->fetchAll();
-     
+
     } catch (\Exception $e) {
       \Drupal::logger('usda_ars_drupal')->error('Error connecting to MSSQL database. Error code: @code, @message.',
               array(
@@ -153,6 +155,46 @@ class ArisDbQueryService extends MssqlDbConnection {
       $data = json_encode($raw_data);
     }
     return $data;
+  }
+
+  /**
+   * Gets list of Authors for the given Publication id.
+   *
+   * @param int $pub_id
+   *   The Publication id.
+   *
+   * @return array
+   *   NULL or empty array if failed, array of authors if successful.
+   */
+  public function getAuthorsForPublication(int $pub_id): array {
+    try {
+      $raw_data = [];
+      $connection = $this->getConnection();
+
+      $query_str = "SELECT a.AUTHORSHIP, a.EMP_ID, a.EMPLOYER, ISNULL(p.PerLName, ISNULL(r.LAST_NAME, a.LAST_NAME)) AS PersonLastName,
+        ISNULL(p.PerFName, ISNULL(r.FIRST_NAME, a.FIRST_NAME)) AS PersonFirstName,
+        p.PerCommonName AS PersonCommonName, p.PersonID, Employer_Name AS EmployerName
+        FROM REF_PERSONEL AS r
+        RIGHT OUTER JOIN v_AH115_Authors AS a ON r.EMP_ID = a.EMP_ID
+        LEFT OUTER JOIN REF_NONARS_AUTHORS as nonaris on a.NON_ARS_SEQNO = nonaris.NONARS_SEQNO
+        LEFT OUTER JOIN People AS p ON a.EMP_ID = p.EmpID
+        WHERE (a.SEQ_NO_115 = :pid)
+        ORDER BY a.AUTHORSHIP";
+
+      $query = $connection->prepare($query_str);
+      $query->execute(['pid' => $pub_id]);
+      $raw_data = $query->fetchAll();
+
+    }
+    catch (\Exception $e) {
+      Drupal::logger('usda_ars_drupal')->error('Error connecting to MSSQL database. Error code: @code, @message.',
+        array(
+          '@code' => $e->getCode(),
+          '@message' => $e->getMessage(),
+        ));
+    }
+
+    return $raw_data;
   }
 
 }
