@@ -21,69 +21,12 @@ base_table: search_api_index_people_index
 base_field: search_api_id
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: none
-        options: {  }
-      cache:
-        type: tag
-        options: {  }
-      query:
-        type: views_query
-        options:
-          bypass_access: false
-          skip_access: false
-          preserve_facet_query_args: false
-      exposed_form:
-        type: input_required
-        options:
-          submit_button: Search
-          reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-          text_input_required: 'Search for a Person: enter the info and click on Search to see results'
-          text_input_required_format: rich_text
-      pager:
-        type: full
-        options:
-          items_per_page: 30
-          offset: 0
-          id: 0
-          total_pages: null
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
-            first: '« First'
-            last: 'Last »'
-          quantity: 9
-      style:
-        type: default
-      row:
-        type: fields
-        options:
-          default_field_elements: true
-          inline:
-            first_name: first_name
-            last_name: last_name
-            office_state: office_state
-            field_location: field_location
-          separator: '&nbsp;'
-          hide_empty: true
+      title: 'Find A Person'
       fields:
         nothing_1:
           id: nothing_1
@@ -92,6 +35,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: custom
           label: ''
           exclude: false
           alter:
@@ -133,7 +77,6 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-          plugin_id: custom
         first_name:
           id: first_name
           table: search_api_index_people_index
@@ -141,6 +84,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -203,7 +147,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         last_name:
           id: last_name
           table: search_api_index_people_index
@@ -211,6 +154,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -273,7 +217,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         email:
           id: email
           table: search_api_index_people_index
@@ -281,6 +224,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -342,7 +286,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         working_title:
           id: working_title
           table: search_api_index_people_index
@@ -350,6 +293,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -412,7 +356,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         aris_person_id:
           id: aris_person_id
           table: search_api_index_people_index
@@ -420,6 +363,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: null
+          entity_field: null
+          plugin_id: search_api_field
           label: ''
           exclude: true
           alter:
@@ -494,9 +440,6 @@ display:
             format_plural_values:
               - ''
               - ''
-          entity_type: null
-          entity_field: null
-          plugin_id: search_api_field
         office_state:
           id: office_state
           table: search_api_index_people_index
@@ -504,6 +447,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api
           label: ''
           exclude: false
           alter:
@@ -549,7 +493,6 @@ display:
           use_highlighting: false
           multi_type: separator
           multi_separator: ', '
-          plugin_id: search_api
         field_location:
           id: field_location
           table: search_api_datasource_people_index_entity_node
@@ -557,6 +500,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -628,8 +573,6 @@ display:
                 view_mode: default
               ars_news_years:
                 display_method: label
-          entity_type: node
-          plugin_id: search_api_field
         nothing:
           id: nothing
           table: views
@@ -637,6 +580,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: custom
           label: ''
           exclude: false
           alter:
@@ -678,7 +622,61 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-          plugin_id: custom
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 30
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
+      exposed_form:
+        type: input_required
+        options:
+          submit_button: Search
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Search for a Person: enter the info and click on Search to see results'
+          text_input_required_format: rich_text
+      access:
+        type: none
+        options: {  }
+      cache:
+        type: none
+        options: {  }
+      empty: {  }
+      sorts:
+        search_api_relevance:
+          id: search_api_relevance
+          table: search_api_index_people_index
+          field: search_api_relevance
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: search_api_relevance
+          exposed: false
+      arguments: {  }
       filters:
         last_name:
           id: last_name
@@ -687,6 +685,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_string
           operator: '='
           value:
             min: ''
@@ -721,9 +720,9 @@ display:
               media_manager: '0'
               news_article_creator: '0'
               news_article_reviewer: '0'
-            placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -736,7 +735,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_api_string
         first_name:
           id: first_name
           table: search_api_index_people_index
@@ -744,6 +742,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_string
           operator: '='
           value:
             min: ''
@@ -778,9 +777,9 @@ display:
               media_manager: '0'
               news_article_creator: '0'
               news_article_reviewer: '0'
-            placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -793,7 +792,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_api_string
         email:
           id: email
           table: search_api_index_people_index
@@ -801,6 +799,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_string
           operator: '='
           value:
             min: ''
@@ -835,9 +834,9 @@ display:
               media_manager: '0'
               news_article_creator: '0'
               news_article_reviewer: '0'
-            placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -850,21 +849,31 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_api_string
-      sorts:
-        search_api_relevance:
-          id: search_api_relevance
-          table: search_api_index_people_index
-          field: search_api_relevance
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: DESC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: search_api
-      title: 'Find A Person'
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: default
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline:
+            first_name: first_name
+            last_name: last_name
+            office_state: office_state
+            field_location: field_location
+          separator: '&nbsp;'
+          hide_empty: true
+      query:
+        type: search_api_query
+        options:
+          bypass_access: false
+          skip_access: false
+          preserve_facet_query_args: false
+      relationships: {  }
+      use_ajax: true
       header:
         result:
           id: result
@@ -873,19 +882,11 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: result
           empty: false
           content: 'Displaying @start - @end of @total'
-          plugin_id: result
       footer: {  }
-      empty: {  }
-      relationships: {  }
-      arguments: {  }
       display_extenders: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -903,9 +904,9 @@ display:
         - 'config:field.storage.node.field_workingtitle'
         - 'config:search_api.index.people_index'
   find_person_block:
-    display_plugin: block
     id: find_person_block
     display_title: Block
+    display_plugin: block
     position: 1
     display_options:
       display_extenders: {  }

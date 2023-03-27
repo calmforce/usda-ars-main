@@ -1,0 +1,19 @@
+uuid: fdc0a4c2-2913-46e5-b71f-6f5702ebdc00
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_citation
+field_name: field_citation
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

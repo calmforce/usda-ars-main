@@ -6,7 +6,7 @@
 id: usda_ars_migrate_news_articles
 
 # A human-friendly description of the migration.
-label: 11 - USDA ARS News Articles
+label: 13 - USDA ARS News Articles
 
 # The machine name of the group containing this migration (which contains shared
 # configuration to be merged with our own configuration here).

@@ -1,0 +1,69 @@
+id: usda_ars_migrate_publications
+label: 17 - USDA ARS Publications
+migration_group: usda_ars_migrate
+
+audit: true
+
+# Define a forced module dependency. This will cause the migration definition to be reloaded,
+# when you uninstall and reinstall your custom module.
+dependencies:
+  enforced:
+    module:
+      - usda_ars_migrate
+
+source:
+  plugin: usda_ars_publications
+  key: aris_public_web
+  constants:
+    bundle: 'publication'
+    langcode: 'en'
+    html_format: 'rich_text'
+
+destination:
+  plugin: entity:node
+
+process:
+  type: 'constants/bundle'
+  langcode: 'constants/langcode'
+  title:
+    plugin: usda_ars_fix_pub_title
+    source: MANUSCRIPT_TITLE
+  field_accn_no: ACCN_NO
+  field_citation: citation
+  field_doi/uri:
+    plugin: skip_on_empty
+    method: process
+    source: DIGITAL_OBJECT_INDICATOR
+  field_summary: summary
+  field_journal: Journal
+  field_mode_code: MODECODE
+  field_publication_date:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: JOURNAL_PUB_DATE
+    -
+      plugin: usda_ars_date_no_time
+  field_acceptance_date:
+    plugin: usda_ars_date_no_time
+    source: JOURNAL_ACCPT_DATE
+  field_publication_type: PUB_TYPE_CODE
+  field_publication_url/uri:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: REPRINT_URL
+    -
+      plugin: usda_ars_fix_url
+  field_seq_no_115: SEQ_NO_115
+  field_abstract: abstract
+  approval_date:
+    plugin: usda_ars_date2timestamp
+    source: APPROVAL_DATE
+  # TODO: APPROVAL_DATE can be NULL, take DATE_CREATED from [A115_MAIN] table.
+  created: '@approval_date'
+  # TODO: take DATE_LAST_MOD from [A115_MAIN] table.
+  changed: '@approval_date'
+  status:
+    plugin: default_value
+    default_value: 1

@@ -1,5 +1,5 @@
 id: usda_ars_link_user_to_person_profile
-label: 6 - USDA ARS Link Users to Person Profiles
+label: 8 - USDA ARS Link Users to Person Profiles
 migration_group: usda_ars_migrate
 
 audit: true

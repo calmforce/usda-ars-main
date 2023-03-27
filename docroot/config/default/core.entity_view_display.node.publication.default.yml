@@ -1,0 +1,149 @@
+uuid: ed492ab9-d3e3-4fb9-b20f-41b661afb277
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.publication.field_abstract
+    - field.field.node.publication.field_acceptance_date
+    - field.field.node.publication.field_accn_no
+    - field.field.node.publication.field_citation
+    - field.field.node.publication.field_doi
+    - field.field.node.publication.field_journal
+    - field.field.node.publication.field_location
+    - field.field.node.publication.field_mode_code
+    - field.field.node.publication.field_publication_date
+    - field.field.node.publication.field_publication_type
+    - field.field.node.publication.field_publication_url
+    - field.field.node.publication.field_seq_no_115
+    - field.field.node.publication.field_summary
+    - node.type.publication
+  module:
+    - datetime
+    - link
+    - options
+    - user
+id: node.publication.default
+targetEntityType: node
+bundle: publication
+mode: default
+content:
+  field_abstract:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_acceptance_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_accn_no:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_citation:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_doi:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_journal:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_location:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_mode_code:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_publication_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_publication_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_publication_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_seq_no_115:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_summary:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

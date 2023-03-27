@@ -1,0 +1,29 @@
+uuid: df291afc-8355-43e9-beca-022204a075a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.pub_date_facet
+  module:
+    - facets
+    - system
+  theme:
+    - usda_ars_uswds
+id: publication_date
+theme: usda_ars_uswds
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:pub_date_facet'
+settings:
+  id: 'facet_block:pub_date_facet'
+  label: 'Publication Date'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: publication_date
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/research/publications/find-a-publication\r\n/research/publications/find-a-publication/*"

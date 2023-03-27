@@ -6,7 +6,7 @@
 id: usda_ars_migrate_site_subfolders
 
 # A human-friendly description of the migration.
-label: 7 - USDA ARS Sites/Locations SubFolders
+label: 9 - USDA ARS Sites/Locations SubFolders
 
 # The machine name of the group containing this migration (which contains shared
 # configuration to be merged with our own configuration here).

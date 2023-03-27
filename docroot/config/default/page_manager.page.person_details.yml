@@ -1,0 +1,12 @@
+uuid: 606867d6-e334-40bd-9f3b-754e92e72b6f
+langcode: en
+status: true
+dependencies: {  }
+id: person_details
+label: ''
+description: 'ARS Employee Details Page'
+use_admin_theme: false
+path: '/people-locations/person/{arg_0}'
+access_logic: and
+access_conditions: {  }
+parameters: {  }

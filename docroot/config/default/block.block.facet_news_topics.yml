@@ -12,17 +12,17 @@ dependencies:
 id: facet_news_topics
 theme: usda_ars_uswds
 region: sidebar_first
-weight: -5
+weight: -7
 provider: null
 plugin: 'facet_block:facet_news_topics_names'
 settings:
   id: 'facet_block:facet_news_topics_names'
   label: 'News Topics'
-  provider: facets
   label_display: '0'
+  provider: facets
   block_id: facet_news_topics
 visibility:
   request_path:
     id: request_path
-    pages: /search/news
     negate: false
+    pages: /search/news

@@ -6,6 +6,7 @@ dependencies:
     - field.field.taxonomy_term.ars_locations.field_address
     - field.field.taxonomy_term.ars_locations.field_breadcrumb_label
     - field.field.taxonomy_term.ars_locations.field_fax
+    - field.field.taxonomy_term.ars_locations.field_geo_location
     - field.field.taxonomy_term.ars_locations.field_hide_page_title
     - field.field.taxonomy_term.ars_locations.field_left_custom_content
     - field.field.taxonomy_term.ars_locations.field_location_type
@@ -16,6 +17,7 @@ dependencies:
     - taxonomy.vocabulary.ars_locations
   module:
     - address
+    - geofield
     - metatag
     - path
     - telephone
@@ -30,81 +32,88 @@ content:
     weight: 3
     region: content
     settings:
-      placeholder: ''
       rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_address:
+    type: address_default
     weight: 5
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: address_default
-    region: content
   field_breadcrumb_label:
+    type: string_textfield
     weight: 2
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_fax:
+    type: telephone_default
     weight: 7
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: telephone_default
+  field_geo_location:
+    type: geofield_latlon
+    weight: 14
     region: content
+    settings:
+      html5_geolocation: false
+    third_party_settings: {  }
   field_hide_page_title:
+    type: boolean_checkbox
     weight: 1
+    region: content
     settings:
       display_label: true
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_left_custom_content:
+    type: text_textarea
     weight: 9
+    region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_location_type:
+    type: options_select
     weight: 4
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_meta_tags:
+    type: metatag_firehose
     weight: 11
+    region: content
     settings:
       sidebar: true
     third_party_settings: {  }
-    type: metatag_firehose
-    region: content
   field_modecode:
+    type: string_textfield
     weight: 8
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_phone:
+    type: telephone_default
     weight: 6
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: telephone_default
-    region: content
   field_right_custom_content:
+    type: text_textarea
     weight: 10
+    region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
-    region: content
   langcode:
     type: language_select
     weight: 2
@@ -128,9 +137,9 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 13
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
 hidden: {  }

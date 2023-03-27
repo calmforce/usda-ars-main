@@ -9,17 +9,17 @@ dependencies:
     - layout_builder
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 id: menu_link_content.left-navigation.token
 targetEntityType: menu_link_content
 bundle: left-navigation
 mode: token
 content:
   children:
-    weight: 1
     settings: {  }
     third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   langcode: true

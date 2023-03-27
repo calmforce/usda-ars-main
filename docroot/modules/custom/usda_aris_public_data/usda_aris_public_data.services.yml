@@ -1,0 +1,7 @@
+services:
+  aris_entity_field.manager:
+    class: Drupal\usda_aris_public_data\ArisEntityFieldManager
+    arguments: [ '@cache.discovery', '@logger.channel.search_api' ]
+  usda_aris_public_data.authors_list_builder:
+    class: Drupal\usda_aris_public_data\ArisAuthorsListBuilder
+    arguments: [ '@usda_ars_migrate.query.aris_db', '@logger.channel.default' ]

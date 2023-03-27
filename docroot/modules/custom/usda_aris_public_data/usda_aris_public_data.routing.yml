@@ -1,0 +1,6 @@
+usda_aris_public_data.connection_test:
+  path: '/mssql-aris-public-db-connection-test'
+  defaults:
+    _controller: '\Drupal\usda_aris_public_data\Controller\MssqlTestController::testConnection'
+  requirements:
+    _permission: 'access content'

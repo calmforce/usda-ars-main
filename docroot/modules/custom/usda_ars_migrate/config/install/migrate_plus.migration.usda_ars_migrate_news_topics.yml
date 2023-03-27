@@ -1,7 +1,7 @@
 # The machine name for a migration, used to uniquely identify it.
 id: usda_ars_migrate_news_topics
 # A human-friendly description of the migration.
-label: 10 - USDA ARS News Topics
+label: 12 - USDA ARS News Topics
 migration_group: usda_ars_migrate
 migration_tags:
   - Umbraco

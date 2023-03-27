@@ -25,62 +25,62 @@ content:
     weight: 0
     region: content
     settings:
-      placeholder: ''
       rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_breadcrumb_label:
+    type: string_textfield
     weight: 101
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_hide_page_title:
+    type: boolean_checkbox
     weight: 104
+    region: content
     settings:
       display_label: true
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_meta_tags:
+    type: metatag_firehose
     weight: 102
+    region: content
     settings:
       sidebar: true
     third_party_settings: {  }
-    type: metatag_firehose
-    region: content
   field_modecode:
+    type: string_textfield
     weight: 103
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_np_code:
-    weight: 107
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
     type: number
+    weight: 107
     region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_umbraco_node_url:
+    type: string_textfield
     weight: 105
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_umbraco_path:
+    type: string_textfield
     weight: 106
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   langcode:
     type: language_select
     weight: 2
@@ -104,9 +104,9 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 100
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
 hidden: {  }

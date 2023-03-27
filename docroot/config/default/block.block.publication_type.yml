@@ -1,0 +1,29 @@
+uuid: b9f00702-550b-44b3-aa67-e9d196819fd8
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.facet_pub_type
+  module:
+    - facets
+    - system
+  theme:
+    - usda_ars_uswds
+id: publication_type
+theme: usda_ars_uswds
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:facet_pub_type'
+settings:
+  id: 'facet_block:facet_pub_type'
+  label: 'Publication Type'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: publication_type
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/research/publications/find-a-publication\r\n/research/publications/find-a-publication/*"

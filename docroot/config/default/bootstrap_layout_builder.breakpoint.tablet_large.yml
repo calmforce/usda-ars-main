@@ -1,0 +1,10 @@
+uuid: eb9bd0b9-9f2d-4411-90ff-c164153e1642
+langcode: en
+status: 0
+dependencies: {  }
+_core:
+  default_config_hash: __aAE7EU7gOly_CDaGMpy2EpxD0-fLNjcF-6kHVTiG4
+id: tablet_large
+label: 'Tablet Large'
+base_class: 'tablet-lg:grid-col'
+weight: 0

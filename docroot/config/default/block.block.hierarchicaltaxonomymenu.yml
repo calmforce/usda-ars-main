@@ -10,14 +10,14 @@ dependencies:
 id: hierarchicaltaxonomymenu
 theme: usda_ars_uswds
 region: sidebar_first
-weight: -7
+weight: -4
 provider: null
 plugin: hierarchical_taxonomy_menu
 settings:
   id: hierarchical_taxonomy_menu
   label: 'National Programs'
-  provider: hierarchical_taxonomy_menu
   label_display: visible
+  provider: hierarchical_taxonomy_menu
   vocabulary: ars_national_programs|
   max_depth: 100
   dynamic_block_title: false
@@ -38,5 +38,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/taxonomy/term/*'
     negate: false
+    pages: '/taxonomy/term/*'

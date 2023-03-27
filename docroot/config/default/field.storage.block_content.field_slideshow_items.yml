@@ -2,9 +2,6 @@ uuid: f293d8ff-2291-460b-ae68-3dc00eaa2042
 langcode: en
 status: true
 dependencies:
-  enforced:
-    module:
-      - lightning_media_slideshow
   module:
     - block_content
     - media

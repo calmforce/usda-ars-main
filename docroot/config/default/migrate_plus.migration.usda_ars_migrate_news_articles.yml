@@ -14,7 +14,7 @@ migration_tags:
   - 'ARS News Articles'
   - 'USDA ARS'
 migration_group: usda_ars_migrate
-label: '11 - USDA ARS News Articles'
+label: '13 - USDA ARS News Articles'
 source:
   plugin: usda_ars_news_articles
   constants:

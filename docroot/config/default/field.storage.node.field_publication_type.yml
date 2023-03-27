@@ -1,0 +1,84 @@
+uuid: 3e03985c-f786-436c-8456-9764568e6b17
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_publication_type
+field_name: field_publication_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: A
+      label: 'Abstract Only'
+    -
+      value: B
+      label: 'Book / Chapter'
+    -
+      value: C
+      label: 'Pct (patent Cooperation Treaty)'
+    -
+      value: D
+      label: 'Database / Dataset'
+    -
+      value: E
+      label: 'Experiment Station'
+    -
+      value: F
+      label: 'Rapid Release Publication'
+    -
+      value: G
+      label: 'Germplasm Release'
+    -
+      value: H
+      label: 'Germplasm Registration'
+    -
+      value: I
+      label: 'Pre-print Publication'
+    -
+      value: J
+      label: 'Peer Reviewed Journal'
+    -
+      value: L
+      label: 'Literature Review'
+    -
+      value: M
+      label: Monograph
+    -
+      value: 'N'
+      label: 'Research Notes'
+    -
+      value: O
+      label: 'Popular Publication'
+    -
+      value: P
+      label: Proceedings
+    -
+      value: R
+      label: 'Review Article'
+    -
+      value: T
+      label: 'Trade Journal'
+    -
+      value: U
+      label: 'Research  Technical Update'
+    -
+      value: V
+      label: 'Government Publication'
+    -
+      value: X
+      label: Other
+    -
+      value: Z
+      label: 'Patent Application'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

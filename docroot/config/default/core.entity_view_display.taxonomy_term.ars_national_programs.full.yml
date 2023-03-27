@@ -18,8 +18,8 @@ dependencies:
     - text
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
   ds:
     layout:
       id: ds_1col_wrapper
@@ -27,15 +27,15 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ''
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
+        label: ''
     regions:
       ds_content:
         - taxonomy_term_title
@@ -52,12 +52,12 @@ bundle: ars_national_programs
 mode: full
 content:
   description:
-    label: hidden
     type: text_default
-    weight: 1
-    region: ds_content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 1
+    region: ds_content
 hidden:
   field_breadcrumb_label: true
   field_hide_page_title: true

@@ -14,7 +14,7 @@ migration_tags:
   - 'ARS Site/Locations SubFolders'
   - 'USDA ARS'
 migration_group: usda_ars_migrate
-label: '7 - USDA ARS Sites/Locations SubFolders'
+label: '9 - USDA ARS Sites/Locations SubFolders'
 source:
   plugin: usda_ars_site_subfolders
   include_parent_types:

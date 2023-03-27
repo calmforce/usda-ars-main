@@ -1,0 +1,10 @@
+uuid: e2ad3b4f-fe64-4df8-846c-464d79514013
+langcode: en
+status: true
+dependencies: {  }
+id: usda_aris_data_search_index
+label: 'ARIS Public Data -> Solr Migration'
+description: 'Migrating ARIS data directly to Solr'
+source_type: 'USDA ARIS/REE'
+module: null
+shared_configuration: null

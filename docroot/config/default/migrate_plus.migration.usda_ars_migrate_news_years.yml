@@ -14,7 +14,7 @@ migration_tags:
   - 'ARS News Years'
   - 'USDA ARS'
 migration_group: usda_ars_migrate
-label: '9 - USDA ARS News Years'
+label: '11 - USDA ARS News Years'
 source:
   plugin: usda_ars_news_years
   constants:

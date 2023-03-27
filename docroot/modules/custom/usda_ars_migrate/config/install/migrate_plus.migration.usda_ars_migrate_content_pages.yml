@@ -6,7 +6,7 @@
 id: usda_ars_migrate_content_pages
 
 # A human-friendly description of the migration.
-label: 8 - USDA ARS Content Web Pages
+label: 10 - USDA ARS Content Web Pages
 
 # The machine name of the group containing this migration (which contains shared
 # configuration to be merged with our own configuration here).
