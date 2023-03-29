@@ -39,7 +39,7 @@
         "drupal/views_block_filter_block": "^1.0",
         "drupal/simple_search_form": "^1.3",
         "ext-xml": "*",
-        "drupal/core": "~9.4",
+        "drupal/core": "~9.5",
         "drupal/inline_entity_form": "^1.0-rc7",
         "drupal/page_manager": "^4.0-beta6",
         "drupal/panelizer": "^5.0-beta3",
@@ -73,7 +73,6 @@
         "drupal/conflict": "^2.0@alpha",
         "wikimedia/composer-merge-plugin": "^2.0",
         "vardot/blazy": "1.8.2.1",
-        "drupal/chosen": "^3.0",
         "drupal/dropzonejs": "^2.5",
         "bower-asset/dropzone": "5.7.1",
         "drupal/jquery_ui_touch_punch": "^1.0",
@@ -82,7 +81,6 @@
         "drupal/govdelivery_signup-govdelivery_signup": "^2.0",
         "drupal/search_api_solr": "^4.2",
         "drupal/smtp": "^1.0",
-        "drupal/samlauth": "^3.3",
         "drupal/backup_migrate": "^5.0",
         "drupal/linkit": "^6.0@beta",
         "drupal/auditfiles": "^2.11",
@@ -108,7 +106,11 @@
         "symfony/deprecation-contracts": "2.5.2",
         "psr/cache": "1.0.1",
         "drupal/openid_connect": "^1.2",
-        "drupal/miniorange_saml": "^2.27"
+        "drupal/group": "^3.0@beta",
+        "ext-pdo": "*",
+        "drupal/leaflet_more_markers": "^1.1",
+        "drupal/leaflet_more_maps": "^2.1",
+        "drupal/subgroup": "^3.0@beta"
     },
     "require-dev": {
         "zaporylie/composer-drupal-optimizations": "^1.1",
@@ -173,6 +175,9 @@
             "drupal/core": "-p2"
         },
         "patches": {
+            "drupal/sqlsrv": {
+                "3291199 - Call to a member function fetchField() on null": "https://www.drupal.org/files/issues/2022-06-18/sqlsrv-undefined-key-return-3291199-4.patch"
+            }
         }
     },
     "repositories": {

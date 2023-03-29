@@ -10,6 +10,7 @@
 /docroot/sites/default/default.services.yml
 /docroot/sites/default/default.settings.php
 /docroot/.htaccess
+.gitattributes
 
 /docroot/libraries
 # Example: Include some libraries, exclude others.

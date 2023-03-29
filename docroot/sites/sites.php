@@ -71,3 +71,5 @@ $sites['8282.localhost'] = 'aglab';
 $sites['44300.localhost'] = 'aglab';
 $sites['sd-staging.arsnet.usda.gov'] = 'scientific-discoveries';
 $sites['aglab-staging.arsnet.usda.gov'] = 'aglab';
+
+$sites['8888.localhost'] = 'default';
