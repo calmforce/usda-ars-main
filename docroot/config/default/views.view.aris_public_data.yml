@@ -457,7 +457,7 @@ display:
         type: full
         options:
           offset: 0
-          items_per_page: 50
+          items_per_page: 20
           total_pages: null
           id: 0
           tags:
@@ -3139,7 +3139,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<br>\r\n(Employee information on this page comes from the <a href=\"https://reedir.arsnet.usda.gov/\" class=\"projectNav\">REE Directory.</a> Please contact your front office staff to update the <a href=\"https://reedir.arsnet.usda.gov/\" class=\"projectNav\">REE Directory.</a>)"
+            value: "<br>\r\n(Employee information on this page comes from the <a href=\"https://reedir.arsnet.usda.gov/\" class=\"projectNav\">REE Directory.</a> Please contact your front office staff to update the <a href=\"https://reedir.arsnet.usda.gov/\" class=\"projectNav\">REE Directory.</a>)\r\n<div>\r\n<p>&nbsp;</p>\r\n</div>"
             format: rich_text
           tokenize: false
       display_extenders: {  }
@@ -4662,6 +4662,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
+      empty: {  }
       sorts:
         search_api_relevance:
           id: search_api_relevance
@@ -4723,11 +4724,28 @@ display:
           break_phrase: false
           not: false
       defaults:
+        empty: false
         title: false
+        use_ajax: false
         fields: false
         sorts: false
         arguments: false
+        header: false
+        footer: false
+      use_ajax: true
       display_description: ''
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: true
+          content: 'Displaying @start - @end of @total'
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
