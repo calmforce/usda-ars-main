@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.person_profile.body
     - field.field.node.person_profile.field_aris_person_id
     - field.field.node.person_profile.field_body_columned_text
+    - field.field.node.person_profile.field_bottom_html
     - field.field.node.person_profile.field_breadcrumb_label
     - field.field.node.person_profile.field_desk_phone
     - field.field.node.person_profile.field_deskaddr
@@ -65,6 +66,7 @@ hidden:
   content_moderation_control: true
   field_aris_person_id: true
   field_body_columned_text: true
+  field_bottom_html: true
   field_breadcrumb_label: true
   field_desk_phone: true
   field_deskaddr: true

@@ -1,0 +1,21 @@
+uuid: 79a71e23-68d0-4b72-af0c-e25daaed2eab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bottom_html
+    - node.type.person_profile
+  module:
+    - text
+id: node.person_profile.field_bottom_html
+field_name: field_bottom_html
+entity_type: node
+bundle: person_profile
+label: 'Bottom HTML'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
