@@ -4108,7 +4108,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Search for:'
-            description: 'Use multiple keywords to narrow down the search results'
+            description: 'Search Last name, First Name, State, Occupation here. Use multiple keywords to narrow down the search results'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false

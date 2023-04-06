@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.person_profile.body
     - field.field.node.person_profile.field_aris_person_id
     - field.field.node.person_profile.field_body_columned_text
+    - field.field.node.person_profile.field_bottom_html
     - field.field.node.person_profile.field_breadcrumb_label
     - field.field.node.person_profile.field_desk_phone
     - field.field.node.person_profile.field_deskaddr
@@ -153,6 +154,14 @@ content:
   field_body_columned_text:
     type: string_textarea
     weight: 10
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_bottom_html:
+    type: text_textarea
+    weight: 49
     region: content
     settings:
       rows: 5
