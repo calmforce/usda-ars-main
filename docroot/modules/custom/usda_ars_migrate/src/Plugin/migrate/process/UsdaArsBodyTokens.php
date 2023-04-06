@@ -20,7 +20,6 @@ class UsdaArsBodyTokens extends ProcessPluginBase {
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-
     // Replacing {{HTML-CODE}} token with its value.
     if (strpos($value, '{{HTML-CODE}}') !== FALSE) {
       // There is the token in HTML, replacing it.
@@ -35,6 +34,11 @@ class UsdaArsBodyTokens extends ProcessPluginBase {
         $usa_job_url_link = '<a href = "' . $usa_job_url . '" target = "_blank">' . $usa_job_url . '</a>';
       }
       $value = str_replace('{{USAJOBS_URLS}}', $usa_job_url_link, $value);
+    }
+    $person_id = $row->getSourceProperty('person_id');
+    if (strpos($value, '{{PUBLICATIONS}}') !== FALSE) {
+      $html = "<p class='publications'>[view:aris_public_data=person_pubs_block=$person_id]</p>";
+      $value = str_replace('{{PUBLICATIONS}}', $html, $value);
     }
     return $value;
   }

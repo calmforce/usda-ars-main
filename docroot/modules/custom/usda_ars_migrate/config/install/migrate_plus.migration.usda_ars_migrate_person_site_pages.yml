@@ -48,10 +48,18 @@ process:
     -
       plugin: skip_on_empty
       method: process
-      source: body
+      source: top_html
     -
       plugin: usda_ars_html_body_tokens
   body/format: 'constants/html_format'
+  field_bottom_html/value:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: bottom_html
+    -
+      plugin: usda_ars_html_body_tokens
+  field_bottom_html/format: 'constants/html_format'
   field_body_columned_text: bodyColumnedText
   field_projects: profileProjects
   field_publications: profilePublications
