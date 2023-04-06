@@ -46,8 +46,8 @@ class UsdaArsPersonSitePages extends UsdaArsSource {
     $query->condition('d.published', 1);
     // Parent has to be published as well.
     $query->condition('pd.published', 1);
+    $query->condition('c.nodeId', [169893, 204654, 242622], 'IN');
     $query->orderBy('level', 'ASC');
-    //$query->condition('c.nodeId', [170963], 'IN');
     return $query;
   }
 
@@ -101,8 +101,11 @@ class UsdaArsPersonSitePages extends UsdaArsSource {
         $row->setSourceProperty('node_url', $node_url);
       }
       $body = $properties['bodyText']->dataNtext;
-      if (!empty($body)) {
-        $row->setSourceProperty('body', $body);
+      if (!empty($body) && $body != '<div class="Section1"></div>') {
+        $row->setSourceProperty('top_html', $body);
+      }
+      else {
+        $body = '';
       }
       $htmlCode = $properties['htmlCode']->dataNtext;
       if (!empty($htmlCode)) {
@@ -110,7 +113,13 @@ class UsdaArsPersonSitePages extends UsdaArsSource {
       }
       $body_columned_text = $properties['bodyColumnedText']->dataNtext;
       if (!empty($body_columned_text)) {
-        $row->setSourceProperty('bodyColumnedText', $body_columned_text);
+        $html = $this->decodeBodyColumnedText($body_columned_text);
+        if (empty($body)) {
+          $row->setSourceProperty('top_html', $html);
+        }
+        else {
+          $row->setSourceProperty('bottom_html', $html);
+        }
       }
       // SEO fields.
       $this->addSeoProperties($properties, $row);
@@ -131,7 +140,7 @@ class UsdaArsPersonSitePages extends UsdaArsSource {
             $publications = $this->arisDbQueryService->getPersonProfilePublications($empid);
             if (!empty($publications)) {
               $row->setSourceProperty('profilePublications', $publications);
-            }            
+            }
           }
         }
       }
