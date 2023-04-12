@@ -5,3 +5,5 @@ services:
   usda_aris_public_data.authors_list_builder:
     class: Drupal\usda_aris_public_data\ArisAuthorsListBuilder
     arguments: [ '@usda_ars_migrate.query.aris_db', '@logger.channel.default' ]
+  usda_aris_public_data.person_profile_pubs_block_builder:
+    class: Drupal\usda_aris_public_data\PersonProfilePubsBlockBuilder
