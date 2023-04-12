@@ -48,6 +48,8 @@ dependencies:
     - field.field.node.person_profile.field_umbraco_node_url
     - field.field.node.person_profile.field_umbraco_path
     - field.field.node.person_profile.field_workingtitle
+    - field.field.node.person_profile.layout_builder__layout
+    - field.field.node.person_profile.layout_selection
     - node.type.person_profile
   module:
     - user
@@ -108,4 +110,6 @@ hidden:
   field_umbraco_path: true
   field_workingtitle: true
   langcode: true
+  layout_builder__layout: true
+  layout_selection: true
   search_api_excerpt: true

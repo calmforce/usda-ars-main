@@ -12,14 +12,7 @@ use Drupal\Component\Serialization\Json;
  */
 function usda_ars_uswds_preprocess_node(&$variables) {
   if ($variables['node']->getType() == 'person_profile') {
-
-    $contentBody = $variables['node']->get('body')->value;
-
-    $contentBodyColumned = $variables['node']->get('field_body_columned_text')->value;
-
-    $body_columned_text = usda_ars_uswds_body_columned_text($contentBodyColumned, $variables['node']);
-
-    $variables['body_columned_text'] = $body_columned_text;
+    //TODO TBD: we'll probably need to unset the title element.
   }
 }
 

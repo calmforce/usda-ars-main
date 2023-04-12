@@ -1,0 +1,21 @@
+uuid: cbaceece-c7d4-4e21-8bc8-6369e5a7ebf4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.layout_selection
+    - node.type.person_profile
+id: node.person_profile.layout_selection
+field_name: layout_selection
+entity_type: node
+bundle: person_profile
+label: Layout
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: layout_library
+  handler_settings: {  }
+field_type: entity_reference

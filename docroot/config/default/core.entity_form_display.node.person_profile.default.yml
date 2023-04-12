@@ -48,6 +48,8 @@ dependencies:
     - field.field.node.person_profile.field_umbraco_node_url
     - field.field.node.person_profile.field_umbraco_path
     - field.field.node.person_profile.field_workingtitle
+    - field.field.node.person_profile.layout_builder__layout
+    - field.field.node.person_profile.layout_selection
     - node.type.person_profile
   module:
     - address
@@ -495,6 +497,12 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  layout_selection:
+    type: options_select
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
     weight: 34
@@ -533,6 +541,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
+  layout_builder__layout: true
   promote: true
   sticky: true
   url_redirects: true

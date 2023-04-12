@@ -122,6 +122,7 @@ module:
   user: 0
   usfedgov_google_analytics: 0
   uswds_blb_configuration: 0
+  uswds_blb_configuration_media_library: 0
   uswds_ckeditor_integration: 0
   variationcache: 0
   views_field_view: 0
