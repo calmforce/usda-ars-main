@@ -42,9 +42,7 @@ process:
     -
       plugin: usda_ars_html_body_tokens
   field_bottom_html/format: constants/html_format
-  field_body_columned_text: bodyColumnedText
   field_projects: profileProjects
-  field_publications: profilePublications
   field_parent_folder:
     -
       plugin: usda_lookup_parent_folder_id

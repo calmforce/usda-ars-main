@@ -46,7 +46,7 @@ class UsdaArsPersonSitePages extends UsdaArsSource {
     $query->condition('d.published', 1);
     // Parent has to be published as well.
     $query->condition('pd.published', 1);
-    $query->condition('c.nodeId', [169893, 204654, 242622], 'IN');
+    //$query->condition('c.nodeId', [169893, 204654, 242622], 'IN');
     $query->orderBy('level', 'ASC');
     return $query;
   }

@@ -5,61 +5,26 @@ dependencies:
   config:
     - field.field.node.person_profile.body
     - field.field.node.person_profile.field_aris_person_id
-    - field.field.node.person_profile.field_body_columned_text
     - field.field.node.person_profile.field_bottom_html
     - field.field.node.person_profile.field_breadcrumb_label
-    - field.field.node.person_profile.field_desk_phone
-    - field.field.node.person_profile.field_deskaddr
-    - field.field.node.person_profile.field_deskbldgabbr
-    - field.field.node.person_profile.field_deskext
-    - field.field.node.person_profile.field_deskroomnum
     - field.field.node.person_profile.field_email
     - field.field.node.person_profile.field_emp_id
     - field.field.node.person_profile.field_hide_page_title
-    - field.field.node.person_profile.field_homepageurl
-    - field.field.node.person_profile.field_honorificname
-    - field.field.node.person_profile.field_imageurl
     - field.field.node.person_profile.field_location
     - field.field.node.person_profile.field_meta_tags
-    - field.field.node.person_profile.field_mod_date
     - field.field.node.person_profile.field_mode_code
     - field.field.node.person_profile.field_news
-    - field.field.node.person_profile.field_ofcaddress
-    - field.field.node.person_profile.field_ofcbldgabbr
-    - field.field.node.person_profile.field_ofcmailstop
-    - field.field.node.person_profile.field_ofcroomnum
-    - field.field.node.person_profile.field_office_fax
-    - field.field.node.person_profile.field_office_phone
-    - field.field.node.person_profile.field_officialtitle
-    - field.field.node.person_profile.field_p_emp_id
     - field.field.node.person_profile.field_parent_folder
-    - field.field.node.person_profile.field_payscale
-    - field.field.node.person_profile.field_percommonname
-    - field.field.node.person_profile.field_perfname
-    - field.field.node.person_profile.field_perlname
-    - field.field.node.person_profile.field_permname
-    - field.field.node.person_profile.field_pos_id
-    - field.field.node.person_profile.field_projects
-    - field.field.node.person_profile.field_publications
-    - field.field.node.person_profile.field_seriesid
-    - field.field.node.person_profile.field_status
-    - field.field.node.person_profile.field_suffix
-    - field.field.node.person_profile.field_umbraco_node_url
     - field.field.node.person_profile.field_umbraco_path
-    - field.field.node.person_profile.field_workingtitle
     - field.field.node.person_profile.layout_builder__layout
     - field.field.node.person_profile.layout_selection
     - node.type.person_profile
   module:
-    - address
     - bootstrap_layout_builder
-    - image
     - layout_builder
     - layout_builder_restrictions
     - layout_library
-    - link
     - metatag
-    - telephone
     - text
     - usda_aris_public_data
     - user
@@ -467,13 +432,6 @@ content:
     third_party_settings: {  }
     weight: 36
     region: content
-  field_body_columned_text:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 40
-    region: content
   field_bottom_html:
     type: text_default
     label: above
@@ -488,45 +446,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 44
-    region: content
-  field_desk_phone:
-    type: telephone_link
-    label: above
-    settings:
-      title: ''
-    third_party_settings: {  }
-    weight: 28
-    region: content
-  field_deskaddr:
-    type: address_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 22
-    region: content
-  field_deskbldgabbr:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 23
-    region: content
-  field_deskext:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 24
-    region: content
-  field_deskroomnum:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 27
     region: content
   field_email:
     type: basic_string
@@ -553,37 +472,6 @@ content:
     third_party_settings: {  }
     weight: 46
     region: content
-  field_homepageurl:
-    type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 17
-    region: content
-  field_honorificname:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 21
-    region: content
-  field_imageurl:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 14
-    region: content
   field_location:
     type: entity_reference_label
     label: above
@@ -598,14 +486,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 45
-    region: content
-  field_mod_date:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 19
     region: content
   field_mode_code:
     type: string
@@ -622,69 +502,6 @@ content:
     third_party_settings: {  }
     weight: 41
     region: content
-  field_ofcaddress:
-    type: address_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 25
-    region: content
-  field_ofcbldgabbr:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 26
-    region: content
-  field_ofcmailstop:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 12
-    region: content
-  field_ofcroomnum:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 13
-    region: content
-  field_office_fax:
-    type: telephone_link
-    label: above
-    settings:
-      title: ''
-    third_party_settings: {  }
-    weight: 29
-    region: content
-  field_office_phone:
-    type: telephone_link
-    label: above
-    settings:
-      title: ''
-    third_party_settings: {  }
-    weight: 30
-    region: content
-  field_officialtitle:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_p_emp_id:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 18
-    region: content
   field_parent_folder:
     type: entity_reference_label
     label: above
@@ -693,100 +510,6 @@ content:
     third_party_settings: {  }
     weight: 33
     region: content
-  field_payscale:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 8
-    region: content
-  field_percommonname:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_perfname:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_perlname:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_permname:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_pos_id:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 16
-    region: content
-  field_projects:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 42
-    region: content
-  field_publications:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 43
-    region: content
-  field_seriesid:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 7
-    region: content
-  field_status:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 15
-    region: content
-  field_suffix:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 20
-    region: content
-  field_umbraco_node_url:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 34
-    region: content
   field_umbraco_path:
     type: string
     label: above
@@ -794,14 +517,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 35
-    region: content
-  field_workingtitle:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 6
     region: content
   links:
     settings: {  }
