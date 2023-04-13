@@ -6,12 +6,7 @@ dependencies:
     - field.storage.node.field_aris_person_id
     - field.storage.node.body
     - field.storage.node.field_email
-    - field.storage.node.field_perfname
-    - field.storage.node.field_perlname
     - field.storage.node.field_location
-    - field.storage.node.field_office_phone
-    - field.storage.node.field_ofcaddress
-    - field.storage.node.field_workingtitle
     - search_api.server.usda_ars_solr
   module:
     - search_api_solr
@@ -98,22 +93,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_email
-  first_name:
-    label: 'First Name'
-    datasource_id: 'entity:node'
-    property_path: field_perfname
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_perfname
-  last_name:
-    label: 'Last Name'
-    datasource_id: 'entity:node'
-    property_path: field_perlname
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_perlname
   location_name:
     label: 'Location or Office » Taxonomy term » Name'
     datasource_id: 'entity:node'
@@ -139,22 +118,6 @@ field_settings:
     indexed_locked: true
     type_locked: true
     hidden: true
-  office_phone:
-    label: 'Office Phone'
-    datasource_id: 'entity:node'
-    property_path: field_office_phone
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_office_phone
-  office_state:
-    label: 'Office Address » State'
-    datasource_id: 'entity:node'
-    property_path: 'field_ofcaddress:administrative_area'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_ofcaddress
   status:
     label: null
     datasource_id: 'entity:node'
@@ -175,14 +138,6 @@ field_settings:
     dependencies:
       module:
         - node
-  working_title:
-    label: 'Working Title'
-    datasource_id: 'entity:node'
-    property_path: field_workingtitle
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_workingtitle
 datasource_settings:
   'entity:node':
     bundles:
@@ -207,12 +162,7 @@ processor_settings:
       - body
       - content_type
       - email
-      - first_name
-      - last_name
       - location_name
-      - office_phone
-      - office_state
-      - working_title
   language_with_fallback: {  }
   rendered_item: {  }
   solr_date_range:

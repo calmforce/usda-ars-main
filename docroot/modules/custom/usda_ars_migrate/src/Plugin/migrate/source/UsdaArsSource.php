@@ -316,7 +316,7 @@ abstract class UsdaArsSource extends SqlBase {
         foreach ($bRowText['areas'] as $area) {
           if (!empty($area['controls'])) {
             $output = $area['controls'][0]['value'];
-            $output = str_replace(['{{PROJECTS}}', '{{NEWS}}'], '', $output);
+            $output = str_replace(['{{PUBLICATIONS}}', '{{PROJECTS}}', '{{NEWS}}'], '', $output);
             $bodyText['sections'][$i]['rows'][$j]['areas'][$k]['controls'][0]['value'] = $output;
             $not_empty = TRUE;
           }

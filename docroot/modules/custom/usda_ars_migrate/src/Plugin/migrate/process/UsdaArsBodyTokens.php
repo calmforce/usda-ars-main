@@ -2,6 +2,7 @@
 
 namespace Drupal\usda_ars_migrate\Plugin\migrate\process;
 
+use Drupal\migrate\Annotation\MigrateProcessPlugin;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
@@ -35,6 +36,8 @@ class UsdaArsBodyTokens extends ProcessPluginBase {
       }
       $value = str_replace('{{USAJOBS_URLS}}', $usa_job_url_link, $value);
     }
+    // TODO: modify code below if we need embeddable tokens in the middle of HTML.
+    $value = str_replace(['{{PUBLICATIONS}}', '{{PROJECTS}}', '{{NEWS}}'], '', $value);
     $person_id = $row->getSourceProperty('person_id');
     if (strpos($value, '{{PUBLICATIONS}}') !== FALSE) {
       $html = "<p class='publications'>[view:aris_public_data=person_pubs_block=$person_id]</p>";
