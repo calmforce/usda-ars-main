@@ -44,14 +44,9 @@ process:
   field_bottom_html/format: constants/html_format
   field_projects: profileProjects
   field_parent_folder:
-    -
-      plugin: usda_lookup_parent_folder_id
-      source: parentID
-      no_stub: true
-    -
-      plugin: skip_on_empty
-      method: row
-      message: 'No parent found for the node, skipping the row'
+    plugin: usda_lookup_parent_folder_id
+    source: parentID
+    no_stub: true
   term_id:
     plugin: usda_parent_location_term_id
     source: '@field_parent_folder'
