@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
     - field.field.node.page.field_archived
-    - field.field.node.page.field_body_columned_text
     - field.field.node.page.field_breadcrumb_label
     - field.field.node.page.field_hide_page_title
     - field.field.node.page.field_location
@@ -38,7 +37,6 @@ content:
     region: content
 hidden:
   field_archived: true
-  field_body_columned_text: true
   field_breadcrumb_label: true
   field_hide_page_title: true
   field_location: true

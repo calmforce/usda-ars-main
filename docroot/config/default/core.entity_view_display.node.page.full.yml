@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.page.body
     - field.field.node.page.field_archived
-    - field.field.node.page.field_body_columned_text
     - field.field.node.page.field_breadcrumb_label
     - field.field.node.page.field_hide_page_title
     - field.field.node.page.field_location
@@ -39,13 +38,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_body_columned_text:
-    type: basic_string
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
     region: content
   links:
     settings: {  }
