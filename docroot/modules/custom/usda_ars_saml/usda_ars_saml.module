@@ -1,0 +1,19 @@
+<?php
+
+/* @file
+ * Module file for USDA ARS SAML Service Provider Module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\usda_ars_saml\FormAlter;
+
+/**
+ * Implements hook_form_alter().
+ */
+function usda_ars_saml_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  if ($form_id == 'user_login_block' || $form_id == 'user_login_form') {
+    \Drupal::service('class_resolver')
+      ->getInstanceFromDefinition(FormAlter::class)
+      ->alterLoginForm($form, $form_state);
+  }
+}

@@ -1,0 +1,5 @@
+usda_ars_saml.settings:
+  route_name: usda_ars_saml.settings
+  title: 'USDA ARS SAML Settings'
+  description: 'USDA ARS SAML Settings'
+  parent: user.admin_index

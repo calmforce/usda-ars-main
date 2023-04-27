@@ -1,0 +1,9 @@
+ars_saml_idp_issuer: 'https://adfs.arsnet.usda.gov/adfs/services/trust'
+ars_saml_idp_login_url: 'https://adfs.arsnet.usda.gov/adfs/ls/'
+ars_saml_fedidcard_only: 1
+ars_saml_agencies: ARS
+ars_saml_autocreate_users: 1
+ars_saml_auto_redirect: 1
+ars_saml_enable_backdoor: 0
+ars_saml_login_redirect: 'user'
+ars_saml_print_attributes: 0

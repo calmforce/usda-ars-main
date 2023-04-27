@@ -1,0 +1,5 @@
+services:
+  usda_ars_saml.route_subscriber:
+    class: Drupal\usda_ars_saml\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

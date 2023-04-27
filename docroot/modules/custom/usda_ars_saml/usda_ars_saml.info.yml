@@ -1,0 +1,6 @@
+name: USDA ARS SAML Service Provider
+type: module
+description: 'Provides SAML Service Provider Authentication to ARS sites.'
+package: USDA ARS
+core_version_requirement: ^8 || ^9
+version: '1.0.0'

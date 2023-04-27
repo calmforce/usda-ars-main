@@ -1,0 +1,21 @@
+usda_ars_saml.saml_response:
+  path: '/saml_response'
+  defaults:
+    _controller: '\Drupal\usda_ars_saml\Controller\ArsSamlController::saml_response'
+  requirements:
+    _access: 'TRUE'
+
+usda_ars_saml.saml_login:
+  path: '/saml_login'
+  defaults:
+    _controller: '\Drupal\usda_ars_saml\Controller\ArsSamlController::saml_login'
+  requirements:
+    _access: 'TRUE'
+
+usda_ars_saml.settings:
+  path: '/admin/config/people/usda_ars_saml/settings'
+  defaults:
+    _title: 'USDA ARS SAML Settings'
+    _form: \Drupal\usda_ars_saml\Form\ArsSamlSettings
+  requirements:
+    _permission: 'administer site configuration'
