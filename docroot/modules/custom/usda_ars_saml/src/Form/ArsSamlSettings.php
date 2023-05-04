@@ -112,6 +112,13 @@ class ArsSamlSettings extends FormBase {
       '#default_value' => \Drupal::config('usda_ars_saml.settings')->get('ars_saml_print_attributes'),
     );
 
+    $form['usda_ars_saml_settings']['ars_saml_log_saml_response'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('DEBUG: Check this option if you want to <b>log the entire SAML response XML.</b>'),
+      '#description' => t('<b>Note:</b> Use this feature <b>for troubleshooting only.</b><br><br>'),
+      '#default_value' => \Drupal::config('usda_ars_saml.settings')->get('ars_saml_log_saml_response'),
+    );
+
     $form['actions'] = [
       '#type' => 'actions',
     ];
@@ -140,6 +147,7 @@ class ArsSamlSettings extends FormBase {
     $enable_backdoor    = $form_values['ars_saml_enable_backdoor'];
     $login_redirect     = $form_values['ars_saml_login_redirect'];
     $print_attributes   = $form_values['ars_saml_print_attributes'];
+    $log_response_xml   = $form_values['ars_saml_log_saml_response'];
     $config = \Drupal::configFactory()->getEditable('usda_ars_saml.settings');
     $config->set('ars_saml_idp_issuer', $idp_issuer)->save();
     $config->set('ars_saml_idp_login_url', $idp_login_url)->save();
@@ -150,6 +158,7 @@ class ArsSamlSettings extends FormBase {
     $config->set('ars_saml_enable_backdoor', $enable_backdoor)->save();
     $config->set('ars_saml_login_redirect', trim($login_redirect))->save();
     $config->set('ars_saml_print_attributes', $print_attributes)->save();
+    $config->set('ars_saml_log_saml_response', $log_response_xml)->save();
 
     \Drupal::messenger()->addStatus(t('ARS ADFS Configuration successfully saved.'));
   }
