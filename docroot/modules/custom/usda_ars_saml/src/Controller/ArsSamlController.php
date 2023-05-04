@@ -9,6 +9,7 @@ namespace Drupal\usda_ars_saml\Controller;
 
 use DOMDocument;
 use DOMXPath;
+use Drupal\Core\Logger\LoggerChannelTrait;
 use Drupal\user\Entity\User;
 use Drupal\Core\Form\FormBuilder;
 use Drupal\Core\Controller\ControllerBase;
@@ -23,13 +24,18 @@ use Drupal\usda_ars_saml\Saml2Response;
  */
 class ArsSamlController extends ControllerBase {
 
+  use LoggerChannelTrait;
+
+  protected $config;
+
   protected $formBuilder;
 
   /**
    * {@inheritdoc}
    */
   public function __construct(FormBuilder $formBuilder = NULL){
-      $this->formBuilder = $formBuilder;
+    $this->formBuilder = $formBuilder;
+    $this->config =  \Drupal::config('usda_ars_saml.settings');
   }
 
   /**
@@ -53,10 +59,9 @@ class ArsSamlController extends ControllerBase {
       \Drupal::messenger()->addMessage($this->t('No body in _$POST found'), 'error');
       return [];
     }
-    $config = \Drupal::config('usda_ars_saml.settings');
     $response = $this->processPostBody($_POST);
 
-    $print_attributes = $config->get('ars_saml_print_attributes');
+    $print_attributes = $this->config->get('ars_saml_print_attributes');
     if ($print_attributes) {
       $render_array = $this->getDebugRenderArray($response);
     }
@@ -64,7 +69,7 @@ class ArsSamlController extends ControllerBase {
       $render_array = [];
     }
     // Check do we have to enforce FedID Card.
-    $fedid_only = $config->get('ars_saml_fedidcard_only');
+    $fedid_only = $this->config->get('ars_saml_fedidcard_only');
     if (!empty($fedid_only)) {
       $upn = explode('@', $response['upn']);
       if (strtolower($upn[1]) != 'fedidcard.gov') {
@@ -73,7 +78,7 @@ class ArsSamlController extends ControllerBase {
         return $render_array;
       }
     }
-    if (!empty($agencies_auth = $config->get('ars_saml_agencies'))) {
+    if (!empty($agencies_auth = $this->config->get('ars_saml_agencies'))) {
       $user_agency = explode(':', $response['agency'])[1];
       $agencies_auth = explode(',', $agencies_auth);
       $user_authorized = FALSE;
@@ -98,7 +103,7 @@ class ArsSamlController extends ControllerBase {
       return $render_array;
     }
 
-    if (empty($account) && !empty($response['email']) && $config->get('ars_saml_autocreate_users')) {
+    if (empty($account) && !empty($response['email']) && $this->config->get('ars_saml_autocreate_users')) {
       // Check do we have an account with the same name.
       $name = $response['name'];
       if (user_load_by_name($name)) {
@@ -134,9 +139,9 @@ class ArsSamlController extends ControllerBase {
         \Drupal::messenger()
           ->addMessage($this->t('User @username successfully authenticated.', ['@username' => $username]));
 
-        if (!$print_attributes && !empty($config->get('ars_saml_login_redirect'))) {
+        if (!$print_attributes && !empty($this->config->get('ars_saml_login_redirect'))) {
           global $base_url;
-          $redirectUrl = $base_url . $config->get('ars_saml_login_redirect');
+          $redirectUrl = $base_url . $this->config->get('ars_saml_login_redirect');
           $response = new RedirectResponse($redirectUrl);
           $request = \Drupal::request();
           $request->getSession()->save();
@@ -194,7 +199,7 @@ class ArsSamlController extends ControllerBase {
    * @return \Symfony\Component\HttpFoundation\Response
    */
   public function saml_login() {
-    $config = \Drupal::config('usda_ars_saml.settings');
+
     $base_url = Utilities::getBaseUrl();
     $saml_login_url = $base_url . '/saml_login';
     $relay_state = $_SERVER['HTTP_REFERER'];
@@ -208,7 +213,7 @@ class ArsSamlController extends ControllerBase {
       $relay_state = $base_url;
     }
     $acs_url = Utilities::getAcsUrl();
-    $sso_url = $config->get('ars_saml_idp_login_url');
+    $sso_url = $this->config->get('ars_saml_idp_login_url');
     $nameid_format = 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified';
     $redirect = $this->initiateLogin( $acs_url, $sso_url, $base_url, $nameid_format, $relay_state );
     $response = new RedirectResponse( $redirect );
@@ -274,6 +279,10 @@ class ArsSamlController extends ControllerBase {
     }
     $response['attr_table'] = $document->saveHTML();
     $response['attributes'] = $attributes;
+
+    if ($this->config->get('ars_saml_log_saml_response')) {
+      $this->getLogger('usda_ars_saml')->info('SAML 1.0 Response: "@saml1"', ['@saml1' => $saml_response]);
+    }
 
     return $response;
   }
@@ -344,8 +353,13 @@ class ArsSamlController extends ControllerBase {
     }
 
     if (!Utilities::validateIssuerAndAudience($saml_2_response, Utilities::getIssuer(), Utilities::getBaseUrl())) {
+
+      $this->getLogger('usda_ars_saml')->warning('SAML Response Issuer: @resp_issuer , Request Issuer: @req_issuer' ,
+        ['@resp_issuer' => current($saml_2_response->getAssertions())->getIssuer(), '@req_issuer' => Utilities::getIssuer()]);
+      $this->getLogger('usda_ars_saml')->warning('SAML Response Audience: @resp_audience , Request Audience: @req_audience' ,
+        ['@resp_audience' => current(current($saml_2_response->getAssertions())->getValidAudiences()), '@req_audience' => Utilities::getBaseUrl()]);
       \Drupal::messenger()
-        ->addMessage($this->t('Unable to validate Issuer and Audience.'), 'error');
+        ->addMessage($this->t('Unable to validate Issuer and Audience.'), 'warning');
     }
 
     $attributes = current($saml_2_response->getAssertions())->getAttributes();
@@ -372,6 +386,10 @@ class ArsSamlController extends ControllerBase {
     $response['attr_table'] = $attr_table;
 
     $response['response_json'] = json_encode($response);
+
+    if ($this->config->get('ars_saml_log_saml_response')) {
+      $this->getLogger('usda_ars_saml')->info('SAML 2.0 Response: "@saml2"', ['@saml2' => $saml_response_string]);
+    }
 
     return $response;
 

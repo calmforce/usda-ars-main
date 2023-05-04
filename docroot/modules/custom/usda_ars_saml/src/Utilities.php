@@ -304,8 +304,8 @@ class Utilities {
    * @return bool
    */
   public static function validateIssuerAndAudience($samlResponse, $issuerToValidateAgainst, $base_url) {
-    $issuer = current($samlResponse->getAssertions())->getIssuer();
-    $audience = current(current($samlResponse->getAssertions())->getValidAudiences());
+    $issuer = trim(current($samlResponse->getAssertions())->getIssuer(), " \n\r\t\v\x00/");
+    $audience = trim(current(current($samlResponse->getAssertions())->getValidAudiences()), " \n\r\t\v\x00/");
     if (strcmp($issuerToValidateAgainst, $issuer) === 0) {
       if (strcmp($audience, $base_url) === 0) {
         return TRUE;
