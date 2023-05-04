@@ -510,9 +510,11 @@ display:
           columns:
             counter: counter
             title: title
-            field_news_topics: field_news_topics
-            field_year: field_year
-          default: '-1'
+            field_location: field_location
+            field_parent_folder: field_parent_folder
+            field_umbraco_path: field_umbraco_path
+            field_aris_person_id: field_aris_person_id
+          default: field_aris_person_id
           info:
             counter:
               sortable: false
@@ -528,12 +530,28 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            field_news_topics:
+            field_location:
+              sortable: true
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            field_year:
+            field_parent_folder:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_umbraco_path:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_aris_person_id:
               sortable: true
               default_sort_order: desc
               align: ''
@@ -1177,16 +1195,34 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-          label: Title
+          label: Name
           exclude: false
           alter:
             alter_text: false
+            text: ''
             make_link: false
+            path: ''
             absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
             word_boundary: false
             ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
             strip_tags: false
             trim: false
+            preserve_tags: ''
             html: false
           element_type: ''
           element_class: ''

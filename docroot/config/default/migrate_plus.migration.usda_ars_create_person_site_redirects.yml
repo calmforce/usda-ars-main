@@ -1,0 +1,35 @@
+uuid: 7bd67586-52ed-40c0-9943-bb9dd4d0f842
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_ars_migrate
+id: usda_ars_create_person_site_redirects
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Umbraco
+  - 'ARS PersonSite Redirects'
+  - 'USDA ARS'
+migration_group: usda_ars_migrate
+label: '7 - USDA ARS PersonSite Redirects'
+source:
+  plugin: usda_ars_person_site_redirects
+  constants:
+    redirect_type: redirect
+    langcode: en
+    status_code: 301
+    uid: 1
+process:
+  rid: nodeId
+  type: constants/redirect_type
+  language: constants/langcode
+  status_code: constants/status_code
+  uid: constants/uid
+  redirect_source/path: source_path
+  redirect_redirect/uri: redirect
+destination:
+  plugin: 'entity:redirect'
+migration_dependencies: null
