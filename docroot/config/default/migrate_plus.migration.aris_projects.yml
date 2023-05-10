@@ -1,0 +1,42 @@
+uuid: c278b8a1-af2b-40a0-8e76-7da84c1782a3
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - usda_aris_public_data
+id: aris_projects
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: usda_aris_data_search_index
+label: '3 - USDA ARS Projects -> Search Index'
+source:
+  plugin: usda_aris_data_projects
+  key: aris_public_web
+  constants:
+    index_id: aris_public_data
+    datasource: 'aris:aris_projects'
+    status: 1
+process:
+  index_id: constants/index_id
+  datasource: constants/datasource
+  item_id: project_item_id
+  changed: changed
+  status: constants/status
+destination:
+  plugin: table
+  database_key: default
+  table_name: search_api_item
+  batch_size: 10
+  id_fields:
+    item_id:
+      type: string
+  fields:
+    index_id: index_id
+    datasource: datasource
+    item_id: project_item_id
+    changed: changed
+    status: status
+migration_dependencies: null

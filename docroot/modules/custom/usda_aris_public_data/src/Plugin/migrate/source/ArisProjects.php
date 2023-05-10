@@ -31,7 +31,7 @@ class ArisProjects extends UsdaArsSource {
       $query->addField('prj', 'OBJECTIVE', 'prj_objective');
       $query->addField('prj', 'APPROACH', 'prj_approach');
       $query->addField('prj', 'STATUS_CODE', 'prj_status');
-      $query->addExpression("RIGHT('00'+CAST(pub.[modecode_1] AS VARCHAR(2)),2) + '-' + RIGHT('00'+CAST(pub.[modecode_2] AS VARCHAR(2)),2) + '-' + RIGHT('00'+CAST(pub.[modecode_3] AS VARCHAR(2)),2) + '-' + RIGHT('00'+CAST(pub.[modecode_4] AS VARCHAR(2)),2)", 'prj_modecode');
+      $query->addExpression("RIGHT('00'+CAST(prj.[modecode_1] AS VARCHAR(2)),2) + '-' + RIGHT('00'+CAST(prj.[modecode_2] AS VARCHAR(2)),2) + '-' + RIGHT('00'+CAST(prj.[modecode_3] AS VARCHAR(2)),2) + '-' + RIGHT('00'+CAST(prj.[modecode_4] AS VARCHAR(2)),2)", 'prj_modecode');
       $query->orderBy('prj.ACCN_NO', 'DESC');
       return $query;
     }
@@ -91,9 +91,9 @@ class ArisProjects extends UsdaArsSource {
      */
     public function getIds() {
         return [
-            'pub_pub_id' => [
+            'prj_project_id' => [
                 'type' => 'integer',
-                'table_column' => 'pub.SEQ_NO_115',
+                'table_column' => 'prj.ACCN_NO',
             ],
         ];
     }
@@ -152,8 +152,12 @@ class ArisProjects extends UsdaArsSource {
     $raw_data = $query->execute()->fetchAll();
     $data = [];
     foreach ($raw_data as $row) {
-      $data[] = $row['prj_np_1'];
-      $data[] = $row['prj_np_2'];
+      if (!empty($row['prj_np_1'])) {
+        $data[] = $row['prj_np_1'];
+      }
+      if (!empty($row['prj_np_2'])) {
+        $data[] = $row['prj_np_2'];
+      }
     }
     return $data;
   }

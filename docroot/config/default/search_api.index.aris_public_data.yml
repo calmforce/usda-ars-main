@@ -59,6 +59,11 @@ name: 'ARIS Public Data'
 description: ''
 read_only: false
 field_settings:
+  aris_project_source_plugin_id:
+    label: 'ARIS Data Source Plugin ID'
+    datasource_id: 'aris:aris_projects'
+    property_path: aris_source_plugin_id
+    type: string
   aris_pub_source_plugin_id:
     label: 'ARIS Data Source Plugin ID'
     datasource_id: 'aris:aris_people'
@@ -207,6 +212,67 @@ field_settings:
     property_path: people_title
     type: text
     boost: !!float 5
+  prj_approach:
+    label: Approach
+    datasource_id: 'aris:aris_projects'
+    property_path: prj_approach
+    type: text
+  prj_end_date:
+    label: 'End Date'
+    datasource_id: 'aris:aris_projects'
+    property_path: prj_end_date
+    type: date
+  prj_modecode:
+    label: 'Project MODECODE'
+    datasource_id: 'aris:aris_projects'
+    property_path: prj_modecode
+    type: string
+  prj_nat_programs:
+    label: 'National Programs'
+    datasource_id: 'aris:aris_projects'
+    property_path: prj_nat_programs
+    type: integer
+  prj_number:
+    label: 'Project Number'
+    datasource_id: 'aris:aris_projects'
+    property_path: prj_number
+    type: string
+  prj_objective:
+    label: Objective
+    datasource_id: 'aris:aris_projects'
+    property_path: prj_objective
+    type: text
+  prj_project_id:
+    label: 'Project ID'
+    datasource_id: 'aris:aris_projects'
+    property_path: prj_project_id
+    type: integer
+  prj_start_date:
+    label: 'Start Date'
+    datasource_id: 'aris:aris_projects'
+    property_path: prj_start_date
+    type: date
+  prj_status:
+    label: 'Project Status'
+    datasource_id: 'aris:aris_projects'
+    property_path: prj_status
+    type: string
+  prj_team:
+    label: 'Project Team'
+    datasource_id: 'aris:aris_projects'
+    property_path: prj_team
+    type: integer
+  prj_title:
+    label: 'Project Title'
+    datasource_id: 'aris:aris_projects'
+    property_path: prj_title
+    type: text
+    boost: !!float 21
+  prj_type:
+    label: 'Project Type'
+    datasource_id: 'aris:aris_projects'
+    property_path: prj_type
+    type: string
   pub_abstract:
     label: Abstract
     datasource_id: 'aris:aris_pubs'
@@ -311,6 +377,7 @@ datasource_settings:
       default: '0'
       selected:
         - people
+  'aris:aris_projects': {  }
   'aris:aris_pubs':
     bundles:
       default: '0'
