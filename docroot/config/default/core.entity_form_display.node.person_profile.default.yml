@@ -3,111 +3,50 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.image_browser
     - field.field.node.person_profile.body
     - field.field.node.person_profile.field_aris_person_id
-    - field.field.node.person_profile.field_body_columned_text
+    - field.field.node.person_profile.field_bottom_html
     - field.field.node.person_profile.field_breadcrumb_label
-    - field.field.node.person_profile.field_desk_phone
-    - field.field.node.person_profile.field_deskaddr
-    - field.field.node.person_profile.field_deskbldgabbr
-    - field.field.node.person_profile.field_deskext
-    - field.field.node.person_profile.field_deskroomnum
     - field.field.node.person_profile.field_email
     - field.field.node.person_profile.field_emp_id
     - field.field.node.person_profile.field_hide_page_title
-    - field.field.node.person_profile.field_homepageurl
-    - field.field.node.person_profile.field_honorificname
-    - field.field.node.person_profile.field_imageurl
     - field.field.node.person_profile.field_location
     - field.field.node.person_profile.field_meta_tags
-    - field.field.node.person_profile.field_mod_date
     - field.field.node.person_profile.field_mode_code
     - field.field.node.person_profile.field_news
-    - field.field.node.person_profile.field_ofcaddress
-    - field.field.node.person_profile.field_ofcbldgabbr
-    - field.field.node.person_profile.field_ofcmailstop
-    - field.field.node.person_profile.field_ofcroomnum
-    - field.field.node.person_profile.field_office_fax
-    - field.field.node.person_profile.field_office_phone
-    - field.field.node.person_profile.field_officialtitle
-    - field.field.node.person_profile.field_p_emp_id
     - field.field.node.person_profile.field_parent_folder
-    - field.field.node.person_profile.field_payscale
-    - field.field.node.person_profile.field_percommonname
-    - field.field.node.person_profile.field_perfname
-    - field.field.node.person_profile.field_perlname
-    - field.field.node.person_profile.field_permname
-    - field.field.node.person_profile.field_pos_id
-    - field.field.node.person_profile.field_projects
-    - field.field.node.person_profile.field_publications
-    - field.field.node.person_profile.field_seriesid
-    - field.field.node.person_profile.field_status
-    - field.field.node.person_profile.field_suffix
-    - field.field.node.person_profile.field_umbraco_node_url
     - field.field.node.person_profile.field_umbraco_path
-    - field.field.node.person_profile.field_workingtitle
+    - field.field.node.person_profile.layout_builder__layout
+    - field.field.node.person_profile.layout_selection
     - node.type.person_profile
   module:
-    - address
-    - entity_browser
     - field_group
-    - link
     - metatag
     - path
-    - telephone
     - text
 third_party_settings:
   field_group:
     group_news_projects_pubs:
       children:
         - field_news
-        - field_projects
-        - field_publications
-      label: 'News, Projects, Pubs from REE/ARIS'
+      label: 'News from REE/ARIS'
       region: content
       parent_name: ''
-      weight: 15
+      weight: 10
       format_type: details
       format_settings:
         classes: ''
+        show_empty_fields: false
         id: ''
         open: false
         description: ''
         required_fields: true
-        weight: 0
     group_person_fields:
       children:
+        - field_aris_person_id
         - field_mode_code
-        - field_perlname
-        - field_perfname
-        - field_permname
-        - field_percommonname
-        - field_officialtitle
-        - field_workingtitle
-        - field_honorificname
-        - field_seriesid
-        - field_payscale
         - field_email
         - field_emp_id
-        - field_deskaddr
-        - field_deskbldgabbr
-        - field_deskroomnum
-        - field_desk_phone
-        - field_deskext
-        - field_ofcaddress
-        - field_ofcbldgabbr
-        - field_ofcmailstop
-        - field_ofcroomnum
-        - field_office_fax
-        - field_office_phone
-        - field_imageurl
-        - field_status
-        - field_pos_id
-        - field_p_emp_id
-        - field_mod_date
-        - field_suffix
-        - field_homepageurl
       label: 'Person Fields from REE/ARIS'
       region: content
       parent_name: ''
@@ -129,7 +68,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 4
+    weight: 1
     region: content
     settings:
       rows: 9
@@ -139,7 +78,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 11
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -150,9 +89,9 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
-  field_body_columned_text:
-    type: string_textarea
-    weight: 10
+  field_bottom_html:
+    type: text_textarea
+    weight: 2
     region: content
     settings:
       rows: 5
@@ -160,44 +99,7 @@ content:
     third_party_settings: {  }
   field_breadcrumb_label:
     type: string_textfield
-    weight: 3
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_desk_phone:
-    type: telephone_default
-    weight: 19
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_deskaddr:
-    type: address_default
-    weight: 16
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_deskbldgabbr:
-    type: string_textfield
-    weight: 17
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_deskext:
-    type: string_textfield
-    weight: 20
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_deskroomnum:
-    type: string_textfield
-    weight: 18
+    weight: 13
     region: content
     settings:
       size: 60
@@ -205,7 +107,7 @@ content:
     third_party_settings: {  }
   field_email:
     type: email_default
-    weight: 14
+    weight: 2
     region: content
     settings:
       placeholder: ''
@@ -213,7 +115,7 @@ content:
     third_party_settings: {  }
   field_emp_id:
     type: string_textfield
-    weight: 15
+    weight: 3
     region: content
     settings:
       size: 60
@@ -221,44 +123,14 @@ content:
     third_party_settings: {  }
   field_hide_page_title:
     type: boolean_checkbox
-    weight: 2
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
-  field_homepageurl:
-    type: link_default
-    weight: 33
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-  field_honorificname:
-    type: string_textfield
-    weight: 11
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_imageurl:
-    type: entity_browser_file
-    weight: 27
-    region: content
-    settings:
-      entity_browser: image_browser
-      field_widget_edit: true
-      field_widget_remove: true
-      field_widget_replace: false
-      open: true
-      selection_mode: selection_append
-      view_mode: default
-      preview_image_style: thumbnail
-    third_party_settings: {  }
   field_location:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -268,22 +140,15 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 16
+    weight: 14
     region: content
     settings:
       sidebar: true
-    third_party_settings: {  }
-  field_mod_date:
-    type: string_textfield
-    weight: 31
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
+      use_details: true
     third_party_settings: {  }
   field_mode_code:
     type: string_textfield
-    weight: 3
+    weight: 1
     region: content
     settings:
       size: 60
@@ -297,69 +162,9 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_ofcaddress:
-    type: address_default
-    weight: 21
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_ofcbldgabbr:
-    type: string_textfield
-    weight: 22
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_ofcmailstop:
-    type: string_textfield
-    weight: 23
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_ofcroomnum:
-    type: string_textfield
-    weight: 24
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_office_fax:
-    type: telephone_default
-    weight: 25
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_office_phone:
-    type: telephone_default
-    weight: 26
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_officialtitle:
-    type: string_textfield
-    weight: 9
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_p_emp_id:
-    type: string_textfield
-    weight: 30
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_parent_folder:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 4
     region: content
     settings:
       match_operator: CONTAINS
@@ -367,124 +172,19 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_payscale:
-    type: string_textfield
-    weight: 13
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_percommonname:
-    type: string_textfield
-    weight: 8
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_perfname:
-    type: string_textfield
-    weight: 5
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_perlname:
-    type: string_textfield
-    weight: 4
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_permname:
-    type: string_textfield
-    weight: 6
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_pos_id:
-    type: string_textfield
-    weight: 29
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_projects:
-    type: string_textarea
-    weight: 47
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_publications:
-    type: string_textarea
-    weight: 48
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_seriesid:
-    type: string_textfield
-    weight: 12
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_status:
-    type: string_textfield
-    weight: 28
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_suffix:
-    type: string_textfield
-    weight: 32
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_umbraco_node_url:
-    type: string_textfield
-    weight: 8
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_umbraco_path:
     type: string_textfield
-    weight: 9
+    weight: 11
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_workingtitle:
-    type: string_textfield
-    weight: 10
+  layout_selection:
+    type: options_select
+    weight: 15
     region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 2
-    region: content
-    settings:
-      include_locked: true
+    settings: {  }
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
@@ -494,20 +194,20 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 14
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 13
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 1
+    weight: 0
     region: content
     settings:
       size: 60
@@ -515,7 +215,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 12
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS
@@ -524,6 +224,8 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
+  langcode: true
+  layout_builder__layout: true
   promote: true
   sticky: true
   url_redirects: true

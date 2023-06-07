@@ -5,8 +5,12 @@ dependencies:
   config:
     - core.entity_view_mode.media.embedded
   module:
+    - blazy
     - editor
+    - insert_view
+    - linkit
     - media
+    - slick
     - token_filter
     - uswds_ckeditor_integration
 _core:
@@ -51,7 +55,7 @@ filters:
   filter_autop:
     id: filter_autop
     provider: filter
-    status: false
+    status: true
     weight: -43
     settings: {  }
   filter_html_escape:
@@ -69,7 +73,7 @@ filters:
   filter_url:
     id: filter_url
     provider: filter
-    status: false
+    status: true
     weight: -42
     settings:
       filter_url_length: 72
@@ -85,7 +89,7 @@ filters:
   token_filter:
     id: token_filter
     provider: token_filter
-    status: false
+    status: true
     weight: 0
     settings:
       replace_empty: '0'
@@ -102,4 +106,54 @@ filters:
     weight: 4
     settings:
       optionset: default
+      layout: ''
+      skin: ''
+      background: false
+      loading: ''
+      preload: false
+      image_style: ''
       media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      overridables:
+        arrows: '0'
+        autoplay: '0'
+        dots: '0'
+        draggable: '0'
+        infinite: '0'
+        mouseWheel: '0'
+        randomize: '0'
+        variableWidth: '0'
+      optionset_thumbnail: ''
+      skin_thumbnail: ''
+      thumbnail_caption: ''
+      thumbnail_effect: ''
+      thumbnail_position: ''
+      override: false
+  blazy_filter:
+    id: blazy_filter
+    provider: blazy
+    status: false
+    weight: 3
+    settings:
+      media_switch: ''
+      hybrid_style: ''
+      box_style: ''
+      box_caption: ''
+      filter_tags:
+        img: img
+        iframe: iframe
+      use_data_uri: '0'
+  insert_view:
+    id: insert_view
+    provider: insert_view
+    status: true
+    weight: 0
+    settings: {  }
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: 0
+    settings:
+      title: true

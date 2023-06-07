@@ -6,18 +6,18 @@ use Drupal\migrate\Annotation\MigrateSource;
 use Drupal\migrate\Row;
 
 /**
- * Defines UsdaArsPersonSitePages migrate source plugin.
+ * Defines UsdaArsPersonSiteChildren migrate source plugin.
  *
  * This annotation tells Drupal that the name of the MigrateSource plugin
- * implemented by this class is "usda_ars_person_site_pages". This is the name
+ * implemented by this class is "usda_ars_person_site_children". This is the name
  * that the migration configuration references with the source "plugin" key.
  *
  * @MigrateSource(
- *   id = "usda_ars_person_site_pages",
+ *   id = "usda_ars_person_site_children",
  *   source_module = "usda_ars_migrate"
  * )
  */
-class UsdaArsPersonSitePages extends UsdaArsSource {
+class UsdaArsPersonSiteChildren extends UsdaArsSource {
 
   /**
    * {@inheritdoc}
@@ -37,14 +37,15 @@ class UsdaArsPersonSitePages extends UsdaArsSource {
     $query->addField('c', 'nodeId', 'nodeId');
     $query->addField('n', 'text', 'nodeName');
     $query->addField('d', 'updateDate', 'updateDate');
-    $query->addField('ct', 'alias', 'node_type');
+    $query->addField('ct', 'alias', 'child_node_type');
     $query->addField('pct', 'alias', 'parent_type');
-    $query->addField('pd', 'documentUser', 'nodeUser');
+    $query->addField('pd', 'documentUser', 'parent_uid');
     $query->fields('n', ['sortOrder', 'createDate', 'parentID', 'level', 'path']);
-    $query->condition('ct.alias', 'PersonSite');
-    // Add parent condition.
-    $query->condition('pct.alias', 'PeopleFolder');
+    $query->condition('ct.alias', 'SiteNavFolder', '<>');
     $query->condition('d.published', 1);
+    // Test Nodes: $query->condition('c.nodeId', [242730, 243051, 243149, 243334], 'IN');
+    // Add parent condition.
+    $query->condition('pct.alias', 'PersonSite');
     // Parent has to be published as well.
     $query->condition('pd.published', 1);
     $query->orderBy('level', 'ASC');
@@ -85,96 +86,51 @@ class UsdaArsPersonSitePages extends UsdaArsSource {
   public function prepareRow(Row $row) {
     // The source properties can be added or modified in prepareRow().
     if (!$row->getIdMap() || $row->needsUpdate() || $this->aboveHighwater($row) || $this->rowChanged($row)) {
-      // The row has not been imported yet.
-      // We have to check because the function prepareRow() called for each row
-      // in each migration batch POST request.
       $created = $row->getSourceProperty('createDate');
       $created_timestamp = strtotime($created);
       $row->setSourceProperty('created', $created_timestamp);
       $changed = $row->getSourceProperty('updateDate');
       $changed_timestamp = strtotime($changed);
       $row->setSourceProperty('changed', $changed_timestamp);
+      // The row has not been imported yet.
+      // We have to check because the function prepareRow() called for each row
+      // in each migration batch POST request.
       $properties = $this->umbracoDbQueryService->getNodeProperties($row->getSourceProperty('nodeId'));
       // Node URL, if set.
       $node_url = $properties['umbracoUrlName']->dataNvarchar;
       if (!empty($node_url)) {
         $row->setSourceProperty('node_url', $node_url);
       }
-      $body = $properties['bodyText']->dataNtext;
-      if (!empty($body) && $body != '<div class="Section1"></div>') {
-        $row->setSourceProperty('top_html', $body);
+      $mode_code = $properties['modeCode']->dataNvarchar;
+      if (!empty($mode_code)) {
+        $row->setSourceProperty('modeCode', $mode_code);
       }
-      else {
+      $child_node_type = $row->getSourceProperty('child_node_type');
+      $body = $properties['bodyText']->dataNtext;
+      if ($child_node_type == 'Standardcolumnedwebpage' && $body[0] == '{') {
+        $body = $this->decodeBodyColumnedText($body);
+      }
+      if (empty($body) || $body == '<div class="Section1"></div>') {
         $body = '';
+      }
+      $body_columned_text = $properties['bodyColumnedText']->dataNtext;
+      if (!empty($body_columned_text)) {
+        $html = $this->decodeBodyColumnedText($body_columned_text);
+        if (!empty($html)) {
+          $body .= $html;
+        }
+      }
+      if (!empty($body)) {
+        $row->setSourceProperty('body', $body);
       }
       $htmlCode = $properties['htmlCode']->dataNtext;
       if (!empty($htmlCode)) {
         $row->setSourceProperty('htmlCode', $htmlCode);
       }
-      $body_columned_text = $properties['bodyColumnedText']->dataNtext;
-      if (!empty($body_columned_text)) {
-        $html = $this->decodeBodyColumnedText($body_columned_text);
-        if (empty($body)) {
-          $row->setSourceProperty('top_html', $html);
-        }
-        else {
-          $row->setSourceProperty('bottom_html', $html);
-        }
-      }
       // SEO fields.
       $this->addSeoProperties($properties, $row);
-      // Person fields.
-      $person_id = $properties['personLink']->dataNvarchar;
-      if (!empty($person_id)) {
-        $projects = $this->arisDbQueryService->getPersonProfileProjects($person_id);
-        if (!empty($projects)) {
-          $row->setSourceProperty('profileProjects', $projects);
-        }
-        $row->setSourceProperty('person_id', $person_id);
-        // Data from ARIS DB.
-        $person_properties = $this->arisDbQueryService->getPersonProperties($person_id);
-        if (!empty($person_properties)) {
-          $this->setPersonSourceProperties($row, $person_properties);
-          if (!empty($person_properties->EmpID)) {
-            $empid = $person_properties->EmpID;
-            $publications = $this->arisDbQueryService->getPersonProfilePublications($empid);
-            if (!empty($publications)) {
-              $row->setSourceProperty('profilePublications', $publications);
-            }
-          }
-        }
-      }
-
     }
     return parent::prepareRow($row);
-  }
-
-  /**
-   * Sets person profile properties.
-   *
-   * @param object $row
-   *   The Drupal\migrate\Row object.
-   * @param object $person_properties
-   *   The fields retrieved from aris_bublic_web DB.
-   */
-  protected function setPersonSourceProperties($row, $person_properties) {
-    $mode_1 = $person_properties->mode_1;
-    $mode_2 = $person_properties->mode_2;
-    $mode_3 = $person_properties->mode_3;
-    $mode_4 = $person_properties->mode_4;
-    if ($mode_1 && $mode_2 && $mode_3 && $mode_4) {
-      $mode_code = $mode_1 . "-" . $mode_2 . "-" . $mode_3 . "-" . $mode_4;
-      $row->setSourceProperty('Mode_code', $mode_code);
-      unset($person_properties->mode_1);
-      unset($person_properties->mode_2);
-      unset($person_properties->mode_3);
-      unset($person_properties->mode_4);
-    }
-    foreach ($person_properties as $key => $value) {
-      if (!empty($value)) {
-        $row->setSourceProperty($key, $value);
-      }
-    }
   }
 
 }

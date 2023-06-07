@@ -30,22 +30,23 @@ process:
     -
       plugin: skip_on_empty
       method: process
-      source: body
+      source: top_html
     -
       plugin: usda_ars_html_body_tokens
   body/format: constants/html_format
-  field_body_columned_text: bodyColumnedText
-  field_projects: profileProjects
-  field_publications: profilePublications
-  field_parent_folder:
-    -
-      plugin: usda_lookup_parent_folder_id
-      source: parentID
-      no_stub: true
+  field_bottom_html/value:
     -
       plugin: skip_on_empty
-      method: row
-      message: 'No parent found for the node, skipping the row'
+      method: process
+      source: bottom_html
+    -
+      plugin: usda_ars_html_body_tokens
+  field_bottom_html/format: constants/html_format
+  field_projects: profileProjects
+  field_parent_folder:
+    plugin: usda_lookup_parent_folder_id
+    source: parentID
+    no_stub: true
   term_id:
     plugin: usda_parent_location_term_id
     source: '@field_parent_folder'
@@ -89,7 +90,9 @@ process:
   field_deskaddr/address_line2: DeskAddr2
   field_deskaddr/locality: DeskCity
   field_deskaddr/administrative_area: DeskState
-  field_deskaddr/postal_code: DeskZip4
+  field_deskaddr/postal_code:
+    plugin: usda_ars_format_zip
+    source: DeskZip4
   field_deskbldgabbr: DeskBldgAbbr
   field_deskext: DeskExt
   field_desk_phone: DeskPhone
@@ -101,7 +104,9 @@ process:
   field_ofcaddress/address_line2: OfcAddr2
   field_ofcaddress/locality: OfcCity
   field_ofcaddress/administrative_area: OfcState
-  field_ofcaddress/postal_code: OfcZip4
+  field_ofcaddress/postal_code:
+    plugin: usda_ars_format_zip
+    source: OfcZip4
   field_ofcbldgabbr: OfcBldgAbbr
   field_office_fax: OfcFax
   field_ofcmailstop: OfcMailStop

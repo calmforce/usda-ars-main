@@ -2,7 +2,11 @@
 
 namespace Drupal\usda_ars_migrate\Plugin\migrate\source;
 
+use Drupal\Component\Serialization\Json;
+use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\State\StateInterface;
+use Drupal\Core\Theme\ActiveTheme;
+use Drupal\Core\Theme\ThemeManagerInterface;
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
 use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate\Row;
@@ -30,12 +34,36 @@ abstract class UsdaArsSource extends SqlBase {
   protected $arisDbQueryService;
 
   /**
+   * The theme manager.
+   *
+   * @var ThemeManagerInterface
+   */
+  protected ThemeManagerInterface $themeManager;
+
+  /**
+   * ARS Main Site Theme.
+   *
+   * @var ActiveTheme
+   */
+  protected ActiveTheme $theme;
+
+  /**
+   * The renderer service.
+   *
+   * @var RendererInterface
+   */
+  protected RendererInterface $renderer;
+
+  /**
    * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration, StateInterface $state, UmbracoDbQueryService $umbracoDbQueryService, ArisDbQueryService $arisDbQueryService) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration, StateInterface $state, UmbracoDbQueryService $umbracoDbQueryService, ArisDbQueryService $arisDbQueryService, ThemeManagerInterface $theme_manager, RendererInterface $renderer) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $migration, $state);
     $this->umbracoDbQueryService = $umbracoDbQueryService;
     $this->arisDbQueryService = $arisDbQueryService;
+    $this->themeManager = $theme_manager;
+    $this->renderer = $renderer;
+    $this->theme = \Drupal::service('theme.initialization')->initTheme('usda_ars_uswds');
   }
 
   /**
@@ -49,7 +77,9 @@ abstract class UsdaArsSource extends SqlBase {
       $migration,
       $container->get('state'),
       $container->get('usda_ars_migrate.query.umbraco_db'),
-      $container->get('usda_ars_migrate.query.aris_db')
+      $container->get('usda_ars_migrate.query.aris_db'),
+      $container->get('theme.manager'),
+      $container->get('renderer')
     );
   }
 
@@ -274,4 +304,41 @@ abstract class UsdaArsSource extends SqlBase {
     }
     return $properties;
   }
+
+  protected function decodeBodyColumnedText($json_text) {
+    $bodyText = Json::decode($json_text);
+    $not_empty = FALSE;
+    $i = 0;
+    foreach ($bodyText['sections'] as $bSectionsText) {
+      $j = 0;
+      foreach ($bSectionsText['rows'] as $bRowText) {
+        $k = 0;
+        foreach ($bRowText['areas'] as $area) {
+          if (!empty($area['controls'])) {
+            $output = $area['controls'][0]['value'];
+            $output = str_replace(['{{PUBLICATIONS}}', '{{PROJECTS}}', '{{NEWS}}'], '', $output);
+            $bodyText['sections'][$i]['rows'][$j]['areas'][$k]['controls'][0]['value'] = $output;
+            $not_empty = TRUE;
+          }
+          $k++;
+        }
+        $j++;
+      }
+      $i++;
+    }
+
+    if ($not_empty) {
+      $renderable = [
+        '#theme' => 'body_columned_template',
+        '#content' => $bodyText,
+      ];
+      $current_active_theme = $this->themeManager->getActiveTheme();
+      $this->themeManager->setActiveTheme($this->theme);
+      $html =  $this->renderer->renderPlain($renderable);
+      $this->themeManager->setActiveTheme($current_active_theme);
+      return $html->__toString();
+    }
+    return '';
+  }
+
 }

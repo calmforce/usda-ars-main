@@ -6,47 +6,19 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.person_profile.body
     - field.field.node.person_profile.field_aris_person_id
-    - field.field.node.person_profile.field_body_columned_text
+    - field.field.node.person_profile.field_bottom_html
     - field.field.node.person_profile.field_breadcrumb_label
-    - field.field.node.person_profile.field_desk_phone
-    - field.field.node.person_profile.field_deskaddr
-    - field.field.node.person_profile.field_deskbldgabbr
-    - field.field.node.person_profile.field_deskext
-    - field.field.node.person_profile.field_deskroomnum
     - field.field.node.person_profile.field_email
     - field.field.node.person_profile.field_emp_id
     - field.field.node.person_profile.field_hide_page_title
-    - field.field.node.person_profile.field_homepageurl
-    - field.field.node.person_profile.field_honorificname
-    - field.field.node.person_profile.field_imageurl
     - field.field.node.person_profile.field_location
     - field.field.node.person_profile.field_meta_tags
-    - field.field.node.person_profile.field_mod_date
     - field.field.node.person_profile.field_mode_code
     - field.field.node.person_profile.field_news
-    - field.field.node.person_profile.field_ofcaddress
-    - field.field.node.person_profile.field_ofcbldgabbr
-    - field.field.node.person_profile.field_ofcmailstop
-    - field.field.node.person_profile.field_ofcroomnum
-    - field.field.node.person_profile.field_office_fax
-    - field.field.node.person_profile.field_office_phone
-    - field.field.node.person_profile.field_officialtitle
-    - field.field.node.person_profile.field_p_emp_id
     - field.field.node.person_profile.field_parent_folder
-    - field.field.node.person_profile.field_payscale
-    - field.field.node.person_profile.field_percommonname
-    - field.field.node.person_profile.field_perfname
-    - field.field.node.person_profile.field_perlname
-    - field.field.node.person_profile.field_permname
-    - field.field.node.person_profile.field_pos_id
-    - field.field.node.person_profile.field_projects
-    - field.field.node.person_profile.field_publications
-    - field.field.node.person_profile.field_seriesid
-    - field.field.node.person_profile.field_status
-    - field.field.node.person_profile.field_suffix
-    - field.field.node.person_profile.field_umbraco_node_url
     - field.field.node.person_profile.field_umbraco_path
-    - field.field.node.person_profile.field_workingtitle
+    - field.field.node.person_profile.layout_builder__layout
+    - field.field.node.person_profile.layout_selection
     - node.type.person_profile
   module:
     - user
@@ -64,46 +36,18 @@ hidden:
   body: true
   content_moderation_control: true
   field_aris_person_id: true
-  field_body_columned_text: true
+  field_bottom_html: true
   field_breadcrumb_label: true
-  field_desk_phone: true
-  field_deskaddr: true
-  field_deskbldgabbr: true
-  field_deskext: true
-  field_deskroomnum: true
   field_email: true
   field_emp_id: true
   field_hide_page_title: true
-  field_homepageurl: true
-  field_honorificname: true
-  field_imageurl: true
   field_location: true
   field_meta_tags: true
-  field_mod_date: true
   field_mode_code: true
   field_news: true
-  field_ofcaddress: true
-  field_ofcbldgabbr: true
-  field_ofcmailstop: true
-  field_ofcroomnum: true
-  field_office_fax: true
-  field_office_phone: true
-  field_officialtitle: true
-  field_p_emp_id: true
   field_parent_folder: true
-  field_payscale: true
-  field_percommonname: true
-  field_perfname: true
-  field_perlname: true
-  field_permname: true
-  field_pos_id: true
-  field_projects: true
-  field_publications: true
-  field_seriesid: true
-  field_status: true
-  field_suffix: true
-  field_umbraco_node_url: true
   field_umbraco_path: true
-  field_workingtitle: true
   langcode: true
+  layout_builder__layout: true
+  layout_selection: true
   search_api_excerpt: true

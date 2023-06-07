@@ -1,7 +1,13 @@
 uuid: de7f8a19-fd1f-402a-a986-71307ccf5c57
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.rich_text
+  module:
+    - dropzonejs
+    - filter
+    - media
 _core:
   default_config_hash: o-m5GZwgtJ0-J90497MEFlWXIKSxQNQb4yw7hNJ9m38
 id: media_creator

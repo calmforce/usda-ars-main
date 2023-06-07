@@ -11,7 +11,7 @@ id: node.person_profile.body
 field_name: body
 entity_type: node
 bundle: person_profile
-label: Body
+label: 'Top HTML'
 description: ''
 required: false
 translatable: true

@@ -3,10 +3,10 @@
 # destination fields), and write it to Drupal.
 
 # The machine name for a migration, used to uniquely identify it.
-id: usda_ars_migrate_person_site_pages
+id: usda_ars_migrate_person_site_children
 
 # A human-friendly description of the migration.
-label: 5 - USDA ARS PersonSite Pages
+label: 6 - USDA ARS PersonSite Child Pages
 
 # The machine name of the group containing this migration (which contains shared
 # configuration to be merged with our own configuration here).
@@ -15,17 +15,16 @@ migration_group: usda_ars_migrate
 audit: true
 migration_tags:
   - Umbraco
-  - ARS PersonSite Pages
+  - ARS PersonSite Child Pages
   - USDA ARS
-
 # Every migration must have a source plugin, which controls the delivery of our
 # source data. In this case, our source plugin has the name "usaid_migrate_regions",
 # which Drupal resolves to the PHP class defined in
 # src/Plugin/migrate/source/UsAidMigrateRegions.php.
 source:
-  plugin: usda_ars_person_site_pages
+  plugin: usda_ars_person_site_children
   constants:
-    bundle: 'person_profile'
+    bundle: 'page'
     langcode: 'en'
     html_format: 'rich_text'
 # Every migration must also have a destination plugin, which handles writing
@@ -48,30 +47,10 @@ process:
     -
       plugin: skip_on_empty
       method: process
-      source: top_html
+      source: body
     -
       plugin: usda_ars_html_body_tokens
   body/format: 'constants/html_format'
-  field_bottom_html/value:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: bottom_html
-    -
-      plugin: usda_ars_html_body_tokens
-  field_bottom_html/format: 'constants/html_format'
-  field_projects: profileProjects
-  field_parent_folder:
-    plugin: usda_lookup_parent_folder_id
-    source: parentID
-    no_stub: true
-  term_id:
-    plugin: usda_parent_location_term_id
-    source: '@field_parent_folder'
-  field_location:
-    plugin: skip_on_empty
-    method: process
-    source: '@term_id'
   field_umbraco_path: path
   field_umbraco_node_url: node_url
   status:
@@ -84,61 +63,11 @@ process:
     -
       plugin: migration_lookup
       migration: usda_ars_migrate_user
-      source: nodeUser
+      source: parent_uid
       no_stub: true
     -
       plugin: usda_ars_user
   revision_uid: '@uid'
-# Fields from the ARIS DB People table.
-  field_aris_person_id: person_id
-  field_emp_id: EmpID
-  field_perlname: PerLName
-  field_perfname: PerFName
-  field_permname: PerMName
-  field_percommonname: PerCommonName
-  field_email: EMail
-  field_homepageurl: HomepageURL
-  field_honorificname: honorificname
-  field_imageurl: Imageurl
-  field_mode_code: Mode_code
-  field_mod_date: Mod_Date
-  field_deskaddr/country_code:
-    plugin: default_value
-    default_value: "US"
-  field_deskaddr/address_line1: DeskAddr1
-  field_deskaddr/address_line2: DeskAddr2
-  field_deskaddr/locality: DeskCity
-  field_deskaddr/administrative_area: DeskState
-  field_deskaddr/postal_code:
-    plugin: usda_ars_format_zip
-    source:  DeskZip4
-  field_deskbldgabbr: DeskBldgAbbr
-  field_deskext: DeskExt
-  field_desk_phone: DeskPhone
-  field_deskroomnum: DeskRoomNum
-  field_ofcaddress/country_code:
-    plugin: default_value
-    default_value: "US"
-  field_ofcaddress/address_line1: OfcAddr1
-  field_ofcaddress/address_line2: OfcAddr2
-  field_ofcaddress/locality: OfcCity
-  field_ofcaddress/administrative_area: OfcState
-  field_ofcaddress/postal_code:
-    plugin: usda_ars_format_zip
-    source:  OfcZip4
-  field_ofcbldgabbr: OfcBldgAbbr
-  field_office_fax: OfcFax
-  field_ofcmailstop: OfcMailStop
-  field_office_phone: OfcPhone
-  field_ofcroomnum: OfcRoomNum
-  field_officialtitle: OfficialTitle
-  field_payscale: PayScale
-  field_pos_id: Pos_Id
-  field_p_emp_id: P_Emp_Id
-  field_seriesid: SeriesID
-  field_status: Status
-  field_suffix: suffix
-  field_workingtitle: WorkingTitle
   # SEO and page presentation params.
   metatags/0/title: htmlTitle
   metatags/0/description: pageDescription
@@ -147,8 +76,6 @@ process:
     plugin: callback
     callable: serialize
     source: '@metatags'
-  field_breadcrumb_label: breadcrumbLabel
-  field_hide_page_title: hidePageTitle
 # By default, configuration entities (like this migration) are not automatically
 # removed when the migration which installed them is uninstalled. To have your
 # migrations uninstalled with your migration module, add an enforced dependency
@@ -157,6 +84,3 @@ dependencies:
   enforced:
     module:
       - usda_ars_migrate
-#migration_dependencies:
-#  required:
-#    - usda_ars_migrate_site_folders

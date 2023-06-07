@@ -4108,7 +4108,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Search for:'
-            description: 'Use multiple keywords to narrow down the search results'
+            description: 'Search Last name, First Name, State, Occupation here. Use multiple keywords to narrow down the search results'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -4341,6 +4341,68 @@ display:
           empty_zero: false
           hide_alter_empty: true
           counter_start: 1
+        pub_pub_id:
+          id: pub_pub_id
+          table: search_api_datasource_aris_public_data_aris_aris_pubs
+          field: pub_pub_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_numeric
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          set_precision: false
+          precision: 0
+          decimal: .
+          separator: ''
+          format_plural: false
+          format_plural_string: !!binary MQNAY291bnQ=
+          prefix: ''
+          suffix: ''
+          link_to_item: false
+          use_highlighting: false
+          multi_type: separator
+          multi_separator: ', '
+          format_plural_values: {  }
         pub_title:
           id: pub_title
           table: search_api_index_aris_public_data
@@ -4355,7 +4417,7 @@ display:
             alter_text: false
             text: ''
             make_link: true
-            path: '/research/publications/publication/{{ pub_seq_no_115 }}'
+            path: '/research/publications/publication/{{ pub_pub_id }}'
             absolute: false
             external: false
             replace_spaces: false

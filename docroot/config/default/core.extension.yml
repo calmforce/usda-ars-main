@@ -48,7 +48,7 @@ module:
   history: 0
   image: 0
   image_widget_crop: 0
-  inline_entity_form: 0
+  insert_view: 0
   jquery_ui: 0
   jquery_ui_draggable: 0
   jquery_ui_droppable: 0
@@ -65,6 +65,7 @@ module:
   leaflet_more_maps: 0
   leaflet_more_markers: 0
   link: 0
+  linkit: 0
   media: 0
   media_library: 0
   media_library_form_element: 0
@@ -120,6 +121,7 @@ module:
   user: 0
   usfedgov_google_analytics: 0
   uswds_blb_configuration: 0
+  uswds_blb_configuration_media_library: 0
   uswds_ckeditor_integration: 0
   variationcache: 0
   views_field_view: 0

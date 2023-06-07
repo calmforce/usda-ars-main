@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_archived
-    - field.field.node.page.field_body_columned_text
     - field.field.node.page.field_breadcrumb_label
     - field.field.node.page.field_hide_page_title
     - field.field.node.page.field_location
@@ -154,21 +153,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 7
             additional: {  }
-          1c7af9b5-9547-42f2-b00a-ebdf9801ca15:
-            uuid: 1c7af9b5-9547-42f2-b00a-ebdf9801ca15
-            region: content
-            configuration:
-              id: 'field_block:node:page:field_body_columned_text'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: basic_string
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-            weight: 8
-            additional: {  }
           487e3de4-b805-4e59-a5b3-a30e99a267ae:
             uuid: 487e3de4-b805-4e59-a5b3-a30e99a267ae
             region: content
@@ -219,13 +203,6 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     weight: 9
-    region: content
-  field_body_columned_text:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 8
     region: content
   field_breadcrumb_label:
     type: string
