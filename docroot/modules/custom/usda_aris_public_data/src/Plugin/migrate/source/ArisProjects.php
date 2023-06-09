@@ -21,7 +21,8 @@ class ArisProjects extends UsdaArsSource {
      */
     public function query() {
       $query = $this->select('w_clean_projects_all', 'prj');
-
+      $query->leftJoin('v_locations', 'loc', 'loc.modecode_1 = prj.modecode_1 AND loc.modecode_2 = prj.modecode_2 AND loc.modecode_3 = prj.modecode_3 AND loc.modecode_4 = prj.modecode_4');
+      $query->leftJoin('V_PROJECT_TEAM', 't', "t.ACCN_NO = prj.ACCN_NO AND t.PRIME_INDICATOR = 'P'");
       $query->addField('prj', 'ACCN_NO', 'prj_project_id');
       $query->addField('prj', 'START_DATE', 'prj_start_date');
       $query->addField('prj', 'TERM_DATE', 'prj_end_date');
@@ -31,6 +32,9 @@ class ArisProjects extends UsdaArsSource {
       $query->addField('prj', 'OBJECTIVE', 'prj_objective');
       $query->addField('prj', 'APPROACH', 'prj_approach');
       $query->addField('prj', 'STATUS_CODE', 'prj_status');
+      $query->addField('loc', 'STATE_CODE', 'prj_state');
+      $query->addField('loc', 'city', 'prj_city');
+      $query->addField('t', 'PERSONID', 'prj_leader');
       $query->addExpression("RIGHT('00'+CAST(prj.[modecode_1] AS VARCHAR(2)),2) + '-' + RIGHT('00'+CAST(prj.[modecode_2] AS VARCHAR(2)),2) + '-' + RIGHT('00'+CAST(prj.[modecode_3] AS VARCHAR(2)),2) + '-' + RIGHT('00'+CAST(prj.[modecode_4] AS VARCHAR(2)),2)", 'prj_modecode');
       $query->orderBy('prj.ACCN_NO', 'DESC');
       return $query;
@@ -62,6 +66,12 @@ class ArisProjects extends UsdaArsSource {
           'prj_approach' =>
             ['label' => $this->t('Approach'),
               'type' => 'string'],
+          'prj_state' =>
+            ['label' => $this->t('Project State'),
+             'type' => 'string'],
+          'prj_city' =>
+            ['label' => $this->t('Project City'),
+             'type' => 'string'],
           'prj_status' =>
             ['label' => $this->t('Project Status'),
               'type' => 'string'],
