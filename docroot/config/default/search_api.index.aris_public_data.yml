@@ -217,11 +217,21 @@ field_settings:
     datasource_id: 'aris:aris_projects'
     property_path: prj_approach
     type: text
+  prj_city:
+    label: 'Project City'
+    datasource_id: 'aris:aris_projects'
+    property_path: prj_city
+    type: string
   prj_end_date:
     label: 'End Date'
     datasource_id: 'aris:aris_projects'
     property_path: prj_end_date
     type: date
+  prj_leader:
+    label: 'Principal Investigator'
+    datasource_id: 'aris:aris_projects'
+    property_path: prj_leader
+    type: string
   prj_modecode:
     label: 'Project MODECODE'
     datasource_id: 'aris:aris_projects'
@@ -252,10 +262,20 @@ field_settings:
     datasource_id: 'aris:aris_projects'
     property_path: prj_start_date
     type: date
+  prj_state:
+    label: 'Project State'
+    datasource_id: 'aris:aris_projects'
+    property_path: prj_state
+    type: string
   prj_status:
     label: 'Project Status'
     datasource_id: 'aris:aris_projects'
     property_path: prj_status
+    type: string
+  prj_status_label:
+    label: 'Project Status Label'
+    datasource_id: 'aris:aris_projects'
+    property_path: prj_status_label
     type: string
   prj_team:
     label: 'Project Team'
@@ -272,6 +292,11 @@ field_settings:
     label: 'Project Type'
     datasource_id: 'aris:aris_projects'
     property_path: prj_type
+    type: string
+  prj_type_label:
+    label: 'Project Type Label'
+    datasource_id: 'aris:aris_projects'
+    property_path: prj_type_label
     type: string
   pub_abstract:
     label: Abstract

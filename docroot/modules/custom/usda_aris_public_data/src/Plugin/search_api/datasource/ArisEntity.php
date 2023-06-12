@@ -219,10 +219,13 @@ class ArisEntity extends DatasourcePluginBase { //implements PluginFormInterface
         $query = $source_plugin->query();
         $id_field = $source_plugin->getIds();
         $fields = $source_plugin->fields();
-        $multivalued_fields = [];
+        $multivalued_fields = $lookup_fields = [];
         foreach ($fields as $key => $field) {
-          if ($field['multivalued'] == TRUE) {
+          if ($field['multivalued']) {
             $multivalued_fields[] = $key;
+          }
+          elseif ($field['lookup']) {
+            $lookup_fields[$key] = [$field['key_field'] =>  $source_plugin->getLookUpFieldMap($field['key_field'])];
           }
         }
         if (is_array($id_field)) {
@@ -244,6 +247,12 @@ class ArisEntity extends DatasourcePluginBase { //implements PluginFormInterface
             foreach ($multivalued_fields as $multivalued_field) {
               $values = $source_plugin->getMultivaluedFieldValues($row[$id_field_alias], $multivalued_field);
               $row[$multivalued_field] = $values;
+            }
+          }
+          if (!empty($lookup_fields)) {
+            foreach ($lookup_fields as $lookup_field => $lookup_map) {
+              $key_field = key($lookup_map);
+              $row[$lookup_field] = $lookup_map[$key_field][$row[$key_field]];
             }
           }
           $search_api_item = $this->fieldsHelper->createItem($this->index, $item_id, $this);

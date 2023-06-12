@@ -51,6 +51,12 @@ class ArisProjects extends UsdaArsSource {
           'prj_type' =>
             ['label' => $this->t('Project Type'),
               'type' => 'string'],
+          'prj_type_label' =>
+            ['label' => $this->t('Project Type Label'),
+             'type' => 'string',
+             'lookup' => TRUE,
+             'key_field' => 'prj_type',
+            ],
           'prj_modecode' =>
             ['label' => $this->t('Project MODECODE'),
               'type' => 'string'],
@@ -75,12 +81,21 @@ class ArisProjects extends UsdaArsSource {
           'prj_status' =>
             ['label' => $this->t('Project Status'),
               'type' => 'string'],
+          'prj_status_label' =>
+            ['label' => $this->t('Project Status Label'),
+             'type' => 'string',
+             'lookup' => TRUE,
+             'key_field' => 'prj_status',
+            ],
           'prj_start_date' =>
             ['label' => $this->t('Start Date'),
               'type' => 'date'],
           'prj_end_date' =>
             ['label' => $this->t('End Date'),
               'type' => 'date'],
+          'prj_leader' =>
+            ['label' => $this->t('Principal Investigator'),
+             'type' => 'string'],
           'prj_team' =>
             ['label' => $this->t('Project Team'),
               'type' => 'integer',
@@ -129,16 +144,17 @@ class ArisProjects extends UsdaArsSource {
     }
 
   /**
-   * @param $prj_id
+   * @param int $prj_id
+   *   The Project ID.
+   *
    * @return array
+   *   The project team Person IDs.
    */
-    private function getProjectTeam($prj_id) {
-      $query = $this->select('w_person_projects_all', 'pp');
-      $query->leftJoin('People', 'p', 'pp.EMP_ID = p.EmpID');
-      $query->addField('p', 'PersonID', 'person_id');
-      $query->isNotNull('pp.EMP_ID');
-      $query->isNotNull('p.PersonID');
-      $query->condition('pp.ACCN_NO', $prj_id);
+    private function getProjectTeam(int $prj_id): array {
+      $query = $this->select('V_PROJECT_TEAM', 'pt');
+      $query->addField('pt', 'PERSONID', 'person_id');
+      $query->condition('pt.ACCN_NO', $prj_id);
+      $query->orderBy('PRIME_INDICATOR', 'DESC');
       $raw_data = $query->execute()->fetchAll();
       if (!empty($raw_data)) {
         $data = [];
@@ -151,10 +167,15 @@ class ArisProjects extends UsdaArsSource {
     }
 
   /**
-   * @param $prj_id
+   * Gets National Programs for Project ID.
+   *
+   * @param int $prj_id
+   *   The Project ID.
+   *
    * @return array
+   *   The national programs.
    */
-  private function getNatPrograms($prj_id) {
+  private function getNatPrograms(int $prj_id): array {
     $query = $this->select('w_clean_projects_all', 'prj');
     $query->addField('prj', 'NP_Number1', 'prj_np_1');
     $query->addField('prj', 'NP_Number2', 'prj_np_2');
@@ -171,6 +192,52 @@ class ArisProjects extends UsdaArsSource {
     }
     return $data;
   }
+
+  /**
+   * Retrieves values for LookUp fields.
+   *
+   * @param string $field
+   *   The field name.
+   *
+   * @return array
+   *   The map.
+   */
+  public function getLookUpFieldMap(string $field): array {
+    if (!in_array($field, ['prj_status_label', 'prj_type_label'])) {
+      return [];
+    }
+    if ($field == 'prj_status_label') {
+      return [
+        'A' => 'Active',
+        'E' => 'Terminated',
+        'X' => 'Expired',
+      ];
+    }
+    else {
+      return [
+        'A' => 'Cooperative Agreement',
+        'B' => 'Standard Cooperative Agreement',
+        'C' => 'Cooperative Research and Development Agreement',
+        'D' => 'In-House Appropriated',
+        'G' => 'Grant',
+        'H' => 'Material Transfer Research Agreement',
+        'I' => 'Interagency Reimbursable Agreement',
+        'J' => 'Research Support Agreement',
+        'L' => 'Cross Location',
+        'M' => 'Memorandum of Understanding',
+        'N' => 'Non-Funded Cooperative Agreement',
+        'O' => 'Outgoing Interagency Agreement',
+        'P' => 'PL-480 Agreement',
+        'Q' => 'General Cooperative Agreement',
+        'R' => 'Reimbursable Cooperative Agreement',
+        'S' => 'Non-Assistance Cooperative Agreement',
+        'T' => 'Trust Fund Cooperative Agreement',
+        'X' => 'Other',
+        'Y' => 'Contract',
+      ];
+    }
+  }
+
 
   /**
    * {@inheritdoc}
