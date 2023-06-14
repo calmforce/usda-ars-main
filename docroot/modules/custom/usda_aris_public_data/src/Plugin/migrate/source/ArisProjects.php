@@ -154,7 +154,8 @@ class ArisProjects extends UsdaArsSource {
       $query = $this->select('V_PROJECT_TEAM', 'pt');
       $query->addField('pt', 'PERSONID', 'person_id');
       $query->condition('pt.ACCN_NO', $prj_id);
-      $query->orderBy('PRIME_INDICATOR', 'DESC');
+      $query->condition('pt.PRIME_INDICATOR','P', '<>');
+//      $query->orderBy('PRIME_INDICATOR', 'DESC');
       $raw_data = $query->execute()->fetchAll();
       if (!empty($raw_data)) {
         $data = [];

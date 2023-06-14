@@ -225,7 +225,7 @@ class ArisEntity extends DatasourcePluginBase { //implements PluginFormInterface
             $multivalued_fields[] = $key;
           }
           elseif ($field['lookup']) {
-            $lookup_fields[$key] = [$field['key_field'] =>  $source_plugin->getLookUpFieldMap($field['key_field'])];
+            $lookup_fields[$key] = [$field['key_field'] =>  $source_plugin->getLookUpFieldMap($key)];
           }
         }
         if (is_array($id_field)) {
